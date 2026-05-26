@@ -1,0 +1,140 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": {
+      "contentSize": "960px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "palette": [
+        {
+          "name": "Navy",
+          "slug": "primary",
+          "color": "#0F203D"
+        },
+        {
+          "name": "Gold",
+          "slug": "secondary",
+          "color": "#D4B478"
+        },
+        {
+          "name": "Navy",
+          "slug": "dark",
+          "color": "#0F203D"
+        },
+        {
+          "name": "Canvas",
+          "slug": "light",
+          "color": "#F8F4EC"
+        },
+        {
+          "name": "Warm Beige",
+          "slug": "warm-beige",
+          "color": "#E7D4C5"
+        },
+        {
+          "name": "Gold Section",
+          "slug": "gold-section",
+          "color": "#AD8B3A"
+        },
+        {
+          "name": "Dark Text",
+          "slug": "dark-text",
+          "color": "#1E1E1E"
+        },
+        {
+          "name": "Deep Blue",
+          "slug": "deep-blue",
+          "color": "#0E326E"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Flatline Sans",
+          "slug": "flatline",
+          "fontFamily": "\"Flatline Sans\", sans-serif"
+        },
+        {
+          "name": "Garet",
+          "slug": "garet",
+          "fontFamily": "\"Garet\", sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Extra Small",
+          "slug": "xs",
+          "size": "0.75rem"
+        },
+        {
+          "name": "Small",
+          "slug": "sm",
+          "size": "0.875rem"
+        },
+        {
+          "name": "Base",
+          "slug": "base",
+          "size": "1rem"
+        },
+        {
+          "name": "Large",
+          "slug": "lg",
+          "size": "1.125rem"
+        },
+        {
+          "name": "Extra Large",
+          "slug": "xl",
+          "size": "1.25rem"
+        },
+        {
+          "name": "2XL",
+          "slug": "2xl",
+          "size": "1.5rem"
+        },
+        {
+          "name": "3XL",
+          "slug": "3xl",
+          "size": "1.875rem"
+        },
+        {
+          "name": "4XL",
+          "slug": "4xl",
+          "size": "2.25rem"
+        },
+        {
+          "name": "5XL",
+          "slug": "5xl",
+          "size": "3rem"
+        },
+        {
+          "name": "6XL",
+          "slug": "6xl",
+          "size": "3.75rem"
+        },
+        {
+          "name": "7XL",
+          "slug": "7xl",
+          "size": "4.5rem"
+        },
+        {
+          "name": "8XL",
+          "slug": "8xl",
+          "size": "6rem"
+        },
+        {
+          "name": "9XL",
+          "slug": "9xl",
+          "size": "8rem"
+        },
+        {
+          "name": "10XL",
+          "slug": "10xl",
+          "size": "5.938rem"
+        }
+      ]
+    }
+  }
+}

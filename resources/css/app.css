@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './utilities.css';
+@import './custom.css' layer(utilities);
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+@source '../../vendor/tailpress/framework/**/*.php';
+@source '../../vendor/tailpress/framework/**/**/*.php';
+@source '../../template-parts/**/*.php';
+@source '../../**/*.php';
+
+@layer base {
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/FlatlineSans-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../fonts/FlatlineSans-RegularItalic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/FlatlineSans-SemiBold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 600;
+    font-style: italic;
+    src: url('../fonts/FlatlineSans-SemiBoldItalic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/FlatlineSans-Bold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Flatline Sans';
+    font-weight: 700;
+    font-style: italic;
+    src: url('../fonts/FlatlineSans-BoldItalic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Garet';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Garet-Book.woff2') format('woff2');
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-zinc-200, currentColor);
+  }
+}

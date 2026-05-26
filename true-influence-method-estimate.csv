@@ -1,0 +1,29 @@
+Category,Page/Feature,Templates?,Manual Estimate,AI-Assisted Estimate,Savings Notes
+Homepage,True Influence Method - Home,No,2 days,4 hours,AI generates sections from Figma instantly
+Homepage,"The Journey Scrolled + Animation + Final CTA",No,1 day,2 hours,AI handles animation logic + scroll interactions
+Homepage,Watch Joanna Speak Modal,No,0.5 day,1 hour,Modal boilerplate is fast with AI
+Content Pages,Events and Workshops,No,0.5 day,1 hour,
+Content Pages,About Joanna (with email subscribe form),No,0.5 day,1.5 hours,Form + email integration
+Content Pages,On Stage,No,0.5 day,1 hour,
+Content Pages,Success Stories,No,0.5 day,1 hour,
+Content Pages,Offers index,No,0.5 day,1 hour,
+Content Pages,The Vault (with registration),No,0.5 day,1.5 hours,Auth/registration form
+Content Pages,$29 Million Dollar Message,No,0.5 day,1 hour,
+Content Pages,FAQS ANSWERS (accordion),No,0.25 day,30 minutes,Accordion pattern is standard
+Content Pages,Inquiry (contact form),No,0.5 day,1 hour,Form validation + submission
+Program Pages (Template),"Tell Your Story, Move the Room, Master My Message, Build My Team, Be Remembered (x5)",Yes,1 day,2 hours,~90% template — AI swaps content in minutes
+Program Pages,Breakthrough Session,Semi,0.5 day,1 hour,
+Program Pages,4-Session Training Package,Semi,0.25 day,30 minutes,
+Program Pages,Private Client,Semi,0.25 day,30 minutes,
+Checkout Pages (Template),"Move the Room, Master My Message, Build My Team, Be Remembered, Breakthrough, Private Client (x6)",Yes,1.5 days,2 hours,~90% template — prices/product names vary
+Thank You Pages (Template),"The Vault, Move the Room, Master My Message, Breakthrough, Build My Team, Be Remembered, Inquiry, On Stage, $29M Message (x9)",Yes,0.5 day,30 minutes,~90% template
+UI Components,Work With Me Dropdown,N/A,0.25 day,15 minutes,
+UI Components,Press badges (FORBES/ABC),N/A,0.25 day,15 minutes,
+Backend,Stripe / Payment Gateway Integration,N/A,2 days,1 day,Still needs careful config + testing
+Backend,Auth / User Accounts,N/A,1.5 days,4 hours,AI generates auth boilerplate
+Backend,CMS CRUD (Events, Testimonials, FAQ, Programs),N/A,2.5 days,4 hours,AI generates all CRUD endpoints + admin
+Backend,Email / Subscribe Integration,N/A,0.5 day,1 hour,
+Animations,Scroll + phase card animations,N/A,1 day,2 hours,AI helps with animation library setup
+QA,Responsive + Cross-browser + Bug fixes,N/A,2 days,4 hours,AI helps catch issues faster
+,,,,
+TOTAL,,,~21 days,~2.5 days (20 hours)
