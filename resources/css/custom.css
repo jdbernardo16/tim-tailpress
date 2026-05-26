@@ -13,23 +13,31 @@
     animation: marquee 40s linear infinite;
 }
 
+.testimonials-marquee__track {
+    width: fit-content;
+    animation: marquee 50s linear infinite;
+}
+
 .marquee__img {
     flex-shrink: 0;
 }
 
 /* Swiper Carousel Styles */
 .tell-story-swiper,
-.about-meaning-swiper {
+.about-meaning-swiper,
+.success-stories-written-swiper {
     overflow: hidden;
 }
 
 .tell-story-swiper .swiper-wrapper,
-.about-meaning-swiper .swiper-wrapper {
+.about-meaning-swiper .swiper-wrapper,
+.success-stories-written-swiper .swiper-wrapper {
     align-items: stretch;
 }
 
 .tell-story-swiper .swiper-slide,
-.about-meaning-swiper .swiper-slide {
+.about-meaning-swiper .swiper-slide,
+.success-stories-written-swiper .swiper-slide {
     flex-shrink: 0;
     width: auto;
     height: auto;
@@ -38,15 +46,21 @@
 /* Navigation arrows */
 .tell-story-nav,
 .about-meaning-nav,
-.onstage-credibility-featured-nav {
+.onstage-credibility-featured-nav,
+.success-stories-written-nav {
     display: flex;
     gap: 12px;
 }
 
 .tell-story-nav,
-.onstage-credibility-featured-nav {
+.success-stories-written-nav {
     justify-content: center;
     margin-top: 32px;
+}
+
+.onstage-credibility-featured-nav {
+    justify-content: flex-start;
+    gap: 16px;
 }
 
 .about-meaning-nav {
@@ -55,7 +69,8 @@
 
 .tell-story-nav__btn,
 .about-meaning-nav__btn,
-.onstage-credibility-featured-nav__btn {
+.onstage-credibility-featured-nav__btn,
+.success-stories-written-nav__btn {
     width: 48px;
     height: 48px;
     display: flex;
@@ -68,15 +83,24 @@
     transition: opacity 0.2s;
 }
 
+.onstage-credibility-featured-nav__btn {
+    width: 52px;
+    height: 52px;
+    background: radial-gradient(circle at 65% 0%, var(--color-warm-beige) 0%, var(--color-gold) 100%);
+    border: 1px solid var(--color-warm-beige);
+}
+
 .tell-story-nav__btn:hover,
 .about-meaning-nav__btn:hover,
-.onstage-credibility-featured-nav__btn:hover {
+.onstage-credibility-featured-nav__btn:hover,
+.success-stories-written-nav__btn:hover {
     opacity: 0.8;
 }
 
 .tell-story-nav__btn svg,
 .about-meaning-nav__btn svg,
-.onstage-credibility-featured-nav__btn svg {
+.onstage-credibility-featured-nav__btn svg,
+.success-stories-written-nav__btn svg {
     width: 20px;
     height: 20px;
     color: var(--color-navy);
