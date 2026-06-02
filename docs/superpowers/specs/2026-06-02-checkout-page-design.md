@@ -118,13 +118,23 @@ A new `/checkout` page that lets visitors purchase the $29 "Your Dollar Message"
   - **Card** (default visible): 3 inputs in `space-y-4`
     - Card number (text, full width, placeholder `1234 1234 1234 1234`, `inputmode="numeric"`)
     - Two-column grid (`md:grid-cols-2 gap-4`): Expiry (placeholder `MM/YY`) + CVC (placeholder `123`)
-  - **Apple Pay** panel: short message "Complete your purchase using Apple Pay." + Apple Pay button (placeholder styled as a black pill, hidden until GHL is wired)
-  - **Wire/Invoice** panel: short message "We'll email you an invoice with wire instructions within 1 business day."
+  - **Apple Pay** panel: short instructional copy ("Complete your purchase using Apple Pay.") and a black pill-styled button (`<button type="button" class="bg-black text-white rounded-full py-3 w-full font-medium">Pay</button>`) that is non-functional until GHL is wired — clicking it shows the same inline note as the main submit button.
+  - **Wire/Invoice** panel: short instructional copy ("We'll email you an invoice with wire instructions within 1 business day.") and a non-functional `EMAIL ME AN INVOICE` button that shows the same inline note.
 
-### Submit button
+### Form and submit button
+
+The form wraps all the input groups, matching the pattern used in `section-be-remembered-form.php` and `section-build-my-team-form.php`:
 
 ```html
-<button type="submit" form="checkout-form" class="btn-primary w-full mt-10">
+<form id="checkout-form" class="mt-10 text-left" novalidate>
+  [YOUR DETAILS group, PAYMENT METHOD group, submit button — see sections above]
+</form>
+```
+
+The submit button sits at the bottom of the form:
+
+```html
+<button type="submit" id="checkout-submit" class="btn-primary w-full mt-10">
   CONFIRM AND PAY $29
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833"
@@ -133,15 +143,7 @@ A new `/checkout` page that lets visitors purchase the $29 "Your Dollar Message"
 </button>
 ```
 
-The form wraps all the input groups:
-
-```html
-<form id="checkout-form" class="contents" novalidate>
-  <!-- YOUR DETAILS group, PAYMENT METHOD group -->
-</form>
-```
-
-(`form.contents` lets the form wrap fields that are visually laid out in a single column without introducing an extra flex/grid item.)
+(No `form="..."` attribute needed — the button is a direct child of `<form id="checkout-form">`.)
 
 ### GHL placeholder
 
