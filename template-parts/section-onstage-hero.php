@@ -74,7 +74,13 @@ $profile_image_id = get_field('section_hero_profile_image');
                         <?php if ($stat_index > 0) : ?>
                             <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
                         <?php endif; ?>
+                        <?php $item_icon_id = get_sub_field('item_icon'); ?>
                         <div class="flex items-center gap-3">
+                            <?php if ($item_icon_id): ?>
+                                <div class="w-6 h-6 flex items-center justify-center">
+                                    <?= wp_get_attachment_image($item_icon_id, 'medium', false, array('class' => 'w-6 h-6')) ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="flex items-baseline gap-1">
                                 <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html(get_sub_field('item_value')); ?></span>
                             </div>

@@ -8,7 +8,7 @@
         "label": "Section Hero Heading",
         "name": "section_hero_heading",
         "type": "text",
-        "default_value": "<em class=\"text-gold\">On Stage</em> With Joanna"
+        "default_value": "Invite Joanna<br>Into the <em class=\"text-gold italic\">Room.</em>"
       },
       {
         "key": "field_section_hero_subtitle",
@@ -39,6 +39,14 @@
         "type": "repeater",
         "layout": "block",
         "sub_fields": [
+          {
+            "key": "field_section_hero_stats_item_icon",
+            "label": "Section Hero Stats Item Icon",
+            "name": "section_hero_stats_item_icon",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+          },
           {
             "key": "field_section_hero_stats_item_value",
             "label": "Section Hero Stats Item Value",

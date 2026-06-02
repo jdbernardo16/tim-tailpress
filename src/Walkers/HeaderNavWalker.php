@@ -10,7 +10,8 @@ class HeaderNavWalker extends Walker_Nav_Menu
     {
         $classes = empty($item->classes) ? [] : (array) $item->classes;
         $has_children = in_array('menu-item-has-children', $classes);
-        $class_names = 'text-white font-garet font-light text-base no-underline';
+        $is_active = untrailingslashit($item->url) === untrailingslashit(home_url(add_query_arg([])));
+        $class_names = ($is_active ? 'text-gold' : 'text-white') . ' font-garet font-light text-base no-underline';
 
         $output .= '<a href="' . esc_url($item->url) . '" class="' . $class_names . '">';
         $output .= esc_html($item->title);
