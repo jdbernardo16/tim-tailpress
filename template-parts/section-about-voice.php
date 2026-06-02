@@ -1,10 +1,12 @@
 <?php
-
 /**
  * About Page - Voice Section template part.
  *
  * @package TailPress
  */
+
+$heading = get_field('section_voice_heading') ?: "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.</em>";
+$text = get_field('section_voice_text');
 ?>
 
 <section class="relative mx-10 rounded-b-3xl bg-gold-section overflow-hidden -translate-y-5">
@@ -64,11 +66,15 @@
 
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
         <h2 class="font-flatline font-semibold text-5xl md:text-6xl text-white leading-tight">
-            Your Voice Carries More Than <em class="text-warm-beige italic">Information.</em>
+            <?= $heading ?>
         </h2>
-        <p class="mt-6 font-garet text-lg text-white leading-normal">
-            It carries your story. Your leadership.<br>The life that shaped you.
-        </p>
+        <?php if ($text): ?>
+            <?= $text ?>
+        <?php else: ?>
+            <p class="mt-6 font-garet text-lg text-white leading-normal">
+                It carries your story. Your leadership.<br>The life that shaped you.
+            </p>
+        <?php endif; ?>
         <div class="mt-10">
             <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
                 Start Your Story Journey
