@@ -1,0 +1,174 @@
+[
+  {
+    "key": "group_page-offers",
+    "title": "Page: Offers",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "Ways to <em class=\"text-gold\">Work</em> with Joanna"
+      },
+      {
+        "key": "field_section_hero_subtitle",
+        "label": "Section Hero Subtitle",
+        "name": "section_hero_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_hero_bg_image",
+        "label": "Section Hero Bg Image",
+        "name": "section_hero_bg_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_profile_image",
+        "label": "Section Hero Profile Image",
+        "name": "section_hero_profile_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_signature_heading",
+        "label": "Section Signature Heading",
+        "name": "section_signature_heading",
+        "type": "text",
+        "default_value": "Signature <em class=\"text-gold italic\">Offers</em>"
+      },
+      {
+        "key": "field_section_signature_subtitle",
+        "label": "Section Signature Subtitle",
+        "name": "section_signature_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_signature_items",
+        "label": "Section Signature Items",
+        "name": "section_signature_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_signature_items_item_title",
+            "label": "Section Signature Items Item Title",
+            "name": "section_signature_items_item_title",
+            "type": "text"
+          },
+          {
+            "key": "field_section_signature_items_item_description",
+            "label": "Section Signature Items Item Description",
+            "name": "section_signature_items_item_description",
+            "type": "textarea"
+          },
+          {
+            "key": "field_section_signature_items_item_price_label",
+            "label": "Section Signature Items Item Price Label",
+            "name": "section_signature_items_item_price_label",
+            "type": "text"
+          },
+          {
+            "key": "field_section_signature_items_item_price",
+            "label": "Section Signature Items Item Price",
+            "name": "section_signature_items_item_price",
+            "type": "text"
+          },
+          {
+            "key": "field_section_signature_items_item_cta",
+            "label": "Section Signature Items Item Cta",
+            "name": "section_signature_items_item_cta",
+            "type": "text"
+          },
+          {
+            "key": "field_section_signature_items_item_url",
+            "label": "Section Signature Items Item Url",
+            "name": "section_signature_items_item_url",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "key": "field_section_other_heading",
+        "label": "Section Other Heading",
+        "name": "section_other_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_other_items",
+        "label": "Section Other Items",
+        "name": "section_other_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_other_items_item_title",
+            "label": "Section Other Items Item Title",
+            "name": "section_other_items_item_title",
+            "type": "text"
+          },
+          {
+            "key": "field_section_other_items_item_description",
+            "label": "Section Other Items Item Description",
+            "name": "section_other_items_item_description",
+            "type": "textarea"
+          },
+          {
+            "key": "field_section_other_items_item_price",
+            "label": "Section Other Items Item Price",
+            "name": "section_other_items_item_price",
+            "type": "text"
+          },
+          {
+            "key": "field_section_other_items_item_cta",
+            "label": "Section Other Items Item Cta",
+            "name": "section_other_items_item_cta",
+            "type": "text"
+          },
+          {
+            "key": "field_section_other_items_item_url",
+            "label": "Section Other Items Item Url",
+            "name": "section_other_items_item_url",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "key": "field_section_cta_heading",
+        "label": "Section Cta Heading",
+        "name": "section_cta_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_cta_text",
+        "label": "Section Cta Text",
+        "name": "section_cta_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_cta_btn_text",
+        "label": "Section Cta Btn Text",
+        "name": "section_cta_btn_text",
+        "type": "text"
+      },
+      {
+        "key": "field_section_cta_btn_url",
+        "label": "Section Cta Btn Url",
+        "name": "section_cta_btn_url",
+        "type": "text"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-offers.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

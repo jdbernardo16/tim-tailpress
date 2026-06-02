@@ -5,6 +5,11 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_download_heading') ?: 'Planning an Event or Leadership Gathering?';
+$text = get_field('section_download_text') ?: "Download Joanna's speaker kit for speaking topics, event formats, experience details, and inquiry information.";
+$btn_text = get_field('section_download_btn_text') ?: 'Download Speaker Kit';
+$btn_url = get_field('section_download_btn_url') ?: home_url('/inquiry/');
 ?>
 
 <section class="relative mx-10 rounded-b-3xl bg-gold-section overflow-hidden -translate-y-5">
@@ -25,14 +30,14 @@
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div class="flex-1 max-w-[714px]">
                 <h2 class="font-flatline font-semibold text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-                    Planning an Event or Leadership Gathering?
+                    <?= $heading ?>
                 </h2>
                 <p class="mt-6 font-garet text-lg text-white leading-relaxed">
-                    Download Joanna's speaker kit for speaking topics, event formats, experience details, and inquiry information.
+                    <?= esc_html($text) ?>
                 </p>
                 <div class="mt-10 flex flex-wrap items-center gap-4">
-                    <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-gradient-to-r from-warm-beige to-gold border border-warm-beige font-flatline font-bold text-sm text-navy">
-                        Download Speaker Kit
+                    <a href="<?php echo esc_url($btn_url); ?>" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-gradient-to-r from-warm-beige to-gold border border-warm-beige font-flatline font-bold text-sm text-navy">
+                        <?= esc_html($btn_text) ?>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>

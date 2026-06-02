@@ -5,6 +5,13 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_registration_heading') ?: "<em>Reserve</em> Your Seat";
+$text = get_field('section_registration_text') ?: "Join Joanna live for an honest conversation around story, leadership, visibility, and the message you haven't fully said yet.\n\nNo performance. No pressure. <strong>Just real conversation.</strong>";
+$btn_text = get_field('section_registration_btn_text') ?: "REGISTER FOR THE VAULT";
+$btn_url = get_field('section_registration_btn_url');
+
+$text_paragraphs = explode("\n\n", $text);
 ?>
 <section class="relative px-4 sm:px-6 lg:px-8 pb-24" id="register">
     <div class="relative max-w-[1360px] mx-auto bg-navy rounded-[20px] overflow-hidden">
@@ -30,21 +37,19 @@
             <div class="max-w-[760px] mx-auto text-center">
                 <!-- Heading -->
                 <h3 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-white leading-[1.1]">
-                    <em class="text-gold italic">Reserve</em> Your Seat
+                    <?= $heading ?>
                 </h3>
 
                 <!-- Subtext -->
                 <div class="mt-6 font-garet text-lg text-white leading-[1.6] max-w-[600px] mx-auto">
-                    <p>
-                        Join Joanna live for an honest conversation around story, leadership, visibility, and the message you haven't fully said yet.
-                    </p>
-                    <p class="mt-4">
-                        No performance. No pressure. <strong>Just real conversation.</strong>
-                    </p>
+                    <?php foreach ($text_paragraphs as $index => $paragraph): ?>
+                        <p class="<?= $index > 0 ? 'mt-4' : '' ?>"><?= $paragraph ?></p>
+                    <?php endforeach; ?>
                 </div>
 
                 <!-- Form -->
-                <form class="mt-10 text-left" action="https://services.leadconnectorhq.com/hooks/txFvEqJbQlKriCxJl8w3/webhook-trigger/a3e3e65a-e7d2-4aa4-b34d-bd02d0265e35" method="POST">
+                <?php $form_action = $btn_url ?: 'https://services.leadconnectorhq.com/hooks/txFvEqJbQlKriCxJl8w3/webhook-trigger/a3e3e65a-e7d2-4aa4-b34d-bd02d0265e35'; ?>
+                <form class="mt-10 text-left" action="<?= esc_url($form_action) ?>" method="POST">
                     <div class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
@@ -97,7 +102,7 @@
 
                         <div class="pt-4">
                             <button type="submit" class="btn-primary w-full">
-                                REGISTER FOR THE VAULT
+                                <?= esc_html($btn_text) ?>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>

@@ -1,0 +1,213 @@
+[
+  {
+    "key": "group_page-on-stage",
+    "title": "Page: On Stage",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "Invite Joanna<br>Into the <em class=\"text-gold italic\">Room.</em>"
+      },
+      {
+        "key": "field_section_hero_subtitle",
+        "label": "Section Hero Subtitle",
+        "name": "section_hero_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_hero_bg_image",
+        "label": "Section Hero Bg Image",
+        "name": "section_hero_bg_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_profile_image",
+        "label": "Section Hero Profile Image",
+        "name": "section_hero_profile_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_stats",
+        "label": "Section Hero Stats",
+        "name": "section_hero_stats",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_hero_stats_item_icon",
+            "label": "Section Hero Stats Item Icon",
+            "name": "section_hero_stats_item_icon",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+          },
+          {
+            "key": "field_section_hero_stats_item_value",
+            "label": "Section Hero Stats Item Value",
+            "name": "section_hero_stats_item_value",
+            "type": "text"
+          },
+          {
+            "key": "field_section_hero_stats_item_label",
+            "label": "Section Hero Stats Item Label",
+            "name": "section_hero_stats_item_label",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "key": "field_section_video_heading",
+        "label": "Section Video Heading",
+        "name": "section_video_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_video_video_url",
+        "label": "Section Video Video Url",
+        "name": "section_video_video_url",
+        "type": "oembed",
+        "width": ""
+      },
+      {
+        "key": "field_section_video_text",
+        "label": "Section Video Text",
+        "name": "section_video_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_credibility_heading",
+        "label": "Section Credibility Heading",
+        "name": "section_credibility_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_credibility_items",
+        "label": "Section Credibility Items",
+        "name": "section_credibility_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_credibility_items_item_heading",
+            "label": "Section Credibility Items Item Heading",
+            "name": "section_credibility_items_item_heading",
+            "type": "text"
+          },
+          {
+            "key": "field_section_credibility_items_item_text",
+            "label": "Section Credibility Items Item Text",
+            "name": "section_credibility_items_item_text",
+            "type": "textarea"
+          }
+        ]
+      },
+      {
+        "key": "field_section_experiences_heading",
+        "label": "Section Experiences Heading",
+        "name": "section_experiences_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_experiences_items",
+        "label": "Section Experiences Items",
+        "name": "section_experiences_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_experiences_items_item_image",
+            "label": "Section Experiences Items Item Image",
+            "name": "section_experiences_items_item_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+          },
+          {
+            "key": "field_section_experiences_items_item_title",
+            "label": "Section Experiences Items Item Title",
+            "name": "section_experiences_items_item_title",
+            "type": "text"
+          },
+          {
+            "key": "field_section_experiences_items_item_description",
+            "label": "Section Experiences Items Item Description",
+            "name": "section_experiences_items_item_description",
+            "type": "textarea"
+          }
+        ]
+      },
+      {
+        "key": "field_section_book_heading",
+        "label": "Section Book Heading",
+        "name": "section_book_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_book_text",
+        "label": "Section Book Text",
+        "name": "section_book_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_book_image",
+        "label": "Section Book Image",
+        "name": "section_book_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_book_btn_text",
+        "label": "Section Book Btn Text",
+        "name": "section_book_btn_text",
+        "type": "text"
+      },
+      {
+        "key": "field_section_book_btn_url",
+        "label": "Section Book Btn Url",
+        "name": "section_book_btn_url",
+        "type": "text"
+      },
+      {
+        "key": "field_section_download_heading",
+        "label": "Section Download Heading",
+        "name": "section_download_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_download_text",
+        "label": "Section Download Text",
+        "name": "section_download_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_download_btn_text",
+        "label": "Section Download Btn Text",
+        "name": "section_download_btn_text",
+        "type": "text"
+      },
+      {
+        "key": "field_section_download_btn_url",
+        "label": "Section Download Btn Url",
+        "name": "section_download_btn_url",
+        "type": "text"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-on-stage.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

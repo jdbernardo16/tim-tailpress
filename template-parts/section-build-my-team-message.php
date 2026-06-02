@@ -5,6 +5,9 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_message_heading') ?: 'Your Business<br>Has Grown. Your <em class="text-gold italic">Leadership</em> Hasn&rsquo;t.';
+$text = get_field('section_message_text');
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,9 +15,12 @@
             <!-- Text Content -->
             <div class="w-full lg:w-1/2">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-[1.1]">
-                    Your Business<br>Has Grown. Your <em class="text-gold italic">Leadership</em> Hasn&rsquo;t.
+                    <?= $heading ?>
                 </h2>
 
+                <?php if ($text): ?>
+                    <?= $text ?>
+                <?php else: ?>
                 <p class="mt-8 font-flatline font-medium text-2xl text-navy">You&rsquo;ve built real success but internally:</p>
 
                 <ul class="mt-4 space-y-1">
@@ -47,11 +53,17 @@
                 <p class="mt-8 font-garet text-lg text-dark-text leading-[1.5] max-w-[480px]">
                     You don&rsquo;t need more management.<br><br>You need a leadership framework people can actually operate through.
                 </p>
+                <?php endif; ?>
             </div>
 
             <!-- Image -->
             <div class="w-full lg:w-1/2">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/build-my-team1.webp" alt="Joanna Horton McPherson" class="w-full h-[450px] object-cover rounded-xl">
+                <?php $image_id = get_field('section_message_image'); ?>
+                <?php if ($image_id): ?>
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[450px] object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php else: ?>
+                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/build-my-team1.webp" alt="Joanna Horton McPherson" class="w-full h-[450px] object-cover rounded-xl">
+                <?php endif; ?>
             </div>
         </div>
     </div>

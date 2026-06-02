@@ -6,7 +6,7 @@
  * @package TailPress
  */
 
-$stats = array(
+$stats_fallback = array(
     array(
         'icon'  => 'UsersThree',
         'value' => '150+',
@@ -18,12 +18,20 @@ $stats = array(
         'label' => 'Countries',
     ),
 );
+$heading = get_field('section_hero_heading') ?: 'Invite Joanna<br>Into the <em class="text-gold italic">Room.</em>';
+$subtitle = get_field('section_hero_subtitle') ?: 'Keynotes, leadership conversations, retreats, and transformational speaking experiences designed to help people reconnect with the truth behind their voice, leadership, and influence.';
+$bg_image_id = get_field('section_hero_bg_image');
+$profile_image_id = get_field('section_hero_profile_image');
 ?>
 
 <section class="relative bg-navy overflow-hidden h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.webp" alt="">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, array('class' => 'w-full h-full object-cover')) ?>
+        <?php else: ?>
+            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.webp" alt="">
+        <?php endif; ?>
     </div>
 
 
@@ -38,16 +46,20 @@ $stats = array(
             <!-- Text Content -->
             <div class="max-w-[665px]">
                 <h1 class="font-flatline font-semibold text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-                    Invite Joanna<br>Into the <em class="text-gold italic">Room.</em>
+                    <?= $heading ?>
                 </h1>
                 <p class="mt-6 font-garet text-lg text-white leading-[27px] max-w-[665px] mx-auto">
-                    Keynotes, leadership conversations, retreats, and transformational speaking experiences designed to help people reconnect with the truth behind their voice, leadership, and influence.
+                    <?= esc_html($subtitle) ?>
                 </p>
             </div>
 
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-joanna.webp" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
+                <?php if ($profile_image_id): ?>
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
+                <?php else: ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-joanna.webp" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -56,24 +68,46 @@ $stats = array(
     <div class="absolute bottom-0 left-0 right-0 flex items-end" style="height: 163px; background: linear-gradient(to top, #0f203d 21%, #0f203d00 100%);">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="flex flex-wrap justify-center gap-6 lg:gap-0">
-                <?php foreach ($stats as $index => $stat) : ?>
-                    <?php if ($index > 0) : ?>
-                        <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
-                    <?php endif; ?>
-                    <div class="flex items-center gap-3">
-                        <div class="w-6 h-6 flex items-center justify-center">
-                            <?php if ($stat['icon'] === 'UsersThree') : ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="" class="w-6 h-6">
-                            <?php elseif ($stat['icon'] === 'SealCheck') : ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="" class="w-6 h-6">
+                <?php if (have_rows('section_hero_stats')): ?>
+                    <?php $stat_index = 0; ?>
+                    <?php while (have_rows('section_hero_stats')): the_row(); ?>
+                        <?php if ($stat_index > 0) : ?>
+                            <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
+                        <?php endif; ?>
+                        <?php $item_icon_id = get_sub_field('item_icon'); ?>
+                        <div class="flex items-center gap-3">
+                            <?php if ($item_icon_id): ?>
+                                <div class="w-6 h-6 flex items-center justify-center">
+                                    <?= wp_get_attachment_image($item_icon_id, 'medium', false, array('class' => 'w-6 h-6')) ?>
+                                </div>
                             <?php endif; ?>
+                            <div class="flex items-baseline gap-1">
+                                <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html(get_sub_field('item_value')); ?></span>
+                            </div>
+                            <span class="font-garet text-sm text-white"><?php echo esc_html(get_sub_field('item_label')); ?></span>
                         </div>
-                        <div class="flex items-baseline gap-1">
-                            <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html($stat['value']); ?></span>
+                        <?php $stat_index++; ?>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <?php foreach ($stats_fallback as $index => $stat) : ?>
+                        <?php if ($index > 0) : ?>
+                            <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
+                        <?php endif; ?>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <?php if ($stat['icon'] === 'UsersThree') : ?>
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="" class="w-6 h-6">
+                                <?php elseif ($stat['icon'] === 'SealCheck') : ?>
+                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="" class="w-6 h-6">
+                                <?php endif; ?>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html($stat['value']); ?></span>
+                            </div>
+                            <span class="font-garet text-sm text-white"><?php echo esc_html($stat['label']); ?></span>
                         </div>
-                        <span class="font-garet text-sm text-white"><?php echo esc_html($stat['label']); ?></span>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

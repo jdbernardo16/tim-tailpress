@@ -6,6 +6,8 @@
  * @package TailPress
  */
 
+$heading = get_field('section_what_happens_heading') ?: "What <em>Happens</em> Inside";
+
 $items = array(
     'Live conversation with Joanna',
     'Real-time reflection and guidance',
@@ -25,22 +27,47 @@ $items = array(
             <!-- Text Content -->
             <div class="w-full lg:w-1/2 order-1 lg:order-2">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-dark-text leading-[1.1]">
-                    What <em class="text-gold italic">Happens</em> Inside
+                    <?= $heading ?>
                 </h2>
 
-                <ul class="mt-8 space-y-4">
-                    <?php foreach ($items as $item) : ?>
-                        <li class="flex items-start gap-4">
-                            <svg class="w-6 h-6 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="7" cy="7" r="3" fill="#d4b478" />
-                                <circle cx="17" cy="7" r="3" fill="#d4b478" />
-                                <circle cx="7" cy="17" r="3" fill="#d4b478" />
-                                <circle cx="17" cy="17" r="3" fill="#d4b478" />
-                            </svg>
-                            <span class="font-garet text-lg text-dark-text leading-[1.5]"><?php echo wp_kses_post($item); ?></span>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if (have_rows('section_what_happens_items')): ?>
+                    <ul class="mt-8 space-y-4">
+                        <?php while (have_rows('section_what_happens_items')): the_row(); ?>
+                            <?php
+                            $item_heading = get_sub_field('item_heading');
+                            $item_text = get_sub_field('item_text');
+                            ?>
+                            <li class="flex items-start gap-4">
+                                <svg class="w-6 h-6 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="7" cy="7" r="3" fill="#d4b478" />
+                                    <circle cx="17" cy="7" r="3" fill="#d4b478" />
+                                    <circle cx="7" cy="17" r="3" fill="#d4b478" />
+                                    <circle cx="17" cy="17" r="3" fill="#d4b478" />
+                                </svg>
+                                <span class="font-garet text-lg text-dark-text leading-[1.5]">
+                                    <?= esc_html($item_heading) ?>
+                                    <?php if ($item_text): ?>
+                                        <br><span class="text-base opacity-80"><?= esc_html($item_text) ?></span>
+                                    <?php endif; ?>
+                                </span>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php else: ?>
+                    <ul class="mt-8 space-y-4">
+                        <?php foreach ($items as $item) : ?>
+                            <li class="flex items-start gap-4">
+                                <svg class="w-6 h-6 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="7" cy="7" r="3" fill="#d4b478" />
+                                    <circle cx="17" cy="7" r="3" fill="#d4b478" />
+                                    <circle cx="7" cy="17" r="3" fill="#d4b478" />
+                                    <circle cx="17" cy="17" r="3" fill="#d4b478" />
+                                </svg>
+                                <span class="font-garet text-lg text-dark-text leading-[1.5]"><?php echo wp_kses_post($item); ?></span>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
 
                 <p class="mt-8 font-garet text-lg text-dark-text leading-[1.5] italic">
                     The Vault exists for women who know there is something important inside them — but haven&#8217;t fully found the language for it yet.

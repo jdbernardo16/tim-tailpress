@@ -5,11 +5,24 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_hero_heading') ?: 'You\'re Not Missing a Message. <em class="text-gold">You\'re Missing Trust.</em>';
+$subtitle = get_field('section_hero_subtitle') ?: 'Somewhere along the way, you learned how to explain yourself… but not how to truly be felt.';
+$bg_image_id = get_field('section_hero_bg_image');
+$profile_image_id = get_field('section_hero_profile_image');
+$btn_primary_text = get_field('section_hero_btn_primary_text') ?: 'Start Your Story';
+$btn_primary_url = get_field('section_hero_btn_primary_url') ?: '/get-started/';
+$btn_secondary_text = get_field('section_hero_btn_secondary_text') ?: 'Watch Joanna Speak';
+$btn_secondary_url = get_field('section_hero_btn_secondary_url') ?: '/on-stage/';
 ?>
 
 <section class="relative bg-navy overflow-hidden">
     <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-bg.webp" alt="True Influence Method">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => 'True Influence Method']) ?>
+        <?php else: ?>
+            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-bg.webp" alt="True Influence Method">
+        <?php endif; ?>
     </div>
     <div class="absolute top-0 right-0 blur-sm opacity-50">
         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ray.webp" alt="ray">
@@ -21,22 +34,26 @@
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div class="flex-1 text-center lg:text-left">
                 <h1 class="font-flatline font-normal text-5xl md:text-6xl text-white leading-tight">
-                    You're Not Missing a Message. <em class="text-gold">You're Missing Trust.</em>
+                    <?= $heading ?>
                 </h1>
                 <p class="mt-6 font-garet text-lg text-white leading-normal max-w-xl mx-auto lg:mx-0">
-                    Somewhere along the way, you learned how to explain yourself… but not how to truly be felt.
+                    <?= esc_html($subtitle) ?>
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
-                        Start Your Story
+                    <a href="<?php echo esc_url(home_url($btn_primary_url)); ?>" class="btn-primary">
+                        <?= esc_html($btn_primary_text) ?>
                     </a>
-                    <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="btn-secondary text-gold">
-                        Watch Joanna Speak
+                    <a href="<?php echo esc_url(home_url($btn_secondary_url)); ?>" class="btn-secondary text-gold">
+                        <?= esc_html($btn_secondary_text) ?>
                     </a>
                 </div>
             </div>
             <div class="flex-1 flex justify-center lg:justify-end">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-img.webp" alt="Joanna" class="w-full max-w-md lg:max-w-lg object-cover">
+                <?php if ($profile_image_id): ?>
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-full max-w-md lg:max-w-lg object-cover', 'alt' => 'Joanna']) ?>
+                <?php else: ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-img.webp" alt="Joanna" class="w-full max-w-md lg:max-w-lg object-cover">
+                <?php endif; ?>
             </div>
         </div>
     </div>

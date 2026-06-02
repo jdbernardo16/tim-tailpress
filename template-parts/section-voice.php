@@ -5,16 +5,24 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_voice_heading') ?: 'Your Voice Carries More Than <em class="text-warm-beige italic">Information.</em>';
+$text = get_field('section_voice_text');
+$image_id = get_field('section_voice_image');
 ?>
 
 <section class="relative mx-10 rounded-3xl bg-gold-section overflow-hidden">
     <!-- Background texture -->
     <div class="absolute inset-0">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-            alt=""
-            class="w-full h-full object-cover"
-            aria-hidden="true">
+        <?php if ($image_id): ?>
+            <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '', 'aria-hidden' => 'true']) ?>
+        <?php else: ?>
+            <img
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
+                alt=""
+                class="w-full h-full object-cover"
+                aria-hidden="true">
+        <?php endif; ?>
     </div>
 
     <!-- Decorative deep blue ellipses -->
@@ -64,11 +72,17 @@
 
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
         <h2 class="font-flatline font-semibold text-5xl md:text-6xl text-white leading-tight">
-            Your Voice Carries More Than <em class="text-warm-beige italic">Information.</em>
+            <?= $heading ?>
         </h2>
-        <p class="mt-6 font-garet text-lg text-white leading-normal">
-            It carries your story. Your leadership.<br>The life that shaped you.
-        </p>
+        <?php if ($text): ?>
+            <div class="mt-6 font-garet text-lg text-white leading-normal">
+                <?= wpautop($text) ?>
+            </div>
+        <?php else: ?>
+            <p class="mt-6 font-garet text-lg text-white leading-normal">
+                It carries your story. Your leadership.<br>The life that shaped you.
+            </p>
+        <?php endif; ?>
         <div class="mt-10">
             <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
                 Start Your Story Journey

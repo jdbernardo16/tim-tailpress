@@ -6,11 +6,20 @@
  * @package TailPress
  */
 
+$heading = get_field('section_vault_heading') ?: 'Stay Inside the <span class="text-gold-section italic font-semibold">Conversation.</span>';
+$text = get_field('section_vault_text') ?: 'Inside The Vault, Joanna shares live reflections, speaking insights, leadership conversations, and the moments still unfolding behind the work.';
+$image_id = get_field('section_vault_image');
+$btn_text = get_field('section_vault_btn_text') ?: 'Enter The Vault';
+$btn_url = get_field('section_vault_btn_url') ?: '/the-vault/';
 $theme_uri = get_template_directory_uri();
 ?>
 
 <section class="relative mx-10 rounded-b-3xl overflow-hidden"
-    style="background-image: url('<?php echo esc_url($theme_uri . '/assets/images/the-vault-bg.webp'); ?>'); background-size: cover; background-position: center;">
+    <?php if ($image_id): ?>
+        style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($image_id, 'full')); ?>'); background-size: cover; background-position: center;"
+    <?php else: ?>
+        style="background-image: url('<?php echo esc_url($theme_uri . '/assets/images/the-vault-bg.webp'); ?>'); background-size: cover; background-position: center;"
+    <?php endif; ?>>
 
     <!-- Decorative blurred gold ellipses -->
     <div class="absolute inset-0 pointer-events-none">
@@ -33,14 +42,14 @@ $theme_uri = get_template_directory_uri();
     <!-- Content -->
     <div class="relative max-w-[800px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-[110px] pb-32 text-center">
         <h2 class="font-flatline font-semibold text-5xl md:text-[56px] text-navy leading-[1.1]">
-            Stay Inside the <span class="text-gold-section italic font-semibold">Conversation.</span>
+            <?= $heading ?>
         </h2>
         <p class="mt-6 font-garet font-light text-lg text-navy leading-[1.5] max-w-xl mx-auto">
-            Inside The Vault, Joanna shares live reflections, speaking insights, leadership conversations, and the moments still unfolding behind the work.
+            <?= esc_html($text) ?>
         </p>
         <div class="mt-10">
-            <a href="<?php echo esc_url(home_url('/the-vault/')); ?>" class="btn-primary">
-                Enter The Vault
+            <a href="<?php echo esc_url(home_url($btn_url)); ?>" class="btn-primary">
+                <?= esc_html($btn_text) ?>
                 <img src="<?php echo esc_url($theme_uri . '/assets/images/btn-arrow.svg'); ?>" alt="" class="w-[21px] h-[8px]" aria-hidden="true">
             </a>
         </div>

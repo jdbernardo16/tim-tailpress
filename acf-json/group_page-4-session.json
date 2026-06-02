@@ -1,0 +1,112 @@
+[
+  {
+    "key": "group_page-4-session",
+    "title": "Page: 4-Session Training Package",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "4-Session <em class=\"text-gold\">Training Package</em>"
+      },
+      {
+        "key": "field_section_hero_subtitle",
+        "label": "Section Hero Subtitle",
+        "name": "section_hero_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_hero_bg_image",
+        "label": "Section Hero Bg Image",
+        "name": "section_hero_bg_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_profile_image",
+        "label": "Section Hero Profile Image",
+        "name": "section_hero_profile_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_build_heading",
+        "label": "Section Build Heading",
+        "name": "section_build_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_build_text",
+        "label": "Section Build Text",
+        "name": "section_build_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_distinct_heading",
+        "label": "Section Distinct Heading",
+        "name": "section_distinct_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_distinct_items",
+        "label": "Section Distinct Items",
+        "name": "section_distinct_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_distinct_items_item_heading",
+            "label": "Section Distinct Items Item Heading",
+            "name": "section_distinct_items_item_heading",
+            "type": "text"
+          },
+          {
+            "key": "field_section_distinct_items_item_text",
+            "label": "Section Distinct Items Item Text",
+            "name": "section_distinct_items_item_text",
+            "type": "textarea"
+          }
+        ]
+      },
+      {
+        "key": "field_section_cta_heading",
+        "label": "Section Cta Heading",
+        "name": "section_cta_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_cta_text",
+        "label": "Section Cta Text",
+        "name": "section_cta_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_cta_btn_text",
+        "label": "Section Cta Btn Text",
+        "name": "section_cta_btn_text",
+        "type": "text",
+        "default_value": "BOOK A SESSION"
+      },
+      {
+        "key": "field_section_cta_btn_url",
+        "label": "Section Cta Btn Url",
+        "name": "section_cta_btn_url",
+        "type": "text",
+        "default_value": "/inquiry/"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-4-session.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

@@ -5,6 +5,10 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_retreat_heading') ?: '<span class="text-navy">Tell Your Story</span><br><em class="text-gold italic">Course &amp; Retreat</em>';
+$text = get_field('section_retreat_text');
+$image_id = get_field('section_retreat_image');
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,12 +16,15 @@
             <!-- Text Content -->
             <div class="w-7/12 max-w-xl">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] leading-[1.1]">
-                    <span class="text-navy">Tell Your Story</span><br>
-                    <em class="text-gold italic">Course &amp; Retreat</em>
+                    <?= $heading ?>
                 </h2>
                 <div class="mt-8 font-garet text-lg text-dark-text leading-normal space-y-6">
-                    <p>A transformational storytelling and leadership experience designed to help people reconnect with the moments that shaped their voice, influence, and emotional authority.</p>
-                    <p>Through retreat immersion, live story work, emotional refinement, and transformational conversations, participants are guided deeper into the work behind authentic leadership.</p>
+                    <?php if ($text): ?>
+                        <?= wpautop($text) ?>
+                    <?php else: ?>
+                        <p>A transformational storytelling and leadership experience designed to help people reconnect with the moments that shaped their voice, influence, and emotional authority.</p>
+                        <p>Through retreat immersion, live story work, emotional refinement, and transformational conversations, participants are guided deeper into the work behind authentic leadership.</p>
+                    <?php endif; ?>
                 </div>
                 <!-- Bottom-left image (laptop/books) -->
                 <div class="aspect-[636/281] w-full rounded-xl overflow-hidden shadow-lg mt-6">
@@ -30,7 +37,11 @@
                 <div class="relative">
                     <!-- Top-right image (woman on couch) -->
                     <div class="rounded-xl overflow-hidden shadow-lg aspect-[448/566] w-full">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/event-frame2-img1.webp" alt="Joanna on a couch in red pants" class="w-full h-full object-cover">
+                        <?php if ($image_id): ?>
+                            <?= wp_get_attachment_image($image_id, 'full', false, array('class' => 'w-full h-full object-cover')) ?>
+                        <?php else: ?>
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/event-frame2-img1.webp" alt="Joanna on a couch in red pants" class="w-full h-full object-cover">
+                        <?php endif; ?>
                     </div>
 
                 </div>

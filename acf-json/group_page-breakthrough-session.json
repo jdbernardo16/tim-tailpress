@@ -1,0 +1,109 @@
+[
+  {
+    "key": "group_page-breakthrough-session",
+    "title": "Page: Breakthrough Session",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "Breakthrough <em class=\"text-gold\">Session</em>"
+      },
+      {
+        "key": "field_section_hero_subtitle",
+        "label": "Section Hero Subtitle",
+        "name": "section_hero_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_hero_bg_image",
+        "label": "Section Hero Bg Image",
+        "name": "section_hero_bg_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_profile_image",
+        "label": "Section Hero Profile Image",
+        "name": "section_hero_profile_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_message_heading",
+        "label": "Section Message Heading",
+        "name": "section_message_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_message_text",
+        "label": "Section Message Text",
+        "name": "section_message_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_build_heading",
+        "label": "Section Build Heading",
+        "name": "section_build_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_build_text",
+        "label": "Section Build Text",
+        "name": "section_build_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_build_btn_text",
+        "label": "Section Build Btn Text",
+        "name": "section_build_btn_text",
+        "type": "text"
+      },
+      {
+        "key": "field_section_build_btn_url",
+        "label": "Section Build Btn Url",
+        "name": "section_build_btn_url",
+        "type": "text"
+      },
+      {
+        "key": "field_section_cta_heading",
+        "label": "Section Cta Heading",
+        "name": "section_cta_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_cta_text",
+        "label": "Section Cta Text",
+        "name": "section_cta_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_cta_btn_text",
+        "label": "Section Cta Btn Text",
+        "name": "section_cta_btn_text",
+        "type": "text",
+        "default_value": "BOOK A SESSION"
+      },
+      {
+        "key": "field_section_cta_btn_url",
+        "label": "Section Cta Btn Url",
+        "name": "section_cta_btn_url",
+        "type": "text",
+        "default_value": "/inquiry/"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-breakthrough-session.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

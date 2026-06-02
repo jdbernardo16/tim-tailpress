@@ -16,7 +16,15 @@ function tailpress(): TailPress\Framework\Theme
             ->enqueueAssets()
         )
         ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
-        ->menus(fn($manager) => $manager->add('primary', __( 'Primary Menu', 'tailpress')))
+        ->menus(function ($manager) {
+            $manager->add('primary', __('Primary Menu', 'tailpress'));
+            $manager->add('header', __('Header Navigation', 'tailpress'));
+            $manager->add('footer-offers', __('Footer - Offers', 'tailpress'));
+            $manager->add('footer-programs', __('Footer - Programs', 'tailpress'));
+            $manager->add('footer-about', __('Footer - About', 'tailpress'));
+            $manager->add('footer-connect', __('Footer - Connect', 'tailpress'));
+            return $manager;
+        })
         ->themeSupport(fn($manager) => $manager->add([
             'title-tag',
             'custom-logo',
@@ -43,3 +51,22 @@ add_filter('script_loader_tag', function ($tag, $handle) {
     }
     return $tag;
 }, 10, 2);
+
+/**
+ * ACF Local JSON — sync field groups to filesystem.
+ */
+add_filter('acf/settings/save_json', function () {
+    return get_template_directory() . '/acf-json';
+});
+
+add_filter('acf/settings/load_json', function ($paths) {
+    $paths[] = get_template_directory() . '/acf-json';
+    return $paths;
+});
+
+/**
+ * Load WP-CLI seeder.
+ */
+if (defined('WP_CLI') && WP_CLI) {
+    require_once get_template_directory() . '/wp-cli/seeder.php';
+}

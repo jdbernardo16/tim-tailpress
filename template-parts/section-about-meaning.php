@@ -1,10 +1,12 @@
 <?php
-
 /**
  * About Page - Meaning Section template part.
  *
  * @package TailPress
  */
+
+$heading = get_field('section_meaning_heading') ?: "Long Before the Stages, There Was the Search for <em class=\"text-gold italic\">Meaning.</em>";
+$text = get_field('section_meaning_text');
 
 $gallery_images = array(
     'tell-story-1.webp',
@@ -24,7 +26,7 @@ $gallery_images = array(
             <!-- Heading -->
             <div class="flex-1">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-tight">
-                    Long Before the Stages, There Was the Search for <em class="text-gold italic">Meaning.</em>
+                    <?= $heading ?>
                 </h2>
                 <!-- Navigation Arrows -->
                 <div class="about-meaning-nav mt-8">
@@ -43,8 +45,12 @@ $gallery_images = array(
             <!-- Text -->
             <div class="flex-1 max-w-xl">
                 <div class="font-garet text-lg text-dark-text leading-normal space-y-6">
-                    <p>Joanna's journey began with public speaking at 13 and entrepreneurship at 20, eventually expanding into acting, education, nonprofit leadership, international schools, and transformational coaching.</p>
-                    <p>Today, she works with thought leaders, founders, public figures, and high-performing women navigating leadership, visibility, emotional clarity, and conscious success.</p>
+                    <?php if ($text): ?>
+                        <?= $text ?>
+                    <?php else: ?>
+                        <p>Joanna's journey began with public speaking at 13 and entrepreneurship at 20, eventually expanding into acting, education, nonprofit leadership, international schools, and transformational coaching.</p>
+                        <p>Today, she works with thought leaders, founders, public figures, and high-performing women navigating leadership, visibility, emotional clarity, and conscious success.</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

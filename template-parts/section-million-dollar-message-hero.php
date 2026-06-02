@@ -5,11 +5,21 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_hero_heading') ?: 'Your Message<br>Already <em class="text-gold italic">Exists.</em>';
+$subtitle = get_field('section_hero_subtitle') ?: 'You are closer to your message than you think.';
+$bg_image_id = get_field('section_hero_bg_image');
+$btn_text = get_field('section_hero_btn_text') ?: 'GET THE TRAINING — $29';
+$btn_url = get_field('section_hero_btn_url') ?: '#inside';
 ?>
 <section class="relative bg-navy overflow-hidden">
     <!-- Background texture -->
     <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" aria-hidden="true">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+        <?php else: ?>
+            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" aria-hidden="true">
+        <?php endif; ?>
     </div>
 
     <!-- Decorative blurred ellipses -->
@@ -28,12 +38,12 @@
 
         <!-- Heading -->
         <h1 class="mt-8 font-flatline font-semibold text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-            Your Message<br>Already <em class="text-gold italic">Exists.</em>
+            <?= $heading ?>
         </h1>
 
         <!-- Subheadline -->
         <p class="mt-6 font-flatline font-semibold text-lg text-white">
-            You are closer to your message than you think.
+            <?= esc_html($subtitle) ?>
         </p>
 
         <!-- Description -->
@@ -46,8 +56,8 @@
 
         <!-- CTA -->
         <div class="mt-10">
-            <a href="#inside" class="btn-primary">
-                GET THE TRAINING — $29
+            <a href="<?= esc_url($btn_url) ?>" class="btn-primary">
+                <?= esc_html($btn_text) ?>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>

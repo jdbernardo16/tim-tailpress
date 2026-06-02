@@ -1,0 +1,64 @@
+[
+  {
+    "key": "group_page-thank-you",
+    "title": "Page: Thank You",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "Thank <em class=\"text-gold\">You</em>"
+      },
+      {
+        "key": "field_section_hero_text",
+        "label": "Section Hero Text",
+        "name": "section_hero_text",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_testimonials_heading",
+        "label": "Section Testimonials Heading",
+        "name": "section_testimonials_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_testimonials_items",
+        "label": "Section Testimonials Items",
+        "name": "section_testimonials_items",
+        "type": "repeater",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_section_testimonials_items_item_quote",
+            "label": "Section Testimonials Items Item Quote",
+            "name": "section_testimonials_items_item_quote",
+            "type": "textarea"
+          },
+          {
+            "key": "field_section_testimonials_items_item_author",
+            "label": "Section Testimonials Items Item Author",
+            "name": "section_testimonials_items_item_author",
+            "type": "text"
+          },
+          {
+            "key": "field_section_testimonials_items_item_title",
+            "label": "Section Testimonials Items Item Title",
+            "name": "section_testimonials_items_item_title",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-thank-you.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "key": "group_page-million-dollar-message",
+    "title": "Page: Million Dollar Message",
+    "fields": [
+      {
+        "key": "field_section_hero_heading",
+        "label": "Section Hero Heading",
+        "name": "section_hero_heading",
+        "type": "text",
+        "default_value": "The Million Dollar <em class=\"text-gold\">Message</em>"
+      },
+      {
+        "key": "field_section_hero_subtitle",
+        "label": "Section Hero Subtitle",
+        "name": "section_hero_subtitle",
+        "type": "textarea"
+      },
+      {
+        "key": "field_section_hero_bg_image",
+        "label": "Section Hero Bg Image",
+        "name": "section_hero_bg_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_profile_image",
+        "label": "Section Hero Profile Image",
+        "name": "section_hero_profile_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_section_hero_btn_text",
+        "label": "Section Hero Btn Text",
+        "name": "section_hero_btn_text",
+        "type": "text",
+        "default_value": "GET INSTANT ACCESS"
+      },
+      {
+        "key": "field_section_hero_btn_url",
+        "label": "Section Hero Btn Url",
+        "name": "section_hero_btn_url",
+        "type": "text"
+      },
+      {
+        "key": "field_section_inside_heading",
+        "label": "Section Inside Heading",
+        "name": "section_inside_heading",
+        "type": "text"
+      },
+      {
+        "key": "field_section_inside_text",
+        "label": "Section Inside Text",
+        "name": "section_inside_text",
+        "type": "wysiwyg",
+        "tabs": "visual",
+        "media_upload": 0
+      },
+      {
+        "key": "field_section_inside_image",
+        "label": "Section Inside Image",
+        "name": "section_inside_image",
+        "type": "image",
+        "return_format": "id",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "page-million-dollar-message.php"
+        }
+      ]
+    ],
+    "active": true
+  }
+]

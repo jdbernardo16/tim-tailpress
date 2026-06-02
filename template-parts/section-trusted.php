@@ -5,32 +5,47 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_trusted_heading') ?: 'Trusted by<br>leaders worldwide';
 ?>
 
 <section class="bg-white py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex space-x-20 justify-between">
             <p class="text-lg font-flatline font-semibold uppercase tracking-[50%] text-navy mb-12">
-                Trusted by<br>leaders worldwide
+                <?= $heading ?>
             </p>
 
             <div class="flex flex-wrap justify-center gap-12 md:gap-16 mb-16">
-                <div class="flex items-center gap-4">
-                    <!-- UsersThree icon -->
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="">
-                    <div>
-                        <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">10,000+</p>
-                        <p class="font-garet text-base text-dark-text">Leaders Transformed</p>
+                <?php if (have_rows('section_trusted_stats')): ?>
+                    <?php while (have_rows('section_trusted_stats')): the_row(); ?>
+                        <?php $icon_id = get_sub_field('item_icon'); ?>
+                        <div class="flex items-center gap-4">
+                            <?php if ($icon_id): ?>
+                                <?= wp_get_attachment_image($icon_id, 'full', false, ['alt' => '']) ?>
+                            <?php endif; ?>
+                            <div>
+                                <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy"><?= esc_html(get_sub_field('item_value')) ?></p>
+                                <p class="font-garet text-base text-dark-text"><?= esc_html(get_sub_field('item_label')) ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <div class="flex items-center gap-4">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="">
+                        <div>
+                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">10,000+</p>
+                            <p class="font-garet text-base text-dark-text">Leaders Transformed</p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <!-- SealCheck icon -->
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="">
-                    <div>
-                        <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">30+</p>
-                        <p class="font-garet text-base text-dark-text">Years of Work</p>
+                    <div class="flex items-center gap-4">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="">
+                        <div>
+                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">30+</p>
+                            <p class="font-garet text-base text-dark-text">Years of Work</p>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

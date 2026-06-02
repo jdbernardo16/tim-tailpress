@@ -6,6 +6,9 @@
  * @package TailPress
  */
 
+$heading = get_field('section_message_heading') ?: "Be the <em>Authority</em> Through Your Story";
+$text = get_field('section_message_text') ?: "That's where authority begins.";
+
 $needs = array(
     'a message that lands clearly',
     'emotional connection, not overexplaining',
@@ -23,7 +26,7 @@ $needs = array(
             <!-- Text Content -->
             <div class="w-full lg:w-1/2 max-w-xl">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-[1.1]">
-                    Be the <em class="text-gold italic">Authority</em> Through Your Story
+                    <?= $heading ?>
                 </h2>
 
                 <p class="mt-10 font-flatline font-medium text-2xl text-navy leading-[1.1]">
@@ -44,7 +47,7 @@ $needs = array(
                 </ul>
 
                 <p class="mt-8 font-garet text-lg text-dark-text leading-[150%]">
-                    That&#8217;s where authority begins.
+                    <?= esc_html($text) ?>
                 </p>
             </div>
         </div>
