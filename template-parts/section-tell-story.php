@@ -37,7 +37,7 @@
                 </p>
             </div>
             <div class="mt-2">
-                <a href="#" class="btn-primary">
+                <a href="<?php echo esc_url(home_url('/events/')); ?>" class="btn-primary">
                     START YOUR STORY
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/btn-arrow.svg" alt="" class="w-5 h-2" aria-hidden="true">
                 </a>
@@ -51,13 +51,13 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.png" alt="Tell Your Story 1" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.webp" alt="Tell Your Story 1" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-2.png" alt="Tell Your Story 2" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-2.webp" alt="Tell Your Story 2" class="w-full h-full object-cover">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-16 h-16 flex items-center justify-center bg-warm-beige/90 backdrop-blur-sm rotate-45 rounded-[5px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-navy -rotate-45 ml-0.5">
@@ -70,7 +70,7 @@
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-3.png" alt="Tell Your Story 3" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-3.webp" alt="Tell Your Story 3" class="w-full h-full object-cover">
                             <div class="absolute bottom-6 left-6 right-6">
                                 <span class="font-flatline text-lg text-white italic">to be vulnerable</span>
                             </div>
@@ -79,19 +79,19 @@
                     <!-- Slide 4 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-4.png" alt="Tell Your Story 4" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-4.webp" alt="Tell Your Story 4" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <!-- Slide 5 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-5.png" alt="Tell Your Story 5" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-5.webp" alt="Tell Your Story 5" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <!-- Slide 6 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.png" alt="Tell Your Story 6" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.webp" alt="Tell Your Story 6" class="w-full h-full object-cover">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-16 h-16 flex items-center justify-center bg-warm-beige/90 backdrop-blur-sm rotate-45 rounded-[5px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-navy -rotate-45 ml-0.5">
@@ -104,7 +104,7 @@
                     <!-- Slide 7 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-2.png" alt="Tell Your Story 7" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-2.webp" alt="Tell Your Story 7" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>

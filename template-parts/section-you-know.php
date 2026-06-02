@@ -11,8 +11,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex space-x-16">
             <div class="relative flex-1 h-fit">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/know-bg.png" alt="Joanna" class="grayscale">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-whole.png" alt="Joanna" class="w-full h-auto absolute bottom-0 left-0">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/know-bg.webp" alt="Joanna" class="grayscale">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-whole.webp" alt="Joanna" class="w-full h-auto absolute bottom-0 left-0">
             </div>
             <div class="max-w-[442px]">
                 <h2 class="font-flatline font-medium text-5xl md:text-6xl text-navy leading-tight">

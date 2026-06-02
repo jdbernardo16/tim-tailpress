@@ -8,8 +8,8 @@
 ?>
 <section class="relative z-10 px-8">
     <div class="py-24 lg:py-32 relative">
-        <img class="absolute top-0 left-0 w-full h-full object-cover rounded-2xl" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-bg.png" alt="">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <img class="absolute top-0 left-0 w-full h-full object-cover rounded-2xl" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-bg.webp" alt="">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] leading-[1.1]">
                 <em class="text-gold italic">More</em> <span class="text-navy">Than Events.</span>
             </h2>

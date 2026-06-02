@@ -11,7 +11,7 @@
     <!-- Background texture -->
     <div class="absolute inset-0">
         <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.png"
+            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
             alt=""
             class="w-full h-full object-cover"
             aria-hidden="true">
@@ -27,35 +27,35 @@
     <div class="absolute inset-0 pointer-events-none hidden xl:block">
         <div class="absolute top-12 left-12 w-48 h-48 rounded-xl overflow-hidden">
             <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-1.png"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-1.webp"
                 alt=""
                 class="w-full h-full object-cover"
                 aria-hidden="true">
         </div>
         <div class="absolute bottom-12 right-12 w-48 h-48 rounded-xl overflow-hidden">
             <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-2.png"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-2.webp"
                 alt=""
                 class="w-full h-full object-cover"
                 aria-hidden="true">
         </div>
         <div class="absolute top-40 left-20 w-44 h-44 rounded-xl overflow-hidden">
             <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-3.png"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-3.webp"
                 alt=""
                 class="w-full h-full object-cover"
                 aria-hidden="true">
         </div>
         <div class="absolute top-16 right-20 w-56 h-56 rounded-xl overflow-hidden">
             <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-4.png"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-4.webp"
                 alt=""
                 class="w-full h-full object-cover"
                 aria-hidden="true">
         </div>
         <div class="absolute bottom-20 left-24 w-56 h-56 rounded-xl overflow-hidden">
             <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-5.png"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-gallery-5.webp"
                 alt=""
                 class="w-full h-full object-cover"
                 aria-hidden="true">
@@ -70,7 +70,7 @@
             It carries your story. Your leadership.<br>The life that shaped you.
         </p>
         <div class="mt-10">
-            <a href="#" class="btn-primary">
+            <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
                 Start Your Story Journey
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

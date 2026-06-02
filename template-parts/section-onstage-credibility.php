@@ -79,7 +79,7 @@ $engagements = array(
 <section class="bg-canvas px-4 sm:px-10">
     <div class="relative overflow-hidden rounded-[20px] bg-navy">
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover opacity-10" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/bg-texture.png" alt="">
+            <img class="w-full h-full object-cover opacity-10" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/bg-texture.webp" alt="">
         </div>
 
         <div class="absolute inset-0 pointer-events-none">
@@ -96,7 +96,7 @@ $engagements = array(
         <div class="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
             <div class="text-center mb-20">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-white leading-tight">
-                    Where She's <em class="text-gold italic">Been.</em>
+                    <em class="text-gold italic">Where</em> She's Been.
                 </h2>
             </div>
 
@@ -107,7 +107,7 @@ $engagements = array(
                             <div class="flex flex-col lg:flex-row items-center gap-[64px]">
                                 <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
                                     <div class="w-full h-[400px] bg-zinc-200">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/speaker-cohort.png" alt="Forbes article" class="w-full h-full object-cover">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes.webp" alt="Forbes article" class="w-full h-full object-cover">
                                     </div>
                                 </div>
 
@@ -132,7 +132,7 @@ $engagements = array(
                             <div class="flex flex-col lg:flex-row items-center gap-[64px]">
                                 <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
                                     <div class="w-full h-[400px] bg-zinc-200">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/speaker-cohort.png" alt="Speaker feature" class="w-full h-full object-cover">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes2.webp" alt="Speaker feature" class="w-full h-full object-cover">
                                     </div>
                                 </div>
 
@@ -157,7 +157,7 @@ $engagements = array(
                             <div class="flex flex-col lg:flex-row items-center gap-[64px]">
                                 <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
                                     <div class="w-full h-[400px] bg-zinc-200">
-                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/speaker-cohort.png" alt="Speaker feature" class="w-full h-full object-cover">
+                                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes3.webp" alt="Speaker feature" class="w-full h-full object-cover">
                                     </div>
                                 </div>
 
@@ -180,7 +180,7 @@ $engagements = array(
                     </div>
                 </div>
 
-                <div class="onstage-credibility-featured-nav">
+                <div class="onstage-credibility-featured-nav ml-auto w-fit">
                     <button class="onstage-credibility-featured-swiper-button-prev onstage-credibility-featured-nav__btn" aria-label="Previous slide">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />

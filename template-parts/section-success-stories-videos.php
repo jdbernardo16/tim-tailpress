@@ -8,32 +8,32 @@
 
 $video_testimonials = array(
     array(
-        'image' => 'story1.png',
+        'image' => 'story1.webp',
         'quote' => 'I now feel inspired and more clear in my why and my purpose.',
         'name'  => 'Victoria Richardson',
     ),
     array(
-        'image' => 'story2.png',
+        'image' => 'story2.webp',
         'quote' => 'The biggest change in me is confidence.',
         'name'  => 'LeQuisha Underwood',
     ),
     array(
-        'image' => 'story3.png',
+        'image' => 'story3.webp',
         'quote' => 'I finally found the talk I was meant to give.',
         'name'  => 'Kendi Brown',
     ),
     array(
-        'image' => 'story4.png',
+        'image' => 'story4.webp',
         'quote' => 'She flips the script on how you do a speech.',
         'name'  => 'BEN ARMSTRONG',
     ),
     array(
-        'image' => 'story5.png',
+        'image' => 'story5.webp',
         'quote' => 'Giving people the confidence they didn\'t know they had.',
         'name'  => 'DAWN ARMSTRONG',
     ),
     array(
-        'image' => 'story6.png',
+        'image' => 'story6.webp',
         'quote' => 'Working with Joanna. What happens is you get real laser focused.',
         'name'  => 'Jessica Avignone',
     ),

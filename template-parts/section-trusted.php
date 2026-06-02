@@ -8,7 +8,7 @@
 ?>
 
 <section class="bg-white py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex space-x-20 justify-between">
             <p class="text-lg font-flatline font-semibold uppercase tracking-[50%] text-navy mb-12">
                 Trusted by<br>leaders worldwide
@@ -38,7 +38,7 @@
         <div class="marquee__track flex gap-8 md:gap-12 opacity-60 grayscale">
             <?php for ($j = 0; $j < 2; $j++) : ?>
                 <?php for ($i = 1; $i <= 30; $i++) : ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo-company-<?php echo $i; ?>.png" alt="" class="marquee__img h-10 w-auto object-contain">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo-company-<?php echo $i; ?>.webp" alt="" class="marquee__img h-10 w-auto object-contain">
                 <?php endfor; ?>
             <?php endfor; ?>
         </div>

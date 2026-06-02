@@ -11,37 +11,37 @@ $phases = array(
         'number'  => '1',
         'title'   => 'Speak Your Story',
         'desc'    => 'Uncover the truth behind your experiences and learn to share it with courage.',
-        'image'   => 'phase-1.png',
+        'image'   => 'phase-1.webp',
     ),
     array(
         'number'  => '2',
         'title'   => 'Move the Room',
         'desc'    => 'Develop the presence and energy that captivates and inspires any audience.',
-        'image'   => 'phase-2.png',
+        'image'   => 'phase-2.webp',
     ),
     array(
         'number'  => '3',
         'title'   => 'Master My Message',
         'desc'    => 'Refine your core message so it resonates deeply and drives action.',
-        'image'   => 'phase-3.png',
+        'image'   => 'phase-3.webp',
     ),
     array(
         'number'  => '4',
         'title'   => 'Build My Team',
         'desc'    => 'Create a culture of trust, communication, and shared purpose.',
-        'image'   => 'phase-4.png',
+        'image'   => 'phase-4.webp',
     ),
     array(
         'number'  => '5',
         'title'   => 'Be Remembered',
         'desc'    => 'Leave a lasting impact that extends far beyond the moment you speak.',
-        'image'   => 'phase-5.png',
+        'image'   => 'phase-5.webp',
     ),
 );
 ?>
 
 <section class="relative bg-canvas">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <!-- Header -->
         <div class="text-center mb-16">
             <h2 class="font-flatline font-medium text-5xl md:text-6xl text-navy leading-tight">

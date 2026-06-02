@@ -10,7 +10,7 @@ $theme_uri = get_template_directory_uri();
 ?>
 
 <section class="relative mx-10 rounded-b-3xl overflow-hidden"
-    style="background-image: url('<?php echo esc_url($theme_uri . '/assets/images/the-vault-bg.png'); ?>'); background-size: cover; background-position: center;">
+    style="background-image: url('<?php echo esc_url($theme_uri . '/assets/images/the-vault-bg.webp'); ?>'); background-size: cover; background-position: center;">
 
     <!-- Decorative blurred gold ellipses -->
     <div class="absolute inset-0 pointer-events-none">
@@ -24,7 +24,7 @@ $theme_uri = get_template_directory_uri();
 
     <!-- Watermark image -->
     <div class="absolute inset-x-0 top-0 flex justify-center pointer-events-none">
-        <img src="<?php echo esc_url($theme_uri . '/assets/images/the-vault.png'); ?>"
+        <img src="<?php echo esc_url($theme_uri . '/assets/images/the-vault.webp'); ?>"
             alt=""
             class="w-[770px] h-auto select-none"
             aria-hidden="true">
@@ -39,7 +39,7 @@ $theme_uri = get_template_directory_uri();
             Inside The Vault, Joanna shares live reflections, speaking insights, leadership conversations, and the moments still unfolding behind the work.
         </p>
         <div class="mt-10">
-            <a href="#" class="btn-primary">
+            <a href="<?php echo esc_url(home_url('/the-vault/')); ?>" class="btn-primary">
                 Enter The Vault
                 <img src="<?php echo esc_url($theme_uri . '/assets/images/btn-arrow.svg'); ?>" alt="" class="w-[21px] h-[8px]" aria-hidden="true">
             </a>

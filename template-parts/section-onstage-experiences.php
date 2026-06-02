@@ -12,27 +12,30 @@ $experiences = array(
         'length'      => '45–60 min',
         'ideal'       => 'Founders, executives, and leadership events',
         'description' => 'Helping leaders reconnect with the lived experiences that shape trust, influence, and emotional authority.',
+        'url'         => home_url('/inquiry/'),
     ),
     array(
         'title'       => 'The Moment That Made You.',
         'length'      => '30–45 min',
         'ideal'       => 'Women&#8217;s leadership and transformational conversations',
         'description' => 'A reflective conversation around identity, truth, visibility, and the defining moments behind leadership.',
+        'url'         => home_url('/inquiry/'),
     ),
     array(
         'title'       => 'Influence Is a Human Experience.',
         'length'      => '20–30 min',
         'ideal'       => 'TED-style events and keynote openings',
         'description' => 'Why people trust emotional truth before strategy, information, or performance.',
+        'url'         => home_url('/inquiry/'),
     ),
 );
 ?>
 
 <section class="bg-canvas py-24 lg:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center text-center">
             <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-tight max-w-[556px]">
-                Conversations That Stay <em class="text-gold italic">With People.</em>
+                <em class="text-gold italic">Conversations</em> That Stay With People.
             </h2>
             <p class="mt-6 font-garet text-lg text-dark-text leading-relaxed max-w-[556px]">
                 Three experiences, three formats — each designed to move a room differently.
@@ -75,8 +78,8 @@ $experiences = array(
                         <?php echo esc_html($experience['description']); ?>
                     </p>
 
-                    <div class="mt-auto">
-                        <a href="#" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-gradient-to-r from-warm-beige to-gold border border-warm-beige font-flatline font-bold text-base text-navy">
+                    <div class="mt-auto w-full">
+                        <a href="<?php echo esc_url($experience['url']); ?>" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full w-full justify-center bg-gradient-to-r from-warm-beige to-gold border border-warm-beige font-flatline font-bold text-base text-navy">
                             BOOKING INQUIRY
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

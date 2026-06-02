@@ -7,19 +7,19 @@
  */
 
 $gallery_images = array(
-    'tell-story-1.png',
-    'tell-story-2.png',
-    'tell-story-3.png',
-    'tell-story-4.png',
-    'tell-story-1.png',
-    'tell-story-2.png',
-    'tell-story-3.png',
-    'tell-story-4.png',
+    'tell-story-1.webp',
+    'tell-story-2.webp',
+    'tell-story-3.webp',
+    'tell-story-4.webp',
+    'tell-story-1.webp',
+    'tell-story-2.webp',
+    'tell-story-3.webp',
+    'tell-story-4.webp',
 );
 ?>
 
 <section class="bg-canvas pb-8 lg:pb-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
             <!-- Heading -->
             <div class="flex-1">

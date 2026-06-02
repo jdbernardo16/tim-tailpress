@@ -11,7 +11,7 @@
     <div class="relative overflow-hidden rounded-[20px] bg-[#0f203d]">
         <!-- Background image with baked-in lights -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/herwork-bg.png" alt="">
+            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/herwork-bg.webp" alt="">
         </div>
 
 
@@ -19,15 +19,15 @@
 
         <!-- "HER WORK" decorative text watermark -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2  z-20 pointer-events-none">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/herwork-text.png" alt="" class="w-[500px] md:w-[700px] lg:w-[900px] max-w-none">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/herwork-text.webp" alt="" class="w-[500px] md:w-[700px] lg:w-[900px] max-w-none">
         </div>
 
         <div class="absolute top-0 right-0">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-work.png" alt="Joanna" class="h-full object-contain">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-work.webp" alt="Joanna" class="h-full object-contain">
         </div>
         <!-- Crowd silhouettes at bottom -->
         <div class="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/work-people.png" alt="" class="w-full h-auto object-cover">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/work-people.webp" alt="" class="w-full h-auto object-cover">
         </div>
 
         <!-- Main content -->

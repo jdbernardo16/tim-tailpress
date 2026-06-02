@@ -8,7 +8,7 @@
 ?>
 
 <section class="bg-canvas py-24 lg:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] leading-[110%] text-center">
             <em class="text-gold italic">Upcoming</em> <span class="text-navy">Experiences</span>
         </h2>
@@ -17,7 +17,7 @@
             <!-- Card 1 -->
             <div class="overflow-hidden">
                 <div class="aspect-[16/9] overflow-hidden rounded-xl">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-frame3-img1.png" alt="Speak & Rise + Retreat" class="w-full h-full object-cover">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-frame3-img1.webp" alt="Speak & Rise + Retreat" class="w-full h-full object-cover">
                 </div>
                 <div class="pt-8">
                     <h3 class="font-flatline text-[32px] text-navy font-semibold leading-[110%]">Speak & Rise + Retreat</h3>
@@ -53,7 +53,7 @@
             <!-- Card 2 -->
             <div class="overflow-hidden">
                 <div class="aspect-[16/9] overflow-hidden rounded-xl">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-frame3-img2.png" alt="Speaking On Stage Top Talent Hollywood" class="w-full h-full object-cover">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-frame3-img2.webp" alt="Speaking On Stage Top Talent Hollywood" class="w-full h-full object-cover">
                 </div>
                 <div class="pt-8">
                     <h3 class="font-flatline text-[32px] text-navy font-semibold leading-[110%]">Speaking On Stage<br>Top Talent Hollywood</h3>
@@ -81,7 +81,7 @@
                     </div>
 
                     <p class="font-garet text-base text-dark-text mt-4 leading-[150%]">
-                        Want to book Joanna On Stage? Click <a href="#" class="text-gold underline">here</a>
+                        Want to book Joanna On Stage? Click <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="text-gold underline">here</a>
                     </p>
                 </div>
             </div>

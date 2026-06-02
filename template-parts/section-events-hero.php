@@ -9,11 +9,11 @@
 <section class="relative overflow-hidden min-h-[555px] flex items-center">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.png" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
     </div>
 
 
-    <div class="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div class="flex flex-col items-center text-center">
             <!-- Subtitle pill -->
             <span class="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white/80">

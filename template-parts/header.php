@@ -8,26 +8,26 @@
 ?>
 
 <header class="fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300" id="site-header">
-    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo.png" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="w-14 h-14">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo.webp" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="w-14 h-14">
         </a>
 
         <nav class="hidden lg:flex items-center gap-6" aria-label="<?php esc_attr_e('Primary Navigation', 'tailpress'); ?>">
-            <a href="#" class="text-white font-garet font-light text-base no-underline">About</a>
-            <a href="#" class="inline-flex items-center gap-1.5 text-white font-garet font-light text-base no-underline">
+            <a href="<?php echo esc_url(home_url('/about/')); ?>" class="text-white font-garet font-light text-base no-underline">About</a>
+            <a href="<?php echo esc_url(home_url('/offers/')); ?>" class="inline-flex items-center gap-1.5 text-white font-garet font-light text-base no-underline">
                 Work with me
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="m6 9 6 6 6-6" />
                 </svg>
             </a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">On Stage</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
+            <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="text-white font-garet font-light text-base no-underline">On Stage</a>
+            <a href="<?php echo esc_url(home_url('/events/')); ?>" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
+            <a href="<?php echo esc_url(home_url('/success-stories/')); ?>" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
+            <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
         </nav>
 
-        <a href="#" class="btn-primary py-3 hidden lg:inline-flex">
+        <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary py-3 hidden lg:inline-flex">
             <?php esc_html_e('GET STARTED', 'tailpress'); ?>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -42,13 +42,13 @@
     </div>
 
     <div id="header-mobile-menu" class="hidden lg:hidden bg-navy/95 absolute top-full left-0 right-0">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col gap-4">
-            <a href="#" class="text-white font-garet font-light text-base no-underline">About</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Work with me</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">On Stage</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
-            <a href="#" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
+            <a href="<?php echo esc_url(home_url('/about/')); ?>" class="text-white font-garet font-light text-base no-underline">About</a>
+            <a href="<?php echo esc_url(home_url('/offers/')); ?>" class="text-white font-garet font-light text-base no-underline">Work with me</a>
+            <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="text-white font-garet font-light text-base no-underline">On Stage</a>
+            <a href="<?php echo esc_url(home_url('/events/')); ?>" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
+            <a href="<?php echo esc_url(home_url('/success-stories/')); ?>" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
+            <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
         </div>
     </div>
 </header>

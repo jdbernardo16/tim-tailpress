@@ -9,7 +9,7 @@
 <section class="relative overflow-hidden min-h-[555px] flex items-center">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.png" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
     </div>
 
     <!-- Dark Navy Background -->
@@ -21,7 +21,7 @@
         <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
     </div>
 
-    <div class="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div class="flex flex-col items-center text-center">
             <!-- Label pill -->
             <span class="inline-flex items-center font-flatline rounded-full bg-white/20 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-[0.5rem] text-gold">

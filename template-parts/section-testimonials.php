@@ -25,7 +25,7 @@ $testimonials = array(
 ?>
 
 <section class="relative bg-canvas py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header: flex row, title left, subtitle right -->
         <div class="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
             <h2 class="font-flatline font-medium text-5xl md:text-[56px] text-navy leading-[1.1] text-left">

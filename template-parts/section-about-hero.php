@@ -33,16 +33,16 @@ $stats = array(
 <section class="relative bg-navy overflow-hidden h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.png" alt="">
+        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.webp" alt="">
     </div>
 
 
     <!-- Logo watermark -->
     <!-- <div class="absolute top-[300px] left-1/2 -translate-x-1/2 w-[1080px] h-[1080px] opacity-5 mix-blend-luminosity pointer-events-none">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icononly_transparent_nobuffer.png" alt="" class="w-full h-full object-contain">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icononly_transparent_nobuffer.webp" alt="" class="w-full h-full object-contain">
     </div> -->
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 h-full">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 h-full">
         <!-- Content Block - Centered -->
         <div class="flex flex-col items-center text-center h-full justify-between">
             <!-- Text Content -->
@@ -57,14 +57,14 @@ $stats = array(
 
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-img.png" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-img.webp" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
             </div>
         </div>
     </div>
 
     <!-- Stats Bar - Full width gradient -->
     <div class="absolute bottom-0 left-0 right-0 flex items-end" style="height: 163px; background: linear-gradient(to top, #0f203d 21%, #0f203d00 100%);">
-        <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="flex flex-wrap justify-center gap-6 lg:gap-0">
                 <?php foreach ($stats as $index => $stat) : ?>
                     <?php if ($index > 0) : ?>

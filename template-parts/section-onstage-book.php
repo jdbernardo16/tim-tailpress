@@ -7,14 +7,17 @@
  */
 ?>
 
-<section class="bg-canvas px-10">
-    <div class="relative overflow-hidden rounded-[20px] bg-navy">
+<section class="bg-canvas px-10 ">
+    <div class="relative overflow-hidden rounded-[20px] bg-navy relative z-[1]">
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover opacity-10" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/bg-texture.png" alt="">
+            <img class="w-full h-full object-cover opacity-10" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/bg-texture.webp" alt="">
         </div>
 
-        <div class="absolute top-0 right-0 w-[475px] h-full pointer-events-none hidden xl:block">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-speaker.png" alt="Joanna" class="w-full h-full object-cover opacity-40 mix-blend-luminosity">
+        <!--<div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/book-joanna-png.webp" alt="Joanna" class="w-full h-full object-cover ">
+        </div>-->
+        <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-book-bg.webp" alt="Joanna" class="w-full h-full object-cover ">
         </div>
 
         <div class="absolute inset-0 pointer-events-none">
@@ -22,7 +25,13 @@
             <div class="absolute top-0 left-0 w-[1525px] h-[1525px] bg-gold/10 rounded-full blur-3xl transform -translate-x-2/3 -translate-y-2/3"></div>
         </div>
 
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 pointer-events-none select-none w-full text-center">
+            <h2 class="font-flatline font-bold text-[117px] leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-white/0 opacity-20 w-full">
+                BOOK JOANNA
+            </h2>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
             <div class="max-w-[658px]">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-white leading-tight">
                     Tell us About Your <em class="text-gold italic">Event.</em>
