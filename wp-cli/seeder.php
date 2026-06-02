@@ -707,6 +707,87 @@ class TimTailPress_Seeder
         $this->update_acf_field('section_registration_btn_text', "REGISTER FOR THE VAULT", $page_id, $force);
         $this->update_acf_field('section_registration_btn_url', '/inquiry/', $page_id, $force);
     }
+
+    /**
+     * Delete all pages and create fresh ones with correct slugs and templates.
+     *
+     * ## OPTIONS
+     *
+     * [--force]
+     * : Skip confirmation prompt.
+     *
+     * @when after_wp_load
+     */
+    public function create_pages($args, $assoc_args)
+    {
+        $force = isset($assoc_args['force']);
+
+        if (! $force) {
+            WP_CLI::confirm('This will DELETE all existing pages and create new ones. Continue?');
+        }
+
+        $pages = get_posts([
+            'post_type' => 'page',
+            'posts_per_page' => -1,
+            'post_status' => 'any',
+        ]);
+
+        $deleted = 0;
+        foreach ($pages as $page) {
+            wp_delete_post($page->ID, true);
+            $deleted++;
+        }
+        WP_CLI::success("Deleted {$deleted} existing page(s).");
+
+        $pages_to_create = [
+            ['slug' => 'front-page',              'title' => 'Home',                'template' => 'Front Page'],
+            ['slug' => 'about',                   'title' => 'About',               'template' => 'About'],
+            ['slug' => '4-session',               'title' => '4-Session Training',  'template' => '4-Session Training Package'],
+            ['slug' => 'be-remembered',            'title' => 'Be Remembered',        'template' => 'Be Remembered'],
+            ['slug' => 'breakthrough-session',     'title' => 'Breakthrough Session', 'template' => 'Breakthrough Session'],
+            ['slug' => 'build-my-team',            'title' => 'Build My Team',        'template' => 'Build My Team'],
+            ['slug' => 'events',                  'title' => 'Events & Workshops',  'template' => 'Events and Workshops'],
+            ['slug' => 'get-started',              'title' => 'Get Started',          'template' => 'Get Started'],
+            ['slug' => 'inquiry',                 'title' => 'Inquiry',             'template' => 'Inquiry'],
+            ['slug' => 'master-my-message',        'title' => 'Master My Message',    'template' => 'Master My Message'],
+            ['slug' => 'million-dollar-message',   'title' => 'Million Dollar Message', 'template' => 'Million Dollar Message'],
+            ['slug' => 'offers',                  'title' => 'Offers',              'template' => 'Offers'],
+            ['slug' => 'on-stage',                'title' => 'On Stage',            'template' => 'On Stage'],
+            ['slug' => 'speaker-cohort',           'title' => 'Speaker Cohort',       'template' => 'Speaker Cohort'],
+            ['slug' => 'success-stories',          'title' => 'Success Stories',      'template' => 'Success Stories'],
+            ['slug' => 'thank-you',               'title' => 'Thank You',           'template' => 'Thank You'],
+            ['slug' => 'the-authority',            'title' => 'The Authority',        'template' => 'The Authority'],
+            ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
+            ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
+            ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+        ];
+
+        $created = 0;
+        foreach ($pages_to_create as $p) {
+            $page_id = wp_insert_post([
+                'post_title'   => $p['title'],
+                'post_name'    => $p['slug'],
+                'post_type'    => 'page',
+                'post_status'  => 'publish',
+                'page_template' => $p['template'] === 'Front Page' ? '' : 'page-' . $p['slug'] . '.php',
+            ]);
+
+            if ($p['slug'] === 'front-page') {
+                update_option('page_on_front', $page_id);
+                update_option('show_on_front', 'page');
+            }
+
+            if (is_wp_error($page_id)) {
+                WP_CLI::warning("Failed to create page: {$p['slug']}");
+                continue;
+            }
+
+            $created++;
+            WP_CLI::line("Created: {$p['title']} (/{$p['slug']}/) → template: {$p['template']}");
+        }
+
+        WP_CLI::success("Created {$created} page(s). Run `wp tim-tailpress seed --force` to populate ACF fields.");
+    }
 }
 
 if (defined('WP_CLI') && WP_CLI) {
