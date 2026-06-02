@@ -1,9 +1,5 @@
 <?php
 
-if (! defined('WP_CLI') || ! WP_CLI) {
-    return;
-}
-
 class TimTailPress_Seeder
 {
     private function get_page_id($slug)
@@ -129,6 +125,28 @@ class TimTailPress_Seeder
         ));
     }
 
+    public function seed_all($force = true)
+    {
+        $this->create_menus();
+
+        $page_slugs = [
+            'front-page', 'about', '4-session', 'be-remembered',
+            'breakthrough-session', 'build-my-team', 'events',
+            'get-started', 'inquiry', 'master-my-message',
+            'million-dollar-message', 'offers', 'on-stage',
+            'speaker-cohort', 'success-stories', 'thank-you',
+            'the-authority', 'the-legacy', 'the-speaker', 'the-vault',
+        ];
+
+        foreach ($page_slugs as $slug) {
+            $slug = trim($slug);
+            $method = 'seed_' . str_replace('-', '_', $slug);
+            if (method_exists($this, $method)) {
+                $this->$method($force);
+            }
+        }
+    }
+
     /**
      * ## OPTIONS
      *
@@ -144,30 +162,21 @@ class TimTailPress_Seeder
     {
         $force = isset($assoc_args['force']);
 
-        $this->create_menus();
-
-        $page_slugs = [
-            'front-page', 'about', '4-session', 'be-remembered',
-            'breakthrough-session', 'build-my-team', 'events',
-            'get-started', 'inquiry', 'master-my-message',
-            'million-dollar-message', 'offers', 'on-stage',
-            'speaker-cohort', 'success-stories', 'thank-you',
-            'the-authority', 'the-legacy', 'the-speaker', 'the-vault',
-        ];
-
         if (! empty($assoc_args['page'])) {
             $page_slugs = explode(',', $assoc_args['page']);
-        }
-
-        foreach ($page_slugs as $slug) {
-            $slug = trim($slug);
-            $method = 'seed_' . str_replace('-', '_', $slug);
-            if (method_exists($this, $method)) {
-                $this->$method($force);
-                WP_CLI::success("Seeded: {$slug}");
-            } else {
-                WP_CLI::warning("No seeder method for: {$slug}");
+            foreach ($page_slugs as $slug) {
+                $slug = trim($slug);
+                $method = 'seed_' . str_replace('-', '_', $slug);
+                if (method_exists($this, $method)) {
+                    $this->$method($force);
+                    WP_CLI::success("Seeded: {$slug}");
+                } else {
+                    WP_CLI::warning("No seeder method for: {$slug}");
+                }
             }
+        } else {
+            $this->seed_all($force);
+            WP_CLI::success('All pages seeded.');
         }
     }
 
@@ -700,4 +709,58 @@ class TimTailPress_Seeder
     }
 }
 
-WP_CLI::add_command('tim-tailpress', 'TimTailPress_Seeder');
+if (defined('WP_CLI') && WP_CLI) {
+    WP_CLI::add_command('tim-tailpress', 'TimTailPress_Seeder');
+}
+
+add_action('wp_ajax_tim_tailpress_seed', function () {
+    if (! current_user_can('manage_options')) {
+        wp_die('Unauthorized.');
+    }
+    if (! wp_verify_nonce($_REQUEST['_wpnonce'] ?? '', 'tim_tailpress_seed')) {
+        wp_die('Invalid nonce.');
+    }
+
+    $seeder = new TimTailPress_Seeder();
+    $seeder->seed_all(true);
+
+    wp_redirect(add_query_arg('seeded', '1', wp_get_referer()));
+    exit;
+});
+
+add_action('admin_menu', function () {
+    add_submenu_page(
+        'tools.php',
+        'Seed Content',
+        'Seed Content',
+        'manage_options',
+        'tim-tailpress-seed',
+        function () {
+            if (! current_user_can('manage_options')) {
+                return;
+            }
+
+            $seeded = isset($_GET['seeded']);
+
+            if ($seeded) : ?>
+                <div class="notice notice-success"><p>Content seeded successfully.</p></div>
+            <?php endif; ?>
+
+            <div class="wrap">
+                <h1>Seed Site Content</h1>
+                <p>Populate all ACF field groups with the original hardcoded content. This will overwrite any existing field values.</p>
+                <form method="post" action="<?= admin_url('admin-ajax.php') ?>">
+                    <?php wp_nonce_field('tim_tailpress_seed') ?>
+                    <input type="hidden" name="action" value="tim_tailpress_seed">
+                    <input type="hidden" name="page" value="tim-tailpress-seed">
+                    <p class="submit">
+                        <button type="submit" class="button button-primary" onclick="return confirm('This will overwrite all ACF field values. Continue?')">
+                            Run Seeder
+                        </button>
+                    </p>
+                </form>
+            </div>
+            <?php
+        }
+    );
+});

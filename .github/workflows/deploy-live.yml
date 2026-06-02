@@ -1,0 +1,90 @@
+name: Deploy to Live (Production)
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: "8.2"
+                  coverage: none
+
+            - name: Install Node dependencies
+              run: npm ci
+
+            - name: Install PHP dependencies
+              run: composer install --no-dev --optimize-autoloader
+
+            - name: Build assets
+              run: npm run build
+
+            - name: Create deployment package
+              run: |
+                  # Create a temporary directory for deployment
+                  mkdir -p deploy-package
+
+                  # Copy files excluding those in .distignore
+                  rsync -av --exclude-from='.distignore' --exclude='deploy-package' --exclude='.git' --exclude='.github' ./ deploy-package/
+
+                  # Remove hidden files/directories EXCEPT .vite (needed for Vite manifest)
+                  find deploy-package -name '.*' -type d ! -path '*/dist/.vite' -exec rm -rf {} + 2>/dev/null || true
+                  find deploy-package -name '.*' -type f ! -path '*/dist/.vite/*' -delete 2>/dev/null || true
+
+            - name: Deploy to Production via FTP
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ${{ secrets.LIVE_FTP_HOST }}
+                  username: ${{ secrets.LIVE_FTP_USER }}
+                  password: ${{ secrets.LIVE_FTP_PASSWORD }}
+                  port: ${{ secrets.LIVE_FTP_PORT }}
+                  server-dir: ${{ secrets.LIVE_FTP_REMOTE_DIR }}
+                  local-dir: deploy-package/
+                  exclude: |
+                      **/.git*
+                      **/.github*
+                      **/.vscode*
+                      **/.idea*
+                      **/node_modules/**
+                      **/deploy-package/**
+                      **/.DS_Store
+                      **/Thumbs.db
+
+            - name: Cleanup
+              if: always()
+              run: rm -rf deploy-package
+
+            - name: Deployment summary
+              if: success()
+              run: |
+                  echo "## Production Deployment Summary 🚀" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Author**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Server**: ${{ secrets.LIVE_FTP_HOST }}" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Environment**: Production" >> $GITHUB_STEP_SUMMARY
+                  echo "- **Status**: ✅ Successfully deployed" >> $GITHUB_STEP_SUMMARY
+
+            - name: Notify on failure
+              if: failure()
+              run: |
+                  echo "## Production Deployment Failed ❌" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY

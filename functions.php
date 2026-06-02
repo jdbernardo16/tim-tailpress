@@ -65,8 +65,8 @@ add_filter('acf/settings/load_json', function ($paths) {
 });
 
 /**
- * Load WP-CLI seeder.
+ * Load seeder (WP-CLI or admin AJAX trigger).
  */
-if (defined('WP_CLI') && WP_CLI) {
+if (defined('WP_CLI') && WP_CLI || is_admin()) {
     require_once get_template_directory() . '/wp-cli/seeder.php';
 }
