@@ -14,17 +14,17 @@
         </a>
 
         <nav class="hidden lg:flex items-center gap-6" aria-label="<?php esc_attr_e('Primary Navigation', 'tailpress'); ?>">
-            <a href="<?php echo esc_url(home_url('/about/')); ?>" class="text-white font-garet font-light text-base no-underline">About</a>
-            <a href="<?php echo esc_url(home_url('/offers/')); ?>" class="inline-flex items-center gap-1.5 text-white font-garet font-light text-base no-underline">
-                Work with me
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                </svg>
-            </a>
-            <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="text-white font-garet font-light text-base no-underline">On Stage</a>
-            <a href="<?php echo esc_url(home_url('/events/')); ?>" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
-            <a href="<?php echo esc_url(home_url('/success-stories/')); ?>" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
-            <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'header',
+                'container' => false,
+                'menu_class' => 'flex items-center gap-6',
+                'items_wrap' => '%3$s',
+                'depth' => 2,
+                'fallback_cb' => false,
+                'walker' => new \TailPress\Walkers\HeaderNavWalker(),
+            ]);
+            ?>
         </nav>
 
         <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary py-3 hidden lg:inline-flex">
@@ -43,12 +43,17 @@
 
     <div id="header-mobile-menu" class="hidden lg:hidden bg-navy/95 absolute top-full left-0 right-0">
         <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
-            <a href="<?php echo esc_url(home_url('/about/')); ?>" class="text-white font-garet font-light text-base no-underline">About</a>
-            <a href="<?php echo esc_url(home_url('/offers/')); ?>" class="text-white font-garet font-light text-base no-underline">Work with me</a>
-            <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="text-white font-garet font-light text-base no-underline">On Stage</a>
-            <a href="<?php echo esc_url(home_url('/events/')); ?>" class="text-white font-garet font-light text-base no-underline">Events & Workshops</a>
-            <a href="<?php echo esc_url(home_url('/success-stories/')); ?>" class="text-white font-garet font-light text-base no-underline">Success Stories</a>
-            <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="text-white font-garet font-light text-base no-underline">Inquiry</a>
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'header',
+                'container' => false,
+                'menu_class' => 'flex flex-col gap-4',
+                'items_wrap' => '%3$s',
+                'depth' => 1,
+                'fallback_cb' => false,
+                'walker' => new \TailPress\Walkers\HeaderNavWalker(),
+            ]);
+            ?>
         </div>
     </div>
 </header>
