@@ -13,28 +13,47 @@
         <div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
             <!-- Column 1: All Offers -->
             <div class="flex flex-col gap-2 lg:w-52">
-                <a href="<?php echo esc_url(home_url('/offers/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">All Offers</a>
-                <a href="<?php echo esc_url(home_url('/the-vault/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">The Vault</a>
-                <a href="<?php echo esc_url(home_url('/million-dollar-message/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">$29 Million Dollar Message</a>
-                <a href="<?php echo esc_url(home_url('/breakthrough-session/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Breakthrough Session</a>
-                <a href="<?php echo esc_url(home_url('/4-session/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">4-Session Training Package</a>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'footer-offers',
+                    'container' => false,
+                    'menu_class' => 'flex flex-col gap-2',
+                    'items_wrap' => '%3$s',
+                    'depth' => 1,
+                    'fallback_cb' => false,
+                    'walker' => new \TailPress\Walkers\FooterNavWalker(),
+                ]);
+                ?>
             </div>
 
             <!-- Column 2: Programs -->
             <div class="flex flex-col gap-2 lg:w-52">
-                <a href="<?php echo esc_url(home_url('/offers/#tell-your-story')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Tell Your Story</a>
-                <a href="<?php echo esc_url(home_url('/offers/#move-the-room')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Move the Room</a>
-                <a href="<?php echo esc_url(home_url('/master-my-message/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Master My Message</a>
-                <a href="<?php echo esc_url(home_url('/build-my-team/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Build My Team</a>
-                <a href="<?php echo esc_url(home_url('/be-remembered/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Be Remembered</a>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'footer-programs',
+                    'container' => false,
+                    'menu_class' => 'flex flex-col gap-2',
+                    'items_wrap' => '%3$s',
+                    'depth' => 1,
+                    'fallback_cb' => false,
+                    'walker' => new \TailPress\Walkers\FooterNavWalker(),
+                ]);
+                ?>
             </div>
 
             <!-- Column 3: About -->
             <div class="flex flex-col gap-2 lg:w-44">
-                <a href="<?php echo esc_url(home_url('/about/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">About Joanna</a>
-                <a href="<?php echo esc_url(home_url('/on-stage/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Joanna On Stage</a>
-                <a href="<?php echo esc_url(home_url('/events/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Events & Workshops</a>
-                <a href="<?php echo esc_url(home_url('/inquiry/')); ?>" class="font-garet font-light text-sm text-black hover:opacity-70 transition-opacity">Inquiry</a>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'footer-about',
+                    'container' => false,
+                    'menu_class' => 'flex flex-col gap-2',
+                    'items_wrap' => '%3$s',
+                    'depth' => 1,
+                    'fallback_cb' => false,
+                    'walker' => new \TailPress\Walkers\FooterNavWalker(),
+                ]);
+                ?>
             </div>
 
             <!-- Column 4: Newsletter -->
