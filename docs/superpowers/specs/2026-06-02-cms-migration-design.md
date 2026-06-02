@@ -9,13 +9,13 @@ Migrate all hardcoded page content in the tim-tailpress WordPress theme to Advan
 
 ## Scope
 
-| Category | Count | Details |
-|---|---|---|
-| Page-specific templates | 19 | `front-page` + 18 `page-{slug}.php` |
-| Template parts to migrate | ~80 | `template-parts/section-*.php` |
-| ACF field groups | 19 | One per page template |
-| WordPress menus | 4–5 | Header, Footer Offers, Footer About, Footer Connect |
-| Seeder commands | 1 | `wp tim-tailpress seed` |
+| Category                  | Count | Details                                             |
+| ------------------------- | ----- | --------------------------------------------------- |
+| Page-specific templates   | 19    | `front-page` + 18 `page-{slug}.php`                 |
+| Template parts to migrate | ~80   | `template-parts/section-*.php`                      |
+| ACF field groups          | 19    | One per page template                               |
+| WordPress menus           | 4–5   | Header, Footer Offers, Footer About, Footer Connect |
+| Seeder commands           | 1     | `wp tim-tailpress seed`                             |
 
 ## 1. Architecture
 
@@ -69,11 +69,11 @@ acf-json/
 section_{section_slug}_{field_name}
 ```
 
-| Part | Description | Example |
-|---|---|---|
-| `section_` | Prefix — all ACF fields share this | `section_hero_` |
-| `{section_slug}` | kebab-case slug matching the template-part file | `hero`, `testimonials`, `you_know` |
-| `{field_name}` | Descriptive field name | `heading`, `text`, `image`, `items` |
+| Part             | Description                                     | Example                             |
+| ---------------- | ----------------------------------------------- | ----------------------------------- |
+| `section_`       | Prefix — all ACF fields share this              | `section_hero_`                     |
+| `{section_slug}` | kebab-case slug matching the template-part file | `hero`, `testimonials`, `you_know`  |
+| `{field_name}`   | Descriptive field name                          | `heading`, `text`, `image`, `items` |
 
 **Sub-field naming inside repeaters:**
 Repeater field: `section_{section}_items`
@@ -81,20 +81,20 @@ Sub-fields: `item_heading`, `item_text`, `item_image`, `item_link`, `item_name`,
 
 ### 1.3 Field Type Mapping
 
-| Content Type | ACF Field Type | Notes |
-|---|---|---|
-| Heading / Title | `text` | Plain text, single line |
-| Tagline / Subtitle | `text` | Plain text, single line |
-| Body paragraph | `textarea` or `wysiwyg` | `textarea` for short copy, `wysiwyg` for rich text |
-| Image | `image` | Returns ID — use `wp_get_attachment_image()` for responsive markup |
-| Button / CTA link | `link` | Returns URL + title + target |
-| Feature / bullet list | `repeater` | Sub-fields: `item_heading`, `item_text` |
-| Testimonial | `repeater` | Sub-fields: `item_name`, `item_title`, `item_text`, `item_image` |
-| Pricing tier | `repeater` | Sub-fields: `item_name`, `item_price`, `item_description` |
-| Logo / brand list | `repeater` | Sub-fields: `item_image`, `item_name` |
-| Stat / number | `number` | |
-| Video URL / embed | `url` or `oembed` | `oembed` for YouTube/Vimeo |
-| Section visibility | `true_false` | Optional toggle to show/hide a section |
+| Content Type          | ACF Field Type          | Notes                                                              |
+| --------------------- | ----------------------- | ------------------------------------------------------------------ |
+| Heading / Title       | `text`                  | Plain text, single line                                            |
+| Tagline / Subtitle    | `text`                  | Plain text, single line                                            |
+| Body paragraph        | `textarea` or `wysiwyg` | `textarea` for short copy, `wysiwyg` for rich text                 |
+| Image                 | `image`                 | Returns ID — use `wp_get_attachment_image()` for responsive markup |
+| Button / CTA link     | `link`                  | Returns URL + title + target                                       |
+| Feature / bullet list | `repeater`              | Sub-fields: `item_heading`, `item_text`                            |
+| Testimonial           | `repeater`              | Sub-fields: `item_name`, `item_title`, `item_text`, `item_image`   |
+| Pricing tier          | `repeater`              | Sub-fields: `item_name`, `item_price`, `item_description`          |
+| Logo / brand list     | `repeater`              | Sub-fields: `item_image`, `item_name`                              |
+| Stat / number         | `number`                |                                                                    |
+| Video URL / embed     | `url` or `oembed`       | `oembed` for YouTube/Vimeo                                         |
+| Section visibility    | `true_false`            | Optional toggle to show/hide a section                             |
 
 ### 1.4 Location Rules
 
@@ -113,11 +113,13 @@ Where `{Template Name}` matches the `Template Name:` header in each `page-{slug}
 Every `get_field()` call includes a fallback to the **current hardcoded value** so the site never breaks — even if ACF is deactivated or a field hasn't been saved yet.
 
 **Before:**
+
 ```php
 <h1 class="text-4xl font-bold">You're Not Missing a Message. You're Missing Trust.</h1>
 ```
 
 **After:**
+
 ```php
 $heading = get_field('section_hero_heading') ?: "You're Not Missing a Message. You're Missing Trust.";
 ?>
@@ -127,6 +129,7 @@ $heading = get_field('section_hero_heading') ?: "You're Not Missing a Message. Y
 ### 2.2 Repeater Fields
 
 **Before:**
+
 ```php
 <?php $testimonials = [
     ['name' => 'A. Robinson', 'text' => '...'],
@@ -138,6 +141,7 @@ $heading = get_field('section_hero_heading') ?: "You're Not Missing a Message. Y
 ```
 
 **After:**
+
 ```php
 <?php if (have_rows('section_testimonials_items')): ?>
     <?php while (have_rows('section_testimonials_items')): the_row(); ?>
@@ -157,11 +161,13 @@ $heading = get_field('section_hero_heading') ?: "You're Not Missing a Message. Y
 ### 2.3 Image Fields
 
 **Before:**
+
 ```php
 <img src="<?= get_template_directory_uri() ?>/assets/images/hero-bg.webp" alt="Hero">
 ```
 
 **After:**
+
 ```php
 $image_id = get_field('section_hero_image');
 if ($image_id) {
@@ -181,6 +187,7 @@ wp-cli/
 ```
 
 Registered in `functions.php`:
+
 ```php
 if (defined('WP_CLI') && WP_CLI) {
     require_once get_template_directory() . '/wp-cli/seeder.php';
@@ -199,7 +206,7 @@ Optional: `wp tim-tailpress seed --page=about` to seed a single page.
 
 ```php
 class TimTailPress_Seeder {
-    
+
     private function get_page_id($slug) {
         return get_posts([
             'post_type' => 'page',
@@ -208,16 +215,16 @@ class TimTailPress_Seeder {
             'posts_per_page' => 1,
         ])[0] ?? null;
     }
-    
+
     public function seed($args, $assoc_args) {
         $pages = $assoc_args['page'] ?? false;
-        
+
         if ($pages) {
             $pages = explode(',', $pages);
         } else {
             $pages = ['front-page', 'about', '4-session', 'be-remembered', /* ... all slugs */];
         }
-        
+
         foreach ($pages as $slug) {
             $method = 'seed_' . str_replace('-', '_', $slug);
             if (method_exists($this, $method)) {
@@ -226,16 +233,16 @@ class TimTailPress_Seeder {
             }
         }
     }
-    
+
     private function seed_front_page() {
         $page_id = $this->get_page_id('front-page');
         if (!$page_id) return;
-        
+
         update_field('section_hero_heading', "You're Not Missing a Message. You're Missing Trust.", $page_id);
         update_field('section_hero_subtitle', '...', $page_id);
         // ... repeat for every field
     }
-    
+
     // One method per page template, populated with exact hardcoded text
 }
 ```
@@ -259,16 +266,17 @@ register_nav_menus([
 
 ### 4.2 Menu Structure
 
-| Menu | Items |
-|---|---|
-| Header Navigation | About, Work with me (dropdown: all offers), On Stage, Events & Workshops, Success Stories, Inquiry, GET STARTED |
-| Footer - Offers | The Vault, Million Dollar Message, Breakthrough Session, 4-Session Training, Tell Your Story, Move the Room, Master My Message, Build My Team, Be Remembered |
-| Footer - About | About Joanna, On Stage, Events & Workshops, Inquiry |
-| Footer - Connect | LinkedIn, Instagram, Facebook (custom links) |
+| Menu              | Items                                                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Header Navigation | About, Work with me (dropdown: all offers), On Stage, Events & Workshops, Success Stories, Inquiry, GET STARTED                                              |
+| Footer - Offers   | The Vault, Million Dollar Message, Breakthrough Session, 4-Session Training, Tell Your Story, Move the Room, Master My Message, Build My Team, Be Remembered |
+| Footer - About    | About Joanna, On Stage, Events & Workshops, Inquiry                                                                                                          |
+| Footer - Connect  | LinkedIn, Instagram, Facebook (custom links)                                                                                                                 |
 
 ### 4.3 Seeder Creates Menus
 
 The WP-CLI seeder also creates these menus and their items:
+
 ```php
 wp_nav_menu_items_from_links($menu_id, [
     ['title' => 'About', 'url' => home_url('/about')],
@@ -281,6 +289,7 @@ wp_nav_menu_items_from_links($menu_id, [
 ### 5.1 Header
 
 `template-parts/header.php` — Replace hardcoded nav list with:
+
 ```php
 wp_nav_menu(['theme_location' => 'header', 'container' => false]);
 ```
@@ -288,6 +297,7 @@ wp_nav_menu(['theme_location' => 'header', 'container' => false]);
 ### 5.2 Footer
 
 `template-parts/footer.php` — Replace three hardcoded link columns with:
+
 ```php
 wp_nav_menu(['theme_location' => 'footer-offers']);
 wp_nav_menu(['theme_location' => 'footer-about']);
@@ -303,22 +313,22 @@ wp_nav_menu(['theme_location' => 'footer-connect']);
 
 ## 7. Risk Mitigation
 
-| Risk | Mitigation |
-|---|---|
-| Field name typos | ACF JSON enforces consistent naming |
-| Missing field breaks page | Fallback to hardcoded value in every `get_field()` call |
-| Seeder overwrites manual edits | Seeder only runs on explicit command |
-| ACF not activated | Theme still works via fallback values |
+| Risk                                | Mitigation                                              |
+| ----------------------------------- | ------------------------------------------------------- |
+| Field name typos                    | ACF JSON enforces consistent naming                     |
+| Missing field breaks page           | Fallback to hardcoded value in every `get_field()` call |
+| Seeder overwrites manual edits      | Seeder only runs on explicit command                    |
+| ACF not activated                   | Theme still works via fallback values                   |
 | Image disappears from media library | Fallback to current `get_template_directory_uri()` path |
 
 ## 8. File Change Summary
 
-| Type | Files | Action |
-|---|---|---|
-| `acf-json/group_*.json` | 19 | Create (field definitions) |
-| `acf-json/index.php` | 1 | Create (silence) |
-| `wp-cli/seeder.php` | 1 | Create |
-| `functions.php` | 1 | Edit (ACF JSON paths, WP-CLI registration, menus) |
-| `template-parts/header.php` | 1 | Edit (nav → wp_nav_menu) |
-| `template-parts/footer.php` | 1 | Edit (nav columns → wp_nav_menu) |
-| `template-parts/section-*.php` | ~80 | Edit (hardcoded → get_field with fallback) |
+| Type                           | Files | Action                                            |
+| ------------------------------ | ----- | ------------------------------------------------- |
+| `acf-json/group_*.json`        | 19    | Create (field definitions)                        |
+| `acf-json/index.php`           | 1     | Create (silence)                                  |
+| `wp-cli/seeder.php`            | 1     | Create                                            |
+| `functions.php`                | 1     | Edit (ACF JSON paths, WP-CLI registration, menus) |
+| `template-parts/header.php`    | 1     | Edit (nav → wp_nav_menu)                          |
+| `template-parts/footer.php`    | 1     | Edit (nav columns → wp_nav_menu)                  |
+| `template-parts/section-*.php` | ~80   | Edit (hardcoded → get_field with fallback)        |
