@@ -1,0 +1,396 @@
+[
+    {
+        "key": "group_front_page",
+        "title": "Page: Front Page",
+        "fields": [
+            {
+                "key": "field_section_hero_heading",
+                "label": "Hero Heading",
+                "name": "section_hero_heading",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "default_value": "You're Not Missing a Message. <em class=\"text-gold\">You're Missing Trust.</em>"
+            },
+            {
+                "key": "field_section_hero_subtitle",
+                "label": "Hero Subtitle",
+                "name": "section_hero_subtitle",
+                "type": "textarea",
+                "default_value": "Somewhere along the way, you learned how to explain yourself\u2026 but not how to truly be felt."
+            },
+            {
+                "key": "field_section_hero_bg_image",
+                "label": "Hero Background Image",
+                "name": "section_hero_bg_image",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_section_hero_profile_image",
+                "label": "Hero Profile Image",
+                "name": "section_hero_profile_image",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_section_hero_btn_primary_text",
+                "label": "Hero Button Primary Text",
+                "name": "section_hero_btn_primary_text",
+                "type": "text",
+                "default_value": "Start Your Story"
+            },
+            {
+                "key": "field_section_hero_btn_primary_url",
+                "label": "Hero Button Primary URL",
+                "name": "section_hero_btn_primary_url",
+                "type": "text",
+                "default_value": "\/get-started\/"
+            },
+            {
+                "key": "field_section_hero_btn_secondary_text",
+                "label": "Hero Button Secondary Text",
+                "name": "section_hero_btn_secondary_text",
+                "type": "text",
+                "default_value": "Watch Joanna Speak"
+            },
+            {
+                "key": "field_section_hero_btn_secondary_url",
+                "label": "Hero Button Secondary URL",
+                "name": "section_hero_btn_secondary_url",
+                "type": "text",
+                "default_value": "\/on-stage\/"
+            },
+            {
+                "key": "field_section_trusted_heading",
+                "label": "Trusted Heading",
+                "name": "section_trusted_heading",
+                "type": "text",
+                "default_value": "Trusted by leaders worldwide"
+            },
+            {
+                "key": "field_section_trusted_stats",
+                "label": "Trusted Stats",
+                "name": "section_trusted_stats",
+                "type": "repeater",
+                "layout": "block",
+                "min": 0,
+                "max": 10,
+                "sub_fields": [
+                    {
+                        "key": "field_section_trusted_stats_icon",
+                        "label": "Icon",
+                        "name": "item_icon",
+                        "type": "image",
+                        "return_format": "id"
+                    },
+                    {
+                        "key": "field_section_trusted_stats_value",
+                        "label": "Value",
+                        "name": "item_value",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_section_trusted_stats_label",
+                        "label": "Label",
+                        "name": "item_label",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "key": "field_section_you_know_heading",
+                "label": "You Know Heading",
+                "name": "section_you_know_heading",
+                "type": "text",
+                "default_value": "You Know What You <em class=\"text-gold\">Mean<\/em>"
+            },
+            {
+                "key": "field_section_you_know_bg_image",
+                "label": "You Know Background Image",
+                "name": "section_you_know_bg_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_you_know_profile_image",
+                "label": "You Know Profile Image",
+                "name": "section_you_know_profile_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_you_know_text",
+                "label": "You Know Text",
+                "name": "section_you_know_text",
+                "type": "wysiwyg",
+                "tabs": "visual",
+                "media_upload": 0
+            },
+            {
+                "key": "field_section_tell_story_heading",
+                "label": "Tell Story Heading",
+                "name": "section_tell_story_heading",
+                "type": "text",
+                "default_value": "Your Story Changes Rooms."
+            },
+            {
+                "key": "field_section_tell_story_text",
+                "label": "Tell Story Text",
+                "name": "section_tell_story_text",
+                "type": "wysiwyg",
+                "tabs": "visual",
+                "media_upload": 0
+            },
+            {
+                "key": "field_section_tell_story_image",
+                "label": "Tell Story Image",
+                "name": "section_tell_story_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_tell_story_btn_text",
+                "label": "Tell Story Button Text",
+                "name": "section_tell_story_btn_text",
+                "type": "text",
+                "default_value": "Tell Your Story"
+            },
+            {
+                "key": "field_section_tell_story_btn_url",
+                "label": "Tell Story Button URL",
+                "name": "section_tell_story_btn_url",
+                "type": "text",
+                "default_value": "\/the-speaker\/"
+            },
+            {
+                "key": "field_section_discover_heading",
+                "label": "Discover Heading",
+                "name": "section_discover_heading",
+                "type": "text",
+                "default_value": "Discover the Message Hidden Inside Your Story."
+            },
+            {
+                "key": "field_section_discover_text",
+                "label": "Discover Text",
+                "name": "section_discover_text",
+                "type": "textarea"
+            },
+            {
+                "key": "field_section_discover_image",
+                "label": "Discover Image",
+                "name": "section_discover_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_discover_btn_text",
+                "label": "Discover Button Text",
+                "name": "section_discover_btn_text",
+                "type": "text",
+                "default_value": "FIND MY MESSAGE"
+            },
+            {
+                "key": "field_section_discover_btn_url",
+                "label": "Discover Button URL",
+                "name": "section_discover_btn_url",
+                "type": "text",
+                "default_value": "\/get-started\/"
+            },
+            {
+                "key": "field_section_journey_heading",
+                "label": "Journey Heading",
+                "name": "section_journey_heading",
+                "type": "text",
+                "default_value": "The Journey"
+            },
+            {
+                "key": "field_section_journey_items",
+                "label": "Journey Items",
+                "name": "section_journey_items",
+                "type": "repeater",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_section_journey_item_icon",
+                        "label": "Icon",
+                        "name": "item_icon",
+                        "type": "image",
+                        "return_format": "id"
+                    },
+                    {
+                        "key": "field_section_journey_item_heading",
+                        "label": "Heading",
+                        "name": "item_heading",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_section_journey_item_text",
+                        "label": "Text",
+                        "name": "item_text",
+                        "type": "textarea"
+                    }
+                ]
+            },
+            {
+                "key": "field_section_speaker_heading",
+                "label": "Speaker Heading",
+                "name": "section_speaker_heading",
+                "type": "text",
+                "default_value": "<em class=\"text-gold italic\">Move<\/em> the Room."
+            },
+            {
+                "key": "field_section_speaker_text",
+                "label": "Speaker Text",
+                "name": "section_speaker_text",
+                "type": "textarea",
+                "default_value": "Speaker Cohort is Joanna's advanced speaking experience for leaders ready to communicate with clarity, emotional authority, and presence that moves people to action."
+            },
+            {
+                "key": "field_section_speaker_image",
+                "label": "Speaker Image",
+                "name": "section_speaker_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_speaker_bg_image",
+                "label": "Speaker Background Image",
+                "name": "section_speaker_bg_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_speaker_watermark_image",
+                "label": "Speaker Watermark Image",
+                "name": "section_speaker_watermark_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_speaker_btn_text",
+                "label": "Speaker Button Text",
+                "name": "section_speaker_btn_text",
+                "type": "text",
+                "default_value": "Explore Speaker Cohort"
+            },
+            {
+                "key": "field_section_speaker_btn_url",
+                "label": "Speaker Button URL",
+                "name": "section_speaker_btn_url",
+                "type": "text",
+                "default_value": "\/speaker-cohort\/"
+            },
+            {
+                "key": "field_section_vault_heading",
+                "label": "Vault Heading",
+                "name": "section_vault_heading",
+                "type": "text",
+                "default_value": "Stay Inside the Conversation."
+            },
+            {
+                "key": "field_section_vault_text",
+                "label": "Vault Text",
+                "name": "section_vault_text",
+                "type": "textarea",
+                "default_value": "Get first access to Joanna's premium audio sessions, private podcast, and curated insights designed for leaders who want to stay sharp, self-aware, and leading from what's real."
+            },
+            {
+                "key": "field_section_vault_image",
+                "label": "Vault Image",
+                "name": "section_vault_image",
+                "type": "image",
+                "return_format": "id"
+            },
+            {
+                "key": "field_section_vault_btn_text",
+                "label": "Vault Button Text",
+                "name": "section_vault_btn_text",
+                "type": "text",
+                "default_value": "ENTER THE VAULT"
+            },
+            {
+                "key": "field_section_vault_btn_url",
+                "label": "Vault Button URL",
+                "name": "section_vault_btn_url",
+                "type": "text",
+                "default_value": "\/the-vault\/"
+            },
+            {
+                "key": "field_section_testimonials_heading",
+                "label": "Testimonials Heading",
+                "name": "section_testimonials_heading",
+                "type": "text",
+                "default_value": "People Remember What Felt <em class=\"text-gold italic\">True.<\/em>"
+            },
+            {
+                "key": "field_section_testimonials_subtitle",
+                "label": "Testimonials Subtitle",
+                "name": "section_testimonials_subtitle",
+                "type": "textarea",
+                "default_value": "Leaders from around the world come to Joanna to reconnect with their voice, refine their message, and lead with deeper influence."
+            },
+            {
+                "key": "field_section_testimonials_items",
+                "label": "Testimonials",
+                "name": "section_testimonials_items",
+                "type": "repeater",
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_section_testimonials_item_quote",
+                        "label": "Quote",
+                        "name": "item_quote",
+                        "type": "textarea"
+                    },
+                    {
+                        "key": "field_section_testimonials_item_author",
+                        "label": "Author",
+                        "name": "item_author",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_section_testimonials_item_title",
+                        "label": "Title",
+                        "name": "item_title",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "key": "field_section_voice_heading",
+                "label": "Voice Heading",
+                "name": "section_voice_heading",
+                "type": "text",
+                "default_value": "Your Voice Carries More Than Information."
+            },
+            {
+                "key": "field_section_voice_text",
+                "label": "Voice Text",
+                "name": "section_voice_text",
+                "type": "wysiwyg",
+                "tabs": "visual",
+                "media_upload": 0
+            },
+            {
+                "key": "field_section_voice_image",
+                "label": "Voice Image",
+                "name": "section_voice_image",
+                "type": "image",
+                "return_format": "id"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "front-page.php"
+                }
+            ]
+        ],
+        "active": true
+    }
+]
