@@ -4,6 +4,9 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_hero_heading') ?: 'Thank You';
+$text = get_field('section_hero_text') ?: 'Your message work begins now.';
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[600px] md:min-h-[700px]">
@@ -15,10 +18,10 @@
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-20 md:pb-24 text-center">
         <h1 class="font-flatline font-semibold text-6xl md:text-8xl lg:text-[112px] leading-[1.1] mb-0" style="background: linear-gradient(135deg, #e7d4c5, #d4b478); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Thank You
+            <?= esc_html($heading) ?>
         </h1>
         <h2 class="font-flatline font-semibold text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1] mb-6">
-            Your message work begins now.
+            <?= esc_html($text) ?>
         </h2>
         <p class="font-garet font-light text-lg text-white leading-[1.5] mb-10">
             A welcome email is on its way with access to your training and guided homework.

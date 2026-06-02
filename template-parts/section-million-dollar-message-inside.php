@@ -6,15 +6,9 @@
  * @package TailPress
  */
 
-$includes = array(
-    'A 7-minute training with Joanna',
-    'A Clear Message – what you say',
-    'A Clear Position – why people choose you',
-    'A Clear Voice – how you confidently show up and get remembered',
-    'The framework behind your defining message',
-    'A guided homework exercise to uncover it yourself',
-    'One message you can immediately use in: speaking, pitches, leadership, interviews, and conversations',
-);
+$heading = get_field('section_inside_heading') ?: 'What&#8217;s <em class="text-gold italic">Inside</em>';
+$inside_text = get_field('section_inside_text');
+$inside_image_id = get_field('section_inside_image');
 ?>
 <section class="bg-canvas py-24 lg:py-32" id="inside">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,10 +16,24 @@ $includes = array(
             <!-- Text Content -->
             <div class="w-full lg:w-1/2">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-[1.1]">
-                    What&#8217;s <em class="text-gold italic">Inside</em>
+                    <?= $heading ?>
                 </h2>
 
+                <?php if ($inside_text): ?>
+                    <?= wpautop($inside_text) ?>
+                <?php else: ?>
                 <ul class="mt-10 space-y-4">
+                    <?php
+                    $includes = array(
+                        'A 7-minute training with Joanna',
+                        'A Clear Message – what you say',
+                        'A Clear Position – why people choose you',
+                        'A Clear Voice – how you confidently show up and get remembered',
+                        'The framework behind your defining message',
+                        'A guided homework exercise to uncover it yourself',
+                        'One message you can immediately use in: speaking, pitches, leadership, interviews, and conversations',
+                    );
+                    ?>
                     <?php foreach ($includes as $item) : ?>
                         <li class="flex items-start gap-3 font-garet text-lg text-dark-text leading-[1.5]">
                             <svg class="w-5 h-5 flex-shrink-0 mt-1.5 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +45,7 @@ $includes = array(
                         </li>
                     <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
 
                 <div class="mt-10">
                     <a href="<?php echo esc_url(home_url('/million-dollar-message/')); ?>" class="btn-primary">
@@ -50,7 +59,11 @@ $includes = array(
 
             <!-- Image -->
             <div class="w-full lg:w-1/2">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/million-inside.webp" alt="Joanna Horton McPherson" class="w-full h-auto object-cover rounded-xl">
+                <?php if ($inside_image_id): ?>
+                    <?= wp_get_attachment_image($inside_image_id, 'full', false, ['class' => 'w-full h-auto object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php else: ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/million-inside.webp" alt="Joanna Horton McPherson" class="w-full h-auto object-cover rounded-xl">
+                <?php endif; ?>
             </div>
         </div>
     </div>

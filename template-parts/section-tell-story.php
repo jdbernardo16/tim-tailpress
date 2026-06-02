@@ -5,6 +5,12 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_tell_story_heading') ?: 'Your Story <em class="text-gold italic">Changes</em> Rooms.';
+$text = get_field('section_tell_story_text');
+$image_id = get_field('section_tell_story_image');
+$btn_text = get_field('section_tell_story_btn_text') ?: 'START YOUR STORY';
+$btn_url = get_field('section_tell_story_btn_url') ?: '/events/';
 ?>
 
 <section class="relative mx-10 rounded-3xl">
@@ -26,19 +32,23 @@
         <!-- Text Content -->
         <div class="flex flex-col items-center gap-6 max-w-[750px] text-center">
             <h2 class="font-flatline font-semibold text-5xl lg:text-[56px] leading-[110%] text-white">
-                Your Story <em class="text-gold italic">Changes</em> Rooms.
+                <?= $heading ?>
             </h2>
             <div class="text-body text-white max-w-[678px]">
-                <p>
-                    Tell Your Story is a <strong class="font-bold">transformational course and retreat experience</strong> where becoming a better speaker starts becoming a better leader.
-                </p>
-                <p class="mt-4">
-                    It's about reconnecting with the moments that shaped your voice, your leadership, and the way people experience you.
-                </p>
+                <?php if ($text): ?>
+                    <?= wpautop($text) ?>
+                <?php else: ?>
+                    <p>
+                        Tell Your Story is a <strong class="font-bold">transformational course and retreat experience</strong> where becoming a better speaker starts becoming a better leader.
+                    </p>
+                    <p class="mt-4">
+                        It's about reconnecting with the moments that shaped your voice, your leadership, and the way people experience you.
+                    </p>
+                <?php endif; ?>
             </div>
             <div class="mt-2">
-                <a href="<?php echo esc_url(home_url('/events/')); ?>" class="btn-primary">
-                    START YOUR STORY
+                <a href="<?php echo esc_url(home_url($btn_url)); ?>" class="btn-primary">
+                    <?= esc_html($btn_text) ?>
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/btn-arrow.svg" alt="" class="w-5 h-2" aria-hidden="true">
                 </a>
             </div>
@@ -51,7 +61,11 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
                         <div class="relative w-full aspect-square rounded-[10px] overflow-hidden bg-black">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.webp" alt="Tell Your Story 1" class="w-full h-full object-cover">
+                            <?php if ($image_id): ?>
+                                <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => 'Tell Your Story']) ?>
+                            <?php else: ?>
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/tell-story-1.webp" alt="Tell Your Story 1" class="w-full h-full object-cover">
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!-- Slide 2 -->

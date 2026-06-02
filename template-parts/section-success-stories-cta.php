@@ -5,6 +5,11 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_cta_heading') ?: 'Your Story May Be Waiting for Its <em class="text-gold italic">Moment</em> too';
+$text = get_field('section_cta_text') ?: 'Explore the retreat, speaking experiences, and transformational work behind the True Influence Method™.';
+$btn_text = get_field('section_cta_btn_text') ?: 'Start Your Story Journey';
+$btn_url = get_field('section_cta_btn_url') ?: home_url('/get-started/');
 ?>
 <section class="relative mx-8 rounded-3xl bg-gold-section overflow-hidden ">
     <!-- Background texture -->
@@ -25,18 +30,18 @@
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
         <!-- Heading -->
         <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-            Your Story May Be Waiting for Its <em class="text-gold italic">Moment</em> too
+            <?= $heading ?>
         </h2>
 
         <!-- Description -->
         <p class="mt-6 font-garet text-lg text-white max-w-xl mx-auto leading-[150%]">
-            Explore the retreat, speaking experiences, and transformational work behind the True Influence Method™.
+            <?= esc_html($text) ?>
         </p>
 
         <!-- Button -->
         <div class="mt-10">
-            <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
-                Start Your Story Journey
+            <a href="<?php echo esc_url($btn_url); ?>" class="btn-primary">
+                <?= esc_html($btn_text) ?>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
                     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>

@@ -5,6 +5,9 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_hero_heading') ?: 'Start the<br><em class="text-gold italic">Conversation.</em>';
+$text = get_field('section_hero_text') ?: 'Tell us where you are, what you\'re exploring, or what feels most aligned right now.';
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[870px]">
@@ -19,10 +22,10 @@
             <!-- Left Content -->
             <div class="w-full lg:max-w-[405px] shrink-0 pt-8 lg:pt-12">
                 <h1 class="font-flatline font-semibold text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-                    Start the<br><em class="text-gold italic">Conversation.</em>
+                    <?= $heading ?>
                 </h1>
                 <p class="mt-6 font-garet font-light text-lg text-white leading-[1.5]">
-                    Tell us where you are, what you're exploring, or what feels most aligned right now.
+                    <?= esc_html($text) ?>
                 </p>
                 <p class="mt-4 font-garet font-light text-lg text-white leading-[1.5]">
                     Fill out the form, and Joanna's team will be in touch within 2 business days.

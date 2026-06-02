@@ -5,6 +5,9 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_form_heading') ?: '<em class="text-gold italic">Begin</em> the Conversation.';
+$text = get_field('section_form_text') ?: '<p>A private conversation to explore your leadership, organization, and the next stage of growth for your team and business.</p>';
 ?>
 <section class="relative px-4 sm:px-6 lg:px-8 pb-24" id="register">
     <div class="relative max-w-[1360px] mx-auto bg-navy rounded-[20px] overflow-hidden">
@@ -30,14 +33,12 @@
             <div class="max-w-[760px] mx-auto text-center">
                 <!-- Heading -->
                 <h3 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-white leading-[1.1]">
-                    <em class="text-gold italic">Begin</em> the Conversation.
+                    <?= $heading ?>
                 </h3>
 
                 <!-- Subtext -->
                 <div class="mt-6 font-garet text-lg text-white leading-[1.6] max-w-[600px] mx-auto">
-                    <p>
-                        A private conversation to explore your leadership, organization, and the next stage of growth for your team and business.
-                    </p>
+                    <?= $text ?>
                 </div>
 
                 <!-- Form -->

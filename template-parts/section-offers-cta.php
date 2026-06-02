@@ -5,6 +5,11 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_cta_heading') ?: 'Not Sure Where<br>to <em class="text-gold italic">Begin?</em>';
+$text = get_field('section_cta_text') ?: "We'll help guide you toward the experience, retreat, or next step that feels most aligned with where you are right now.";
+$btn_text = get_field('section_cta_btn_text') ?: 'Find Your Path';
+$btn_url = get_field('section_cta_btn_url') ?: home_url('/get-started/');
 ?>
 <section class="relative mx-4 sm:mx-8 mb-24 rounded-3xl bg-gold-section overflow-hidden">
     <!-- Background texture -->
@@ -25,18 +30,18 @@
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
         <!-- Heading -->
         <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[64px] text-white leading-[1.1]">
-            Not Sure Where<br>to <em class="text-gold italic">Begin?</em>
+            <?= $heading ?>
         </h2>
 
         <!-- Description -->
         <p class="mt-6 font-garet text-lg text-white max-w-xl mx-auto leading-[150%]">
-            We'll help guide you toward the experience, retreat, or next step that feels most aligned with where you are right now.
+            <?= esc_html($text) ?>
         </p>
 
         <!-- Button -->
         <div class="mt-10">
-            <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">
-                Find Your Path
+            <a href="<?= esc_url($btn_url) ?>" class="btn-primary">
+                <?= esc_html($btn_text) ?>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>

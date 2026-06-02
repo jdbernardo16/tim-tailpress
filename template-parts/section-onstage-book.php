@@ -5,6 +5,12 @@
  *
  * @package TailPress
  */
+
+$heading = get_field('section_book_heading') ?: 'Tell us About Your <em class="text-gold italic">Event.</em>';
+$text = get_field('section_book_text') ?: "Share a few details about your audience, event format, and what you want the room to experience. Joanna's team will review and follow up with the next best step.";
+$image_id = get_field('section_book_image');
+$btn_text = get_field('section_book_btn_text') ?: 'SEND INQUIRY';
+$btn_url = get_field('section_book_btn_url') ?: '#';
 ?>
 
 <section class="bg-canvas px-10 ">
@@ -13,12 +19,15 @@
             <img class="w-full h-full object-cover opacity-10" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/bg-texture.webp" alt="">
         </div>
 
-        <!--<div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/book-joanna-png.webp" alt="Joanna" class="w-full h-full object-cover ">
-        </div>-->
-        <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-book-bg.webp" alt="Joanna" class="w-full h-full object-cover ">
-        </div>
+        <?php if ($image_id): ?>
+            <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
+                <?= wp_get_attachment_image($image_id, 'full', false, array('class' => 'w-full h-full object-cover', 'alt' => 'Joanna')) ?>
+            </div>
+        <?php else: ?>
+            <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-book-bg.webp" alt="Joanna" class="w-full h-full object-cover ">
+            </div>
+        <?php endif; ?>
 
         <div class="absolute inset-0 pointer-events-none">
             <div class="absolute top-1/2 right-0 w-[1535px] h-[1535px] bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3"></div>
