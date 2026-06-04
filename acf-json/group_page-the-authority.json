@@ -32,6 +32,14 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_message_heading",
             "label": "Section Message Heading",
             "name": "section_message_heading",
@@ -81,6 +89,24 @@
                     "label": "Section Two Ways Items Item Btn Url",
                     "name": "item_btn_url",
                     "type": "text"
+                },
+                {
+                    "key": "field_section_two_ways_items_item_price_label",
+                    "label": "Section Two Ways Items Item Price Label",
+                    "name": "item_price_label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_two_ways_items_item_price",
+                    "label": "Section Two Ways Items Item Price",
+                    "name": "item_price",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_two_ways_items_item_includes",
+                    "label": "Section Two Ways Items Item Includes",
+                    "name": "item_includes",
+                    "type": "textarea"
                 }
             ]
         },
@@ -116,6 +142,24 @@
                     "type": "image",
                     "return_format": "id",
                     "preview_size": "medium"
+                },
+                {
+                    "key": "field_section_work_items_item_price",
+                    "label": "Section Work Items Item Price",
+                    "name": "item_price",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_work_items_item_btn_text",
+                    "label": "Section Work Items Item Btn Text",
+                    "name": "item_btn_text",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_work_items_item_btn_url",
+                    "label": "Section Work Items Item Btn Url",
+                    "name": "item_btn_url",
+                    "type": "text"
                 }
             ]
         }

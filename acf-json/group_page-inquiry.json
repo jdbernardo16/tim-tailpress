@@ -7,13 +7,21 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "Let's <em class=\"text-gold\">Connect</em>"
+            "default_value": "Start the<br><em class=\"text-gold italic\">Conversation.</em>"
         },
         {
             "key": "field_section_hero_text",
             "label": "Section Hero Text",
             "name": "section_hero_text",
             "type": "textarea"
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         }
     ],
     "location": [

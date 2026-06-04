@@ -97,6 +97,14 @@
             "default_value": "/inquiry/"
         },
         {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_4_session_section_build_items",
             "label": "Build Items",
             "name": "section_build_items",

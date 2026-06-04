@@ -44,6 +44,14 @@
             "type": "textarea"
         },
         {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_build_heading",
             "label": "Section Build Heading",
             "name": "section_build_heading",
@@ -117,6 +125,22 @@
             "label": "Section Cta Btn Url",
             "name": "section_cta_btn_url",
             "type": "text"
+        },
+        {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_form_bg_image",
+            "label": "Section Form Bg Image",
+            "name": "section_form_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_be_remembered_section_build_items",

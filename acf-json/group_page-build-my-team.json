@@ -44,6 +44,14 @@
             "type": "textarea"
         },
         {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_build_heading",
             "label": "Section Build Heading",
             "name": "section_build_heading",
@@ -119,6 +127,22 @@
             "type": "text"
         },
         {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_form_bg_image",
+            "label": "Section Form Bg Image",
+            "name": "section_form_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_build_my_team_section_build_items",
             "label": "Build Items",
             "name": "section_build_items",
@@ -157,13 +181,15 @@
             "key": "field_build_my_team_section_form_heading",
             "label": "Section Form Heading",
             "name": "section_form_heading",
-            "type": "text"
+            "type": "text",
+            "default_value": "<em class=\"text-gold italic\">Begin</em> the Conversation."
         },
         {
             "key": "field_build_my_team_section_form_text",
             "label": "Section Form Text",
             "name": "section_form_text",
-            "type": "textarea"
+            "type": "textarea",
+            "default_value": "<p>A private conversation to explore your leadership, organization, and the next stage of growth for your team and business.</p>"
         }
     ],
     "location": [

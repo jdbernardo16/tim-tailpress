@@ -21,6 +21,11 @@ $btn_url = get_field('section_speaker_btn_url') ?: '/speaker-cohort/';
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($bg_image_id, 'full')); ?>');"></div>
     <?php endif; ?>
 
+    <!-- Watermark image -->
+    <?php if ($watermark_image_id): ?>
+        <?= wp_get_attachment_image($watermark_image_id, 'full', false, ['class' => 'absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1360px] pointer-events-none select-none z-1', 'aria-hidden' => 'true']) ?>
+    <?php endif; ?>
+
     <div class="relative flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[564px]">
         <!-- Left image -->
         <div class="flex-1 flex justify-start items-end h-full">

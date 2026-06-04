@@ -7,9 +7,15 @@
 
 $heading = get_field('section_hero_heading') ?: 'Thank You';
 $text = get_field('section_hero_text') ?: 'Your message work begins now.';
+$bg_image_id = get_field('section_hero_bg_image');
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[600px] md:min-h-[700px]">
+    <?php if ($bg_image_id): ?>
+    <div class="absolute inset-0">
+        <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '']) ?>
+    </div>
+    <?php endif; ?>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-20 md:pb-24 text-center">
         <h1 class="font-flatline font-semibold text-6xl md:text-8xl lg:text-[112px] leading-[1.1] mb-0" style="background: linear-gradient(135deg, #e7d4c5, #d4b478); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             <?= esc_html($heading) ?>

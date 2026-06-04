@@ -86,6 +86,40 @@
             "type": "text"
         },
         {
+            "key": "field_section_credibility_featured",
+            "label": "Section Credibility Featured",
+            "name": "section_credibility_featured",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_credibility_featured_item_image",
+                    "label": "Section Credibility Featured Item Image",
+                    "name": "item_image",
+                    "type": "image",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_section_credibility_featured_item_badge",
+                    "label": "Section Credibility Featured Item Badge",
+                    "name": "item_badge",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_credibility_featured_item_title",
+                    "label": "Section Credibility Featured Item Title",
+                    "name": "item_title",
+                    "type": "textarea"
+                },
+                {
+                    "key": "field_section_credibility_featured_item_date",
+                    "label": "Section Credibility Featured Item Date",
+                    "name": "item_date",
+                    "type": "text"
+                }
+            ]
+        },
+        {
             "key": "field_section_credibility_items",
             "label": "Section Credibility Items",
             "name": "section_credibility_items",
@@ -93,16 +127,22 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_section_credibility_items_item_badge",
+                    "label": "Section Credibility Items Item Badge",
+                    "name": "item_badge",
+                    "type": "text"
+                },
+                {
                     "key": "field_section_credibility_items_item_heading",
                     "label": "Section Credibility Items Item Heading",
                     "name": "item_heading",
                     "type": "text"
                 },
                 {
-                    "key": "field_section_credibility_items_item_text",
-                    "label": "Section Credibility Items Item Text",
-                    "name": "item_text",
-                    "type": "textarea"
+                    "key": "field_section_credibility_items_item_date",
+                    "label": "Section Credibility Items Item Date",
+                    "name": "item_date",
+                    "type": "text"
                 }
             ]
         },
@@ -126,17 +166,21 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_section_experiences_items_item_image",
-                    "label": "Section Experiences Items Item Image",
-                    "name": "item_image",
-                    "type": "image",
-                    "return_format": "id",
-                    "preview_size": "medium"
-                },
-                {
                     "key": "field_section_experiences_items_item_title",
                     "label": "Section Experiences Items Item Title",
                     "name": "item_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_experiences_items_item_length",
+                    "label": "Section Experiences Items Item Length",
+                    "name": "item_length",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_experiences_items_item_ideal",
+                    "label": "Section Experiences Items Item Ideal",
+                    "name": "item_ideal",
                     "type": "text"
                 },
                 {
@@ -144,6 +188,12 @@
                     "label": "Section Experiences Items Item Description",
                     "name": "item_description",
                     "type": "textarea"
+                },
+                {
+                    "key": "field_section_experiences_items_item_btn_url",
+                    "label": "Section Experiences Items Item Btn Url",
+                    "name": "item_btn_url",
+                    "type": "text"
                 }
             ]
         },

@@ -72,10 +72,6 @@ $image_id = get_field('section_voice_image');
             <div class="mt-6 font-garet text-lg text-white leading-normal">
                 <?= wpautop($text) ?>
             </div>
-        <?php else: ?>
-            <p class="mt-6 font-garet text-lg text-white leading-normal">
-                It carries your story. Your leadership.<br>The life that shaped you.
-            </p>
         <?php endif; ?>
         <div class="mt-10">
             <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">

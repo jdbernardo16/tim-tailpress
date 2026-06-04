@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "Master My <em class=\"text-gold\">Message</em>"
+            "default_value": "Become Known<br><em class=\"text-gold italic\">for Something Specific.</em>"
         },
         {
             "key": "field_section_hero_subtitle",
@@ -42,6 +42,14 @@
             "label": "Section Message Text",
             "name": "section_message_text",
             "type": "textarea"
+        },
+        {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_section_build_heading",
@@ -117,6 +125,14 @@
             "label": "Section Cta Btn Url",
             "name": "section_cta_btn_url",
             "type": "text"
+        },
+        {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_master_my_message_section_build_items",

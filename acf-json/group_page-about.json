@@ -97,7 +97,7 @@
             "label": "Section Meaning Heading",
             "name": "section_meaning_heading",
             "type": "text",
-            "default_value": "Long Before the Stages, There Was the Search for <em class=\"text-gold\">Meaning.</em>"
+            "default_value": "Long Before the Stages, There Was the Search for <em class=\"text-gold italic\">Meaning.</em>"
         },
         {
             "key": "field_section_meaning_text",
@@ -180,7 +180,7 @@
             "label": "Section Voice Heading",
             "name": "section_voice_heading",
             "type": "text",
-            "default_value": "Your Voice Carries More Than Information."
+            "default_value": "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.</em>"
         },
         {
             "key": "field_section_voice_text",
@@ -189,6 +189,14 @@
             "type": "wysiwyg",
             "tabs": "visual",
             "media_upload": 0
+        },
+        {
+            "key": "field_section_voice_bg_image",
+            "label": "Section Voice Bg Image",
+            "name": "section_voice_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         }
     ],
     "location": [

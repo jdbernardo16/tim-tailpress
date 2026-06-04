@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "The <em class=\"text-gold\">Legacy</em>"
+            "default_value": "The <em class=\"text-gold italic\">Legacy</em>"
         },
         {
             "key": "field_section_hero_subtitle",
@@ -42,6 +42,14 @@
             "label": "Section Message Text",
             "name": "section_message_text",
             "type": "textarea"
+        },
+        {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_section_two_ways_heading",

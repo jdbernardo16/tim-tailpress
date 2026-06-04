@@ -8,12 +8,17 @@
 
 $heading = get_field('section_form_heading') ?: '<em class="text-gold italic">Begin</em> the Conversation.';
 $text = get_field('section_form_text') ?: '<p>A private conversation to explore your leadership, organization, and the next stage of growth for your team and business.</p>';
+$form_bg_image_id = get_field('section_form_bg_image');
 ?>
 <section class="relative px-4 sm:px-6 lg:px-8 pb-24" id="register">
     <div class="relative max-w-[1360px] mx-auto bg-navy rounded-[20px] overflow-hidden">
         <!-- Background texture -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-registration-bg.webp" alt="" aria-hidden="true">
+            <?php if ($form_bg_image_id): ?>
+                <?= wp_get_attachment_image($form_bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+            <?php else: ?>
+                <img class="w-full h-full object-cover" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/vault-registration-bg.webp" alt="" aria-hidden="true">
+            <?php endif; ?>
         </div>
 
         <!-- Decorative blurred ellipses -->

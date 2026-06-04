@@ -6,7 +6,8 @@
  * @package TailPress
  */
 
-$heading = get_field('section_registration_heading') ?: "<em>Reserve</em> Your Seat";
+$heading = get_field('section_registration_heading') ?: "<em class=\"text-gold italic\">Reserve</em> Your Seat";
+$registration_bg_image_id = get_field('section_registration_bg_image');
 $text = get_field('section_registration_text') ?: "Join Joanna live for an honest conversation around story, leadership, visibility, and the message you haven't fully said yet.\n\nNo performance. No pressure. <strong>Just real conversation.</strong>";
 $btn_text = get_field('section_registration_btn_text') ?: "REGISTER FOR THE VAULT";
 $btn_url = get_field('section_registration_btn_url');
@@ -17,7 +18,11 @@ $text_paragraphs = explode("\n\n", $text);
     <div class="relative max-w-[1360px] mx-auto bg-navy rounded-[20px] overflow-hidden">
         <!-- Background texture -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-registration-bg.webp" alt="" aria-hidden="true">
+            <?php if ($registration_bg_image_id): ?>
+                <?= wp_get_attachment_image($registration_bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+            <?php else: ?>
+                <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-registration-bg.webp" alt="" aria-hidden="true">
+            <?php endif; ?>
         </div>
 
         <!-- Decorative blurred ellipses -->

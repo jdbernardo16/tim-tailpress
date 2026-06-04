@@ -30,9 +30,6 @@ $text = get_field('section_you_know_text');
                 <div class="mt-6 font-garet text-lg text-dark-text leading-normal space-y-4">
                     <?php if ($text): ?>
                         <?= wpautop($text) ?>
-                    <?php else: ?>
-                        <p>But when it's time to speak… <br><br>You over-explain. You soften your truth. You lose the part people were supposed to feel.</p>
-                        <p>Because the words were never the problem.<br><br>The disconnect came long before the conversation did.</p>
                     <?php endif; ?>
                 </div>
             </div>

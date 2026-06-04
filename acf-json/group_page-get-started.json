@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "Get <em class=\"text-gold\">Started</em>"
+            "default_value": "Choose Where You Are."
         },
         {
             "key": "field_section_hero_text",

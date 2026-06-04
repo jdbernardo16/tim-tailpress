@@ -1,14 +1,8 @@
 <?php
 
-$heading = get_field('section_what_is_heading') ?: "What is the <em>Vault?</em>";
+$heading = get_field('section_what_is_heading');
 $what_is_text = get_field('section_what_is_text');
 $what_is_image_id = get_field('section_what_is_image');
-
-$paragraphs = array(
-    "The Vault is Joanna's free live conversation space for women exploring voice, visibility, leadership, and emotional truth.",
-    "A place for honest reflection, real questions, and the conversations that usually happen after the stage lights go down.",
-    "No performance. No pressure. Just space to reconnect with what's real.",
-);
 ?>
 <section class="bg-canvas py-24 lg:py-28">
     <div class="max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-8">

@@ -127,6 +127,8 @@ class TimTailPress_Seeder
 
     public function seed_all($force = true)
     {
+        $this->cleanup_media();
+
         // Clear ACF caches to ensure fresh reads
         if (function_exists('acf_get_store')) {
             $store = acf_get_store('fields');
@@ -290,7 +292,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
 
         $this->update_acf_field('section_vault_heading', 'Stay Inside the <span class="text-gold-section italic font-semibold">Conversation.</span>', $page_id, $force);
         $this->update_acf_field('section_vault_text', 'Inside The Vault, Joanna shares live reflections, speaking insights, leadership conversations, and the moments still unfolding behind the work.', $page_id, $force);
-        $this->update_acf_field('section_vault_image', $this->upload_image('the-vault.webp'), $page_id, $force);
+        $this->update_acf_field('section_vault_image', $this->upload_image('the-vault-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_vault_btn_text', 'Enter The Vault', $page_id, $force);
         $this->update_acf_field('section_vault_btn_url', '/the-vault/', $page_id, $force);
 
@@ -358,6 +360,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
 
         $this->update_acf_field('section_voice_heading', "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.</em>", $page_id, $force);
         $this->update_acf_field('section_voice_text', 'It carries your story. Your leadership.<br>The life that shaped you.', $page_id, $force);
+        $this->update_acf_field('section_voice_bg_image', $this->upload_image('voice-bg.webp'), $page_id, $force);
     }
 
     private function seed_4_session($force = false)
@@ -390,6 +393,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_text', '<p><span class="font-flatline font-semibold text-5xl md:text-6xl text-gold-section italic">$8,000</span></p><p class="font-garet text-base text-navy">4 Private Sessions</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'BOOK PRIVATE TRAINING', $page_id, $force);
         $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
     private function seed_be_remembered($force = false)
@@ -404,6 +408,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('be-remembered-1.webp'), $page_id, $force);
         $this->update_acf_field('section_message_heading', 'Your Work Has Impact.<br>Your <em class="text-gold italic">Legacy</em> Doesn&rsquo;t Have a Framework.', $page_id, $force);
         $this->update_acf_field('section_message_text', '<p>You&#8217;ve built a meaningful career but:</p><ul><li>your influence feels tied only to your presence</li><li>succession planning has never been formalized</li><li>your work, voice, and wealth are not yet aligned</li><li>there is no clear structure for what you&#8217;ll leave behind</li></ul><p>You don&#8217;t need more success.</p><p>You need a legacy blueprint others can carry forward.</p>', $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('be-remembered-1.webp'), $page_id, $force);
         $this->update_acf_field('section_build_heading', 'What You <em class="text-gold italic">Build</em>', $page_id, $force);
         $this->update_acf_field('section_build_items', [
             ['item_heading' => 'A clear legacy blueprint'],
@@ -426,8 +431,10 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_text', '<p>Starts at</p><p>$1M</p><p>Private Legacy Advisory</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'BOOK DISCOVERY CALL - FREE', $page_id, $force);
         $this->update_acf_field('section_cta_btn_url', '#register', $page_id, $force);
+        $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_form_heading', '<em class="text-gold italic">Begin</em> the Conversation.', $page_id, $force);
         $this->update_acf_field('section_form_text', '<p>A private conversation to explore your legacy, succession, voice, and the long-term impact you want your work to carry forward.</p>', $page_id, $force);
+        $this->update_acf_field('section_form_bg_image', $this->upload_image('vault-registration-bg.webp'), $page_id, $force);
     }
 
     private function seed_breakthrough_session($force = false)
@@ -472,6 +479,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('build-my-team1.webp'), $page_id, $force);
         $this->update_acf_field('section_message_heading', 'Your Business<br>Has Grown. Your <em class="text-gold italic">Leadership</em> Hasn&rsquo;t.', $page_id, $force);
         $this->update_acf_field('section_message_text', '<p>You&#8217;ve built real success but internally:</p><ul><li>communication becomes inconsistent</li><li>leadership depends too heavily on you</li><li>trust weakens as teams scale</li><li>culture becomes harder to sustain</li></ul><p>You don&#8217;t need more management.</p><p>You need a leadership framework people can actually operate through.</p>', $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('build-my-team1.webp'), $page_id, $force);
         $this->update_acf_field('section_build_heading', 'What You <em class="text-gold italic">Build</em>', $page_id, $force);
         $this->update_acf_field('section_build_text', '<p>You create psychological safety and trust inside your team and a repeatable system others can lead through.</p>', $page_id, $force);
         $this->update_acf_field('section_build_btn_text', 'SCALE MY BUSINESS', $page_id, $force);
@@ -493,10 +501,12 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_distinct_image', $this->upload_image('build-my-team2.webp'), $page_id, $force);
         $this->update_acf_field('section_form_heading', '<em class="text-gold italic">Begin</em> the Conversation.', $page_id, $force);
         $this->update_acf_field('section_form_text', '<p>A private conversation to explore your leadership, organization, and the next stage of growth for your team and business.</p>', $page_id, $force);
+        $this->update_acf_field('section_form_bg_image', $this->upload_image('vault-registration-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_cta_heading', 'Strong Organizations <em class="text-gold italic">Are Built Through Trust.</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', '<p>Starting at</p><p>$250,000</p><p>Private Leadership Advisory</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'BOOK DISCOVERY CALL - FREE', $page_id, $force);
         $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
     private function seed_events($force = false)
@@ -594,6 +604,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         }
         $this->update_acf_field('section_hero_heading', 'Start the<br><em class="text-gold italic">Conversation.</em>', $page_id, $force);
         $this->update_acf_field('section_hero_text', 'Tell us where you are, what you\'re exploring, or what feels most aligned right now.', $page_id, $force);
+        $this->update_acf_field('section_hero_bg_image', $this->upload_image('generic-bg.webp'), $page_id, $force);
     }
 
     private function seed_master_my_message($force = false)
@@ -608,6 +619,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('master1.webp'), $page_id, $force);
         $this->update_acf_field('section_message_heading', 'Your Work is Strong.<br>Your <em class="text-gold italic">Positioning</em> Isn&rsquo;t.', $page_id, $force);
         $this->update_acf_field('section_message_text', '<p>You&#8217;ve built real experience but:</p><ul><li>people still don&#8217;t clearly understand what makes you different</li><li>your message sounds too similar to others in your space</li><li>your expertise isn&#8217;t translating into authority</li><li>your ideas are respected, but not remembered</li></ul><p>You don&#8217;t lack success.</p><p>You haven&#8217;t fully claimed your differentiator yet.</p>', $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('master1.webp'), $page_id, $force);
         $this->update_acf_field('section_build_heading', 'What You <em class="text-gold italic">Build</em>', $page_id, $force);
         $this->update_acf_field('section_build_items', [
             ['item_heading' => 'A refined, repeatable signature message'],
@@ -620,7 +632,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_build_btn_text', 'CREATE MY KEYNOTE', $page_id, $force);
         $this->update_acf_field('section_build_btn_url', '/inquiry/', $page_id, $force);
         $this->update_acf_field('section_distinct_heading', 'This is Where Your <em class="font-normal">Message</em> Becomes <em class="text-gold italic">Distinct.</em>', $page_id, $force);
-        $this->update_acf_field('section_distinct_image', $this->upload_image('master1.webp'), $page_id, $force);
+        $this->update_acf_field('section_distinct_image', $this->upload_image('master2.webp'), $page_id, $force);
         $this->update_acf_field('section_distinct_items', [
             ['item_heading' => 'Message Architecture', 'item_text' => 'Build a message framework that supports every communication you\u2019ll ever make.'],
             ['item_heading' => 'Authority Positioning', 'item_text' => 'Position yourself as the go-to authority in your space.'],
@@ -630,6 +642,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_text', '<p>Starting at</p><p><span style="text-decoration: line-through;">$40,000</span> $25,000</p><p>Keynote, positioning, and leadership refinement</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'CREATE MY KEYNOTE', $page_id, $force);
         $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
     private function seed_million_dollar_message($force = false)
@@ -663,7 +676,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_signature_subtitle', 'The primary transformational experiences inside the True Influence Method&trade; — designed for different stages of leadership, visibility, authority, and long-term impact.', $page_id, $force);
         $this->update_acf_field('section_signature_items', [
             ['item_title' => 'Tell Your Story', 'item_description' => 'Reconnect with the defining moments behind your leadership, voice, and influence.', 'item_price_label' => '', 'item_price' => '$3,200', 'item_cta' => 'FIND MY MESSAGE', 'item_url' => home_url('/the-speaker/')],
-            ['item_title' => 'Move the Room', 'item_description' => 'Build a signature talk and message people trust, remember, and follow.', 'item_price_label' => '', 'item_price' => '$12,000', 'item_cta' => 'TAKE THE STAGE', 'item_url' => home_url('/the-speaker/')],
+            ['item_title' => 'Move the Room', 'item_description' => 'Build a signature talk and message people trust, remember, and follow.', 'item_price_label' => '', 'item_price' => '$12,000', 'item_cta' => 'TAKE THE STAGE', 'item_url' => home_url('/speaker-cohort/')],
             ['item_title' => 'Master My Message', 'item_description' => 'Refine your positioning, authority, and keynote-level message.', 'item_price_label' => 'Starts at', 'item_price' => '$25,000', 'item_cta' => 'CREATE MY KEYNOTE', 'item_url' => home_url('/master-my-message/')],
             ['item_title' => 'Build My Team', 'item_description' => 'Scale communication, trust, and leadership across your organization.', 'item_price_label' => 'Starts at', 'item_price' => '$250,000', 'item_cta' => 'SCALE MY BUSINESS', 'item_url' => home_url('/build-my-team/')],
             ['item_title' => 'Be Remembered', 'item_description' => 'Create work, leadership, and influence designed to outlast you.', 'item_price_label' => 'Starts at', 'item_price' => '$1M', 'item_cta' => 'SCALE MY BUSINESS', 'item_url' => home_url('/be-remembered/')],
@@ -673,7 +686,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
             ['item_title' => 'The Vault', 'item_description' => 'Live conversations with Joanna around story, visibility, leadership, and emotional truth.', 'item_price' => 'FREE', 'item_cta' => 'RESERVE MY SEAT', 'item_url' => home_url('/the-vault/')],
             ['item_title' => 'Million Dollar Message', 'item_description' => 'A 7-minute training to uncover the defining message behind your work.', 'item_price' => '$29', 'item_cta' => 'GET THE TRAINING', 'item_url' => home_url('/million-dollar-message/')],
             ['item_title' => '4-Session Training Package', 'item_description' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_cta' => 'BOOK PRIVATE TRAINING', 'item_url' => home_url('/inquiry/')],
-            ['item_title' => 'Breakthrough Session', 'item_description' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_cta' => 'BOOK A BREAKTHROUGH SESSION', 'item_url' => home_url('/inquiry/')],
+            ['item_title' => 'Breakthrough Session', 'item_description' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_cta' => 'BOOK A BREAKTHROUGH SESSION', 'item_url' => home_url('/breakthrough-session/')],
         ], $page_id, $force);
         $this->update_acf_field('section_cta_heading', 'Not Sure Where<br>to <em class="text-gold italic">Begin?</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', 'We\'ll help guide you toward the experience, retreat, or next step that feels most aligned with where you are right now.', $page_id, $force);
@@ -700,26 +713,31 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_video_video_url', 'https://www.youtube.com/watch?v=06QKEonomv0', $page_id, $force);
         $this->update_acf_field('section_video_text', "A glimpse into Joanna's presence, storytelling, and emotional leadership in live speaking environments.", $page_id, $force);
         $this->update_acf_field('section_credibility_heading', '<em class="text-gold italic">Where</em> She\'s Been.', $page_id, $force);
+        $this->update_acf_field('section_credibility_featured', [
+            ['item_image' => $this->upload_image('forbes.webp'), 'item_badge' => 'KEYNOTE', 'item_title' => "Forbes -\nWhy Fostering Belonging Is Key For Supporting Women Investors", 'item_date' => 'March 2026'],
+            ['item_image' => $this->upload_image('forbes2.webp'), 'item_badge' => 'KEYNOTE', 'item_title' => "Harvard Alumni -\nAnnual Harvard Alumni for Global Women&#8217;s Empowerment", 'item_date' => 'Apr 2026'],
+            ['item_image' => $this->upload_image('forbes3.webp'), 'item_badge' => 'PANEL', 'item_title' => "WILDx -\nThe WILDx Experience: A stage for truth and transformation", 'item_date' => 'Dec 2025'],
+        ], $page_id, $force);
         $this->update_acf_field('section_credibility_items', [
-            ['item_heading' => 'Makers Bar Interview — Social Entrepreneur Thought Leader', 'item_text' => '2025'],
-            ['item_heading' => 'Speak & Rise: Women Speakers Leading From The Stage', 'item_text' => 'Jan 2026'],
-            ['item_heading' => 'Speak & Rise: Executive Leading from the Stage', 'item_text' => 'Feb 2026'],
-            ['item_heading' => 'Annual Harvard Alumni for Global Women\'s Empowerment', 'item_text' => 'Apr 2026'],
-            ['item_heading' => 'Women in Global Leadership Podcast', 'item_text' => 'Nov 2025'],
-            ['item_heading' => 'GCU Investment Club Keynote', 'item_text' => 'Jan 2026'],
-            ['item_heading' => 'Top Talent Hollywood Keynote', 'item_text' => 'May 2026'],
-            ['item_heading' => 'The WILDx Experience — Stage for Truth & Transformation', 'item_text' => 'Dec 2025'],
-            ['item_heading' => 'President of NAWBO Phoenix', 'item_text' => '2025'],
-            ['item_heading' => 'She Means Business Magazine Feature', 'item_text' => 'Jan 2026'],
-            ['item_heading' => 'Phoenix Business Journal\'s Mentoring Monday', 'item_text' => 'Feb 2026'],
-            ['item_heading' => '2nd Annual Scale Up Symposium', 'item_text' => 'Apr 2026'],
+            ['item_badge' => 'PODCAST', 'item_heading' => 'Makers Bar Interview — Social Entrepreneur Thought Leader', 'item_date' => '2025'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'Speak & Rise: Women Speakers Leading From The Stage', 'item_date' => 'Jan 2026'],
+            ['item_badge' => 'PANEL', 'item_heading' => 'Speak & Rise: Executive Leading from the Stage', 'item_date' => 'Feb 2026'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'Annual Harvard Alumni for Global Women\'s Empowerment', 'item_date' => 'Apr 2026'],
+            ['item_badge' => 'PODCAST', 'item_heading' => 'Women in Global Leadership Podcast', 'item_date' => 'Nov 2025'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'GCU Investment Club Keynote', 'item_date' => 'Jan 2026'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'Top Talent Hollywood Keynote', 'item_date' => 'May 2026'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'The WILDx Experience — Stage for Truth & Transformation', 'item_date' => 'Dec 2025'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'President of NAWBO Phoenix', 'item_date' => '2025'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'She Means Business Magazine Feature', 'item_date' => 'Jan 2026'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => 'Phoenix Business Journal\'s Mentoring Monday', 'item_date' => 'Feb 2026'],
+            ['item_badge' => 'KEYNOTE', 'item_heading' => '2nd Annual Scale Up Symposium', 'item_date' => 'Apr 2026'],
         ], $page_id, $force);
         $this->update_acf_field('section_experiences_heading', '<em class="text-gold italic">Conversations</em> That Stay With People.', $page_id, $force);
         $this->update_acf_field('section_experiences_subtitle', 'Three experiences, three formats — each designed to move a room differently.', $page_id, $force);
         $this->update_acf_field('section_experiences_items', [
-            ['item_image' => '', 'item_title' => 'Speak Your Story. Create Influence.', 'item_description' => 'Helping leaders reconnect with the lived experiences that shape trust, influence, and emotional authority.'],
-            ['item_image' => '', 'item_title' => 'The Moment That Made You.', 'item_description' => 'A reflective conversation around identity, truth, visibility, and the defining moments behind leadership.'],
-            ['item_image' => '', 'item_title' => 'Influence Is a Human Experience.', 'item_description' => 'Why people trust emotional truth before strategy, information, or performance.'],
+            ['item_title' => 'Speak Your Story. Create Influence.', 'item_length' => '45&ndash;60 min', 'item_ideal' => 'Founders, executives, and leadership events', 'item_description' => 'Helping leaders reconnect with the lived experiences that shape trust, influence, and emotional authority.', 'item_btn_url' => home_url('/inquiry/')],
+            ['item_title' => 'The Moment That Made You.', 'item_length' => '30&ndash;45 min', 'item_ideal' => "Women&#8217;s leadership and transformational conversations", 'item_description' => 'A reflective conversation around identity, truth, visibility, and the defining moments behind leadership.', 'item_btn_url' => home_url('/inquiry/')],
+            ['item_title' => 'Influence Is a Human Experience.', 'item_length' => '20&ndash;30 min', 'item_ideal' => 'TED-style events and keynote openings', 'item_description' => 'Why people trust emotional truth before strategy, information, or performance.', 'item_btn_url' => home_url('/inquiry/')],
         ], $page_id, $force);
         $this->update_acf_field('section_book_heading', 'Tell us About Your <em class="text-gold italic">Event.</em>', $page_id, $force);
         $this->update_acf_field('section_book_text', "Share a few details about your audience, event format, and what you want the room to experience. Joanna's team will review and follow up with the next best step.", $page_id, $force);
@@ -747,6 +765,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('joanna-profile.webp'), $page_id, $force);
         $this->update_acf_field('section_message_heading', 'You Know Your Work. But Your Message Still <em class="text-gold italic">Isn\'t Landing.</em>', $page_id, $force);
         $this->update_acf_field('section_message_text', '<p>You:</p><ul><li>ramble instead of landing your point</li><li>over-explain before saying anything clear</li><li>walk away thinking: &ldquo;That&rsquo;s not what I meant to say.&rdquo;</li></ul><p>You don&#8217;t lack experience.</p><p>You haven&#8217;t structured your message to move people yet.</p>', $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('move-the-room1.webp'), $page_id, $force);
         $this->update_acf_field('section_build_heading', 'What You <em class="text-gold italic">Build</em><br>Inside the Cohort', $page_id, $force);
         $this->update_acf_field('section_build_items', [
             ['item_icon' => '', 'item_heading' => 'Your Signature Talk', 'item_text' => 'Craft a talk that lands with power and precision.'],
@@ -757,6 +776,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_build_btn_text', 'JOIN THE COHORT', $page_id, $force);
         $this->update_acf_field('section_build_btn_url', '/inquiry/', $page_id, $force);
         $this->update_acf_field('section_speaking_heading', 'This is <em class="font-normal text-gold italic">Not</em> Just<br>Speaking Training.', $page_id, $force);
+        $this->update_acf_field('section_speaking_image', $this->upload_image('move-the-room2.webp'), $page_id, $force);
         $this->update_acf_field('section_speaking_items', [
             ['item_heading' => 'Message Development', 'item_text' => 'Craft a message that lands with power and precision.'],
             ['item_heading' => 'Stage Presence', 'item_text' => 'Develop the presence that commands attention and builds trust.'],
@@ -766,7 +786,8 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_heading', 'Some People Know Their Work. Others Can Others <em class="text-gold italic">Move a Room</em> With it.', $page_id, $force);
         $this->update_acf_field('section_cta_text', '<p>Starting at</p><p><span style="text-decoration: line-through;">$20,000</span> $12,000</p><p>Featured retreat speaking opportunity included</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'TAKE THE STAGE', $page_id, $force);
-        $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_btn_url', '/speaker-cohort/', $page_id, $force);
+        $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
     private function seed_success_stories($force = false)
@@ -812,6 +833,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         }
         $this->update_acf_field('section_hero_heading', 'Thank You', $page_id, $force);
         $this->update_acf_field('section_hero_text', 'Your message work begins now.', $page_id, $force);
+        $this->update_acf_field('section_hero_bg_image', $this->upload_image('generic-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_testimonials_heading', 'People Remember What <em class="text-gold italic">Felt True.</em>', $page_id, $force);
         $this->update_acf_field('section_testimonials_items', [
             ['item_quote' => 'Working with Joanna has been nothing short of life-changing.', 'item_author' => 'A. Robinson', 'item_title' => 'Executive Leader'],
@@ -826,22 +848,22 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         if (! $page_id) {
             return;
         }
-        $this->update_acf_field('section_hero_heading', "The <em>Authority</em>", $page_id, $force);
+        $this->update_acf_field('section_hero_heading', 'The <em class="text-gold italic">Authority</em>', $page_id, $force);
         $this->update_acf_field('section_hero_subtitle', "This path is designed for leaders ready to refine how they communicate, strengthen their authority, and turn their experience into a message people immediately understand, remember, and follow.", $page_id, $force);
         $this->update_acf_field('section_hero_bg_image', $this->upload_image('general-bg.webp'), $page_id, $force);
-        $this->update_acf_field('section_hero_profile_image', $this->upload_image('joanna-profile.webp'), $page_id, $force);
-        $this->update_acf_field('section_message_heading', "Be the <em>Authority</em> Through Your Story", $page_id, $force);
-        $this->update_acf_field('section_message_text', "You need: a message that lands clearly, emotional connection, not overexplaining, language people can remember and repeat. That's where authority begins.", $page_id, $force);
-        $this->update_acf_field('section_two_ways_heading', "Two Ways <em>Forward</em>", $page_id, $force);
+        $this->update_acf_field('section_hero_profile_image', $this->upload_image('the-authority.webp'), $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('the-authority.webp'), $page_id, $force);
+        $this->update_acf_field('section_message_heading', 'Be the <em class="text-gold italic">Authority</em> Through Your Story', $page_id, $force);
+        $this->update_acf_field('section_message_text', "That's where authority begins.", $page_id, $force);
+        $this->update_acf_field('section_two_ways_heading', 'Two Ways <em class="text-gold italic">Forward</em>', $page_id, $force);
         $this->update_acf_field('section_two_ways_items', [
-            ['item_heading' => 'Move the Room &mdash; My Signature Talk', 'item_text' => 'Your story becomes a structured talk that moves people.', 'item_btn_text' => 'TAKE THE STAGE', 'item_btn_url' => home_url('/the-speaker/')],
-            ['item_heading' => 'Master My Message &mdash; Keynote or TEDx', 'item_text' => 'This is where you become known.', 'item_btn_text' => 'CREATE MY KEYNOTE', 'item_btn_url' => home_url('/master-my-message/')],
+            ['item_heading' => 'Move the Room &mdash; My Signature Talk', 'item_text' => 'Your story becomes a structured talk that moves people.', 'item_price' => '$12,000', 'item_price_label' => '', 'item_includes' => "A 7-minute signature talk\nA clear problem \u2192 solution message\nEmotional connection points + defined CTA\nLive coaching with Joanna", 'item_btn_text' => 'TAKE THE STAGE', 'item_btn_url' => home_url('/the-speaker/')],
+            ['item_heading' => 'Master My Message &mdash; Keynote or TEDx', 'item_text' => 'This is where you become known.', 'item_price' => '$25,000', 'item_price_label' => 'Starts at', 'item_includes' => "A refined, repeatable signature message\nYour thought-leader perspective\nYour \"special sauce\" (what you do differently)\nA one-liner people can repeat", 'item_btn_text' => 'CREATE MY KEYNOTE', 'item_btn_url' => home_url('/master-my-message/')],
         ], $page_id, $force);
-        $this->update_acf_field('section_work_heading', "Work 1:1 with Joanna.", $page_id, $force);
+        $this->update_acf_field('section_work_heading', 'Work 1:1 with Joanna.', $page_id, $force);
         $this->update_acf_field('section_work_items', [
-            ['item_heading' => 'Discovery', 'item_text' => 'We begin by understanding where you are and where you want to go.', 'item_image' => $this->upload_image('work-discovery.webp')],
-            ['item_heading' => 'Development', 'item_text' => 'Together, we build your message and authority position.', 'item_image' => $this->upload_image('work-development.webp')],
-            ['item_heading' => 'Delivery', 'item_text' => 'You step into your message with confidence and power.', 'item_image' => $this->upload_image('work-delivery.webp')],
+            ['item_heading' => 'Breakthrough Session', 'item_text' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_btn_text' => 'BOOK A BREAKTHROUGH SESSION', 'item_btn_url' => home_url('/inquiry/')],
+            ['item_heading' => '4-Session Training Package', 'item_text' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_btn_text' => 'BOOK PRIVATE TRAINING', 'item_btn_url' => home_url('/inquiry/')],
         ], $page_id, $force);
     }
 
@@ -851,13 +873,14 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         if (! $page_id) {
             return;
         }
-        $this->update_acf_field('section_hero_heading', "The <em>Legacy</em>", $page_id, $force);
+        $this->update_acf_field('section_hero_heading', 'The <em class="text-gold italic">Legacy</em>', $page_id, $force);
         $this->update_acf_field('section_hero_subtitle', "This path is designed for leaders ready to strengthen their authority, refine how they communicate, and build a message that people immediately understand, remember, and trust.", $page_id, $force);
         $this->update_acf_field('section_hero_bg_image', $this->upload_image('general-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('joanna-profile.webp'), $page_id, $force);
-        $this->update_acf_field('section_message_heading', "Make an <em>Impact</em> With Your Voice", $page_id, $force);
+        $this->update_acf_field('section_message_image', $this->upload_image('the-legacy.webp'), $page_id, $force);
+        $this->update_acf_field('section_message_heading', 'Make an <em class="text-gold italic">Impact</em> With Your Voice', $page_id, $force);
         $this->update_acf_field('section_message_text', "You need: a message that lands clearly, emotional connection, not overexplaining, language people can remember and repeat. That's where authority begins.", $page_id, $force);
-        $this->update_acf_field('section_two_ways_heading', "Two Ways <em>Forward</em>", $page_id, $force);
+        $this->update_acf_field('section_two_ways_heading', 'Two Ways <em class="text-gold italic">Forward</em>', $page_id, $force);
         $this->update_acf_field('section_two_ways_items', [
             ['item_heading' => 'Build My Team &mdash; My Scaling Strategy', 'item_text' => 'Your message becomes a system.', 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/build-my-team/')],
             ['item_heading' => 'Be Remembered &mdash; My Legacy Framework', 'item_text' => 'Your work outlives you.', 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/be-remembered/')],
@@ -895,13 +918,15 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         if (! $page_id) {
             return;
         }
-        $this->update_acf_field('section_hero_heading', "The <em>Vault</em>", $page_id, $force);
+        $this->update_acf_field('section_hero_heading', "The <em class=\"text-gold italic\">Vault</em>", $page_id, $force);
         $this->update_acf_field('section_hero_subtitle', "A free live session with Joanna &mdash; <strong>June 5, 9:00&ndash;10:00 AM PST</strong>\n\nThis is your invitation to sit with Joanna in real time. No slides. No sales pitch. Just a direct conversation about the message you've been carrying and haven't fully said yet. Bring a question. Leave with clarity.", $page_id, $force);
         $this->update_acf_field('section_hero_bg_image', $this->upload_image('vault-hero-bg.webp'), $page_id, $force);
-        $this->update_acf_field('section_what_is_heading', "What is the <em>Vault?</em>", $page_id, $force);
+        $this->update_acf_field('section_hero_image', $this->upload_image('vault-hero-joanna.webp'), $page_id, $force);
+        $this->update_acf_field('section_what_is_heading', "What is the <em class=\"text-gold italic\">Vault?</em>", $page_id, $force);
         $this->update_acf_field('section_what_is_text', '<p>The Vault is Joanna\'s free live conversation space for women exploring voice, visibility, leadership, and emotional truth.</p><p>A place for honest reflection, real questions, and the conversations that usually happen after the stage lights go down.</p><p>No performance. No pressure. Just space to reconnect with what\'s real.</p>', $page_id, $force);
         $this->update_acf_field('section_what_is_image', $this->upload_image('vault-what-is.webp'), $page_id, $force);
         $this->update_acf_field('section_what_happens_heading', "What <em>Happens</em> Inside", $page_id, $force);
+        $this->update_acf_field('section_what_happens_image', $this->upload_image('vault-what-happens.webp'), $page_id, $force);
         $this->update_acf_field('section_what_happens_items', [
             ['item_heading' => 'Live conversation with Joanna', 'item_text' => ''],
             ['item_heading' => 'Real-time reflection and guidance', 'item_text' => ''],
@@ -913,6 +938,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_registration_text', '<p>Join Joanna live for an honest conversation around story, leadership, visibility, and the message you haven\'t fully said yet.</p><p>No performance. No pressure. <strong>Just real conversation.</strong></p>', $page_id, $force);
         $this->update_acf_field('section_registration_btn_text', "REGISTER FOR THE VAULT", $page_id, $force);
         $this->update_acf_field('section_registration_btn_url', '', $page_id, $force);
+        $this->update_acf_field('section_registration_bg_image', $this->upload_image('vault-registration-bg.webp'), $page_id, $force);
     }
 
     /**
@@ -1077,6 +1103,19 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
 
         WP_CLI::success("Created {$created} page(s). Run `wp tim-tailpress seed --force` to populate ACF fields.");
     }
+
+    private function cleanup_media()
+    {
+        $attachments = get_posts([
+            'post_type' => 'attachment',
+            'posts_per_page' => -1,
+            'post_status' => 'any',
+            'fields' => 'ids',
+        ]);
+        foreach ($attachments as $id) {
+            wp_delete_attachment($id, true);
+        }
+    }
 }
 
 if (defined('WP_CLI') && WP_CLI) {
@@ -1134,3 +1173,4 @@ add_action('admin_menu', function () {
         }
     );
 });
+

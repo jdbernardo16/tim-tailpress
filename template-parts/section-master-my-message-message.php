@@ -22,6 +22,14 @@ $text = get_field('section_message_text');
                     <?= $text ?>
                 <?php endif; ?>
             </div>
+
+            <!-- Image -->
+            <div class="w-full lg:w-1/2">
+                <?php $image_id = get_field('section_message_image'); ?>
+                <?php if ($image_id): ?>
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[450px] object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

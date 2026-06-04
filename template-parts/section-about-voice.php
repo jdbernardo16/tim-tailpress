@@ -7,16 +7,15 @@
 
 $heading = get_field('section_voice_heading') ?: "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.</em>";
 $text = get_field('section_voice_text');
+$bg_image_id = get_field('section_voice_bg_image');
 ?>
 
 <section class="relative mx-10 rounded-b-3xl bg-gold-section overflow-hidden -translate-y-5">
     <!-- Background texture -->
     <div class="absolute inset-0">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-            alt=""
-            class="w-full h-full object-cover"
-            aria-hidden="true">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+        <?php endif; ?>
     </div>
 
     <!-- Decorative deep blue ellipses -->

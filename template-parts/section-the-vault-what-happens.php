@@ -6,22 +6,17 @@
  * @package TailPress
  */
 
-$heading = get_field('section_what_happens_heading') ?: "What <em>Happens</em> Inside";
-
-$items = array(
-    'Live conversation with Joanna',
-    'Real-time reflection and guidance',
-    'Message clarity and refinement',
-    'Honest conversations around visibility, leadership, and truth',
-    'A space to ask the question you haven&#8217;t fully said out loud yet',
-);
+$heading = get_field('section_what_happens_heading');
+$what_happens_image_id = get_field('section_what_happens_image');
 ?>
 <section class="bg-canvas pb-24 lg:pb-28">
     <div class="max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
             <!-- Image -->
             <div class="w-full lg:w-1/2 order-2 lg:order-1">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-what-happens.webp" alt="Joanna Horton McPherson" class="w-full h-[458px] object-cover rounded-[10px]">
+                <?php if ($what_happens_image_id): ?>
+                    <?= wp_get_attachment_image($what_happens_image_id, 'full', false, ['class' => 'w-full h-[458px] object-cover rounded-[10px]', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php endif; ?>
             </div>
 
             <!-- Text Content -->

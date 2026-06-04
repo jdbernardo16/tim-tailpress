@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "The Million Dollar <em class=\"text-gold\">Message</em>"
+            "default_value": "Your Message<br>Already <em class=\"text-gold italic\">Exists.</em>"
         },
         {
             "key": "field_section_hero_subtitle",

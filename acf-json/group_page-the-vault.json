@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "The <em class=\"text-gold\">Vault</em>"
+            "default_value": "The <em class=\"text-gold italic\">Vault</em>"
         },
         {
             "key": "field_section_hero_subtitle",
@@ -24,10 +24,19 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_section_hero_image",
+            "label": "Section Hero Image",
+            "name": "section_hero_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_what_is_heading",
             "label": "Section What Is Heading",
             "name": "section_what_is_heading",
-            "type": "text"
+            "type": "text",
+            "default_value": "What is the <em class=\"text-gold italic\">Vault?</em>"
         },
         {
             "key": "field_section_what_is_text",
@@ -49,7 +58,8 @@
             "key": "field_section_what_happens_heading",
             "label": "Section What Happens Heading",
             "name": "section_what_happens_heading",
-            "type": "text"
+            "type": "text",
+            "default_value": "What <em class=\"text-gold italic\">Happens</em> Inside"
         },
         {
             "key": "field_section_what_happens_items",
@@ -73,10 +83,19 @@
             ]
         },
         {
+            "key": "field_section_what_happens_image",
+            "label": "Section What Happens Image",
+            "name": "section_what_happens_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_registration_heading",
             "label": "Section Registration Heading",
             "name": "section_registration_heading",
-            "type": "text"
+            "type": "text",
+            "default_value": "<em class=\"text-gold italic\">Reserve</em> Your Seat"
         },
         {
             "key": "field_section_registration_text",
@@ -95,6 +114,14 @@
             "label": "Section Registration Btn Url",
             "name": "section_registration_btn_url",
             "type": "text"
+        },
+        {
+            "key": "field_section_registration_bg_image",
+            "label": "Section Registration Bg Image",
+            "name": "section_registration_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         }
     ],
     "location": [

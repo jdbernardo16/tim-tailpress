@@ -7,34 +7,6 @@
  */
 
 $heading = get_field('section_journey_heading') ?: 'The <em class="text-gold italic">Journey</em>';
-
-$fallback_phases = array(
-    array(
-        'title'   => 'Speak Your Story',
-        'text'    => 'Uncover the truth behind your experiences and learn to share it with courage.',
-        'image'   => 'phase-1.webp',
-    ),
-    array(
-        'title'   => 'Move the Room',
-        'text'    => 'Develop the presence and energy that captivates and inspires any audience.',
-        'image'   => 'phase-2.webp',
-    ),
-    array(
-        'title'   => 'Master My Message',
-        'text'    => 'Refine your core message so it resonates deeply and drives action.',
-        'image'   => 'phase-3.webp',
-    ),
-    array(
-        'title'   => 'Build My Team',
-        'text'    => 'Create a culture of trust, communication, and shared purpose.',
-        'image'   => 'phase-4.webp',
-    ),
-    array(
-        'title'   => 'Be Remembered',
-        'text'    => 'Leave a lasting impact that extends far beyond the moment you speak.',
-        'image'   => 'phase-5.webp',
-    ),
-);
 ?>
 
 <section class="relative bg-canvas">

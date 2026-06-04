@@ -6,7 +6,7 @@
  * @package TailPress
  */
 
-$heading = get_field('section_hero_heading') ?: "The <em>Vault</em>";
+$heading = get_field('section_hero_heading') ?: "The <em class=\"text-gold italic\">Vault</em>";
 $subtitle = get_field('section_hero_subtitle') ?: "A free live session with Joanna &mdash; <strong>June 5, 9:00&ndash;10:00 AM PST</strong>\n\nThis is your invitation to sit with Joanna in real time. No slides. No sales pitch. Just a direct conversation about the message you've been carrying and haven't fully said yet. Bring a question. Leave with clarity.";
 $bg_image_id = get_field('section_hero_bg_image');
 $subtitle_paragraphs = explode("\n\n", $subtitle);
@@ -55,7 +55,7 @@ $subtitle_paragraphs = explode("\n\n", $subtitle);
 
         <!-- Hero Image -->
         <div class="mt-12 flex justify-center">
-            <?php $hero_image_id = get_field('section_hero_bg_image'); ?>
+            <?php $hero_image_id = get_field('section_hero_image'); ?>
             <?php if ($hero_image_id): ?>
                 <?= wp_get_attachment_image($hero_image_id, 'full', false, ['class' => 'w-full max-w-md lg:max-w-lg h-auto object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
             <?php endif; ?>

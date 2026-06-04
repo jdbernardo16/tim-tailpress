@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "Speaker <em class=\"text-gold\">Cohort</em>"
+            "default_value": "Stop Explaining.<br><em class=\"text-gold italic\">Start Landing.</em>"
         },
         {
             "key": "field_section_hero_subtitle",
@@ -44,6 +44,14 @@
             "type": "textarea"
         },
         {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_section_build_heading",
             "label": "Section Build Heading",
             "name": "section_build_heading",
@@ -72,6 +80,14 @@
             "label": "Section Speaking Heading",
             "name": "section_speaking_heading",
             "type": "text"
+        },
+        {
+            "key": "field_section_speaking_image",
+            "label": "Section Speaking Image",
+            "name": "section_speaking_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_section_speaking_items",
@@ -117,6 +133,14 @@
             "label": "Section Cta Btn Url",
             "name": "section_cta_btn_url",
             "type": "text"
+        },
+        {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
         },
         {
             "key": "field_speaker_cohort_section_build_items",

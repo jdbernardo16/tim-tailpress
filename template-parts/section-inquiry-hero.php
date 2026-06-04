@@ -8,9 +8,17 @@
 
 $heading = get_field('section_hero_heading') ?: 'Start the<br><em class="text-gold italic">Conversation.</em>';
 $text = get_field('section_hero_text') ?: 'Tell us where you are, what you\'re exploring, or what feels most aligned right now.';
+$bg_image_id = get_field('section_hero_bg_image');
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[870px]">
+    <!-- Background texture -->
+    <div class="absolute inset-0">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '']) ?>
+        <?php endif; ?>
+    </div>
+
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-44 pb-20">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-[145px] items-start">
             <!-- Left Content -->

@@ -7,7 +7,7 @@
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
             "type": "text",
-            "default_value": "Ways to <em class=\"text-gold\">Work</em> with Joanna"
+            "default_value": "Ways to Work<br>with Joanna."
         },
         {
             "key": "field_section_hero_subtitle",
