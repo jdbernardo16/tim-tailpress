@@ -8,7 +8,7 @@
 ?>
 
 <footer class="bg-canvas">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-20 py-16">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16 pb-[max(1rem,env(safe-area-inset-bottom))]">
         <!-- Top section: Links + Newsletter -->
         <div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
             <!-- Column 1: All Offers -->
@@ -80,7 +80,7 @@
         <!-- Bottom section -->
         <div class="flex flex-col md:flex-row justify-between items-center gap-6">
             <!-- Left: Profile + Socials -->
-            <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-10">
                 <!-- Profile -->
                 <div class="flex items-center gap-2.5">
                     <img
@@ -121,12 +121,12 @@
         </div>
 
         <!-- Large Logo + Brand Name -->
-        <div class="mt-16 flex items-center gap-4 sm:gap-6">
+        <div class="mt-12 sm:mt-16 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             <img
                 src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/footer-logo-icon.webp"
                 alt="True Influence Method"
-                class="w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 object-contain flex-shrink-0">
-            <span class="font-flatline font-semibold text-navy text-5xl sm:text-6xl lg:text-8xl leading-none tracking-tight">
+                class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 object-contain flex-shrink-0">
+            <span class="font-flatline font-semibold text-navy text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-none tracking-tight">
                 THE TRUE<br>INFLUENCE METHOD
             </span>
         </div>
