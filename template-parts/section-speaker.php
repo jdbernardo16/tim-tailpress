@@ -15,7 +15,7 @@ $btn_text = get_field('section_speaker_btn_text') ?: 'Explore Speaker Cohort';
 $btn_url = get_field('section_speaker_btn_url') ?: '/speaker-cohort/';
 ?>
 
-<section class="relative mx-10 rounded-3xl overflow-hidden bg-navy">
+<section class="relative mx-4 sm:mx-10 rounded-3xl overflow-hidden bg-navy">
     <!-- Background image -->
     <?php if ($bg_image_id): ?>
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($bg_image_id, 'full')); ?>');"></div>
@@ -26,17 +26,17 @@ $btn_url = get_field('section_speaker_btn_url') ?: '/speaker-cohort/';
         <?= wp_get_attachment_image($watermark_image_id, 'full', false, ['class' => 'absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1360px] pointer-events-none select-none z-1', 'aria-hidden' => 'true']) ?>
     <?php endif; ?>
 
-    <div class="relative flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[564px]">
-        <!-- Left image -->
-        <div class="flex-1 flex justify-start items-end h-full">
+    <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 min-h-[480px] lg:h-[564px]">
+        <!-- Image -->
+        <div class="flex-1 flex justify-center lg:justify-start items-end h-64 lg:h-full order-1 lg:order-none">
             <?php if ($image_id): ?>
-                <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'h-full w-auto object-contain object-bottom', 'alt' => 'Joanna - Speaker Cohort']) ?>
+                <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'h-full w-auto object-contain object-bottom max-h-64 lg:max-h-none', 'alt' => 'Joanna - Speaker Cohort']) ?>
             <?php endif; ?>
         </div>
 
-        <!-- Right content -->
-        <div class="flex-1 max-w-[480px]">
-            <h2 class="font-flatline font-semibold text-white text-center" style="font-size: 56px; line-height: 1.1;">
+        <!-- Content -->
+        <div class="flex-1 max-w-[480px] text-center lg:text-left order-2 lg:order-none mt-8 lg:mt-0">
+            <h2 class="font-flatline font-semibold text-white text-4xl sm:text-5xl lg:text-[56px] leading-[1.1]">
                 <?= $heading ?>
             </h2>
             <p class="mt-6 text-body text-white">
