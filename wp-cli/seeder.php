@@ -392,7 +392,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_heading', 'Clarity Changes <em class="text-gold italic">How You Lead.</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', '<p><span class="font-flatline font-semibold text-5xl md:text-6xl text-gold-section italic">$8,000</span></p><p class="font-garet text-base text-navy">4 Private Sessions</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'BOOK PRIVATE TRAINING', $page_id, $force);
-        $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_btn_url', 'https://go.trueinfluencemethod.com/4-session-training-package', $page_id, $force);
         $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
@@ -453,7 +453,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_build_heading', 'What You <em class="text-gold italic">Leave</em> With', $page_id, $force);
         $this->update_acf_field('section_build_text', '<p>Sometimes the breakthrough is not learning something new. It&#8217;s finally seeing clearly what was already there.</p>', $page_id, $force);
         $this->update_acf_field('section_build_btn_text', 'BOOK A SESSION', $page_id, $force);
-        $this->update_acf_field('section_build_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_build_btn_url', 'https://go.trueinfluencemethod.com/breakthrough-session', $page_id, $force);
         $this->update_acf_field('section_build_items', [
             ['item_heading' => 'Clear direction on your message'],
             ['item_heading' => 'Greater emotional clarity and confidence'],
@@ -464,7 +464,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_heading', 'One Honest Conversation <em class="text-gold italic">Can Change Everything.</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', '<p>$2,000</p><p>Private Session</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'BOOK A BREAKTHROUGH SESSION', $page_id, $force);
-        $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_btn_url', 'https://go.trueinfluencemethod.com/breakthrough-session', $page_id, $force);
     }
 
     private function seed_build_my_team($force = false)
@@ -630,7 +630,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
             ['item_heading' => 'A defined point of view'],
         ], $page_id, $force);
         $this->update_acf_field('section_build_btn_text', 'CREATE MY KEYNOTE', $page_id, $force);
-        $this->update_acf_field('section_build_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_build_btn_url', 'https://go.trueinfluencemethod.com/master-my-message', $page_id, $force);
         $this->update_acf_field('section_distinct_heading', 'This is Where Your <em class="font-normal">Message</em> Becomes <em class="text-gold italic">Distinct.</em>', $page_id, $force);
         $this->update_acf_field('section_distinct_image', $this->upload_image('master2.webp'), $page_id, $force);
         $this->update_acf_field('section_distinct_items', [
@@ -641,7 +641,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_cta_heading', 'Some People Have <em class="font-normal">Expertise</em>. <em class="text-gold italic">Others Become Known For it.</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', '<p>Starting at</p><p><span style="text-decoration: line-through;">$40,000</span> $25,000</p><p>Keynote, positioning, and leadership refinement</p>', $page_id, $force);
         $this->update_acf_field('section_cta_btn_text', 'CREATE MY KEYNOTE', $page_id, $force);
-        $this->update_acf_field('section_cta_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_cta_btn_url', 'https://go.trueinfluencemethod.com/master-my-message', $page_id, $force);
         $this->update_acf_field('section_cta_bg_image', $this->upload_image('cta-bg.webp'), $page_id, $force);
     }
 
@@ -675,9 +675,9 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_signature_heading', 'Signature <em class="text-gold italic">Offers</em>', $page_id, $force);
         $this->update_acf_field('section_signature_subtitle', 'The primary transformational experiences inside the True Influence Method&trade; — designed for different stages of leadership, visibility, authority, and long-term impact.', $page_id, $force);
         $this->update_acf_field('section_signature_items', [
-            ['item_title' => 'Tell Your Story', 'item_description' => 'Reconnect with the defining moments behind your leadership, voice, and influence.', 'item_price_label' => '', 'item_price' => '$3,200', 'item_cta' => 'FIND MY MESSAGE', 'item_url' => home_url('/the-speaker/')],
+            ['item_title' => 'Tell Your Story', 'item_description' => 'Reconnect with the defining moments behind your leadership, voice, and influence.', 'item_price_label' => '', 'item_price' => '$3,200', 'item_cta' => 'FIND MY MESSAGE', 'item_url' => 'https://go.trueinfluencemethod.com/move-the-room'],
             ['item_title' => 'Move the Room', 'item_description' => 'Build a signature talk and message people trust, remember, and follow.', 'item_price_label' => '', 'item_price' => '$12,000', 'item_cta' => 'TAKE THE STAGE', 'item_url' => home_url('/speaker-cohort/')],
-            ['item_title' => 'Master My Message', 'item_description' => 'Refine your positioning, authority, and keynote-level message.', 'item_price_label' => 'Starts at', 'item_price' => '$25,000', 'item_cta' => 'CREATE MY KEYNOTE', 'item_url' => home_url('/master-my-message/')],
+            ['item_title' => 'Master My Message', 'item_description' => 'Refine your positioning, authority, and keynote-level message.', 'item_price_label' => 'Starts at', 'item_price' => '$25,000', 'item_cta' => 'CREATE MY KEYNOTE', 'item_url' => 'https://go.trueinfluencemethod.com/master-my-message'],
             ['item_title' => 'Build My Team', 'item_description' => 'Scale communication, trust, and leadership across your organization.', 'item_price_label' => 'Starts at', 'item_price' => '$250,000', 'item_cta' => 'SCALE MY BUSINESS', 'item_url' => home_url('/build-my-team/')],
             ['item_title' => 'Be Remembered', 'item_description' => 'Create work, leadership, and influence designed to outlast you.', 'item_price_label' => 'Starts at', 'item_price' => '$1M', 'item_cta' => 'SCALE MY BUSINESS', 'item_url' => home_url('/be-remembered/')],
         ], $page_id, $force);
@@ -685,8 +685,8 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_other_items', [
             ['item_title' => 'The Vault', 'item_description' => 'Live conversations with Joanna around story, visibility, leadership, and emotional truth.', 'item_price' => 'FREE', 'item_cta' => 'RESERVE MY SEAT', 'item_url' => home_url('/the-vault/')],
             ['item_title' => 'Million Dollar Message', 'item_description' => 'A 7-minute training to uncover the defining message behind your work.', 'item_price' => '$29', 'item_cta' => 'GET THE TRAINING', 'item_url' => home_url('/million-dollar-message/')],
-            ['item_title' => '4-Session Training Package', 'item_description' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_cta' => 'BOOK PRIVATE TRAINING', 'item_url' => home_url('/inquiry/')],
-            ['item_title' => 'Breakthrough Session', 'item_description' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_cta' => 'BOOK A BREAKTHROUGH SESSION', 'item_url' => home_url('/breakthrough-session/')],
+            ['item_title' => '4-Session Training Package', 'item_description' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_cta' => 'BOOK PRIVATE TRAINING', 'item_url' => 'https://go.trueinfluencemethod.com/4-session-training-package'],
+            ['item_title' => 'Breakthrough Session', 'item_description' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_cta' => 'BOOK A BREAKTHROUGH SESSION', 'item_url' => 'https://go.trueinfluencemethod.com/breakthrough-session'],
         ], $page_id, $force);
         $this->update_acf_field('section_cta_heading', 'Not Sure Where<br>to <em class="text-gold italic">Begin?</em>', $page_id, $force);
         $this->update_acf_field('section_cta_text', 'We\'ll help guide you toward the experience, retreat, or next step that feels most aligned with where you are right now.', $page_id, $force);
@@ -862,8 +862,8 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         ], $page_id, $force);
         $this->update_acf_field('section_work_heading', 'Work 1:1 with Joanna.', $page_id, $force);
         $this->update_acf_field('section_work_items', [
-            ['item_heading' => 'Breakthrough Session', 'item_text' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_btn_text' => 'BOOK A BREAKTHROUGH SESSION', 'item_btn_url' => home_url('/breakthrough-session/')],
-            ['item_heading' => '4-Session Training Package', 'item_text' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_btn_text' => 'BOOK PRIVATE TRAINING', 'item_btn_url' => home_url('/4-session/')],
+            ['item_heading' => 'Breakthrough Session', 'item_text' => 'One focused session designed to create immediate clarity and direction.', 'item_price' => '$2,000', 'item_btn_text' => 'BOOK A BREAKTHROUGH SESSION', 'item_btn_url' => 'https://go.trueinfluencemethod.com/breakthrough-session'],
+            ['item_heading' => '4-Session Training Package', 'item_text' => 'Private message refinement and leadership clarity across four sessions.', 'item_price' => '$8,000', 'item_btn_text' => 'BOOK PRIVATE TRAINING', 'item_btn_url' => 'https://go.trueinfluencemethod.com/4-session-training-package'],
         ], $page_id, $force);
     }
 
@@ -905,11 +905,11 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_story_image', $this->upload_image('the-speaker2.webp'), $page_id, $force);
         $this->update_acf_field('section_story_price', '$3,200', $page_id, $force);
         $this->update_acf_field('section_story_btn_text', 'FIND MY MESSAGE', $page_id, $force);
-        $this->update_acf_field('section_story_btn_url', '/the-speaker/', $page_id, $force);
+        $this->update_acf_field('section_story_btn_url', 'https://go.trueinfluencemethod.com/move-the-room', $page_id, $force);
         $this->update_acf_field('section_breakthrough_heading', "Want to go further?", $page_id, $force);
         $this->update_acf_field('section_breakthrough_text', 'One focused session designed to create immediate clarity and direction.', $page_id, $force);
         $this->update_acf_field('section_breakthrough_btn_text', "BOOK A BREAKTHROUGH SESSION", $page_id, $force);
-        $this->update_acf_field('section_breakthrough_btn_url', '/inquiry/', $page_id, $force);
+        $this->update_acf_field('section_breakthrough_btn_url', 'https://go.trueinfluencemethod.com/breakthrough-session', $page_id, $force);
     }
 
     private function seed_the_vault($force = false)
