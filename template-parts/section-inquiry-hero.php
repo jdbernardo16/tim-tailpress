@@ -11,12 +11,6 @@ $text = get_field('section_hero_text') ?: 'Tell us where you are, what you\'re e
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[870px]">
-    <!-- Background texture -->
-    <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/generic-bg.webp" alt="">
-    </div>
-
-
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-44 pb-20">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-[145px] items-start">
             <!-- Left Content -->

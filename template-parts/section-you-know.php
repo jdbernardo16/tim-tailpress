@@ -18,13 +18,9 @@ $text = get_field('section_you_know_text');
             <div class="relative flex-1 h-fit">
                 <?php if ($bg_image_id): ?>
                     <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'grayscale', 'alt' => 'Joanna']) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/know-bg.webp" alt="Joanna" class="grayscale">
                 <?php endif; ?>
                 <?php if ($profile_image_id): ?>
                     <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-full h-auto absolute bottom-0 left-0', 'alt' => 'Joanna']) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/joanna-whole.webp" alt="Joanna" class="w-full h-auto absolute bottom-0 left-0">
                 <?php endif; ?>
             </div>
             <div class="max-w-[442px]">

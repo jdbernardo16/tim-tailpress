@@ -17,8 +17,6 @@ $theme_uri = get_template_directory_uri();
 <section class="relative mx-10 rounded-b-3xl overflow-hidden"
     <?php if ($image_id): ?>
         style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($image_id, 'full')); ?>'); background-size: cover; background-position: center;"
-    <?php else: ?>
-        style="background-image: url('<?php echo esc_url($theme_uri . '/assets/images/the-vault-bg.webp'); ?>'); background-size: cover; background-position: center;"
     <?php endif; ?>>
 
     <!-- Decorative blurred gold ellipses -->

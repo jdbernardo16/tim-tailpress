@@ -53,20 +53,6 @@ $items = array(
                             </li>
                         <?php endwhile; ?>
                     </ul>
-                <?php else: ?>
-                    <ul class="mt-8 space-y-4">
-                        <?php foreach ($items as $item) : ?>
-                            <li class="flex items-start gap-4">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="7" cy="7" r="3" fill="#d4b478" />
-                                    <circle cx="17" cy="7" r="3" fill="#d4b478" />
-                                    <circle cx="7" cy="17" r="3" fill="#d4b478" />
-                                    <circle cx="17" cy="17" r="3" fill="#d4b478" />
-                                </svg>
-                                <span class="font-garet text-lg text-dark-text leading-[1.5]"><?php echo wp_kses_post($item); ?></span>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
                 <?php endif; ?>
 
                 <p class="mt-8 font-garet text-lg text-dark-text leading-[1.5] italic">

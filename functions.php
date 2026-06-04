@@ -65,6 +65,14 @@ add_filter('acf/settings/load_json', function ($paths) {
 });
 
 /**
+ * Allow SVG uploads for theme assets.
+ */
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
+/**
  * Load seeder (WP-CLI or admin AJAX trigger).
  */
 if (defined('WP_CLI') && WP_CLI || is_admin()) {

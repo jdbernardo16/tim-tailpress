@@ -78,30 +78,6 @@ $fallback_phases = array(
                         </div>
                     </div>
                 <?php $phase_num++; endwhile; ?>
-            <?php else: ?>
-                <?php foreach ($fallback_phases as $index => $phase) : ?>
-                    <div class="relative rounded-lg overflow-hidden bg-zinc-200 aspect-[1100/362] group">
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/<?php echo esc_attr($phase['image']); ?>"
-                            alt="<?php echo esc_attr($phase['title']); ?>"
-                            class="w-full h-full object-cover object-top">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                        <div class="absolute bottom-0 left-0 right-0 p-5">
-                            <h3 class="font-flatline font-medium text-3xl text-white leading-tight">
-                                <?= esc_html($phase['title']); ?>
-                            </h3>
-                            <p class="mt-2 font-garet text-base text-white leading-relaxed">
-                                <?= esc_html($phase['text']); ?>
-                            </p>
-                        </div>
-
-                        <div class="absolute top-3 right-3 font-flatline font-medium text-5xl text-white/20 leading-none select-none">
-                            PHASE <?= $index + 1 ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </div>

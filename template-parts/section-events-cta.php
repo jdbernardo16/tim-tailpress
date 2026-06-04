@@ -6,20 +6,18 @@
  * @package TailPress
  */
 
+$bg_image_id = get_field('section_cta_bg_image');
 $heading = get_field('section_cta_heading') ?: 'Not Sure Where to<br><em class="text-gold italic">Begin?</em>';
 $text = get_field('section_cta_text') ?: "We'll help guide you toward the experience, retreat, or next step that feels most aligned with where you are right now.";
 $btn_text = get_field('section_cta_btn_text') ?: 'Find Your Path';
 $btn_url = get_field('section_cta_btn_url') ?: home_url('/get-started/');
 ?>
 <section class="relative mx-8 rounded-b-3xl bg-gold-section overflow-hidden -translate-y-5">
-    <!-- Background texture -->
+    <?php if ($bg_image_id): ?>
     <div class="absolute inset-0">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-            alt=""
-            class="w-full h-full object-cover"
-            aria-hidden="true">
+        <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '', 'aria-hidden' => 'true']) ?>
     </div>
+    <?php endif; ?>
 
 
     <!-- Decorative deep blue ellipses -->

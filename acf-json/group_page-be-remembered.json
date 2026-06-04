@@ -1,134 +1,187 @@
-[
-  {
+{
     "key": "group_page-be-remembered",
     "title": "Page: Be Remembered",
     "fields": [
-      {
-        "key": "field_section_hero_heading",
-        "label": "Section Hero Heading",
-        "name": "section_hero_heading",
-        "type": "text",
-        "default_value": "Be <em class=\"text-gold\">Remembered.</em>"
-      },
-      {
-        "key": "field_section_hero_subtitle",
-        "label": "Section Hero Subtitle",
-        "name": "section_hero_subtitle",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_hero_bg_image",
-        "label": "Section Hero Bg Image",
-        "name": "section_hero_bg_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_hero_profile_image",
-        "label": "Section Hero Profile Image",
-        "name": "section_hero_profile_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_message_heading",
-        "label": "Section Message Heading",
-        "name": "section_message_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_message_text",
-        "label": "Section Message Text",
-        "name": "section_message_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_build_heading",
-        "label": "Section Build Heading",
-        "name": "section_build_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_build_text",
-        "label": "Section Build Text",
-        "name": "section_build_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_build_btn_text",
-        "label": "Section Build Btn Text",
-        "name": "section_build_btn_text",
-        "type": "text"
-      },
-      {
-        "key": "field_section_build_btn_url",
-        "label": "Section Build Btn Url",
-        "name": "section_build_btn_url",
-        "type": "text"
-      },
-      {
-        "key": "field_section_distinct_heading",
-        "label": "Section Distinct Heading",
-        "name": "section_distinct_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_distinct_items",
-        "label": "Section Distinct Items",
-        "name": "section_distinct_items",
-        "type": "repeater",
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_section_distinct_items_item_heading",
-            "label": "Section Distinct Items Item Heading",
-            "name": "section_distinct_items_item_heading",
-            "type": "text"
-          },
-          {
-            "key": "field_section_distinct_items_item_text",
-            "label": "Section Distinct Items Item Text",
-            "name": "section_distinct_items_item_text",
+        {
+            "key": "field_section_hero_heading",
+            "label": "Section Hero Heading",
+            "name": "section_hero_heading",
+            "type": "text",
+            "default_value": "Be <em class=\"text-gold\">Remembered.</em>"
+        },
+        {
+            "key": "field_section_hero_subtitle",
+            "label": "Section Hero Subtitle",
+            "name": "section_hero_subtitle",
             "type": "textarea"
-          }
-        ]
-      },
-      {
-        "key": "field_section_cta_heading",
-        "label": "Section Cta Heading",
-        "name": "section_cta_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_cta_text",
-        "label": "Section Cta Text",
-        "name": "section_cta_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_cta_btn_text",
-        "label": "Section Cta Btn Text",
-        "name": "section_cta_btn_text",
-        "type": "text"
-      },
-      {
-        "key": "field_section_cta_btn_url",
-        "label": "Section Cta Btn Url",
-        "name": "section_cta_btn_url",
-        "type": "text"
-      }
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_hero_profile_image",
+            "label": "Section Hero Profile Image",
+            "name": "section_hero_profile_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_message_heading",
+            "label": "Section Message Heading",
+            "name": "section_message_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_message_text",
+            "label": "Section Message Text",
+            "name": "section_message_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_build_heading",
+            "label": "Section Build Heading",
+            "name": "section_build_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_build_text",
+            "label": "Section Build Text",
+            "name": "section_build_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_build_btn_text",
+            "label": "Section Build Btn Text",
+            "name": "section_build_btn_text",
+            "type": "text"
+        },
+        {
+            "key": "field_section_build_btn_url",
+            "label": "Section Build Btn Url",
+            "name": "section_build_btn_url",
+            "type": "text"
+        },
+        {
+            "key": "field_section_distinct_heading",
+            "label": "Section Distinct Heading",
+            "name": "section_distinct_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_distinct_items",
+            "label": "Section Distinct Items",
+            "name": "section_distinct_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_distinct_items_item_heading",
+                    "label": "Section Distinct Items Item Heading",
+                    "name": "item_heading",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_distinct_items_item_text",
+                    "label": "Section Distinct Items Item Text",
+                    "name": "item_text",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "key": "field_section_cta_heading",
+            "label": "Section Cta Heading",
+            "name": "section_cta_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_cta_text",
+            "label": "Section Cta Text",
+            "name": "section_cta_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_cta_btn_text",
+            "label": "Section Cta Btn Text",
+            "name": "section_cta_btn_text",
+            "type": "text"
+        },
+        {
+            "key": "field_section_cta_btn_url",
+            "label": "Section Cta Btn Url",
+            "name": "section_cta_btn_url",
+            "type": "text"
+        },
+        {
+            "key": "field_be_remembered_section_build_items",
+            "label": "Build Items",
+            "name": "section_build_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_be_remembered_section_build_items_icon",
+                    "label": "Icon",
+                    "name": "item_icon",
+                    "type": "image",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_be_remembered_section_build_items_heading",
+                    "label": "Heading",
+                    "name": "item_heading",
+                    "type": "text"
+                },
+                {
+                    "key": "field_be_remembered_section_build_items_text",
+                    "label": "Text",
+                    "name": "item_text",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "key": "field_be_remembered_section_distinct_image",
+            "label": "Section Distinct Image",
+            "name": "section_distinct_image",
+            "type": "image",
+            "return_format": "id"
+        },
+        {
+            "key": "field_be_remembered_section_distinct_text",
+            "label": "Section Distinct Text",
+            "name": "section_distinct_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_be_remembered_section_form_heading",
+            "label": "Section Form Heading",
+            "name": "section_form_heading",
+            "type": "text",
+            "default_value": "<em class=\"text-gold italic\">Begin</em> the Conversation."
+        },
+        {
+            "key": "field_be_remembered_section_form_text",
+            "label": "Section Form Text",
+            "name": "section_form_text",
+            "type": "textarea",
+            "default_value": "<p>A private conversation to explore your legacy, succession, voice, and the long-term impact you want your work to carry forward.</p>"
+        }
     ],
     "location": [
-      [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "page-be-remembered.php"
-        }
-      ]
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-be-remembered.php"
+            }
+        ]
     ],
     "active": true
-  }
-]
+}

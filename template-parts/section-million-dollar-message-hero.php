@@ -9,6 +9,7 @@
 $heading = get_field('section_hero_heading') ?: 'Your Message<br>Already <em class="text-gold italic">Exists.</em>';
 $subtitle = get_field('section_hero_subtitle') ?: 'You are closer to your message than you think.';
 $bg_image_id = get_field('section_hero_bg_image');
+$profile_image_id = get_field('section_hero_profile_image');
 $btn_text = get_field('section_hero_btn_text') ?: 'GET THE TRAINING — $29';
 $btn_url = get_field('section_hero_btn_url') ?: '#inside';
 ?>
@@ -17,8 +18,6 @@ $btn_url = get_field('section_hero_btn_url') ?: '#inside';
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
-        <?php else: ?>
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" aria-hidden="true">
         <?php endif; ?>
     </div>
 
@@ -31,6 +30,13 @@ $btn_url = get_field('section_hero_btn_url') ?: '#inside';
     </div>
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
+        <!-- Profile Image -->
+        <?php if ($profile_image_id): ?>
+            <div class="mb-10">
+                <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[180px] h-[180px] object-cover rounded-full', 'alt' => 'Joanna Horton McPherson']) ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Pill Label -->
         <span class="inline-flex items-center font-flatline rounded-full bg-white/15 backdrop-blur-sm px-6 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
             Million Dollar Message

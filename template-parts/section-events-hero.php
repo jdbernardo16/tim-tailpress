@@ -16,8 +16,6 @@ $profile_image_id = get_field('section_hero_profile_image');
     <div class="absolute inset-0 w-full h-full">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, array('class' => 'w-full h-full object-cover object-top', 'alt' => '')) ?>
-        <?php else: ?>
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
         <?php endif; ?>
     </div>
 

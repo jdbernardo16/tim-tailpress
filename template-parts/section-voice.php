@@ -16,12 +16,6 @@ $image_id = get_field('section_voice_image');
     <div class="absolute inset-0">
         <?php if ($image_id): ?>
             <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '', 'aria-hidden' => 'true']) ?>
-        <?php else: ?>
-            <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-                alt=""
-                class="w-full h-full object-cover"
-                aria-hidden="true">
         <?php endif; ?>
     </div>
 

@@ -6,19 +6,19 @@
  * @package TailPress
  */
 
-$heading = get_field('section_download_heading') ?: 'Planning an Event or Leadership Gathering?';
-$text = get_field('section_download_text') ?: "Download Joanna's speaker kit for speaking topics, event formats, experience details, and inquiry information.";
-$btn_text = get_field('section_download_btn_text') ?: 'Download Speaker Kit';
-$btn_url = get_field('section_download_btn_url') ?: home_url('/inquiry/');
+$heading = get_field('section_download_heading');
+$text = get_field('section_download_text');
+$btn_text = get_field('section_download_btn_text');
+$btn_url = get_field('section_download_btn_url');
+$bg_image_id = get_field('section_download_bg_image');
+$image_left_id = get_field('section_download_image_left');
+$image_right_id = get_field('section_download_image_right');
 ?>
-
 <section class="relative mx-10 rounded-b-3xl bg-gold-section overflow-hidden -translate-y-5">
     <div class="absolute inset-0">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-            alt=""
-            class="w-full h-full object-cover"
-            aria-hidden="true">
+        <?php if ($bg_image_id): ?>
+            <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+        <?php endif; ?>
     </div>
 
     <div class="absolute inset-0 pointer-events-none">
@@ -54,10 +54,14 @@ $btn_url = get_field('section_download_btn_url') ?: home_url('/inquiry/');
             <div class="flex-shrink-0 hidden lg:block relative">
                 <div class="relative w-64 h-80">
                     <div class="absolute -top-10 -right-4 w-64 h-80 rounded-lg overflow-hidden shadow-xl">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/speaker-kit2.webp" alt="" class="w-full h-full object-cover">
+                        <?php if ($image_right_id): ?>
+                            <?= wp_get_attachment_image($image_right_id, 'medium', false, ['class' => 'w-full h-full object-cover']) ?>
+                        <?php endif; ?>
                     </div>
                     <div class="absolute top-4 left-0 w-64 h-80 rounded-lg overflow-hidden shadow-xl z-10">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/speaker-kit.webp" alt="Speaker Kit" class="w-full h-full object-cover">
+                        <?php if ($image_left_id): ?>
+                            <?= wp_get_attachment_image($image_left_id, 'medium', false, ['class' => 'w-full h-full object-cover', 'alt' => 'Speaker Kit']) ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

@@ -10,12 +10,6 @@ $text = get_field('section_hero_text') ?: 'Your message work begins now.';
 ?>
 
 <section class="relative bg-navy overflow-hidden min-h-[600px] md:min-h-[700px]">
-    <!-- Background texture -->
-    <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/generic-bg.webp" alt="">
-    </div>
-
-
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 pb-20 md:pb-24 text-center">
         <h1 class="font-flatline font-semibold text-6xl md:text-8xl lg:text-[112px] leading-[1.1] mb-0" style="background: linear-gradient(135deg, #e7d4c5, #d4b478); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             <?= esc_html($heading) ?>

@@ -18,13 +18,8 @@ $needs = array(
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <!-- Image -->
-            <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/the-legacy.webp" alt="Joanna Horton McPherson" class="w-full max-w-lg object-cover rounded-xl">
-            </div>
-
             <!-- Text Content -->
-            <div class="w-full lg:w-1/2 max-w-xl">
+            <div class="w-full max-w-xl mx-auto">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-[1.1]">
                     <?= $heading ?>
                 </h2>

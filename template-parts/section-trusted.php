@@ -30,21 +30,6 @@ $heading = get_field('section_trusted_heading') ?: 'Trusted by<br>leaders worldw
                             </div>
                         </div>
                     <?php endwhile; ?>
-                <?php else: ?>
-                    <div class="flex items-center gap-4">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="">
-                        <div>
-                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">10,000+</p>
-                            <p class="font-garet text-base text-dark-text">Leaders Transformed</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="">
-                        <div>
-                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">30+</p>
-                            <p class="font-garet text-base text-dark-text">Years of Work</p>
-                        </div>
-                    </div>
                 <?php endif; ?>
             </div>
         </div>

@@ -8,16 +8,7 @@
 $heading = get_field('section_meaning_heading') ?: "Long Before the Stages, There Was the Search for <em class=\"text-gold italic\">Meaning.</em>";
 $text = get_field('section_meaning_text');
 
-$gallery_images = array(
-    'tell-story-1.webp',
-    'tell-story-2.webp',
-    'tell-story-3.webp',
-    'tell-story-4.webp',
-    'tell-story-1.webp',
-    'tell-story-2.webp',
-    'tell-story-3.webp',
-    'tell-story-4.webp',
-);
+$gallery_images = get_field('section_meaning_gallery');
 ?>
 
 <section class="bg-canvas pb-8 lg:pb-12">
@@ -55,19 +46,18 @@ $gallery_images = array(
             </div>
         </div>
         <!-- Gallery Carousel -->
+        <?php if ($gallery_images): ?>
         <div class="swiper about-meaning-swiper mt-12 lg:mt-16">
             <div class="swiper-wrapper">
-                <?php foreach ($gallery_images as $image) : ?>
+                <?php foreach ($gallery_images as $image_id) : ?>
                     <div class="swiper-slide">
                         <div class="relative aspect-square rounded-xl overflow-hidden">
-                            <img
-                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/<?php echo esc_attr($image); ?>"
-                                alt="Joanna"
-                                class="w-full h-full object-cover">
+                            <?= wp_get_attachment_image($image_id, 'medium', false, ['class' => 'w-full h-full object-cover', 'alt' => 'Joanna']) ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 </section>

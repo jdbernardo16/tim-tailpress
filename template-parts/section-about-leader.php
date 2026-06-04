@@ -18,8 +18,6 @@ $gallery = get_field('section_leader_gallery');
             <div class="flex-1 flex justify-center lg:justify-start">
                 <?php if ($image_id): ?>
                     <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full max-w-md lg:max-w-lg object-cover rounded-xl', 'alt' => 'Joanna']) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-frame2.webp" alt="Joanna" class="w-full max-w-md lg:max-w-lg object-cover rounded-xl">
                 <?php endif; ?>
             </div>
             <!-- Text Content -->

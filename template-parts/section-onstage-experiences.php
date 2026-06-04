@@ -29,8 +29,8 @@ $experiences_fallback = array(
         'url'         => home_url('/inquiry/'),
     ),
 );
-$heading = get_field('section_experiences_heading') ?: '<em class="text-gold italic">Conversations</em> That Stay With People.';
-$subtitle = get_field('section_experiences_subtitle') ?: 'Three experiences, three formats — each designed to move a room differently.';
+$heading = get_field('section_experiences_heading');
+$subtitle = get_field('section_experiences_subtitle');
 ?>
 
 <section class="bg-canvas py-24 lg:py-32">

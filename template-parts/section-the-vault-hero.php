@@ -16,8 +16,6 @@ $subtitle_paragraphs = explode("\n\n", $subtitle);
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
-        <?php else: ?>
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-hero-bg.webp" alt="" aria-hidden="true">
         <?php endif; ?>
     </div>
 
@@ -57,7 +55,10 @@ $subtitle_paragraphs = explode("\n\n", $subtitle);
 
         <!-- Hero Image -->
         <div class="mt-12 flex justify-center">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-hero-joanna.webp" alt="Joanna Horton McPherson" class="w-full max-w-md lg:max-w-lg h-auto object-contain">
+            <?php $hero_image_id = get_field('section_hero_bg_image'); ?>
+            <?php if ($hero_image_id): ?>
+                <?= wp_get_attachment_image($hero_image_id, 'full', false, ['class' => 'w-full max-w-md lg:max-w-lg h-auto object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
+            <?php endif; ?>
         </div>
     </div>
 </section>
