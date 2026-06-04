@@ -11,24 +11,18 @@ $text = get_field('section_voice_text');
 $image_id = get_field('section_voice_image');
 ?>
 
-<section class="relative mx-10 rounded-3xl bg-gold-section overflow-hidden">
+<section class="relative mx-4 sm:mx-10 rounded-3xl bg-gold-section overflow-hidden">
     <!-- Background texture -->
     <div class="absolute inset-0">
         <?php if ($image_id): ?>
             <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '', 'aria-hidden' => 'true']) ?>
-        <?php else: ?>
-            <img
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-                alt=""
-                class="w-full h-full object-cover"
-                aria-hidden="true">
         <?php endif; ?>
     </div>
 
     <!-- Decorative deep blue ellipses -->
-    <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
     </div>
 
     <!-- Decorative images -->
@@ -78,10 +72,6 @@ $image_id = get_field('section_voice_image');
             <div class="mt-6 font-garet text-lg text-white leading-normal">
                 <?= wpautop($text) ?>
             </div>
-        <?php else: ?>
-            <p class="mt-6 font-garet text-lg text-white leading-normal">
-                It carries your story. Your leadership.<br>The life that shaped you.
-            </p>
         <?php endif; ?>
         <div class="mt-10">
             <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary">

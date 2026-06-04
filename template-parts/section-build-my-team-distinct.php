@@ -17,8 +17,6 @@ $text = get_field('section_distinct_text');
                 <?php $image_id = get_field('section_distinct_image'); ?>
                 <?php if ($image_id): ?>
                     <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[560px] object-cover rounded-xl', 'alt' => 'Joanna connecting with leadership teams']) ?>
-                <?php else: ?>
-                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/build-my-team2.webp" alt="Joanna connecting with leadership teams" class="w-full h-[560px] object-cover rounded-xl">
                 <?php endif; ?>
             </div>
 

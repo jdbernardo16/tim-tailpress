@@ -11,8 +11,8 @@ $heading = get_field('section_trusted_heading') ?: 'Trusted by<br>leaders worldw
 
 <section class="bg-white py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex space-x-20 justify-between">
-            <p class="text-lg font-flatline font-semibold uppercase tracking-[50%] text-navy mb-12">
+        <div class="flex flex-col md:flex-row md:space-x-20 md:justify-between gap-6 md:gap-0">
+            <p class="text-lg font-flatline font-semibold uppercase tracking-[50%] text-navy mb-6 md:mb-12">
                 <?= $heading ?>
             </p>
 
@@ -30,21 +30,6 @@ $heading = get_field('section_trusted_heading') ?: 'Trusted by<br>leaders worldw
                             </div>
                         </div>
                     <?php endwhile; ?>
-                <?php else: ?>
-                    <div class="flex items-center gap-4">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="">
-                        <div>
-                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">10,000+</p>
-                            <p class="font-garet text-base text-dark-text">Leaders Transformed</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="">
-                        <div>
-                            <p class="font-flatline text-lg font-semibold leading-[1.2rem] text-navy">30+</p>
-                            <p class="font-garet text-base text-dark-text">Years of Work</p>
-                        </div>
-                    </div>
                 <?php endif; ?>
             </div>
         </div>

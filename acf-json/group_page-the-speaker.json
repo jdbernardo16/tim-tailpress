@@ -1,105 +1,132 @@
-[
-  {
+{
     "key": "group_page-the-speaker",
     "title": "Page: The Speaker",
     "fields": [
-      {
-        "key": "field_section_hero_heading",
-        "label": "Section Hero Heading",
-        "name": "section_hero_heading",
-        "type": "text",
-        "default_value": "The <em class=\"text-gold\">Speaker</em>"
-      },
-      {
-        "key": "field_section_hero_subtitle",
-        "label": "Section Hero Subtitle",
-        "name": "section_hero_subtitle",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_hero_bg_image",
-        "label": "Section Hero Bg Image",
-        "name": "section_hero_bg_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_hero_profile_image",
-        "label": "Section Hero Profile Image",
-        "name": "section_hero_profile_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_message_heading",
-        "label": "Section Message Heading",
-        "name": "section_message_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_message_text",
-        "label": "Section Message Text",
-        "name": "section_message_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_story_heading",
-        "label": "Section Story Heading",
-        "name": "section_story_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_story_text",
-        "label": "Section Story Text",
-        "name": "section_story_text",
-        "type": "wysiwyg",
-        "tabs": "visual",
-        "media_upload": 0
-      },
-      {
-        "key": "field_section_story_image",
-        "label": "Section Story Image",
-        "name": "section_story_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_breakthrough_heading",
-        "label": "Section Breakthrough Heading",
-        "name": "section_breakthrough_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_breakthrough_text",
-        "label": "Section Breakthrough Text",
-        "name": "section_breakthrough_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_breakthrough_btn_text",
-        "label": "Section Breakthrough Btn Text",
-        "name": "section_breakthrough_btn_text",
-        "type": "text"
-      },
-      {
-        "key": "field_section_breakthrough_btn_url",
-        "label": "Section Breakthrough Btn Url",
-        "name": "section_breakthrough_btn_url",
-        "type": "text"
-      }
+        {
+            "key": "field_section_hero_heading",
+            "label": "Section Hero Heading",
+            "name": "section_hero_heading",
+            "type": "text",
+            "default_value": "The <em class=\"text-gold\">Speaker</em>"
+        },
+        {
+            "key": "field_section_hero_subtitle",
+            "label": "Section Hero Subtitle",
+            "name": "section_hero_subtitle",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_hero_profile_image",
+            "label": "Section Hero Profile Image",
+            "name": "section_hero_profile_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_message_heading",
+            "label": "Section Message Heading",
+            "name": "section_message_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_message_text",
+            "label": "Section Message Text",
+            "name": "section_message_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_story_heading",
+            "label": "Section Story Heading",
+            "name": "section_story_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_story_text",
+            "label": "Section Story Text",
+            "name": "section_story_text",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "media_upload": 0
+        },
+        {
+            "key": "field_section_story_image",
+            "label": "Section Story Image",
+            "name": "section_story_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_story_price",
+            "label": "Section Story Price",
+            "name": "section_story_price",
+            "type": "text",
+            "default_value": "$3,200"
+        },
+        {
+            "key": "field_section_story_btn_text",
+            "label": "Section Story Btn Text",
+            "name": "section_story_btn_text",
+            "type": "text",
+            "default_value": "FIND MY MESSAGE"
+        },
+        {
+            "key": "field_section_story_btn_url",
+            "label": "Section Story Btn Url",
+            "name": "section_story_btn_url",
+            "type": "text",
+            "default_value": "/the-speaker/"
+        },
+        {
+            "key": "field_section_breakthrough_heading",
+            "label": "Section Breakthrough Heading",
+            "name": "section_breakthrough_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_breakthrough_text",
+            "label": "Section Breakthrough Text",
+            "name": "section_breakthrough_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_breakthrough_btn_text",
+            "label": "Section Breakthrough Btn Text",
+            "name": "section_breakthrough_btn_text",
+            "type": "text"
+        },
+        {
+            "key": "field_section_breakthrough_btn_url",
+            "label": "Section Breakthrough Btn Url",
+            "name": "section_breakthrough_btn_url",
+            "type": "text"
+        }
     ],
     "location": [
-      [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "page-the-speaker.php"
-        }
-      ]
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-the-speaker.php"
+            }
+        ]
     ],
     "active": true
-  }
-]
+}

@@ -20,8 +20,6 @@ $btn_secondary_url = get_field('section_hero_btn_secondary_url') ?: '/on-stage/'
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => 'True Influence Method']) ?>
-        <?php else: ?>
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-bg.webp" alt="True Influence Method">
         <?php endif; ?>
     </div>
     <div class="absolute top-0 right-0 blur-sm opacity-50">
@@ -51,8 +49,6 @@ $btn_secondary_url = get_field('section_hero_btn_secondary_url') ?: '/on-stage/'
             <div class="flex-1 flex justify-center lg:justify-end">
                 <?php if ($profile_image_id): ?>
                     <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-full max-w-md lg:max-w-lg object-cover', 'alt' => 'Joanna']) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-img.webp" alt="Joanna" class="w-full max-w-md lg:max-w-lg object-cover">
                 <?php endif; ?>
             </div>
         </div>

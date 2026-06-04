@@ -1,100 +1,106 @@
-[
-  {
+{
     "key": "group_page-the-legacy",
     "title": "Page: The Legacy",
     "fields": [
-      {
-        "key": "field_section_hero_heading",
-        "label": "Section Hero Heading",
-        "name": "section_hero_heading",
-        "type": "text",
-        "default_value": "The <em class=\"text-gold\">Legacy</em>"
-      },
-      {
-        "key": "field_section_hero_subtitle",
-        "label": "Section Hero Subtitle",
-        "name": "section_hero_subtitle",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_hero_bg_image",
-        "label": "Section Hero Bg Image",
-        "name": "section_hero_bg_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_hero_profile_image",
-        "label": "Section Hero Profile Image",
-        "name": "section_hero_profile_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_message_heading",
-        "label": "Section Message Heading",
-        "name": "section_message_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_message_text",
-        "label": "Section Message Text",
-        "name": "section_message_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_two_ways_heading",
-        "label": "Section Two Ways Heading",
-        "name": "section_two_ways_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_two_ways_items",
-        "label": "Section Two Ways Items",
-        "name": "section_two_ways_items",
-        "type": "repeater",
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_section_two_ways_items_item_heading",
-            "label": "Section Two Ways Items Item Heading",
-            "name": "section_two_ways_items_item_heading",
+        {
+            "key": "field_section_hero_heading",
+            "label": "Section Hero Heading",
+            "name": "section_hero_heading",
+            "type": "text",
+            "default_value": "The <em class=\"text-gold italic\">Legacy</em>"
+        },
+        {
+            "key": "field_section_hero_subtitle",
+            "label": "Section Hero Subtitle",
+            "name": "section_hero_subtitle",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_hero_profile_image",
+            "label": "Section Hero Profile Image",
+            "name": "section_hero_profile_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_message_heading",
+            "label": "Section Message Heading",
+            "name": "section_message_heading",
             "type": "text"
-          },
-          {
-            "key": "field_section_two_ways_items_item_text",
-            "label": "Section Two Ways Items Item Text",
-            "name": "section_two_ways_items_item_text",
-            "type": "wysiwyg",
-            "tabs": "visual",
-            "media_upload": 0
-          },
-          {
-            "key": "field_section_two_ways_items_item_btn_text",
-            "label": "Section Two Ways Items Item Btn Text",
-            "name": "section_two_ways_items_item_btn_text",
+        },
+        {
+            "key": "field_section_message_text",
+            "label": "Section Message Text",
+            "name": "section_message_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_message_image",
+            "label": "Section Message Image",
+            "name": "section_message_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_two_ways_heading",
+            "label": "Section Two Ways Heading",
+            "name": "section_two_ways_heading",
             "type": "text"
-          },
-          {
-            "key": "field_section_two_ways_items_item_btn_url",
-            "label": "Section Two Ways Items Item Btn Url",
-            "name": "section_two_ways_items_item_btn_url",
-            "type": "text"
-          }
-        ]
-      }
+        },
+        {
+            "key": "field_section_two_ways_items",
+            "label": "Section Two Ways Items",
+            "name": "section_two_ways_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_two_ways_items_item_heading",
+                    "label": "Section Two Ways Items Item Heading",
+                    "name": "item_heading",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_two_ways_items_item_text",
+                    "label": "Section Two Ways Items Item Text",
+                    "name": "item_text",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_section_two_ways_items_item_btn_text",
+                    "label": "Section Two Ways Items Item Btn Text",
+                    "name": "item_btn_text",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_two_ways_items_item_btn_url",
+                    "label": "Section Two Ways Items Item Btn Url",
+                    "name": "item_btn_url",
+                    "type": "text"
+                }
+            ]
+        }
     ],
     "location": [
-      [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "page-the-legacy.php"
-        }
-      ]
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-the-legacy.php"
+            }
+        ]
     ],
     "active": true
-  }
-]
+}

@@ -6,75 +6,7 @@
  * @package TailPress
  */
 
-$engagements_fallback = array(
-    array(
-        array(
-            'badge' => 'PODCAST',
-            'title' => 'Makers Bar Interview with Joanna Horton McPherson, Social Entrepreneur Thought Leader',
-            'date'  => '2025',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'Speak &amp; Rise: Women Speakers Leading From The Stage',
-            'date'  => 'Jan 2026',
-        ),
-        array(
-            'badge' => 'PANEL',
-            'title' => 'Speak &amp; Rise: Executive Leading from the Stage',
-            'date'  => 'Feb 2026',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'Annual Harvard Alumni for Global Women&#8217;s Empowerment',
-            'date'  => 'Apr 2026',
-        ),
-    ),
-    array(
-        array(
-            'badge' => 'PODCAST',
-            'title' => 'Women in Global Leadership',
-            'date'  => 'Nov 2025',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'GCU Investment Club',
-            'date'  => 'Jan 2026',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'Top Talent Hollywood',
-            'date'  => 'May 2026',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'The WILDx Experience: A stage for truth and transformation',
-            'date'  => 'Dec 2025',
-        ),
-    ),
-    array(
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'President of NAWBO Phoenix',
-            'date'  => '2025',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'She Means Business Magazine &#8212; The Premier National Magazine for America&#8217;s Best Women Entrepreneurs',
-            'date'  => 'Jan 2026',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => 'Phoenix Business Journal&#8217;s Mentoring Monday',
-            'date'  => 'Feb 2026',
-        ),
-        array(
-            'badge' => 'KEYNOTE',
-            'title' => '2nd Annual Scale Up Symposium',
-            'date'  => 'Apr 2026',
-        ),
-    ),
-);
-$heading = get_field('section_credibility_heading') ?: '<em class="text-gold italic">Where</em> She\'s Been.';
+$heading = get_field('section_credibility_heading');
 ?>
 
 <section class="bg-canvas px-4 sm:px-10">
@@ -101,6 +33,67 @@ $heading = get_field('section_credibility_heading') ?: '<em class="text-gold ita
                 </h2>
             </div>
 
+            <?php if (have_rows('section_credibility_featured')): ?>
+            <div class="relative mb-20">
+                <div class="swiper onstage-credibility-featured-swiper">
+                    <div class="swiper-wrapper">
+                        <?php while (have_rows('section_credibility_featured')): the_row(); ?>
+                            <?php
+                            $featured_image_id = get_sub_field('item_image');
+                            $featured_badge = get_sub_field('item_badge');
+                            $featured_title = get_sub_field('item_title');
+                            $featured_date = get_sub_field('item_date');
+                            ?>
+                            <div class="swiper-slide">
+                                <div class="flex flex-col lg:flex-row items-center gap-[64px]">
+                                    <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
+                                        <?php if ($featured_image_id): ?>
+                                        <div class="w-full h-[400px]">
+                                            <?= wp_get_attachment_image($featured_image_id, 'full', false, ['class' => 'w-full h-full object-cover']) ?>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="w-full lg:w-[328px] flex flex-col gap-6">
+                                        <?php if ($featured_badge): ?>
+                                        <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px]">
+                                            <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]"><?= esc_html($featured_badge) ?></span>
+                                        </div>
+                                        <?php endif; ?>
+
+                                        <?php if ($featured_title): ?>
+                                        <h3 class="font-flatline font-semibold text-gold text-[22px] leading-[110%]">
+                                            <?= nl2br(esc_html($featured_title)) ?>
+                                        </h3>
+                                        <?php endif; ?>
+
+                                        <?php if ($featured_date): ?>
+                                        <p class="font-garet text-white text-lg">
+                                            <?= esc_html($featured_date) ?>
+                                        </p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+
+                <div class="onstage-credibility-featured-nav ml-auto w-fit">
+                    <button class="onstage-credibility-featured-swiper-button-prev onstage-credibility-featured-nav__btn" aria-label="Previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                        </svg>
+                    </button>
+                    <button class="onstage-credibility-featured-swiper-button-next onstage-credibility-featured-nav__btn" aria-label="Next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <?php endif; ?>
+
             <?php if (have_rows('section_credibility_items')): ?>
                 <div class="flex flex-col gap-6">
                     <?php $item_count = 0; ?>
@@ -112,130 +105,22 @@ $heading = get_field('section_credibility_heading') ?: '<em class="text-gold ita
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                         <?php endif; ?>
                         <div class="rounded-[10px] bg-white/15 backdrop-blur-[9px] border border-gold p-5 min-h-[201px] flex flex-col">
+                            <?php $item_badge = get_sub_field('item_badge'); ?>
+                            <?php if ($item_badge): ?>
+                            <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px] mb-2">
+                                <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]"><?= esc_html($item_badge) ?></span>
+                            </div>
+                            <?php endif; ?>
                             <h4 class="font-flatline font-semibold text-gold text-lg leading-[110%] flex-1">
                                 <?php echo esc_html(get_sub_field('item_heading')); ?>
                             </h4>
                             <p class="font-garet text-white text-sm mt-6">
-                                <?php echo esc_html(get_sub_field('item_text')); ?>
+                                <?php echo esc_html(get_sub_field('item_date')); ?>
                             </p>
                         </div>
                         <?php $item_count++; ?>
                     <?php endwhile; ?>
                     </div>
-                </div>
-            <?php else: ?>
-                <div class="relative mb-20">
-                    <div class="swiper onstage-credibility-featured-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="flex flex-col lg:flex-row items-center gap-[64px]">
-                                    <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
-                                        <div class="w-full h-[400px] bg-zinc-200">
-                                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes.webp" alt="Forbes article" class="w-full h-full object-cover">
-                                        </div>
-                                    </div>
-
-                                    <div class="w-full lg:w-[328px] flex flex-col gap-6">
-                                        <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px]">
-                                            <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]">KEYNOTE</span>
-                                        </div>
-
-                                        <h3 class="font-flatline font-semibold text-gold text-[22px] leading-[110%]">
-                                            Forbes -<br>
-                                            Why Fostering Belonging Is Key For Supporting Women Investors
-                                        </h3>
-
-                                        <p class="font-garet text-white text-lg">
-                                            March 2026
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="flex flex-col lg:flex-row items-center gap-[64px]">
-                                    <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
-                                        <div class="w-full h-[400px] bg-zinc-200">
-                                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes2.webp" alt="Speaker feature" class="w-full h-full object-cover">
-                                        </div>
-                                    </div>
-
-                                    <div class="w-full lg:w-[328px] flex flex-col gap-6">
-                                        <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px]">
-                                            <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]">KEYNOTE</span>
-                                        </div>
-
-                                        <h3 class="font-flatline font-semibold text-gold text-[22px] leading-[110%]">
-                                            Harvard Alumni -<br>
-                                            Annual Harvard Alumni for Global Women&#8217;s Empowerment
-                                        </h3>
-
-                                        <p class="font-garet text-white text-lg">
-                                            Apr 2026
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="flex flex-col lg:flex-row items-center gap-[64px]">
-                                    <div class="w-full lg:w-[708px] rounded-[10px] bg-white overflow-hidden flex-shrink-0">
-                                        <div class="w-full h-[400px] bg-zinc-200">
-                                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/forbes3.webp" alt="Speaker feature" class="w-full h-full object-cover">
-                                        </div>
-                                    </div>
-
-                                    <div class="w-full lg:w-[328px] flex flex-col gap-6">
-                                        <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px]">
-                                            <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]">PANEL</span>
-                                        </div>
-
-                                        <h3 class="font-flatline font-semibold text-gold text-[22px] leading-[110%]">
-                                            WILDx -<br>
-                                            The WILDx Experience: A stage for truth and transformation
-                                        </h3>
-
-                                        <p class="font-garet text-white text-lg">
-                                            Dec 2025
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="onstage-credibility-featured-nav ml-auto w-fit">
-                        <button class="onstage-credibility-featured-swiper-button-prev onstage-credibility-featured-nav__btn" aria-label="Previous slide">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                            </svg>
-                        </button>
-                        <button class="onstage-credibility-featured-swiper-button-next onstage-credibility-featured-nav__btn" aria-label="Next slide">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-6">
-                    <?php foreach ($engagements_fallback as $row) : ?>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-                            <?php foreach ($row as $card) : ?>
-                                <div class="rounded-[10px] bg-white/15 backdrop-blur-[9px] border border-gold p-5 min-h-[201px] flex flex-col">
-                                    <div class="inline-flex self-start items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-[3px]">
-                                        <span class="font-flatline font-black text-xs text-warm-beige tracking-[0.15em]"><?php echo esc_html($card['badge']); ?></span>
-                                    </div>
-                                    <h4 class="font-flatline font-semibold text-gold text-lg leading-[110%] mt-2 flex-1">
-                                        <?php echo wp_kses_post($card['title']); ?>
-                                    </h4>
-                                    <p class="font-garet text-white text-sm mt-6">
-                                        <?php echo esc_html($card['date']); ?>
-                                    </p>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
         </div>

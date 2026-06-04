@@ -65,8 +65,16 @@ add_filter('acf/settings/load_json', function ($paths) {
 });
 
 /**
- * Load WP-CLI seeder.
+ * Allow SVG uploads for theme assets.
  */
-if (defined('WP_CLI') && WP_CLI) {
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
+/**
+ * Load seeder (WP-CLI or admin AJAX trigger).
+ */
+if (defined('WP_CLI') && WP_CLI || is_admin()) {
     require_once get_template_directory() . '/wp-cli/seeder.php';
 }

@@ -6,21 +6,18 @@
  * @package TailPress
  */
 
-$heading = get_field('section_message_heading') ?: "You <em>Don&#8217;t Need</em> to Sound More Impressive.";
-$text = get_field('section_message_text') ?: "That's where this work begins.";
-
-$insights = array(
-    'what shaped you',
-    'what people emotionally connect to',
-    'and why your story actually matters',
-);
+$image_id = get_field('section_message_image');
+$heading = get_field('section_message_heading');
+$text = get_field('section_message_text');
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <!-- Image -->
             <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/the-speaker1.webp" alt="Joanna Horton McPherson" class="w-full max-w-lg object-cover rounded-xl">
+                <?php if ($image_id): ?>
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full max-w-lg object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php endif; ?>
             </div>
 
             <!-- Text Content -->
@@ -34,16 +31,30 @@ $insights = array(
                 </p>
 
                 <ul class="mt-4 space-y-2">
-                    <?php foreach ($insights as $insight) : ?>
-                        <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
-                            <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
-                                <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
-                                <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
-                            </svg>
-                            <span><?php echo esc_html($insight); ?></span>
-                        </li>
-                    <?php endforeach; ?>
+                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
+                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
+                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
+                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
+                        </svg>
+                        <span>what shaped you</span>
+                    </li>
+                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
+                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
+                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
+                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
+                        </svg>
+                        <span>what people emotionally connect to</span>
+                    </li>
+                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
+                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
+                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
+                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
+                        </svg>
+                        <span>and why your story actually matters</span>
+                    </li>
                 </ul>
 
                 <p class="mt-8 font-garet text-lg text-dark-text leading-[150%]">

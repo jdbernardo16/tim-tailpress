@@ -1,159 +1,202 @@
-[
-  {
+{
     "key": "group_page-events",
     "title": "Page: Events & Workshops",
     "fields": [
-      {
-        "key": "field_section_hero_heading",
-        "label": "Section Hero Heading",
-        "name": "section_hero_heading",
-        "type": "text",
-        "default_value": "Events & <em class=\"text-gold\">Workshops</em>"
-      },
-      {
-        "key": "field_section_hero_subtitle",
-        "label": "Section Hero Subtitle",
-        "name": "section_hero_subtitle",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_hero_bg_image",
-        "label": "Section Hero Bg Image",
-        "name": "section_hero_bg_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_hero_profile_image",
-        "label": "Section Hero Profile Image",
-        "name": "section_hero_profile_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_retreat_heading",
-        "label": "Section Retreat Heading",
-        "name": "section_retreat_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_retreat_text",
-        "label": "Section Retreat Text",
-        "name": "section_retreat_text",
-        "type": "wysiwyg",
-        "tabs": "visual",
-        "media_upload": 0
-      },
-      {
-        "key": "field_section_retreat_image",
-        "label": "Section Retreat Image",
-        "name": "section_retreat_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      },
-      {
-        "key": "field_section_upcoming_heading",
-        "label": "Section Upcoming Heading",
-        "name": "section_upcoming_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_upcoming_items",
-        "label": "Section Upcoming Items",
-        "name": "section_upcoming_items",
-        "type": "repeater",
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_section_upcoming_items_item_date",
-            "label": "Section Upcoming Items Item Date",
-            "name": "section_upcoming_items_item_date",
-            "type": "text"
-          },
-          {
-            "key": "field_section_upcoming_items_item_title",
-            "label": "Section Upcoming Items Item Title",
-            "name": "section_upcoming_items_item_title",
-            "type": "text"
-          },
-          {
-            "key": "field_section_upcoming_items_item_location",
-            "label": "Section Upcoming Items Item Location",
-            "name": "section_upcoming_items_item_location",
-            "type": "text"
-          },
-          {
-            "key": "field_section_upcoming_items_item_description",
-            "label": "Section Upcoming Items Item Description",
-            "name": "section_upcoming_items_item_description",
+        {
+            "key": "field_section_hero_heading",
+            "label": "Section Hero Heading",
+            "name": "section_hero_heading",
+            "type": "text",
+            "default_value": "Events & <em class=\"text-gold\">Workshops</em>"
+        },
+        {
+            "key": "field_section_hero_subtitle",
+            "label": "Section Hero Subtitle",
+            "name": "section_hero_subtitle",
             "type": "textarea"
-          }
-        ]
-      },
-      {
-        "key": "field_section_features_heading",
-        "label": "Section Features Heading",
-        "name": "section_features_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_features_items",
-        "label": "Section Features Items",
-        "name": "section_features_items",
-        "type": "repeater",
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_section_features_items_item_heading",
-            "label": "Section Features Items Item Heading",
-            "name": "section_features_items_item_heading",
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_hero_profile_image",
+            "label": "Section Hero Profile Image",
+            "name": "section_hero_profile_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_retreat_heading",
+            "label": "Section Retreat Heading",
+            "name": "section_retreat_heading",
             "type": "text"
-          },
-          {
-            "key": "field_section_features_items_item_text",
-            "label": "Section Features Items Item Text",
-            "name": "section_features_items_item_text",
+        },
+        {
+            "key": "field_section_retreat_text",
+            "label": "Section Retreat Text",
+            "name": "section_retreat_text",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "media_upload": 0
+        },
+        {
+            "key": "field_section_retreat_image",
+            "label": "Section Retreat Image",
+            "name": "section_retreat_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_retreat_image_2",
+            "label": "Section Retreat Image 2",
+            "name": "section_retreat_image_2",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_upcoming_heading",
+            "label": "Section Upcoming Heading",
+            "name": "section_upcoming_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_upcoming_items",
+            "label": "Section Upcoming Items",
+            "name": "section_upcoming_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_upcoming_items_item_date",
+                    "label": "Section Upcoming Items Item Date",
+                    "name": "item_date",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_upcoming_items_item_title",
+                    "label": "Section Upcoming Items Item Title",
+                    "name": "item_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_upcoming_items_item_location",
+                    "label": "Section Upcoming Items Item Location",
+                    "name": "item_location",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_upcoming_items_item_description",
+                    "label": "Section Upcoming Items Item Description",
+                    "name": "item_description",
+                    "type": "textarea"
+                },
+                {
+                    "key": "field_section_upcoming_items_item_image",
+                    "label": "Section Upcoming Items Item Image",
+                    "name": "item_image",
+                    "type": "image",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_section_upcoming_items_item_note",
+                    "label": "Section Upcoming Items Item Note",
+                    "name": "item_note",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "key": "field_section_features_bg_image",
+            "label": "Section Features Bg Image",
+            "name": "section_features_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_features_heading",
+            "label": "Section Features Heading",
+            "name": "section_features_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_features_items",
+            "label": "Section Features Items",
+            "name": "section_features_items",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_features_items_item_icon",
+                    "label": "Section Features Items Item Icon",
+                    "name": "item_icon",
+                    "type": "image",
+                    "return_format": "id",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_section_features_items_item_heading",
+                    "label": "Section Features Items Item Heading",
+                    "name": "item_heading",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_features_items_item_text",
+                    "label": "Section Features Items Item Text",
+                    "name": "item_text",
+                    "type": "textarea"
+                }
+            ]
+        },
+        {
+            "key": "field_section_cta_bg_image",
+            "label": "Section Cta Bg Image",
+            "name": "section_cta_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_cta_heading",
+            "label": "Section Cta Heading",
+            "name": "section_cta_heading",
+            "type": "text"
+        },
+        {
+            "key": "field_section_cta_text",
+            "label": "Section Cta Text",
+            "name": "section_cta_text",
             "type": "textarea"
-          }
-        ]
-      },
-      {
-        "key": "field_section_cta_heading",
-        "label": "Section Cta Heading",
-        "name": "section_cta_heading",
-        "type": "text"
-      },
-      {
-        "key": "field_section_cta_text",
-        "label": "Section Cta Text",
-        "name": "section_cta_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_cta_btn_text",
-        "label": "Section Cta Btn Text",
-        "name": "section_cta_btn_text",
-        "type": "text"
-      },
-      {
-        "key": "field_section_cta_btn_url",
-        "label": "Section Cta Btn Url",
-        "name": "section_cta_btn_url",
-        "type": "text"
-      }
+        },
+        {
+            "key": "field_section_cta_btn_text",
+            "label": "Section Cta Btn Text",
+            "name": "section_cta_btn_text",
+            "type": "text"
+        },
+        {
+            "key": "field_section_cta_btn_url",
+            "label": "Section Cta Btn Url",
+            "name": "section_cta_btn_url",
+            "type": "text"
+        }
     ],
     "location": [
-      [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "page-events.php"
-        }
-      ]
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-events.php"
+            }
+        ]
     ],
     "active": true
-  }
-]
+}

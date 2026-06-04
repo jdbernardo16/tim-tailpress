@@ -6,20 +6,18 @@
  * @package TailPress
  */
 
+$bg_image_id = get_field('section_cta_bg_image');
 $heading = get_field('section_cta_heading') ?: 'Your Story May Be Waiting for Its <em class="text-gold italic">Moment</em> too';
 $text = get_field('section_cta_text') ?: 'Explore the retreat, speaking experiences, and transformational work behind the True Influence Method™.';
 $btn_text = get_field('section_cta_btn_text') ?: 'Start Your Story Journey';
 $btn_url = get_field('section_cta_btn_url') ?: home_url('/get-started/');
 ?>
 <section class="relative mx-8 rounded-3xl bg-gold-section overflow-hidden ">
-    <!-- Background texture -->
+    <?php if ($bg_image_id): ?>
     <div class="absolute inset-0">
-        <img
-            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/voice-bg.webp"
-            alt=""
-            class="w-full h-full object-cover"
-            aria-hidden="true">
+        <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => '', 'aria-hidden' => 'true']) ?>
     </div>
+    <?php endif; ?>
 
     <!-- Decorative deep blue ellipses with blur -->
     <div class="absolute inset-0 pointer-events-none">

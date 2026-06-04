@@ -6,9 +6,10 @@
  * @package TailPress
  */
 
-$heading = get_field('section_retreat_heading') ?: '<span class="text-navy">Tell Your Story</span><br><em class="text-gold italic">Course &amp; Retreat</em>';
+$heading = get_field('section_retreat_heading');
 $text = get_field('section_retreat_text');
 $image_id = get_field('section_retreat_image');
+$image_2_id = get_field('section_retreat_image_2');
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,30 +22,21 @@ $image_id = get_field('section_retreat_image');
                 <div class="mt-8 font-garet text-lg text-dark-text leading-normal space-y-6">
                     <?php if ($text): ?>
                         <?= wpautop($text) ?>
-                    <?php else: ?>
-                        <p>A transformational storytelling and leadership experience designed to help people reconnect with the moments that shaped their voice, influence, and emotional authority.</p>
-                        <p>Through retreat immersion, live story work, emotional refinement, and transformational conversations, participants are guided deeper into the work behind authentic leadership.</p>
                     <?php endif; ?>
                 </div>
-                <!-- Bottom-left image (laptop/books) -->
+                <?php if ($image_2_id): ?>
                 <div class="aspect-[636/281] w-full rounded-xl overflow-hidden shadow-lg mt-6">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/events-frame2-img2.webp" alt="Laptop and books on a table" class="w-full h-full object-cover">
+                    <?= wp_get_attachment_image($image_2_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => 'Laptop and books on a table']) ?>
                 </div>
-
+                <?php endif; ?>
             </div>
             <!-- Images -->
-            <div class="w-5/12 relative  max-w-lg lg:max-w-xl">
-                <div class="relative">
-                    <!-- Top-right image (woman on couch) -->
-                    <div class="rounded-xl overflow-hidden shadow-lg aspect-[448/566] w-full">
-                        <?php if ($image_id): ?>
-                            <?= wp_get_attachment_image($image_id, 'full', false, array('class' => 'w-full h-full object-cover')) ?>
-                        <?php else: ?>
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/event-frame2-img1.webp" alt="Joanna on a couch in red pants" class="w-full h-full object-cover">
-                        <?php endif; ?>
-                    </div>
-
+            <div class="w-5/12 relative max-w-lg lg:max-w-xl">
+                <?php if ($image_id): ?>
+                <div class="rounded-xl overflow-hidden shadow-lg aspect-[448/566] w-full">
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'alt' => 'Joanna on a couch in red pants']) ?>
                 </div>
+                <?php endif; ?>
                 <div class="mt-4">
                     <a href="<?php echo esc_url(home_url('/events/')); ?>" class="btn-primary w-full">
                         EXPLORE THE EXPERIENCE

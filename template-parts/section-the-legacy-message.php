@@ -6,8 +6,9 @@
  * @package TailPress
  */
 
-$heading = get_field('section_message_heading') ?: "Make an <em>Impact</em> With Your Voice";
+$heading = get_field('section_message_heading') ?: 'Make an <em class="text-gold italic">Impact</em> With Your Voice';
 $text = get_field('section_message_text') ?: "That's where authority begins.";
+$message_image_id = get_field('section_message_image');
 
 $needs = array(
     'a message that lands clearly',
@@ -20,7 +21,11 @@ $needs = array(
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <!-- Image -->
             <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/the-legacy.webp" alt="Joanna Horton McPherson" class="w-full max-w-lg object-cover rounded-xl">
+                <?php if ($message_image_id): ?>
+                    <?= wp_get_attachment_image($message_image_id, 'full', false, ['class' => 'w-full max-w-lg object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                <?php else: ?>
+                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/the-legacy.webp" alt="Joanna Horton McPherson" class="w-full max-w-lg object-cover rounded-xl">
+                <?php endif; ?>
             </div>
 
             <!-- Text Content -->

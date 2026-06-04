@@ -12,13 +12,11 @@ $profile_image_id = get_field('section_hero_profile_image');
 $has_stats = have_rows('section_hero_stats');
 ?>
 
-<section class="relative bg-navy overflow-hidden h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover']) ?>
-        <?php else: ?>
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.webp" alt="">
         <?php endif; ?>
     </div>
 
@@ -44,9 +42,7 @@ $has_stats = have_rows('section_hero_stats');
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
                 <?php if ($profile_image_id): ?>
-                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-img.webp" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -78,53 +74,6 @@ $has_stats = have_rows('section_hero_stats');
                         </div>
                         <?php $stat_index++; ?>
                     <?php endwhile; ?>
-                <?php else: ?>
-                    <?php
-                    $stats = array(
-                        array(
-                            'icon'  => 'UsersThree',
-                            'value' => '10,000',
-                            'label' => 'Leaders Transformed',
-                        ),
-                        array(
-                            'icon'  => 'SealCheck',
-                            'value' => '30',
-                            'label' => 'Years of Work',
-                        ),
-                        array(
-                            'icon'  => 'Lectern',
-                            'value' => '1,000',
-                            'label' => 'Keynotes Delivered',
-                        ),
-                        array(
-                            'icon'  => 'UserCircleCheck',
-                            'value' => '6',
-                            'label' => 'Founder & Investor',
-                        ),
-                    );
-                    ?>
-                    <?php foreach ($stats as $index => $stat) : ?>
-                        <?php if ($index > 0) : ?>
-                            <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
-                        <?php endif; ?>
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center">
-                                <?php if ($stat['icon'] === 'UsersThree') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="" class="w-6 h-6">
-                                <?php elseif ($stat['icon'] === 'SealCheck') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="" class="w-6 h-6">
-                                <?php elseif ($stat['icon'] === 'Lectern') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/Lectern.svg" alt="" class="w-6 h-6">
-                                <?php elseif ($stat['icon'] === 'UserCircleCheck') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UserCircleCheck.svg" alt="" class="w-6 h-6">
-                                <?php endif; ?>
-                            </div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html($stat['value']); ?></span>
-                            </div>
-                            <span class="font-garet text-sm text-white"><?php echo esc_html($stat['label']); ?></span>
-                        </div>
-                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>

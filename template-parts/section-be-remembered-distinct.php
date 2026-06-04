@@ -17,8 +17,6 @@ $text = get_field('section_distinct_text');
                 <?php $image_id = get_field('section_distinct_image'); ?>
                 <?php if ($image_id): ?>
                     <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[560px] object-cover rounded-xl', 'alt' => 'Joanna shaping long-term legacy and impact']) ?>
-                <?php else: ?>
-                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/be-remembered-2.webp" alt="Joanna shaping long-term legacy and impact" class="w-full h-[560px] object-cover rounded-xl">
                 <?php endif; ?>
             </div>
 

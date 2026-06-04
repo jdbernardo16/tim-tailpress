@@ -23,12 +23,6 @@ if (! $gallery_images) {
                 <div class="relative aspect-square rounded-xl overflow-hidden">
                     <?php if (is_numeric($image)) : ?>
                         <?= wp_get_attachment_image($image, 'medium', false, ['class' => 'w-full h-full object-cover']) ?>
-                    <?php else : ?>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/<?php echo esc_attr($image); ?>"
-                            alt="Joanna"
-                            class="w-full h-full object-cover"
-                        >
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>

@@ -10,13 +10,11 @@ $heading = get_field('section_hero_heading') ?: "The <em>Speaker</em>";
 $subtitle = get_field('section_hero_subtitle') ?: "This path is designed for leaders ready to uncover the message behind their lived experience and begin communicating it with greater clarity, confidence, and emotional truth.";
 $bg_image_id = get_field('section_hero_bg_image');
 ?>
-<section class="relative overflow-hidden min-h-[555px] flex items-center">
+<section class="relative overflow-hidden min-h-[400px] sm:min-h-[500px] lg:min-h-[555px] flex items-center">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover object-top', 'aria-hidden' => 'true']) ?>
-        <?php else: ?>
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/general-bg.webp" alt="" class="w-full h-full object-cover object-top" aria-hidden="true">
         <?php endif; ?>
     </div>
 

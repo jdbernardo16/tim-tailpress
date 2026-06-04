@@ -24,13 +24,11 @@ $bg_image_id = get_field('section_hero_bg_image');
 $profile_image_id = get_field('section_hero_profile_image');
 ?>
 
-<section class="relative bg-navy overflow-hidden h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
             <?= wp_get_attachment_image($bg_image_id, 'full', false, array('class' => 'w-full h-full object-cover')) ?>
-        <?php else: ?>
-            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/about-joanna-bg.webp" alt="">
         <?php endif; ?>
     </div>
 
@@ -56,9 +54,7 @@ $profile_image_id = get_field('section_hero_profile_image');
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
                 <?php if ($profile_image_id): ?>
-                    <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
-                <?php else: ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-joanna.webp" alt="Joanna Horton McPherson" class="w-[338px] object-contain">
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -88,25 +84,6 @@ $profile_image_id = get_field('section_hero_profile_image');
                         </div>
                         <?php $stat_index++; ?>
                     <?php endwhile; ?>
-                <?php else: ?>
-                    <?php foreach ($stats_fallback as $index => $stat) : ?>
-                        <?php if ($index > 0) : ?>
-                            <div class="hidden lg:block w-px h-6 bg-white/40 self-center mx-8"></div>
-                        <?php endif; ?>
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center">
-                                <?php if ($stat['icon'] === 'UsersThree') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/UsersThree.svg" alt="" class="w-6 h-6">
-                                <?php elseif ($stat['icon'] === 'SealCheck') : ?>
-                                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/SealCheck.svg" alt="" class="w-6 h-6">
-                                <?php endif; ?>
-                            </div>
-                            <div class="flex items-baseline gap-1">
-                                <span class="font-flatline font-semibold text-lg text-gold"><?php echo esc_html($stat['value']); ?></span>
-                            </div>
-                            <span class="font-garet text-sm text-white"><?php echo esc_html($stat['label']); ?></span>
-                        </div>
-                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>

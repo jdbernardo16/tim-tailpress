@@ -23,10 +23,6 @@ $btn_url = get_field('section_book_btn_url') ?: '#';
             <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
                 <?= wp_get_attachment_image($image_id, 'full', false, array('class' => 'w-full h-full object-cover', 'alt' => 'Joanna')) ?>
             </div>
-        <?php else: ?>
-            <div class="absolute top-0 right-0 h-full pointer-events-none hidden xl:block">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/onstage-book-bg.webp" alt="Joanna" class="w-full h-full object-cover ">
-            </div>
         <?php endif; ?>
 
         <div class="absolute inset-0 pointer-events-none">
@@ -43,10 +39,10 @@ $btn_url = get_field('section_book_btn_url') ?: '#';
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
             <div class="max-w-[658px]">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-white leading-tight">
-                    Tell us About Your <em class="text-gold italic">Event.</em>
+                    <?= $heading ?>
                 </h2>
                 <p class="mt-6 font-garet text-lg text-white leading-relaxed">
-                    Share a few details about your audience, event format, and what you want the room to experience. Joanna's team will review and follow up with the next best step.
+                    <?= esc_html($text) ?>
                 </p>
 
                 <form class="mt-10 space-y-4" action="#" method="post">
@@ -119,7 +115,7 @@ $btn_url = get_field('section_book_btn_url') ?: '#';
 
                     <div class="pt-6">
                         <button type="submit" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-gradient-to-r from-warm-beige to-gold border border-warm-beige font-flatline font-bold text-sm text-navy">
-                            SEND INQUIRY
+                            <?= esc_html($btn_text) ?>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>

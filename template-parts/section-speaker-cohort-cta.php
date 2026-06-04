@@ -6,17 +6,20 @@
  * @package TailPress
  */
 
-$heading = get_field('section_cta_heading') ?: 'Some People Know Their Work. Others Can Others <em class="text-gold italic">Move a Room</em> With it.';
+$heading = get_field('section_cta_heading');
 $text = get_field('section_cta_text');
 $btn_text = get_field('section_cta_btn_text') ?: 'TAKE THE STAGE';
 $btn_url = get_field('section_cta_btn_url') ?: home_url('/speaker-cohort/');
+$bg_image_id = get_field('section_cta_bg_image');
 ?>
 <section class="bg-canvas pb-24 lg:pb-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative bg-warm-beige rounded-3xl overflow-hidden">
             <!-- Background texture -->
             <div class="absolute inset-0">
-                <img class="w-full h-full object-cover" src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/cta-bg.webp" alt="" aria-hidden="true">
+                <?php if ($bg_image_id): ?>
+                    <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'w-full h-full object-cover', 'aria-hidden' => 'true']) ?>
+                <?php endif; ?>
             </div>
 
             <div class="relative px-6 py-20 md:px-12 md:py-24 lg:px-20 flex flex-col items-center text-center">

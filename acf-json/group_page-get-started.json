@@ -1,53 +1,96 @@
-[
-  {
+{
     "key": "group_page-get-started",
     "title": "Page: Get Started",
     "fields": [
-      {
-        "key": "field_section_hero_heading",
-        "label": "Section Hero Heading",
-        "name": "section_hero_heading",
-        "type": "text",
-        "default_value": "Get <em class=\"text-gold\">Started</em>"
-      },
-      {
-        "key": "field_section_hero_text",
-        "label": "Section Hero Text",
-        "name": "section_hero_text",
-        "type": "textarea"
-      },
-      {
-        "key": "field_section_hero_btn_text",
-        "label": "Section Hero Btn Text",
-        "name": "section_hero_btn_text",
-        "type": "text",
-        "default_value": "Let's Begin"
-      },
-      {
-        "key": "field_section_hero_btn_url",
-        "label": "Section Hero Btn Url",
-        "name": "section_hero_btn_url",
-        "type": "text",
-        "default_value": "/inquiry/"
-      },
-      {
-        "key": "field_section_hero_bg_image",
-        "label": "Section Hero Bg Image",
-        "name": "section_hero_bg_image",
-        "type": "image",
-        "return_format": "id",
-        "preview_size": "medium"
-      }
+        {
+            "key": "field_section_hero_heading",
+            "label": "Section Hero Heading",
+            "name": "section_hero_heading",
+            "type": "text",
+            "default_value": "Choose Where You Are."
+        },
+        {
+            "key": "field_section_hero_text",
+            "label": "Section Hero Text",
+            "name": "section_hero_text",
+            "type": "textarea"
+        },
+        {
+            "key": "field_section_hero_btn_text",
+            "label": "Section Hero Btn Text",
+            "name": "section_hero_btn_text",
+            "type": "text",
+            "default_value": "Let's Begin"
+        },
+        {
+            "key": "field_section_hero_btn_url",
+            "label": "Section Hero Btn Url",
+            "name": "section_hero_btn_url",
+            "type": "text",
+            "default_value": "/inquiry/"
+        },
+        {
+            "key": "field_section_hero_bg_image",
+            "label": "Section Hero Bg Image",
+            "name": "section_hero_bg_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_section_hero_cards",
+            "label": "Cards",
+            "name": "section_hero_cards",
+            "type": "repeater",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_section_hero_cards_tag",
+                    "label": "Tag",
+                    "name": "tag",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_hero_cards_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_hero_cards_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea"
+                },
+                {
+                    "key": "field_section_hero_cards_quote",
+                    "label": "Quote",
+                    "name": "quote",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_hero_cards_button_text",
+                    "label": "Button Text",
+                    "name": "button_text",
+                    "type": "text"
+                },
+                {
+                    "key": "field_section_hero_cards_button_url",
+                    "label": "Button URL",
+                    "name": "button_url",
+                    "type": "text"
+                }
+            ]
+        }
     ],
     "location": [
-      [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "page-get-started.php"
-        }
-      ]
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-get-started.php"
+            }
+        ]
     ],
     "active": true
-  }
-]
+}

@@ -17,8 +17,6 @@ $text = get_field('section_speaking_text');
                 <?php $image_id = get_field('section_speaking_image'); ?>
                 <?php if ($image_id): ?>
                     <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[500px] object-cover rounded-xl', 'alt' => 'Joanna connecting with cohort members']) ?>
-                <?php else: ?>
-                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/move-the-room2.webp" alt="Joanna connecting with cohort members" class="w-full h-[500px] object-cover rounded-xl">
                 <?php endif; ?>
             </div>
 

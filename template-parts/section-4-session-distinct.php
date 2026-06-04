@@ -17,8 +17,6 @@ $text = get_field('section_distinct_text');
                 <?php $image_id = get_field('section_distinct_image'); ?>
                 <?php if ($image_id): ?>
                     <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[500px] object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
-                <?php else: ?>
-                    <img src="<?= esc_url(get_template_directory_uri()) ?>/assets/images/4-session.webp" alt="Joanna Horton McPherson" class="w-full h-[500px] object-cover rounded-xl">
                 <?php endif; ?>
             </div>
 
