@@ -47,25 +47,17 @@ jobs:
                   find deploy-package -name '.*' -type d ! -path '*/dist/.vite' -exec rm -rf {} + 2>/dev/null || true
                   find deploy-package -name '.*' -type f ! -path '*/dist/.vite/*' -delete 2>/dev/null || true
 
-            - name: Deploy to Hostinger via SFTP
-              uses: SamKirkland/Web-Sync@v1.0.0
+            - name: Deploy to Hostinger via SCP/SFTP
+              uses: appleboy/scp-action@v0.1.7
               with:
-                  server: ${{ secrets.FTP_HOST }}
+                  host: ${{ secrets.FTP_HOST }}
                   username: ${{ secrets.FTP_USER }}
                   password: ${{ secrets.FTP_PASSWORD }}
                   port: ${{ secrets.FTP_PORT }}
-                  server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-                  local-dir: deploy-package/
-                  protocol: sftp
-                  exclude: |
-                      **/.git*
-                      **/.github*
-                      **/.vscode*
-                      **/.idea*
-                      **/node_modules/**
-                      **/deploy-package/**
-                      **/.DS_Store
-                      **/Thumbs.db
+                  source: "deploy-package/*"
+                  target: ${{ secrets.FTP_REMOTE_DIR }}
+                  strip_components: 1
+                  rm: true
 
             - name: Cleanup
               if: always()
