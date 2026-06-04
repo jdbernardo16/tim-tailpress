@@ -6,7 +6,7 @@ $btn_text = get_field('section_tell_story_btn_text') ?: 'START YOUR STORY';
 $btn_url = get_field('section_tell_story_btn_url') ?: '/events/';
 ?>
 
-<section class="relative mx-10 rounded-3xl">
+<section class="relative mx-4 sm:mx-10 rounded-3xl">
     <div class="absolute inset-0 bg-navy rounded-3xl overflow-hidden pointer-events-none">
         <div class="absolute top-0 right-0 w-[1535px] h-[1535px] bg-deep-blue rounded-full blur-[620px] transform translate-x-1/3 -translate-y-1/3"></div>
         <div class="absolute -top-[100%] right-[80%] w-[1525px] h-[1525px] bg-gold/70 rounded-full blur-[560px] transform"></div>
