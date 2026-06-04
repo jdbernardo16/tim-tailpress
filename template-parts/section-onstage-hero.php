@@ -24,7 +24,7 @@ $bg_image_id = get_field('section_hero_bg_image');
 $profile_image_id = get_field('section_hero_profile_image');
 ?>
 
-<section class="relative bg-navy overflow-hidden h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
@@ -54,7 +54,7 @@ $profile_image_id = get_field('section_hero_profile_image');
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
                 <?php if ($profile_image_id): ?>
-                    <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
                 <?php endif; ?>
             </div>
         </div>
