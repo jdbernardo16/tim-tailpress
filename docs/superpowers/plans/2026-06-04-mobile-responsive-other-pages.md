@@ -16,16 +16,17 @@
 
 ## File Allocation (No Overlaps)
 
-| Subagent | Files | Pattern |
-| --- | --- | --- |
-| 3A | 8 hero files (Groups A + B) | min-h-[555px] and h-screen → responsive chain |
-| 3B | 6 files (Groups C + D) | mx-X + decorative ellipse/watermark overflow |
+| Subagent | Files                       | Pattern                                       |
+| -------- | --------------------------- | --------------------------------------------- |
+| 3A       | 8 hero files (Groups A + B) | min-h-[555px] and h-screen → responsive chain |
+| 3B       | 6 files (Groups C + D)      | mx-X + decorative ellipse/watermark overflow  |
 
 ---
 
 ## Subagent 3A: Hero Sections
 
 **Files modified:**
+
 - `template-parts/section-events-hero.php`
 - `template-parts/section-offers-hero.php`
 - `template-parts/section-success-stories-hero.php`
@@ -42,11 +43,13 @@
 - [ ] **Step 1: Replace min-h-[555px] with responsive chain**
 
 Find:
+
 ```php
 <section class="relative overflow-hidden min-h-[555px] flex items-center">
 ```
 
 Replace with:
+
 ```php
 <section class="relative overflow-hidden min-h-[400px] sm:min-h-[500px] lg:min-h-[555px] flex items-center">
 ```
@@ -163,23 +166,27 @@ git commit -m "feat(home): scale the-authority hero min-height for mobile"
 - [ ] **Step 1: Replace h-screen with responsive chain**
 
 Find:
+
 ```php
 <section class="relative bg-navy overflow-hidden h-screen">
 ```
 
 Replace with:
+
 ```php
-<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-auto">
 ```
 
 - [ ] **Step 2: Add max-w safety to profile image**
 
 Find (in the profile image container):
+
 ```php
 <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
 ```
 
 Replace with:
+
 ```php
 <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
 ```
@@ -201,23 +208,27 @@ git commit -m "feat(home): rework about hero for mobile (min-height + image scal
 - [ ] **Step 1: Replace h-screen with responsive chain**
 
 Find:
+
 ```php
 <section class="relative bg-navy overflow-hidden h-screen">
 ```
 
 Replace with:
+
 ```php
-<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-auto">
 ```
 
 - [ ] **Step 2: Add max-w safety to profile image**
 
 Find (in the profile image container):
+
 ```php
 <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
 ```
 
 Replace with:
+
 ```php
 <?= wp_get_attachment_image($profile_image_id, 'full', false, array('class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson')) ?>
 ```
@@ -235,6 +246,7 @@ git commit -m "feat(home): rework on-stage hero for mobile (min-height + image s
 ## Subagent 3B: CTA + Decorative Overflow
 
 **Files modified:**
+
 - `template-parts/section-events-cta.php`
 - `template-parts/section-offers-cta.php`
 - `template-parts/section-onstage-download.php`
@@ -256,6 +268,7 @@ Replace with: `<section class="relative mx-4 sm:mx-8 rounded-b-3xl bg-gold-secti
 - [ ] **Step 2: Scale decorative ellipses**
 
 Find the two decorative ellipses (top-right w-96 and bottom-left w-80 with translate transforms). Scale them:
+
 ```php
 <!-- before -->
 <div class="absolute top-0 right-0 w-96 h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
@@ -337,11 +350,13 @@ git commit -m "feat(home): scale on-stage download ellipses + reduce mobile marg
 - [ ] **Step 1: Scale the watermark image**
 
 Find (in the watermark div):
+
 ```php
 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-watermark.webp" alt="" class="w-[770px] h-auto max-w-none opacity-90" aria-hidden="true">
 ```
 
 Replace with:
+
 ```php
 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vault-watermark.webp" alt="" class="w-[280px] sm:w-[500px] lg:w-[770px] h-auto max-w-none opacity-90" aria-hidden="true">
 ```
@@ -404,13 +419,19 @@ git commit -m "feat(home): scale million-dollar-message hero ellipses for mobile
 - [ ] **Step 1: Find and scale the 1535px ellipse**
 
 Find:
+
 ```html
-<div class="absolute top-1/2 right-0 w-[1535px] h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"></div>
+<div
+    class="absolute top-1/2 right-0 w-[1535px] h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"
+></div>
 ```
 
 Replace with:
+
 ```html
-<div class="absolute top-1/2 right-0 w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] lg:w-[1535px] lg:h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"></div>
+<div
+    class="absolute top-1/2 right-0 w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] lg:w-[1535px] lg:h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"
+></div>
 ```
 
 - [ ] **Step 2: Verify parent has overflow-hidden**
@@ -440,6 +461,7 @@ npm run build
 - [ ] **Step 2: Visual verify each affected page at 500×800**
 
 Navigate in Chrome devtools to each of the 9 pages and confirm no horizontal overflow:
+
 - `/about/`, `/on-stage/`, `/events/`, `/success-stories/`, `/offers/`
 - `/the-vault/`, `/the-speaker/`, `/the-legacy/`, `/the-authority/`
 - `/million-dollar-message/`
@@ -462,16 +484,16 @@ Confirm no new errors in dev console.
 
 **Spec coverage check:**
 
-| Spec requirement | Task |
-| --- | --- |
-| Group A: min-h-[555px] in 6 heroes | 3A.1-3A.6 |
-| Group B: h-screen in about + on-stage | 3A.7, 3A.8 |
+| Spec requirement                                 | Task       |
+| ------------------------------------------------ | ---------- |
+| Group A: min-h-[555px] in 6 heroes               | 3A.1-3A.6  |
+| Group B: h-screen in about + on-stage            | 3A.7, 3A.8 |
 | Group B: profile image scale in about + on-stage | 3A.7, 3A.8 |
-| Group C: mx-8/mx-10 in 3 CTAs | 3B.1-3B.3 |
-| Group C: decorative ellipse scaling in 3 CTAs | 3B.1-3B.3 |
-| Group D: vault hero watermark + ellipses | 3B.4 |
-| Group D: million-dollar-message hero ellipses | 3B.5 |
-| Group D: the-speaker story 1535px ellipse | 3B.6 |
+| Group C: mx-8/mx-10 in 3 CTAs                    | 3B.1-3B.3  |
+| Group C: decorative ellipse scaling in 3 CTAs    | 3B.1-3B.3  |
+| Group D: vault hero watermark + ellipses         | 3B.4       |
+| Group D: million-dollar-message hero ellipses    | 3B.5       |
+| Group D: the-speaker story 1535px ellipse        | 3B.6       |
 
 **Placeholder scan:** All code blocks complete. No TBDs.
 
@@ -480,5 +502,6 @@ Confirm no new errors in dev console.
 **Parallel safety:** Subagent 3A touches 8 hero files. Subagent 3B touches 6 different files (CTAs and other sections). Zero file overlap. No merge conflicts possible.
 
 **Risk acknowledgment:**
+
 - The `min-h-[400px]` mobile value may still be too tall on very small phones (320px). Will verify at the smallest testable width (500px) and adjust if needed.
 - The h-screen → min-h-screen conversion on Group B preserves desktop but may shift content positioning. Visual verification will catch this.

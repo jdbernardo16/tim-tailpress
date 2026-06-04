@@ -11,7 +11,7 @@ $subtitle = get_field('section_hero_subtitle') ?: 'You are closer to your messag
 $bg_image_id = get_field('section_hero_bg_image');
 $profile_image_id = get_field('section_hero_profile_image');
 $btn_text = get_field('section_hero_btn_text') ?: 'GET THE TRAINING — $29';
-$btn_url = get_field('section_hero_btn_url') ?: '#inside';
+$btn_url = get_field('section_hero_btn_url') ?: 'https://go.trueinfluencemethod.com/million-dollar-purchase-checkout-page-7216';
 ?>
 <section class="relative bg-navy overflow-hidden">
     <!-- Background texture -->
@@ -29,13 +29,7 @@ $btn_url = get_field('section_hero_btn_url') ?: '#inside';
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[200px] sm:w-[450px] sm:h-[300px] lg:w-[600px] lg:h-[400px] bg-gold/30 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
-        <!-- Profile Image -->
-        <?php if ($profile_image_id): ?>
-            <div class="mb-10">
-                <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[180px] h-[180px] object-cover rounded-full', 'alt' => 'Joanna Horton McPherson']) ?>
-            </div>
-        <?php endif; ?>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
 
         <!-- Pill Label -->
         <span class="inline-flex items-center font-flatline rounded-full bg-white/15 backdrop-blur-sm px-6 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white">
@@ -53,7 +47,7 @@ $btn_url = get_field('section_hero_btn_url') ?: '#inside';
         </p>
 
         <!-- Description -->
-        <div class="mt-4 font-garet text-lg text-white leading-[1.6] max-w-[600px] space-y-3">
+        <div class="mt-4 font-garet text-lg text-white leading-[1.6] max-w-[800px] space-y-3">
             <p>The problem is not that you do not have one.</p>
             <p>It is that you are too close to your own wisdom to see it clearly.</p>
             <p>This short training helps you uncover the defining message behind your work, the one that creates clarity, connection, and opportunity.</p>

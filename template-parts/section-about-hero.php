@@ -12,7 +12,7 @@ $profile_image_id = get_field('section_hero_profile_image');
 $has_stats = have_rows('section_hero_stats');
 ?>
 
-<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-auto">
     <!-- Background image -->
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>

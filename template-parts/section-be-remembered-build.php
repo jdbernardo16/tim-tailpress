@@ -9,7 +9,6 @@
 $heading = get_field('section_build_heading') ?: 'What You <em class="text-gold italic">Build</em>';
 $text = get_field('section_build_text');
 $btn_text = get_field('section_build_btn_text');
-$btn_url = get_field('section_build_btn_url');
 ?>
 <section class="bg-canvas py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,9 +60,9 @@ $btn_url = get_field('section_build_btn_url');
                 </p>
                 <?php endif; ?>
 
-                <?php if ($btn_text && $btn_url): ?>
+                <?php if ($btn_text): ?>
                 <div class="mt-10">
-                    <a href="<?= esc_url($btn_url) ?>" class="btn-primary">
+                    <a href="#register" class="btn-primary scroll-smooth">
                         <?= esc_html($btn_text) ?>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.167 10h11.666m0 0L10 4.167M15.833 10L10 15.833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

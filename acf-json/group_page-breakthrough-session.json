@@ -90,10 +90,32 @@
             "type": "text"
         },
         {
-            "key": "field_section_cta_text",
-            "label": "Section Cta Text",
-            "name": "section_cta_text",
-            "type": "textarea"
+            "key": "field_section_cta_price_label",
+            "label": "Price Label",
+            "name": "section_cta_price_label",
+            "type": "text",
+            "instructions": "e.g. \"Starting at\" (optional)"
+        },
+        {
+            "key": "field_section_cta_price_original",
+            "label": "Original Price (strikethrough)",
+            "name": "section_cta_price_original",
+            "type": "text",
+            "instructions": "e.g. \"$40,000\" (optional \u2014 shows strikethrough)"
+        },
+        {
+            "key": "field_section_cta_price",
+            "label": "Price",
+            "name": "section_cta_price",
+            "type": "text",
+            "instructions": "e.g. \"$25,000\""
+        },
+        {
+            "key": "field_section_cta_price_description",
+            "label": "Price Description",
+            "name": "section_cta_price_description",
+            "type": "text",
+            "instructions": "e.g. \"Keynote, positioning, and leadership refinement\" (optional)"
         },
         {
             "key": "field_section_cta_btn_text",

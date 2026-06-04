@@ -7,10 +7,14 @@
  */
 
 $heading = get_field('section_cta_heading');
-$text = get_field('section_cta_text');
-$btn_text = get_field('section_cta_btn_text') ?: 'TAKE THE STAGE';
-$btn_url = get_field('section_cta_btn_url') ?: home_url('/speaker-cohort/');
+$btn_text = get_field('section_cta_btn_text') ?: 'JOIN THE COHORT';
+$btn_url = get_field('section_cta_btn_url') ?: 'https://go.trueinfluencemethod.com/move-the-room';
 $bg_image_id = get_field('section_cta_bg_image');
+
+$price_label = get_field('section_cta_price_label');
+$price_original = get_field('section_cta_price_original');
+$price = get_field('section_cta_price');
+$price_description = get_field('section_cta_price_description');
 ?>
 <section class="bg-canvas pb-24 lg:pb-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,17 +32,25 @@ $bg_image_id = get_field('section_cta_bg_image');
                     <?= $heading ?>
                 </h2>
 
-                <?php if ($text): ?>
-                <?= $text ?>
-                <?php else: ?>
+                <?php if ($price): ?>
                 <!-- Pricing -->
                 <div class="mt-10 flex flex-col items-center">
-                    <p class="font-flatline font-semibold text-3xl text-navy">Starting at</p>
+                    <?php if ($price_label): ?>
+                    <p class="font-flatline font-semibold text-3xl text-navy"><?= esc_html($price_label) ?></p>
+                    <?php endif; ?>
+
+                    <?php if ($price_original): ?>
                     <div class="mt-4 flex items-center gap-4">
-                        <span class="font-flatline font-semibold text-3xl text-dark-text/40 line-through italic">$20,000</span>
-                        <span class="font-flatline font-semibold text-5xl md:text-6xl text-gold-section italic">$12,000</span>
+                        <span class="font-flatline font-semibold text-3xl text-dark-text/40 line-through italic"><?= esc_html($price_original) ?></span>
+                        <span class="font-flatline font-semibold text-5xl md:text-6xl text-gold-section italic"><?= esc_html($price) ?></span>
                     </div>
-                    <p class="mt-4 font-garet text-base text-navy">Featured retreat speaking opportunity included</p>
+                    <?php else: ?>
+                    <span class="mt-4 font-flatline font-semibold text-5xl md:text-6xl text-gold-section italic"><?= esc_html($price) ?></span>
+                    <?php endif; ?>
+
+                    <?php if ($price_description): ?>
+                    <p class="mt-4 font-garet text-base text-navy"><?= esc_html($price_description) ?></p>
+                    <?php endif; ?>
                 </div>
                 <?php endif; ?>
 
