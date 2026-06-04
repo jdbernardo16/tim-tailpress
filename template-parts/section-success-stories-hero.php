@@ -10,7 +10,7 @@ $heading = get_field('section_hero_heading') ?: 'Stories People<br>Now Carry <em
 $subtitle = get_field('section_hero_subtitle') ?: 'Conversations, retreats, and transformational experiences that helped leaders reconnect with their voice, clarity, confidence, and influence.';
 $bg_image_id = get_field('section_hero_bg_image');
 ?>
-<section class="relative overflow-hidden min-h-[555px] flex items-center">
+<section class="relative overflow-hidden min-h-[400px] sm:min-h-[500px] lg:min-h-[555px] flex items-center">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
         <?php if ($bg_image_id): ?>
