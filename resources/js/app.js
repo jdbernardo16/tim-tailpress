@@ -96,4 +96,177 @@ window.addEventListener("load", function () {
             },
         });
     }
+
+    // ============================================================
+    // Inquiry Form — validation, GHL webhook submission, modal
+    // ============================================================
+    const inquiryForm = document.getElementById("inquiry-form");
+    if (!inquiryForm) return;
+
+    const modalEl = document.getElementById("inquiry-success-modal");
+    const modalCloseBtn = document.getElementById("inquiry-modal-close");
+    const modalOkayBtn = document.getElementById("inquiry-modal-okay");
+    const submitBtn = document.getElementById("inquiry-submit");
+    const btnText = submitBtn?.querySelector(".inquiry-btn-text");
+    const btnSpinner = submitBtn?.querySelector(".inquiry-btn-spinner");
+
+    /** Show an error message for a specific field. */
+    function showFieldError(fieldName, message) {
+        const errorEl = document.querySelector(`.inquiry-error[data-field="${fieldName}"]`);
+        const inputEl = document.querySelector(`#inquiry-form [name="${fieldName}"]`);
+        if (errorEl) {
+            errorEl.textContent = message;
+            errorEl.classList.remove("hidden");
+        }
+        if (inputEl) inputEl.classList.add("inquiry-field-error");
+    }
+
+    /** Clear all field-level errors. */
+    function clearAllErrors() {
+        document.querySelectorAll(".inquiry-error").forEach((el) => {
+            el.textContent = "";
+            el.classList.add("hidden");
+        });
+        document.querySelectorAll(".inquiry-field-error").forEach((el) => {
+            el.classList.remove("inquiry-field-error");
+        });
+    }
+
+    /** Validate a single field, returns error string or empty string. */
+    function validateField(name, value) {
+        const trimmed = value.trim();
+        switch (name) {
+            case "full_name":
+                return trimmed.length < 2 ? "Please enter your full name." : "";
+            case "email":
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed) ? "" : "Please enter a valid email address.";
+            case "phone":
+                return trimmed.length > 0 && !/^[\d\s\-\+\(\)\.]{7,20}$/.test(trimmed)
+                    ? "Please enter a valid phone number."
+                    : "";
+            case "message":
+                return trimmed.length < 10 ? "Please write at least 10 characters." : "";
+            default:
+                return "";
+        }
+    }
+
+    /** Validate the entire form. Returns true if valid. */
+    function validateForm() {
+        clearAllErrors();
+        let isValid = true;
+        const requiredFields = ["full_name", "email", "message"];
+        requiredFields.forEach((name) => {
+            const input = inquiryForm.querySelector(`[name="${name}"]`);
+            const error = validateField(name, input?.value || "");
+            if (error) {
+                showFieldError(name, error);
+                isValid = false;
+            }
+        });
+        // Validate phone (optional but check format if filled)
+        const phoneInput = inquiryForm.querySelector('[name="phone"]');
+        if (phoneInput?.value.trim()) {
+            const phoneError = validateField("phone", phoneInput.value);
+            if (phoneError) {
+                showFieldError("phone", phoneError);
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
+
+    /** Set loading state on the submit button. */
+    function setLoading(loading) {
+        if (!submitBtn || !btnText || !btnSpinner) return;
+        submitBtn.disabled = loading;
+        btnText.classList.toggle("hidden", loading);
+        btnSpinner.classList.toggle("hidden", !loading);
+    }
+
+    /** Show the success modal. */
+    function showModal() {
+        if (!modalEl) return;
+        modalEl.classList.remove("hidden");
+        modalEl.classList.add("flex");
+        document.body.style.overflow = "hidden";
+    }
+
+    /** Hide the success modal and reset the form. */
+    function hideModalAndReset() {
+        if (modalEl) {
+            modalEl.classList.add("hidden");
+            modalEl.classList.remove("flex");
+        }
+        document.body.style.overflow = "";
+        inquiryForm.reset();
+        clearAllErrors();
+    }
+
+    // Real-time validation on blur
+    inquiryForm.querySelectorAll("input, textarea").forEach((el) => {
+        el.addEventListener("blur", function () {
+            const err = this.name === "phone" && !this.value.trim()
+                ? "" // optional phone — skip when empty
+                : validateField(this.name, this.value);
+            const errorEl = document.querySelector(`.inquiry-error[data-field="${this.name}"]`);
+            if (err) {
+                showFieldError(this.name, err);
+            } else {
+                if (errorEl) { errorEl.textContent = ""; errorEl.classList.add("hidden"); }
+                this.classList.remove("inquiry-field-error");
+            }
+        });
+    });
+
+    // Form submission
+    inquiryForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        const webhook = this.dataset.ghlWebhook;
+        if (!webhook) {
+            console.error("Inquiry form: missing GHL webhook URL");
+            return;
+        }
+
+        const payload = {
+            full_name: this.full_name.value.trim(),
+            email: this.email.value.trim(),
+            phone: this.phone.value.trim(),
+            message: this.message.value.trim(),
+        };
+
+        setLoading(true);
+        try {
+            const response = await fetch(webhook, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            showModal();
+        } catch (err) {
+            console.error("Inquiry submission failed:", err);
+            showFieldError("full_name", "Something went wrong. Please try again or contact us directly.");
+        } finally {
+            setLoading(false);
+        }
+    });
+
+    // Modal close handlers
+    modalCloseBtn?.addEventListener("click", hideModalAndReset);
+    modalOkayBtn?.addEventListener("click", hideModalAndReset);
+
+    // Close modal on overlay click
+    modalEl?.addEventListener("click", function (e) {
+        if (e.target === this) hideModalAndReset();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modalEl && !modalEl.classList.contains("hidden")) {
+            hideModalAndReset();
+        }
+    });
 });
