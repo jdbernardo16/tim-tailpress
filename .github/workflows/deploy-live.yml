@@ -57,7 +57,7 @@ jobs:
                   protocol: ftps
                   security: loose
                   timeout: 60000
-                  server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+                  server-dir: ${{ secrets.FTP_LIVE_REMOTE_DIR }}
                   local-dir: deploy-package/
                   exclude: |
                       **/.git*
