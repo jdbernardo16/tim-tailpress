@@ -26,7 +26,7 @@ $heading = get_field('section_journey_heading') ?: 'The <em class="text-gold ita
             <?php if (have_rows('section_journey_items')): ?>
                 <?php $phase_num = 1; while (have_rows('section_journey_items')): the_row(); ?>
                     <?php $item_icon_id = get_sub_field('item_icon'); ?>
-                    <div class="relative rounded-lg overflow-hidden bg-zinc-200 aspect-[1100/362] group">
+                    <div class="relative rounded-lg overflow-hidden bg-zinc-200 aspect-[16/12] sm:aspect-[1100/362] group">
                         <?php if ($item_icon_id): ?>
                             <?= wp_get_attachment_image($item_icon_id, 'full', false, ['class' => 'w-full h-full object-cover object-top', 'alt' => esc_attr(get_sub_field('item_heading'))]) ?>
                         <?php endif; ?>
@@ -45,7 +45,7 @@ $heading = get_field('section_journey_heading') ?: 'The <em class="text-gold ita
                         </div>
 
                         <!-- Phase Watermark -->
-                        <div class="absolute top-3 right-3 font-flatline font-medium text-5xl text-white/20 leading-none select-none">
+                        <div class="absolute top-3 right-3 font-flatline font-medium text-3xl sm:text-5xl text-white/20 leading-none select-none">
                             PHASE <?= $phase_num ?>
                         </div>
                     </div>

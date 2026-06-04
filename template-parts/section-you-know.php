@@ -12,10 +12,10 @@ $profile_image_id = get_field('section_you_know_profile_image');
 $text = get_field('section_you_know_text');
 ?>
 
-<section class="bg-[#F8F4EC] py-24 lg:pt-64">
+<section class="bg-canvas py-16 lg:py-24 lg:pt-64">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex space-x-16">
-            <div class="relative flex-1 h-fit">
+        <div class="flex flex-col lg:flex-row lg:space-x-16 gap-8 lg:gap-0">
+            <div class="relative w-full lg:flex-1 h-fit">
                 <?php if ($bg_image_id): ?>
                     <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'grayscale', 'alt' => 'Joanna']) ?>
                 <?php endif; ?>

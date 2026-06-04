@@ -16,7 +16,7 @@ $btn_url = get_field('section_story_btn_url') ?: home_url('/the-speaker/');
 
         <!-- Decorative gold blur ellipse -->
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-1/2 right-0 w-[1535px] h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"></div>
+            <div class="absolute top-1/2 right-0 w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] lg:w-[1535px] lg:h-[1535px] bg-gold/40 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/2"></div>
         </div>
 
         <div class="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12">

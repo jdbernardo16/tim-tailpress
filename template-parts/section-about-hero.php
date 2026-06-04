@@ -12,7 +12,7 @@ $profile_image_id = get_field('section_hero_profile_image');
 $has_stats = have_rows('section_hero_stats');
 ?>
 
-<section class="relative bg-navy overflow-hidden h-screen">
+<section class="relative bg-navy overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-screen">
     <!-- Background image -->
     <div class="absolute inset-0">
         <?php if ($bg_image_id): ?>
@@ -42,7 +42,7 @@ $has_stats = have_rows('section_hero_stats');
             <!-- Joanna Image - Centered -->
             <div class="mt-8 flex justify-center">
                 <?php if ($profile_image_id): ?>
-                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[338px] object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[280px] sm:w-[338px] max-w-full object-contain', 'alt' => 'Joanna Horton McPherson']) ?>
                 <?php endif; ?>
             </div>
         </div>

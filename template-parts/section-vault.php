@@ -14,26 +14,24 @@ $btn_url = get_field('section_vault_btn_url') ?: '/the-vault/';
 $theme_uri = get_template_directory_uri();
 ?>
 
-<section class="relative mx-10 rounded-b-3xl overflow-hidden"
+<section class="relative mx-4 sm:mx-10 rounded-b-3xl overflow-hidden"
     <?php if ($image_id): ?>
         style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($image_id, 'full')); ?>'); background-size: cover; background-position: center;"
     <?php endif; ?>>
 
     <!-- Decorative blurred gold ellipses -->
-    <div class="absolute inset-0 pointer-events-none">
-        <!-- Ellipse 2: positioned bottom-right area -->
-        <div class="absolute w-[1535px] h-[1535px] bg-gold rounded-full"
-            style="top: 342px; left: 986px; filter: blur(620px);"></div>
-        <!-- Ellipse 3: positioned top-left area, opacity 0.7 -->
-        <div class="absolute w-[1525px] h-[1525px] bg-gold/70 rounded-full"
-            style="top: -1183px; left: -901px; filter: blur(560px);"></div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] lg:w-[1535px] lg:h-[1535px] bg-gold rounded-full"
+            style="top: 30%; left: 40%; filter: blur(120px);"></div>
+        <div class="absolute w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] lg:w-[1525px] lg:h-[1525px] bg-gold/70 rounded-full"
+            style="top: -10%; left: -10%; filter: blur(100px);"></div>
     </div>
 
     <!-- Watermark image -->
     <div class="absolute inset-x-0 top-0 flex justify-center pointer-events-none">
         <img src="<?php echo esc_url($theme_uri . '/assets/images/the-vault.webp'); ?>"
             alt=""
-            class="w-[770px] h-auto select-none"
+            class="w-[260px] sm:w-[500px] lg:w-[770px] h-auto select-none"
             aria-hidden="true">
     </div>
 

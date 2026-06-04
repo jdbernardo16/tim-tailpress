@@ -7,7 +7,7 @@
  */
 ?>
 
-<header class="fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300" id="site-header">
+<header class="fixed top-0 left-0 right-0 z-50 py-3 sm:py-6 transition-all duration-300" id="site-header">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center shrink-0">
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo.webp" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="w-14 h-14">
@@ -34,14 +34,17 @@
             </svg>
         </a>
 
-        <button type="button" id="header-mobile-toggle" class="lg:hidden text-white p-2" aria-label="<?php esc_attr_e('Toggle navigation', 'tailpress'); ?>">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <button type="button" id="header-mobile-toggle" class="lg:hidden text-white p-2 focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2 rounded" aria-label="<?php esc_attr_e('Toggle navigation', 'tailpress'); ?>" aria-expanded="false" aria-controls="header-mobile-menu">
+            <svg id="header-mobile-toggle-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg id="header-mobile-toggle-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
 
-    <div id="header-mobile-menu" class="hidden lg:hidden bg-navy/95 absolute top-full left-0 right-0">
+    <div id="header-mobile-menu" class="hidden lg:hidden bg-navy/95 backdrop-blur-sm absolute top-full left-0 right-0" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Mobile menu', 'tailpress'); ?>">
         <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
             <?php
             wp_nav_menu([
@@ -57,35 +60,3 @@
         </div>
     </div>
 </header>
-
-<?php if (has_nav_menu('primary')) : ?>
-    <script>
-        (function() {
-            var toggle = document.getElementById('header-mobile-toggle');
-            var menu = document.getElementById('header-mobile-menu');
-            if (toggle && menu) {
-                toggle.addEventListener('click', function() {
-                    menu.classList.toggle('hidden');
-                });
-            }
-        })();
-    </script>
-<?php endif; ?>
-
-<script>
-(function() {
-    var header = document.getElementById('site-header');
-    if (!header) return;
-
-    function updateHeader() {
-        if (window.scrollY > 10) {
-            header.classList.add('bg-navy/95', 'backdrop-blur-sm');
-        } else {
-            header.classList.remove('bg-navy/95', 'backdrop-blur-sm');
-        }
-    }
-
-    window.addEventListener('scroll', updateHeader);
-    updateHeader();
-})();
-</script>

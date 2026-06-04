@@ -23,10 +23,10 @@ $btn_url = get_field('section_hero_btn_url') ?: '#inside';
 
     <!-- Decorative blurred ellipses -->
     <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
+        <div class="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
         <!-- Gold glow at bottom center -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[200px] sm:w-[450px] sm:h-[300px] lg:w-[600px] lg:h-[400px] bg-gold/30 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
