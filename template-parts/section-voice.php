@@ -11,7 +11,7 @@ $text = get_field('section_voice_text');
 $image_id = get_field('section_voice_image');
 ?>
 
-<section class="relative mx-10 rounded-3xl bg-gold-section overflow-hidden">
+<section class="relative mx-4 sm:mx-10 rounded-3xl bg-gold-section overflow-hidden">
     <!-- Background texture -->
     <div class="absolute inset-0">
         <?php if ($image_id): ?>
@@ -20,9 +20,9 @@ $image_id = get_field('section_voice_image');
     </div>
 
     <!-- Decorative deep blue ellipses -->
-    <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-deep-blue/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-deep-blue/20 rounded-full blur-3xl transform translate-y-1/2"></div>
     </div>
 
     <!-- Decorative images -->
