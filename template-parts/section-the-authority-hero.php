@@ -10,7 +10,7 @@ $heading = get_field('section_hero_heading') ?: "The <em>Authority</em>";
 $subtitle = get_field('section_hero_subtitle') ?: "This path is designed for leaders ready to refine how they communicate, strengthen their authority, and turn their experience into a message people immediately understand, remember, and follow.";
 $bg_image_id = get_field('section_hero_bg_image');
 ?>
-<section class="relative overflow-hidden min-h-[555px] flex items-center">
+<section class="relative overflow-hidden min-h-[400px] sm:min-h-[500px] lg:min-h-[555px] flex items-center">
     <!-- Background Image -->
     <div class="absolute inset-0 w-full h-full">
         <?php if ($bg_image_id): ?>
