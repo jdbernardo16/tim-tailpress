@@ -52,7 +52,7 @@
                 'container' => false,
                 'menu_class' => 'flex flex-col gap-4',
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth' => 1,
+                'depth' => 2,
                 'fallback_cb' => false,
                 'walker' => new \TailPress\Walkers\HeaderNavWalker(),
             ]);
