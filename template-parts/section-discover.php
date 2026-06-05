@@ -37,7 +37,7 @@ $btn_url = get_field('section_discover_btn_url') ?: '/million-dollar-message/';
             </div>
             <div class="relative flex-1 mt-8 lg:mt-0">
                 <?php if ($image_id): ?>
-                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full', 'alt' => 'Joanna - Discover']) ?>
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full lg:block hidden', 'alt' => 'Joanna - Discover']) ?>
                 <?php endif; ?>
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/discover-whole.webp" alt="Joanna - Discover" class="w-full relative lg:absolute lg:bottom-0 lg:left-0 mt-4 lg:mt-0">
 

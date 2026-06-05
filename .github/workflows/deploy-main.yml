@@ -3,7 +3,7 @@ name: Deploy to Hostinger
 on:
     push:
         branches:
-            - live
+            - main
     workflow_dispatch:
 
 jobs:
@@ -50,14 +50,14 @@ jobs:
             - name: Deploy to Hostinger via FTPS
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
-                  server: ${{ secrets.FTP_MAIN_HOST }}
-                  username: ${{ secrets.FTP_MAIN_USER }}
-                  password: ${{ secrets.FTP_MAIN_PASSWORD }}
-                  port: ${{ secrets.FTP_MAIN_PORT }}
+                  server: ${{ secrets.FTP_LIVE_HOST }}
+                  username: ${{ secrets.FTP_LIVE_USER }}
+                  password: ${{ secrets.FTP_LIVE_PASSWORD }}
+                  port: ${{ secrets.FTP_LIVE_PORT }}
                   protocol: ftps
                   security: loose
                   timeout: 60000
-                  server-dir: ${{ secrets.FTP_MAIN_REMOTE_DIR }}
+                  server-dir: ${{ secrets.FTP_LIVE_REMOTE_DIR }}
                   local-dir: deploy-package/
                   exclude: |
                       **/.git*

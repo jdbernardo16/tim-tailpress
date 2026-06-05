@@ -230,6 +230,12 @@
                     "label": "Text",
                     "name": "item_text",
                     "type": "textarea"
+                },
+                {
+                    "key": "field_section_journey_item_url",
+                    "label": "URL",
+                    "name": "item_url",
+                    "type": "url"
                 }
             ]
         },

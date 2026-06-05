@@ -20,7 +20,7 @@ $text = get_field('section_you_know_text');
                     <?= wp_get_attachment_image($bg_image_id, 'full', false, ['class' => 'grayscale', 'alt' => 'Joanna']) ?>
                 <?php endif; ?>
                 <?php if ($profile_image_id): ?>
-                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-full h-auto absolute bottom-0 left-0', 'alt' => 'Joanna']) ?>
+                    <?= wp_get_attachment_image($profile_image_id, 'full', false, ['class' => 'w-[72%] h-auto absolute bottom-0 right-9 md:right-[84px]', 'alt' => 'Joanna']) ?>
                 <?php endif; ?>
             </div>
             <div class="max-w-[442px]">

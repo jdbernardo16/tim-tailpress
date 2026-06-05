@@ -51,10 +51,12 @@ $btn_url = get_field('section_build_btn_url');
                 <?php endif; ?>
 
                 <?php if ($text): ?>
-                <?= $text ?>
+                <div class="mt-12 font-garet text-lg !text-white leading-[1.5] max-w-[600px]">
+                    <?= $text ?>
+                </div>
                 <?php else: ?>
                 <!-- Bottom Text -->
-                <p class="mt-12 font-garet text-lg text-white leading-[1.5] max-w-[600px]">
+                <p class="mt-12 font-garet text-lg !text-white leading-[1.5] max-w-[600px]">
                     Sometimes the breakthrough is not learning something new.<br>It&rsquo;s finally seeing clearly what was already there.
                 </p>
                 <?php endif; ?>

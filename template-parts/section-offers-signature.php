@@ -65,7 +65,7 @@ $subtitle = get_field('section_signature_subtitle') ?: 'The primary transformati
                         'price_label' => '',
                         'price'       => '$3,200',
                         'cta'         => 'TAKE THE STAGE',
-                        'url'         => home_url('/speaker-cohort/'),
+                        'url'         => 'https://go.trueinfluencemethod.com/move-the-room',
                     ),
                     array(
                         'title'       => 'Master My Message',
