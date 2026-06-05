@@ -259,3 +259,42 @@
         display: none;
     }
 }
+
+/* =================================================================
+   Mobile: Work With Me dropdown (click to expand inline)
+   ================================================================= */
+
+@media (max-width: 959px) {
+    /* Show chevron on mobile (override the desktop hide) */
+    .menu-chevron {
+        display: inline-block;
+    }
+
+    /* Inline submenu styling on mobile */
+    .sub-menu {
+        position: static;
+        min-width: 0;
+        padding: 4px 0 4px 16px;
+        border: none;
+        background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 4px 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+    }
+
+    /* Show submenu when parent is expanded */
+    .menu-item-has-children.expanded > .sub-menu {
+        display: block;
+    }
+
+    /* Chevron rotation when expanded */
+    .menu-item-has-children.expanded > a > .menu-chevron {
+        transform: rotate(180deg);
+    }
+}
