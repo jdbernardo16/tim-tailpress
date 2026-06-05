@@ -15,6 +15,7 @@
     font-family: 'Flatline Sans';
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-Regular.woff2') format('woff2');
   }
 
@@ -22,6 +23,7 @@
     font-family: 'Flatline Sans';
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-RegularItalic.woff2') format('woff2');
   }
 
@@ -29,6 +31,7 @@
     font-family: 'Flatline Sans';
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-SemiBold.woff2') format('woff2');
   }
 
@@ -36,6 +39,7 @@
     font-family: 'Flatline Sans';
     font-weight: 600;
     font-style: italic;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-SemiBoldItalic.woff2') format('woff2');
   }
 
@@ -43,6 +47,7 @@
     font-family: 'Flatline Sans';
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-Bold.woff2') format('woff2');
   }
 
@@ -50,6 +55,7 @@
     font-family: 'Flatline Sans';
     font-weight: 700;
     font-style: italic;
+    font-display: swap;
     src: url('../fonts/FlatlineSans-BoldItalic.woff2') format('woff2');
   }
 
@@ -57,6 +63,7 @@
     font-family: 'Garet';
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
     src: url('../fonts/Garet-Book.woff2') format('woff2');
   }
 
