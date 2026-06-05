@@ -125,6 +125,123 @@ class TimTailPress_Seeder
         ));
     }
 
+    private function seed_seo($force = false)
+    {
+        $pages = [
+            'front-page'          => ['meta_desc' => "Transform your leadership voice with Joanna Horton McPherson's True Influence Method™. Discover how to communicate with clarity, emotional authority, and trust.", 'og_image' => 'hero-img.webp'],
+            'about'               => ['meta_desc' => 'Learn about Joanna Horton McPherson, creator of the True Influence Method™ helping leaders turn lived experience into messages people trust, feel, and follow.', 'og_image' => 'about-joanna-img.webp'],
+            '4-session'           => ['meta_desc' => "Build your message from the inside out with Joanna's private 4-Session Training Package. Uncover, refine, and articulate the message behind your work.", 'og_image' => 'joanna-profile.webp'],
+            'be-remembered'       => ['meta_desc' => 'Build a legacy that outlasts you with Be Remembered — Joanna\'s private legacy experience for founders and executives ready to create lasting impact.', 'og_image' => 'be-remembered-1.webp'],
+            'breakthrough-session' => ['meta_desc' => "One session to see clearly. A private breakthrough session with Joanna to uncover what's true underneath the message you've been trying to say.", 'og_image' => 'breakthrough-1.webp'],
+            'build-my-team'       => ['meta_desc' => "Scale trust, communication, and leadership across your organization with Build My Team — Joanna's private leadership experience for founders and executives.", 'og_image' => 'build-my-team1.webp'],
+            'events'              => ['meta_desc' => 'Explore transformational retreats, speaking experiences, and leadership conversations with Joanna Horton McPherson at events and workshops worldwide.', 'og_image' => 'joanna-profile.webp'],
+            'get-started'         => ['meta_desc' => "Choose where you are in your leadership journey. Discover the right path to uncover your message, build your authority, or define your legacy.", 'og_image' => 'generic-bg.webp'],
+            'inquiry'             => ['meta_desc' => "Start the conversation with Joanna Horton McPherson. Tell us where you are and what you're exploring in your leadership and message journey.", 'og_image' => 'generic-bg.webp'],
+            'master-my-message'   => ['meta_desc' => "Become known for something specific. Master My Message is Joanna's advanced authority-positioning experience for leaders ready to refine their message.", 'og_image' => 'master1.webp'],
+            'million-dollar-message' => ['meta_desc' => "Your message already exists. Uncover the defining message behind your work with Joanna's 7-minute Million Dollar Message training for just \$29.", 'og_image' => 'million-hero.webp'],
+            'offers'              => ['meta_desc' => 'Explore ways to work with Joanna Horton McPherson — from retreats and speaker development to private leadership advisory and transformational conversations.', 'og_image' => 'joanna-profile.webp'],
+            'on-stage'            => ['meta_desc' => 'Book Joanna Horton McPherson for your next event. Keynotes, leadership conversations, and transformational speaking experiences that move rooms.', 'og_image' => 'onstage-joanna.webp'],
+            'speaker-cohort'      => ['meta_desc' => "Stop explaining. Start landing. Join Joanna's Speaker Cohort to turn your lived experience into a clear, structured message people trust and follow.", 'og_image' => 'joanna-profile.webp'],
+            'success-stories'     => ['meta_desc' => "Read stories from leaders who transformed their voice, clarity, and confidence through Joanna Horton McPherson's True Influence Method™.", 'og_image' => 'general-bg.webp'],
+            'thank-you'           => ['meta_desc' => 'Thank you for beginning your message work with Joanna Horton McPherson. Your journey toward clearer communication starts now.', 'og_image' => 'generic-bg.webp'],
+            'the-authority'       => ['meta_desc' => "Refine how you communicate and turn your experience into a message people immediately understand, remember, and follow with The Authority path.", 'og_image' => 'the-authority.webp'],
+            'the-legacy'          => ['meta_desc' => "Strengthen your authority and build a message that people immediately understand, remember, and trust with The Legacy path.", 'og_image' => 'joanna-profile.webp'],
+            'the-speaker'         => ['meta_desc' => "Uncover the message behind your lived experience and communicate with greater clarity, confidence, and emotional truth with The Speaker path.", 'og_image' => 'the-speaker1.webp'],
+            'the-vault'           => ['meta_desc' => "Join Joanna live in The Vault — a free conversation space for women exploring voice, visibility, leadership, and emotional truth.", 'og_image' => 'vault-hero-joanna.webp'],
+        ];
+
+        foreach ($pages as $slug => $data) {
+            $page_id = $this->get_page_id($slug);
+            if (! $page_id) {
+                continue;
+            }
+
+            $this->update_acf_field('seo_meta_description', $data['meta_desc'], $page_id, $force);
+            $this->update_acf_field('seo_robots', '', $page_id, $force);
+
+            $img_id = $this->upload_image($data['og_image']);
+            if ($img_id) {
+                // Pass attachment ID directly, consistent with all other image field seeding in this class.
+                // ACF resolves ID → URL internally based on the field's return_format setting.
+                $this->update_acf_field('seo_og_image', $img_id, $page_id, $force);
+            }
+
+            WP_CLI::line("Seeded SEO fields for: {$slug}");
+        }
+    }
+
+    private function seed_blog_posts($force = false)
+    {
+        $category_name = 'Leadership & Influence';
+        $category = get_term_by('name', $category_name, 'category');
+        if (! $category) {
+            $result = wp_insert_term($category_name, 'category', ['slug' => sanitize_title($category_name)]);
+            if (is_wp_error($result)) {
+                WP_CLI::warning('Failed to create category "Leadership & Influence": ' . $result->get_error_message());
+                return;
+            }
+            $category = get_term($result['term_id'], 'category');
+        }
+        $category_id = $category->term_id;
+
+        $posts = [
+            [
+                'title'   => 'Why Emotional Truth Matters More Than Strategic Communication',
+                'slug'    => 'emotional-truth-strategic-communication',
+                'excerpt' => 'Most leaders over-explain. The ones people remember have learned that trust is built not through information, but through emotional truth.',
+                'content' => "In leadership, we're taught to communicate clearly, concisely, and strategically. We learn frameworks for messaging, structures for presentations, and formulas for persuasion.\n\nBut the leaders who actually move rooms — the ones people remember years later — have discovered something counterintuitive: emotional truth matters more than strategic communication.\n\n**What is emotional truth?**\n\nIt's the willingness to say what's actually true underneath the polished message. It's the moment a leader stops explaining and starts being real about what they've learned, what they've lost, and what they're still figuring out.\n\n**Why it works**\n\nTrust isn't built through information. Trust is built through congruence — when what someone says matches what we sense is true about them. When a leader shares something vulnerable, the brain registers safety. And in safety, people open up, engage, and commit.\n\n**Three ways to lead with emotional truth:**\n\n1. Name the tension. Before presenting a solution, acknowledge the real struggle.\n2. Share your own learning edge. Admit what you're still figuring out.\n3. Speak from experience, not theory. Replace abstract concepts with lived moments.\n\nThe next time you prepare to speak, ask yourself: Am I trying to sound impressive — or am I trying to be real? The answer will determine whether your audience merely listens or is truly moved.",
+            ],
+            [
+                'title'   => 'The Hidden Connection Between Storytelling and Leadership Presence',
+                'slug'    => 'storytelling-leadership-presence',
+                'excerpt' => 'True leadership presence isn\'t about commanding attention — it\'s about creating connection. And the most powerful tool for connection is your story.',
+                'content' => "Leadership presence is one of those qualities we recognize instantly but struggle to define. We know it when we see it — that quality some leaders have that makes people lean in, listen deeply, and feel inspired.\n\nBut what if presence isn't about confidence, charisma, or commanding attention? What if true presence comes from something far more accessible: the ability to tell your story in a way that creates connection?\n\n**Presence is connection, not performance**\n\nWhen we try to perform presence — deepening our voice, slowing our pace, adopting power poses — we often come across as rehearsed rather than real. But when we share a genuine story, something shifts. Our body relaxes. Our voice finds its natural rhythm. And the audience stops evaluating and starts experiencing.\n\n**Why storytelling creates presence:**\n\nStories activate the entire brain. When you share a personal experience, listeners don't just hear your words — they feel your emotions, imagine the scenes, and unconsciously mirror your physiological state. This creates a shared experience, and shared experience creates presence.\n\n**The story that builds presence:**\n\nThe most presence-building story you can tell is the one about your defining moment — the experience that shaped your leadership, your values, or your understanding of your work. It doesn't have to be dramatic. It just has to be true.\n\nThe next time you need to lead a room, don't prepare more slides. Prepare to share one real moment from your journey. That's where your presence lives.",
+            ],
+            [
+                'title'   => 'From Over-Explaining to Landing: Finding Your Core Message',
+                'slug'    => 'over-explaining-core-message',
+                'excerpt' => 'If you find yourself explaining too much, it\'s not because your idea is complex — it\'s because you haven\'t found the core yet. Here\'s how to find it.',
+                'content' => "Do you ever finish a conversation thinking: \"That's not what I meant to say\"?\n\nYou're not alone. One of the most common challenges leaders face is the tendency to over-explain. We add context, background, caveats, and qualifiers — trying to be so clear that we end up muddying our message entirely.\n\n**The paradox of over-explaining**\n\nThe harder we try to be clear, the less clear we become. Why? Because over-explaining is usually a sign that we haven't yet found the core of our message. We're still searching for it — out loud, in front of our audience.\n\n**The core message test**\n\nA core message passes three tests:\n\n1. **The grandma test** — Can you say it in one sentence your grandmother would understand?\n2. **The repeat test** — Can someone else repeat your message without adding their own interpretation?\n3. **The feeling test** — Does saying it actually feel true in your body?\n\n**How to find your core:**\n\nStart by asking yourself: If my audience remembers only one thing from our conversation, what must it be? Write that down. Then cross out every word that isn't essential. Keep going until you can't remove anything else without losing the meaning.\n\nThat's your core message.\n\n**Practice landing, not explaining**\n\nInstead of leading with context, lead with your core. Say your one sentence first. Then, if needed, add context. This forces you to land before you explain — and your audience will thank you for it.",
+            ],
+        ];
+
+        foreach ($posts as $p) {
+            $existing = get_posts([
+                'name'           => $p['slug'],
+                'post_type'      => 'post',
+                'posts_per_page' => 1,
+                'fields'         => 'ids',
+            ]);
+
+            if (! empty($existing) && ! $force) {
+                continue;
+            }
+
+            $post_data = [
+                'post_title'    => $p['title'],
+                'post_name'     => $p['slug'],
+                'post_excerpt'  => $p['excerpt'],
+                'post_content'  => $p['content'],
+                'post_status'   => 'publish',
+                'post_type'     => 'post',
+                'post_category' => [$category_id],
+            ];
+
+            if (! empty($existing)) {
+                $post_data['ID'] = $existing[0];
+            }
+
+            $post_id = wp_insert_post($post_data);
+
+            if (is_wp_error($post_id)) {
+                WP_CLI::warning("Failed to seed blog post '{$p['title']}': " . $post_id->get_error_message());
+                continue;
+            }
+
+            WP_CLI::line("Seeded blog post: {$p['title']}");
+        }
+    }
+
     public function seed_all($force = true)
     {
         $this->cleanup_media();
@@ -155,6 +272,9 @@ class TimTailPress_Seeder
                 $this->$method($force);
             }
         }
+
+        $this->seed_seo($force);
+        $this->seed_blog_posts($force);
     }
 
     /**
