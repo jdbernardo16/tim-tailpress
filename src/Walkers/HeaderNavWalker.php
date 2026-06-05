@@ -25,7 +25,7 @@ class HeaderNavWalker extends Walker_Nav_Menu
 
     public function start_lvl(&$output, $depth = 0, $args = [])
     {
-        $output .= '<div class="sub-menu hidden">';
+        $output .= '<div class="sub-menu">';
     }
 
     public function end_lvl(&$output, $depth = 0, $args = [])
