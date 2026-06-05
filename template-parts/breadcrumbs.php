@@ -62,7 +62,7 @@ if (is_singular()) {
 }
 ?>
 
-<nav aria-label="<?php esc_attr_e('Breadcrumb', 'tailpress'); ?>" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-sm text-zinc-600">
+<nav aria-label="<?php esc_attr_e('Breadcrumb', 'tailpress'); ?>" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 text-sm text-zinc-600 hidden">
     <ol class="flex flex-wrap items-center gap-1">
         <?php foreach ($items as $i => $item): ?>
             <li>
