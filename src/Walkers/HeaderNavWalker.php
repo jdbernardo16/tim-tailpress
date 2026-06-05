@@ -14,6 +14,9 @@ class HeaderNavWalker extends Walker_Nav_Menu
         $class_names = ($is_active ? 'text-gold' : 'text-white') . ' font-garet font-light text-base no-underline';
         $class_names .= $depth > 0 ? ' sub-menu-link' : '';
 
+        $li_classes = implode(' ', array_filter($classes));
+        $output .= '<li class="' . esc_attr($li_classes) . '">';
+
         $output .= '<a href="' . esc_url($item->url) . '" class="' . $class_names . '">';
         $output .= esc_html($item->title);
 
@@ -22,6 +25,11 @@ class HeaderNavWalker extends Walker_Nav_Menu
         }
 
         $output .= '</a>';
+    }
+
+    public function end_el(&$output, $item, $depth = 0, $args = [])
+    {
+        $output .= '</li>';
     }
 
     public function start_lvl(&$output, $depth = 0, $args = [])
