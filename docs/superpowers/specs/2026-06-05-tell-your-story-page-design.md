@@ -63,7 +63,7 @@ Build a standalone WordPress page at `/tell-your-story/` that:
 
 | Path | Purpose |
 |---|---|
-| `page-tell-your-story.php` | Page template — `get_header()` + 8 section parts + modal + `get_footer()` |
+| `page-tell-your-story.php` | Page template — `get_header()` + 8 template parts + `get_footer()` |
 | `template-parts/section-tell-your-story-hero.php` | Navy hero with logo, pill eyebrow, headline, subtitle, CTA |
 | `template-parts/section-tell-your-story-speaking.php` | "This Is Not Just Speaking Training…" — 2-col text + photo frame |
 | `template-parts/section-tell-your-story-founding.php` | Navy rounded "Be Part of the Founding Experience" card |
@@ -133,10 +133,10 @@ the rest of the theme). All repeater sub-fields use the `item_*` prefix.
 | `section_pricing_subhead` | textarea | Body copy |
 | `section_pricing_original_price` | text | Default: `$12,000` |
 | `section_pricing_price` | text | Default: `$3,200` |
-| `section_pricing_includes_label` | text | Default: `Investment` |
+| `section_pricing_label` | text | Default: `Investment` (label above the price) |
 | `section_pricing_footnote` | textarea | Travel not included copy |
 | `section_pricing_cta_text` | text | Default: `JOIN THE COURSE & RETREAT` |
-| `section_pricing_cta_url` | text | Kajabi checkout URL (preserved from source) |
+| `section_pricing_cta_url` | text | Default: `https://true-influence-method.mykajabi.com/offers/zvLu7zev/checkout` |
 | `section_faq_heading` | text | Default: `Frequently Asked<br><em>Questions</em>` |
 | `section_faq_items` | repeater | sub: `item_question` (text), `item_answer` (textarea), `item_open` (true/false) |
 | `section_modal_enabled` | true/false | Master toggle (default `1`) |
