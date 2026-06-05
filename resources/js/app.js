@@ -165,6 +165,45 @@ window.addEventListener("load", function () {
         });
     }
 
+    // Tell Your Story Page Carousel
+    const tellYourStorySwiper = document.querySelector(".tell-your-story-swiper");
+    if (tellYourStorySwiper) {
+        new Swiper(tellYourStorySwiper, {
+            modules: [Navigation, Autoplay],
+            slidesPerView: "auto",
+            spaceBetween: 8,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            navigation: {
+                nextEl: ".tell-your-story-swiper-button-next",
+                prevEl: ".tell-your-story-swiper-button-prev",
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 8,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 8,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 8,
+                },
+                1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 8,
+                },
+            },
+        });
+    }
+
     // ============================================================
     // Inquiry Form — validation, GHL webhook submission, modal
     // ============================================================

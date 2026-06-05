@@ -11,7 +11,7 @@ $subtitle = get_field('section_hero_subtitle') ?: 'Somewhere along the way, you 
 $bg_image_id = get_field('section_hero_bg_image');
 $profile_image_id = get_field('section_hero_profile_image');
 $btn_primary_text = get_field('section_hero_btn_primary_text') ?: 'Start Your Story';
-$btn_primary_url = get_field('section_hero_btn_primary_url') ?: '/get-started/';
+$btn_primary_url = get_field('section_hero_btn_primary_url') ?: '/tell-your-story/';
 $btn_secondary_text = get_field('section_hero_btn_secondary_text') ?: 'Watch Joanna Speak';
 $btn_secondary_url = get_field('section_hero_btn_secondary_url') ?: '/on-stage/';
 ?>

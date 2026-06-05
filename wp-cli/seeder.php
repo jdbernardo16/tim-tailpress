@@ -462,7 +462,7 @@ class TimTailPress_Seeder
         $this->update_acf_field('section_hero_bg_image', $this->upload_image('hero-bg.webp'), $page_id, $force);
         $this->update_acf_field('section_hero_profile_image', $this->upload_image('hero-img.webp'), $page_id, $force);
         $this->update_acf_field('section_hero_btn_primary_text', 'Start Your Story', $page_id, $force);
-        $this->update_acf_field('section_hero_btn_primary_url', '/get-started/', $page_id, $force);
+        $this->update_acf_field('section_hero_btn_primary_url', '/tell-your-story/', $page_id, $force);
         $this->update_acf_field('section_hero_btn_secondary_text', 'Watch Joanna Speak', $page_id, $force);
         $this->update_acf_field('section_hero_btn_secondary_url', '/on-stage/', $page_id, $force);
 
@@ -483,7 +483,7 @@ class TimTailPress_Seeder
 It\'s about reconnecting with the moments that shaped your voice, your leadership, and the way people experience you.', $page_id, $force);
         $this->update_acf_field('section_tell_story_image', $this->upload_image('tell-story-1.webp'), $page_id, $force);
         $this->update_acf_field('section_tell_story_btn_text', 'START YOUR STORY', $page_id, $force);
-        $this->update_acf_field('section_tell_story_btn_url', '/events/', $page_id, $force);
+        $this->update_acf_field('section_tell_story_btn_url', '/tell-your-story/', $page_id, $force);
 
         $this->update_acf_field('section_discover_heading', 'Discover the Message <em class="text-gold italic">Hidden</em> Inside Your Story.', $page_id, $force);
         $this->update_acf_field('section_discover_text', 'A guided experience to help you uncover the truth, perspective, and story behind your influence.', $page_id, $force);

@@ -3,7 +3,7 @@
 $heading = get_field('section_tell_story_heading') ?: 'Your Story <em class="text-gold italic">Changes</em> Rooms.';
 $text = get_field('section_tell_story_text');
 $btn_text = get_field('section_tell_story_btn_text') ?: 'START YOUR STORY';
-$btn_url = get_field('section_tell_story_btn_url') ?: '/events/';
+$btn_url = get_field('section_tell_story_btn_url') ?: '/tell-your-story/';
 ?>
 
 <section class="relative mx-4 sm:mx-10 rounded-3xl">

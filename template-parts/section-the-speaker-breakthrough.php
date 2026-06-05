@@ -9,7 +9,7 @@
 $heading = get_field('section_breakthrough_heading') ?: "Want to go further?";
 $text = get_field('section_breakthrough_text') ?: "One focused session designed to create immediate clarity and direction.";
 $btn_text = get_field('section_breakthrough_btn_text') ?: "BOOK A BREAKTHROUGH SESSION";
-$btn_url = get_field('section_breakthrough_btn_url') ?: home_url('/inquiry/');
+$btn_url = get_field('section_breakthrough_btn_url') ?: 'https://go.trueinfluencemethod.com/breakthrough-session';
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">

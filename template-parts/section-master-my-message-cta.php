@@ -8,7 +8,7 @@
 
 $heading = get_field('section_cta_heading') ?: 'Some People Have <em class="font-normal">Expertise</em>. <em class="text-gold italic">Others Become Known For it.</em>';
 $btn_text = get_field('section_cta_btn_text') ?: 'CREATE MY KEYNOTE';
-$btn_url = get_field('section_cta_btn_url') ?: 'https://go.trueinfluencemethod.com/master-my-message';
+$btn_url = get_field('section_cta_btn_url') ?: '/master-my-message/';
 $bg_image_id = get_field('section_cta_bg_image');
 
 $price_label = get_field('section_cta_price_label');

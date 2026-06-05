@@ -9,7 +9,7 @@
 $heading = get_field('section_upcoming_heading') ?: '<em class="text-gold italic">Upcoming</em> <span class="text-navy">Experiences</span>';
 ?>
 
-<section class="bg-canvas py-24 lg:py-32">
+<section id="upcoming" class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] leading-[110%] text-center">
             <?= $heading ?>
@@ -52,7 +52,7 @@ $heading = get_field('section_upcoming_heading') ?: '<em class="text-gold italic
 
                         <?php $note = get_sub_field('item_note'); ?>
                         <?php if ($note): ?>
-                        <p class="font-garet text-base text-dark-text mt-4 leading-[150%]"><?php echo esc_html($note); ?></p>
+                        <p class="font-garet text-base text-dark-text mt-4 leading-[150%]"><?php echo wp_kses_post($note); ?></p>
                         <?php endif; ?>
                     </div>
                 <?php endwhile; ?>

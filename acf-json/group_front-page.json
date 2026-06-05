@@ -46,7 +46,7 @@
             "label": "Hero Button Primary URL",
             "name": "section_hero_btn_primary_url",
             "type": "text",
-            "default_value": "/get-started/"
+            "default_value": "/tell-your-story/"
         },
         {
             "key": "field_section_hero_btn_secondary_text",
@@ -230,6 +230,12 @@
                     "label": "Text",
                     "name": "item_text",
                     "type": "textarea"
+                },
+                {
+                    "key": "field_section_journey_item_url",
+                    "label": "URL",
+                    "name": "item_url",
+                    "type": "url"
                 }
             ]
         },
