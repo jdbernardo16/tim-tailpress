@@ -1224,6 +1224,105 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         WP_CLI::success("Created {$created} page(s). Run `wp tim-tailpress seed --force` to populate ACF fields.");
     }
 
+    /**
+     * Reset everything: delete all pages and media, recreate pages, reseed all content.
+     *
+     * ## OPTIONS
+     *
+     * [--force]
+     * : Skip confirmation prompt.
+     *
+     * @when after_wp_load
+     */
+    public function reset($args, $assoc_args)
+    {
+        $force = isset($assoc_args['force']);
+
+        if (! $force) {
+            WP_CLI::confirm('This will DELETE all pages AND all media, then recreate everything from scratch. Continue?');
+        }
+
+        WP_CLI::line('Deleting all pages...');
+        $pages = get_posts([
+            'post_type' => 'page',
+            'posts_per_page' => -1,
+            'post_status' => 'any',
+            'fields' => 'ids',
+        ]);
+        foreach ($pages as $id) {
+            wp_delete_post($id, true);
+        }
+        WP_CLI::success('All pages deleted.');
+
+        WP_CLI::line('Deleting all media...');
+        $attachments = get_posts([
+            'post_type' => 'attachment',
+            'posts_per_page' => -1,
+            'post_status' => 'any',
+            'fields' => 'ids',
+        ]);
+        foreach ($attachments as $id) {
+            wp_delete_attachment($id, true);
+        }
+        WP_CLI::success('All media deleted.');
+
+        WP_CLI::line('Creating fresh pages...');
+        // Inline create_pages logic so we don't need to parse CLI args
+        $pages_to_create = [
+            ['slug' => 'front-page',              'title' => 'Home',                'template' => 'Front Page'],
+            ['slug' => 'about',                   'title' => 'About',               'template' => 'About'],
+            ['slug' => '4-session',               'title' => '4-Session Training',  'template' => '4-Session Training Package'],
+            ['slug' => 'be-remembered',            'title' => 'Be Remembered',        'template' => 'Be Remembered'],
+            ['slug' => 'breakthrough-session',     'title' => 'Breakthrough Session', 'template' => 'Breakthrough Session'],
+            ['slug' => 'build-my-team',            'title' => 'Build My Team',        'template' => 'Build My Team'],
+            ['slug' => 'events',                  'title' => 'Events & Workshops',  'template' => 'Events and Workshops'],
+            ['slug' => 'get-started',              'title' => 'Get Started',          'template' => 'Get Started'],
+            ['slug' => 'inquiry',                 'title' => 'Inquiry',             'template' => 'Inquiry'],
+            ['slug' => 'master-my-message',        'title' => 'Master My Message',    'template' => 'Master My Message'],
+            ['slug' => 'million-dollar-message',   'title' => 'Million Dollar Message', 'template' => 'Million Dollar Message'],
+            ['slug' => 'offers',                  'title' => 'Offers',              'template' => 'Offers'],
+            ['slug' => 'on-stage',                'title' => 'On Stage',            'template' => 'On Stage'],
+            ['slug' => 'speaker-cohort',           'title' => 'Speaker Cohort',       'template' => 'Speaker Cohort'],
+            ['slug' => 'success-stories',          'title' => 'Success Stories',      'template' => 'Success Stories'],
+            ['slug' => 'thank-you',               'title' => 'Thank You',           'template' => 'Thank You'],
+            ['slug' => 'the-authority',            'title' => 'The Authority',        'template' => 'The Authority'],
+            ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
+            ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
+            ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+        ];
+
+        $created = 0;
+        foreach ($pages_to_create as $p) {
+            $page_id = wp_insert_post([
+                'post_title'    => $p['title'],
+                'post_name'     => $p['slug'],
+                'post_type'     => 'page',
+                'post_status'   => 'publish',
+                'page_template' => $p['template'] === 'Front Page' ? '' : 'page-' . $p['slug'] . '.php',
+            ]);
+
+            if ($p['slug'] === 'front-page') {
+                update_option('page_on_front', $page_id);
+                update_option('show_on_front', 'page');
+            }
+
+            if (is_wp_error($page_id)) {
+                WP_CLI::warning("Failed to create page: {$p['slug']}");
+                continue;
+            }
+
+            $created++;
+            WP_CLI::line("Created: {$p['title']} (/{$p['slug']}/)");
+        }
+        WP_CLI::success("Created {$created} page(s).");
+
+        WP_CLI::line('Seeding all ACF content...');
+        // Call seed_all(true) with $force = true
+        $this->seed_all(true);
+
+        WP_CLI::success('Full reset & seed complete. All pages, media, SEO fields, and blog posts have been regenerated.');
+    }
+
     private function cleanup_media()
     {
         $attachments = get_posts([
@@ -1257,6 +1356,92 @@ add_action('wp_ajax_tim_tailpress_seed', function () {
     exit;
 });
 
+add_action('wp_ajax_tim_tailpress_reset', function () {
+    if (! current_user_can('manage_options')) {
+        wp_die('Unauthorized.');
+    }
+    if (! wp_verify_nonce($_REQUEST['_wpnonce'] ?? '', 'tim_tailpress_reset')) {
+        wp_die('Invalid nonce.');
+    }
+
+    $seeder = new TimTailPress_Seeder();
+
+    // Delete all pages
+    $pages = get_posts([
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'post_status' => 'any',
+        'fields' => 'ids',
+    ]);
+    foreach ($pages as $id) {
+        wp_delete_post($id, true);
+    }
+
+    // Delete all media
+    $attachments = get_posts([
+        'post_type' => 'attachment',
+        'posts_per_page' => -1,
+        'post_status' => 'any',
+        'fields' => 'ids',
+    ]);
+    foreach ($attachments as $id) {
+        wp_delete_attachment($id, true);
+    }
+
+    // Reset ACF caches
+    if (function_exists('acf_get_store')) {
+        $store = acf_get_store('fields');
+        if ($store) $store->reset();
+        $store = acf_get_store('field-groups');
+        if ($store) $store->reset();
+    }
+
+    // Recreate all pages from scratch
+    $pages_to_create = [
+        ['slug' => 'front-page',              'title' => 'Home',                'template' => 'Front Page'],
+        ['slug' => 'about',                   'title' => 'About',               'template' => 'About'],
+        ['slug' => '4-session',               'title' => '4-Session Training',  'template' => '4-Session Training Package'],
+        ['slug' => 'be-remembered',            'title' => 'Be Remembered',        'template' => 'Be Remembered'],
+        ['slug' => 'breakthrough-session',     'title' => 'Breakthrough Session', 'template' => 'Breakthrough Session'],
+        ['slug' => 'build-my-team',            'title' => 'Build My Team',        'template' => 'Build My Team'],
+        ['slug' => 'events',                  'title' => 'Events & Workshops',  'template' => 'Events and Workshops'],
+        ['slug' => 'get-started',              'title' => 'Get Started',          'template' => 'Get Started'],
+        ['slug' => 'inquiry',                 'title' => 'Inquiry',             'template' => 'Inquiry'],
+        ['slug' => 'master-my-message',        'title' => 'Master My Message',    'template' => 'Master My Message'],
+        ['slug' => 'million-dollar-message',   'title' => 'Million Dollar Message', 'template' => 'Million Dollar Message'],
+        ['slug' => 'offers',                  'title' => 'Offers',              'template' => 'Offers'],
+        ['slug' => 'on-stage',                'title' => 'On Stage',            'template' => 'On Stage'],
+        ['slug' => 'speaker-cohort',           'title' => 'Speaker Cohort',       'template' => 'Speaker Cohort'],
+        ['slug' => 'success-stories',          'title' => 'Success Stories',      'template' => 'Success Stories'],
+        ['slug' => 'thank-you',               'title' => 'Thank You',           'template' => 'Thank You'],
+        ['slug' => 'the-authority',            'title' => 'The Authority',        'template' => 'The Authority'],
+        ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
+        ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
+        ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+    ];
+
+    foreach ($pages_to_create as $p) {
+        $page_id = wp_insert_post([
+            'post_title'    => $p['title'],
+            'post_name'     => $p['slug'],
+            'post_type'     => 'page',
+            'post_status'   => 'publish',
+            'page_template' => $p['template'] === 'Front Page' ? '' : 'page-' . $p['slug'] . '.php',
+        ]);
+
+        if ($p['slug'] === 'front-page') {
+            update_option('page_on_front', $page_id);
+            update_option('show_on_front', 'page');
+        }
+    }
+
+    // Seed everything with force
+    $seeder->seed_all(true);
+
+    wp_redirect(add_query_arg('reset', '1', wp_get_referer()));
+    exit;
+});
+
 add_action('admin_menu', function () {
     add_submenu_page(
         'tools.php',
@@ -1270,21 +1455,42 @@ add_action('admin_menu', function () {
             }
 
             $seeded = isset($_GET['seeded']);
+            $reset = isset($_GET['reset']);
 
             if ($seeded) : ?>
                 <div class="notice notice-success"><p>Content seeded successfully.</p></div>
             <?php endif; ?>
+            <?php if ($reset) : ?>
+                <div class="notice notice-success"><p>Full reset complete. All pages, media, SEO fields, and blog posts have been regenerated.</p></div>
+            <?php endif; ?>
 
             <div class="wrap">
                 <h1>Seed Site Content</h1>
+
+                <h2>Quick Seed</h2>
                 <p>Populate all ACF field groups with the original hardcoded content. This will overwrite any existing field values.</p>
-                <form method="post" action="<?= admin_url('admin-ajax.php') ?>">
+                <form method="post" action="<?= admin_url('admin-ajax.php') ?>" style="margin-bottom:2em">
                     <?php wp_nonce_field('tim_tailpress_seed') ?>
                     <input type="hidden" name="action" value="tim_tailpress_seed">
                     <input type="hidden" name="page" value="tim-tailpress-seed">
                     <p class="submit">
                         <button type="submit" class="button button-primary" onclick="return confirm('This will overwrite all ACF field values. Continue?')">
                             Run Seeder
+                        </button>
+                    </p>
+                </form>
+
+                <hr>
+
+                <h2>Full Reset &amp; Seed</h2>
+                <p><strong>Destructive.</strong> Deletes all pages, all media library items, then recreates all pages from scratch and seeds all content (ACF fields, SEO fields, nav menus, blog posts). Use this to start fresh.</p>
+                <form method="post" action="<?= admin_url('admin-ajax.php') ?>">
+                    <?php wp_nonce_field('tim_tailpress_reset') ?>
+                    <input type="hidden" name="action" value="tim_tailpress_reset">
+                    <input type="hidden" name="page" value="tim-tailpress-seed">
+                    <p class="submit">
+                        <button type="submit" class="button button-danger" onclick="return confirm('⚠️ This will DELETE all pages and ALL media library items, then recreate everything from scratch. This cannot be undone. Continue?')" style="background:#c00;border-color:#c00;color:#fff;text-shadow:none">
+                            Full Reset &amp; Seed
                         </button>
                     </p>
                 </form>
