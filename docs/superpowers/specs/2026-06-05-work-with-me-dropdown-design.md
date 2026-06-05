@@ -107,19 +107,49 @@ indicator rotates 180° to confirm the active state.
 }
 ```
 
-### Mobile: hide chevron (CSS)
+### Mobile: show chevron + click-to-toggle (CSS + JS)
 
 ```css
 @media (max-width: 959px) {
-  .menu-chevron { display: none; }
+    .menu-chevron { display: inline-block; }
+    .sub-menu {
+        position: static;
+        min-width: 0;
+        padding: 4px 0 4px 16px;
+        border: none;
+        background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 4px 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
+    }
+    .menu-item-has-children.expanded > .sub-menu { display: block; }
+    .menu-item-has-children.expanded > a > .menu-chevron { transform: rotate(180deg); }
 }
 ```
 
-The mobile menu uses `depth => 1` so the submenu is never rendered, but the
-parent `<li>` still carries `menu-item-has-children` and the walker still emits
-the chevron. Hiding the chevron at the mobile breakpoint removes the dangling
-affordance. Breakpoint matches the theme's `--breakpoint-lg: 960px` (the same
-breakpoint where `hidden lg:flex` reveals the desktop nav).
+```js
+// In resources/js/app.js (inside the existing mobile-menu IIFE)
+document.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+        if (window.innerWidth >= 960) return;
+        var parent = link.parentElement;
+        if (parent.classList.contains('expanded')) return;
+        e.preventDefault();
+        parent.classList.add('expanded');
+    });
+});
+```
+
+The mobile menu uses `depth => 2` so the walker renders the submenu items
+inline. Submenu is hidden by default; first tap on the parent link expands it
+(chevron rotates), second tap navigates normally. Breakpoint matches the
+theme's `--breakpoint-lg: 960px`.
 
 ### Walker changes (`src/Walkers/HeaderNavWalker.php`)
 
@@ -191,11 +221,12 @@ later only if QA reports a real issue.
 
 | Trigger | Desktop | Mobile |
 |---|---|---|
-| Hover parent `<li>` | Panel fades in, chevron rotates | (no-op; mobile uses different menu) |
+| Hover parent `<li>` | Panel fades in, chevron rotates | (no-op; touch has no hover) |
 | Mouse leaves parent `<li>` | Panel fades out, chevron resets | n/a |
 | Keyboard focus into parent | Panel shows, chevron rotates (`:focus-within`) | n/a |
-| Click parent `<a>` | Normal navigation | Normal navigation (no dropdown) |
-| Click submenu link | Normal navigation, panel closes via blur | n/a |
+| Click parent `<a>` (1st tap) | Normal navigation | Submenu expands inline, chevron rotates 180° |
+| Click parent `<a>` (2nd tap) | n/a | Normal navigation |
+| Click submenu link | Normal navigation, panel closes via blur | Normal navigation |
 
 ## Acceptance Criteria
 
