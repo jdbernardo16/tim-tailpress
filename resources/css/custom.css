@@ -254,7 +254,7 @@
 }
 
 /* Mobile: hide chevron (no submenu rendered at depth=1) */
-@media (max-width: 1023px) {
+@media (max-width: 959px) {
     .menu-chevron {
         display: none;
     }
