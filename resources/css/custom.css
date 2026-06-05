@@ -227,3 +227,35 @@
     visibility: visible;
     transform: translateY(0);
 }
+
+/* Submenu link styling */
+.sub-menu-link {
+    font-family: var(--font-garet);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.sub-menu-link:hover {
+    color: var(--color-gold);
+}
+
+/* Chevron rotation on parent hover/focus */
+.menu-chevron {
+    transition: transform 200ms ease;
+}
+
+.menu-item-has-children:hover > a > .menu-chevron,
+.menu-item-has-children:focus-within > a > .menu-chevron {
+    transform: rotate(180deg);
+}
+
+/* Mobile: hide chevron (no submenu rendered at depth=1) */
+@media (max-width: 1023px) {
+    .menu-chevron {
+        display: none;
+    }
+}
