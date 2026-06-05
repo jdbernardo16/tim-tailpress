@@ -15,6 +15,9 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('bg-canvas text-navy antialiased'); ?>>
+<a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-navy focus:rounded">
+    <?php esc_html_e('Skip to content', 'tailpress'); ?>
+</a>
 <?php do_action('tailpress_site_before'); ?>
 
 <div id="page" class="min-h-screen flex flex-col">

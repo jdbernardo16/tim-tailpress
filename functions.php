@@ -73,6 +73,13 @@ add_filter('upload_mimes', function ($mimes) {
 });
 
 /**
+ * Initialize theme SEO (no plugin required).
+ */
+add_action('after_setup_theme', function () {
+    new TailPress\SEO();
+});
+
+/**
  * Load seeder (WP-CLI or admin AJAX trigger).
  */
 if (defined('WP_CLI') && WP_CLI || is_admin()) {
