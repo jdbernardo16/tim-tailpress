@@ -110,7 +110,7 @@ indicator rotates 180° to confirm the active state.
 ### Mobile: hide chevron (CSS)
 
 ```css
-@media (max-width: 1023px) {
+@media (max-width: 959px) {
   .menu-chevron { display: none; }
 }
 ```
@@ -118,15 +118,22 @@ indicator rotates 180° to confirm the active state.
 The mobile menu uses `depth => 1` so the submenu is never rendered, but the
 parent `<li>` still carries `menu-item-has-children` and the walker still emits
 the chevron. Hiding the chevron at the mobile breakpoint removes the dangling
-affordance.
+affordance. Breakpoint matches the theme's `--breakpoint-lg: 960px` (the same
+breakpoint where `hidden lg:flex` reveals the desktop nav).
 
 ### Walker changes (`src/Walkers/HeaderNavWalker.php`)
 
-1. Remove `hidden` from the `start_lvl` opening div. We now control visibility
+1. **Emit the `<li>` opening tag in `start_el`** with the WordPress menu item
+   classes (including `menu-item-has-children` when applicable). The current
+   walker overrides `start_el` and never emits a `<li>`, while the inherited
+   `end_el` still emits a closing `</li>`, producing invalid HTML and breaking
+   the CSS selectors that depend on `.menu-item-has-children`.
+2. **Override `end_el`** to emit the closing `</li>` explicitly.
+3. Remove `hidden` from the `start_lvl` opening div. We now control visibility
    with opacity/visibility for animation; `display: none` would block that.
-2. Add `sub-menu-link` class to every `<a>` rendered inside the submenu
+4. Add `sub-menu-link` class to every `<a>` rendered inside the submenu
    (recognised by `$depth > 0`).
-3. Add `menu-chevron` class to the chevron `<svg>`.
+5. Add `menu-chevron` class to the chevron `<svg>`.
 
 Pseudocode diff:
 
@@ -142,7 +149,10 @@ public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     $has_children = in_array('menu-item-has-children', $classes);
     $is_active = untrailingslashit($item->url) === untrailingslashit(home_url(add_query_arg([])));
     $class_names = ($is_active ? 'text-gold' : 'text-white') . ' font-garet font-light text-base no-underline';
-    $class_names .= $depth > 0 ? ' sub-menu-link' : ''; // new
+    $class_names .= $depth > 0 ? ' sub-menu-link' : '';
+
+    $li_classes = implode(' ', array_filter($classes)); // new — emit <li> with WP classes
+    $output .= '<li class="' . esc_attr($li_classes) . '">'; // new
 
     $output .= '<a href="' . esc_url($item->url) . '" class="' . $class_names . '">';
     $output .= esc_html($item->title);
@@ -152,6 +162,11 @@ public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     }
 
     $output .= '</a>';
+}
+
+public function end_el(&$output, $item, $depth = 0, $args = []) // new — override inherited
+{
+    $output .= '</li>';
 }
 ```
 
