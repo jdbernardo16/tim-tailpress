@@ -90,17 +90,46 @@ class TimTailPress_Seeder
 
     private function create_menu($menu_name, $location, $items)
     {
-        if (wp_get_nav_menu_object($menu_name)) {
-            return;
+        $menu = wp_get_nav_menu_object($menu_name);
+
+        if (! $menu) {
+            $menu_id = wp_create_nav_menu($menu_name);
+            if (is_wp_error($menu_id)) {
+                return;
+            }
+        } else {
+            $menu_id = $menu->term_id;
         }
 
-        $menu_id = wp_create_nav_menu($menu_name);
-        if (is_wp_error($menu_id)) {
-            return;
+        $existing_items = wp_get_nav_menu_items($menu_id);
+        if ($existing_items === false) {
+            $existing_items = [];
+        }
+        $existing_keys = [];
+        foreach ($existing_items as $existing) {
+            $parent_id = get_post_meta($existing->ID, '_menu_item_menu_item_parent', true);
+            $parent_title = $parent_id ? get_the_title($parent_id) : '';
+            $key = $parent_title . '||' . $existing->title;
+            $existing_keys[$key] = true;
         }
 
         $item_ids = [];
         foreach ($items as $i => $item) {
+            $parent_title = $item['parent'] ?? '';
+            $key = $parent_title . '||' . $item['title'];
+
+            if (isset($existing_keys[$key])) {
+                foreach ($existing_items as $existing) {
+                    $existing_parent_id = get_post_meta($existing->ID, '_menu_item_menu_item_parent', true);
+                    $existing_parent_title = $existing_parent_id ? get_the_title($existing_parent_id) : '';
+                    if ($existing_parent_title === $parent_title && $existing->title === $item['title']) {
+                        $item_ids[$i] = $existing->ID;
+                        break;
+                    }
+                }
+                continue;
+            }
+
             $item_id = wp_update_nav_menu_item($menu_id, 0, [
                 'menu-item-title' => $item['title'],
                 'menu-item-url' => $item['url'] ?? '',
@@ -111,7 +140,7 @@ class TimTailPress_Seeder
         }
 
         foreach ($items as $i => $item) {
-            if (! empty($item['parent'])) {
+            if (! empty($item['parent']) && isset($item_ids[$i])) {
                 $parent_idx = array_search($item['parent'], array_column($items, 'title'));
                 if ($parent_idx !== false && isset($item_ids[$parent_idx])) {
                     update_post_meta($item_ids[$i], '_menu_item_menu_item_parent', $item_ids[$parent_idx]);
@@ -148,6 +177,7 @@ class TimTailPress_Seeder
             'the-legacy'          => ['meta_desc' => "Strengthen your authority and build a message that people immediately understand, remember, and trust with The Legacy path.", 'og_image' => 'joanna-profile.webp'],
             'the-speaker'         => ['meta_desc' => "Uncover the message behind your lived experience and communicate with greater clarity, confidence, and emotional truth with The Speaker path.", 'og_image' => 'the-speaker1.webp'],
             'the-vault'           => ['meta_desc' => "Join Joanna live in The Vault — a free conversation space for women exploring voice, visibility, leadership, and emotional truth.", 'og_image' => 'vault-hero-joanna.webp'],
+            'tell-your-story'    => ['meta_desc' => "Tell Your Story is the transformational course + retreat experience inside the True Influence Method. Created for leaders ready to reconnect with the story behind their influence.", 'og_image' => 'tell-your-story-hero-bg.webp'],
         ];
 
         foreach ($pages as $slug => $data) {
@@ -255,6 +285,7 @@ class TimTailPress_Seeder
         }
 
         $this->create_menus();
+        $this->ensure_pages_exist();
 
         $page_slugs = [
             'front-page', 'about', '4-session', 'be-remembered',
@@ -263,6 +294,7 @@ class TimTailPress_Seeder
             'million-dollar-message', 'offers', 'on-stage',
             'speaker-cohort', 'success-stories', 'thank-you',
             'the-authority', 'the-legacy', 'the-speaker', 'the-vault',
+            'tell-your-story',
         ];
 
         foreach ($page_slugs as $slug) {
@@ -275,6 +307,62 @@ class TimTailPress_Seeder
 
         $this->seed_seo($force);
         $this->seed_blog_posts($force);
+    }
+
+    private function ensure_pages_exist()
+    {
+        $pages = [
+            ['slug' => 'front-page',              'title' => 'Home',                'template' => 'Front Page'],
+            ['slug' => 'about',                   'title' => 'About',               'template' => 'About'],
+            ['slug' => '4-session',               'title' => '4-Session Training',  'template' => '4-Session Training Package'],
+            ['slug' => 'be-remembered',            'title' => 'Be Remembered',        'template' => 'Be Remembered'],
+            ['slug' => 'breakthrough-session',     'title' => 'Breakthrough Session', 'template' => 'Breakthrough Session'],
+            ['slug' => 'build-my-team',            'title' => 'Build My Team',        'template' => 'Build My Team'],
+            ['slug' => 'events',                  'title' => 'Events & Workshops',  'template' => 'Events and Workshops'],
+            ['slug' => 'get-started',              'title' => 'Get Started',          'template' => 'Get Started'],
+            ['slug' => 'inquiry',                 'title' => 'Inquiry',             'template' => 'Inquiry'],
+            ['slug' => 'master-my-message',        'title' => 'Master My Message',    'template' => 'Master My Message'],
+            ['slug' => 'million-dollar-message',   'title' => 'Million Dollar Message', 'template' => 'Million Dollar Message'],
+            ['slug' => 'offers',                  'title' => 'Offers',              'template' => 'Offers'],
+            ['slug' => 'on-stage',                'title' => 'On Stage',            'template' => 'On Stage'],
+            ['slug' => 'speaker-cohort',           'title' => 'Speaker Cohort',       'template' => 'Speaker Cohort'],
+            ['slug' => 'success-stories',          'title' => 'Success Stories',      'template' => 'Success Stories'],
+            ['slug' => 'thank-you',               'title' => 'Thank You',           'template' => 'Thank You'],
+            ['slug' => 'the-authority',            'title' => 'The Authority',        'template' => 'The Authority'],
+            ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
+            ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
+            ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+            ['slug' => 'tell-your-story',         'title' => 'Tell Your Story',     'template' => 'Tell Your Story'],
+        ];
+
+        foreach ($pages as $p) {
+            $existing = get_posts([
+                'name'             => $p['slug'],
+                'post_type'        => 'page',
+                'posts_per_page'   => 1,
+                'fields'           => 'ids',
+                'post_status'      => 'any',
+            ]);
+
+            if (! empty($existing)) {
+                continue;
+            }
+
+            $page_id = wp_insert_post([
+                'post_title'    => $p['title'],
+                'post_name'     => $p['slug'],
+                'post_type'     => 'page',
+                'post_status'   => 'publish',
+                'page_template' => $p['slug'] === 'front-page' ? '' : 'page-' . $p['slug'] . '.php',
+            ]);
+
+            if ($p['slug'] === 'front-page') {
+                update_option('page_on_front', $page_id);
+                update_option('show_on_front', 'page');
+            }
+
+            WP_CLI::line("Created page: {$p['title']} ({$p['slug']})");
+        }
     }
 
     /**
@@ -1071,6 +1159,73 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_registration_bg_image', $this->upload_image('vault-registration-bg.webp'), $page_id, $force);
     }
 
+    private function seed_tell_your_story($force = false)
+    {
+        $page_id = $this->get_page_id('tell-your-story');
+        if (! $page_id) {
+            return;
+        }
+
+        $this->update_acf_field('section_tys_hero_eyebrow', 'Tell Your Story', $page_id, $force);
+        $this->update_acf_field('section_tys_hero_heading', 'Where Leaders<br>Tell The <em class="text-gold italic">Truth.</em>', $page_id, $force);
+        $this->update_acf_field('section_tys_hero_body', 'Tell Your Story is the transformational course + retreat experience inside the True Influence Method. Created for leaders ready to reconnect with the story behind their influence.', $page_id, $force);
+        $this->update_acf_field('section_tys_hero_cta_text', 'VIEW THE RETREAT EXPERIENCE', $page_id, $force);
+        $this->update_acf_field('section_tys_hero_cta_url', '#pricing', $page_id, $force);
+        $this->update_acf_field('section_tys_hero_bg_image', $this->upload_image('tell-your-story-hero-bg.webp'), $page_id, $force);
+
+        $this->update_acf_field('section_tys_speaking_heading', 'This Is <em>Not</em> Just Speaking Training; It\'s Leading from the Stage', $page_id, $force);
+        $this->update_acf_field('section_tys_speaking_text_1', 'This is the work of uncovering the moments that shaped your voice, your leadership, and the way people experience you.', $page_id, $force);
+        $this->update_acf_field('section_tys_speaking_text_2', 'Inside the retreat, leaders reconnect with the truth behind their message so their words stop sounding practiced and start feeling real.', $page_id, $force);
+
+        $this->update_acf_field('section_tys_founding_heading', 'Be Part of the<br><em class="text-gold">Founding Experience.</em>', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_subhead', 'This retreat marks the beginning of a new chapter inside the True Influence Method \u2014 bringing together a small group of leaders ready to uncover the story behind their influence.', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_card_title', 'Inside the Experience', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_card_sub', 'A guided experience designed to help you uncover the story behind your leadership.', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_card_text', 'Inside Tell Your Story, you\'ll move through a structured self-guided course experience with Joanna designed to help you identify the defining moments, emotional truths, and deeper why behind your message.', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_date', 'September 17-20, 2027', $page_id, $force);
+        $this->update_acf_field('section_tys_founding_features', [
+            ['feature_text' => 'Four guided self-paced modules'],
+            ['feature_text' => 'Community connection with like-minded leaders'],
+            ['feature_text' => 'Reflective prompts and story exercises'],
+            ['feature_text' => 'Story sharing, refinement, and feedback'],
+            ['feature_text' => 'Defining moment and "why" discovery'],
+            ['feature_text' => 'Immersive retreat experience with Joanna'],
+        ], $page_id, $force);
+
+        $this->update_acf_field('section_tys_carousel_images', [
+            ['image' => $this->upload_image('tell-your-story-carousel-1.webp')],
+            ['image' => $this->upload_image('tell-your-story-carousel-2.webp')],
+            ['image' => $this->upload_image('tell-your-story-carousel-3.webp')],
+            ['image' => $this->upload_image('tell-your-story-carousel-4.webp')],
+            ['image' => $this->upload_image('tell-your-story-carousel-5.webp')],
+            ['image' => $this->upload_image('tell-your-story-carousel-6.webp')],
+        ], $page_id, $force);
+
+        $this->update_acf_field('section_tys_transformations_heading', 'Some Transformations Can\'t be Explained.<br>They Have to be <em class="text-gold italic">Experienced.</em>', $page_id, $force);
+        $this->update_acf_field('section_tys_transformations_subtitle', 'When your story becomes clear, so does your leadership.', $page_id, $force);
+        $this->update_acf_field('section_tys_transformations_banner', 'Because your message finally comes from something real.', $page_id, $force);
+
+        $this->update_acf_field('section_tys_pricing_heading', 'Join the Course &amp; Retreat<br><em class="text-gold-section italic">Experience</em>', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_subhead', 'This inaugural course & retreat experience is intentionally intimate to preserve depth, connection, and transformation.', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_strike', '$12,000', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_price', '$3,200', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_footnote', 'Includes the transformational course and retreat experience. Travel & accommodations not included.', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_cta_text', 'JOIN THE COURSE & RETREAT', $page_id, $force);
+        $this->update_acf_field('section_tys_pricing_cta_url', 'https://true-influence-method.mykajabi.com/offers/zvLu7zev/checkout', $page_id, $force);
+
+        $this->update_acf_field('section_tys_faq_heading', 'Frequently Asked<br><em class="text-gold italic">Questions</em>', $page_id, $force);
+        $this->update_acf_field('section_tys_faq_items', [
+            ['question' => 'What happens during the retreat?', 'answer' => 'Tell Your Story is an immersive transformational experience designed to help leaders reconnect with the story behind their voice, leadership, and influence. Through guided reflection, live story sharing, emotional feedback, and intimate group experiences, participants begin clarifying the message that feels most true to who they are.'],
+            ['question' => 'Do I need speaking experience?', 'answer' => 'No. This experience is not about becoming a polished performer. It\u2019s about reconnecting with the truth behind your voice so your message feels more grounded, clear, and emotionally honest.'],
+            ['question' => 'Is this for leaders or speakers?', 'answer' => 'Both. Tell Your Story is designed for leaders, founders, visionaries, and speakers who want to communicate with deeper trust, clarity, and emotional connection.'],
+            ['question' => 'What\u2019s included?', 'answer' => 'Your investment includes the transformational course experience, retreat sessions, guided exercises, live story work, and immersive group experiences throughout the retreat. Travel and accommodations are not included.'],
+            ['question' => 'Is travel included?', 'answer' => 'No. Travel and accommodations are separate so participants can choose the arrangements that best support their experience.'],
+            ['question' => 'What if I\u2019m not fully clear on my message yet?', 'answer' => 'That\u2019s exactly why this experience exists. Tell Your Story is designed for people who know there\u2019s something deeper they want to communicate \u2014 even if they don\u2019t fully have the words for it yet.'],
+        ], $page_id, $force);
+
+        WP_CLI::line('Seeded ACF fields for: tell-your-story');
+    }
+
     /**
      * Fix page template assignments for existing pages that still use 'default'.
      *
@@ -1108,6 +1263,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
             'the-legacy'           => 'page-the-legacy.php',
             'the-speaker'          => 'page-the-speaker.php',
             'the-vault'            => 'page-the-vault.php',
+            'tell-your-story'      => 'page-tell-your-story.php',
         ];
 
         $pages = get_posts([
@@ -1276,6 +1432,24 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         }
         WP_CLI::success('All media deleted.');
 
+        WP_CLI::line('Deleting all menus...');
+        $menu_items = get_posts([
+            'post_type' => 'nav_menu_item',
+            'posts_per_page' => -1,
+            'post_status' => 'any',
+            'fields' => 'ids',
+        ]);
+        foreach ($menu_items as $id) {
+            wp_delete_post($id, true);
+        }
+        $menus = get_terms(['taxonomy' => 'nav_menu', 'hide_empty' => false]);
+        if (! is_wp_error($menus)) {
+            foreach ($menus as $menu) {
+                wp_delete_term($menu->term_id, 'nav_menu');
+            }
+        }
+        WP_CLI::success('All menus deleted.');
+
         WP_CLI::line('Creating fresh pages...');
         // Inline create_pages logic so we don't need to parse CLI args
         $pages_to_create = [
@@ -1299,6 +1473,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
             ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
             ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
             ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+            ['slug' => 'tell-your-story',         'title' => 'Tell Your Story',     'template' => 'Tell Your Story'],
         ];
 
         $created = 0;
@@ -1428,6 +1603,7 @@ add_action('wp_ajax_tim_tailpress_reset', function () {
         ['slug' => 'the-legacy',              'title' => 'The Legacy',          'template' => 'The Legacy'],
         ['slug' => 'the-speaker',             'title' => 'The Speaker',         'template' => 'The Speaker'],
         ['slug' => 'the-vault',               'title' => 'The Vault',           'template' => 'The Vault'],
+        ['slug' => 'tell-your-story',         'title' => 'Tell Your Story',     'template' => 'Tell Your Story'],
     ];
 
     foreach ($pages_to_create as $p) {
