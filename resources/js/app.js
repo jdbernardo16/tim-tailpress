@@ -53,6 +53,20 @@ import { Navigation, Autoplay } from "swiper/modules";
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
     }
+
+    // Mobile submenu toggle (Work With Me and any other parent item)
+    document.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth >= 960) return; // Desktop: normal navigation
+            var parent = link.parentElement;
+            if (parent.classList.contains('expanded')) {
+                return; // Already expanded: navigate normally
+            }
+            // First click: expand
+            e.preventDefault();
+            parent.classList.add('expanded');
+        });
+    });
 })();
 
 window.addEventListener("load", function () {
