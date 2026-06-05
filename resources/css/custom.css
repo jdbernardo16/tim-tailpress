@@ -189,3 +189,41 @@
         margin-bottom: 0 !important;
     }
 }
+
+/* =================================================================
+   Header nav: Work With Me hover dropdown
+   ================================================================= */
+
+/* Parent item with children — needs a positioning context */
+.menu-item-has-children {
+    position: relative;
+}
+
+/* Dropdown panel */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 50;
+    min-width: 475px;
+    padding: 24px;
+    border-radius: 10px;
+    background: rgba(15, 32, 61, 0.9);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(212, 180, 120, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+}
+
+.menu-item-has-children:hover > .sub-menu,
+.menu-item-has-children:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
