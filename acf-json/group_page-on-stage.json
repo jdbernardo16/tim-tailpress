@@ -6,57 +6,180 @@
             "key": "field_section_hero_heading",
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Invite Joanna<br>Into the <em class=\"text-gold italic\">Room.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Invite Joanna<br>Into the <em class=\"text-gold italic\">Room.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_hero_subtitle",
             "label": "Section Hero Subtitle",
             "name": "section_hero_subtitle",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_hero_bg_image",
             "label": "Section Hero Bg Image",
             "name": "section_hero_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_hero_profile_image",
             "label": "Section Hero Profile Image",
             "name": "section_hero_profile_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_hero_stats",
             "label": "Section Hero Stats",
             "name": "section_hero_stats",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_hero_stats_item_icon",
                     "label": "Section Hero Stats Item Icon",
                     "name": "item_icon",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
-                    "preview_size": "medium"
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_section_hero_stats"
                 },
                 {
                     "key": "field_section_hero_stats_item_value",
                     "label": "Section Hero Stats Item Value",
                     "name": "item_value",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_hero_stats"
                 },
                 {
                     "key": "field_section_hero_stats_item_label",
                     "label": "Section Hero Stats Item Label",
                     "name": "item_label",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_hero_stats"
                 }
             ]
         },
@@ -64,58 +187,188 @@
             "key": "field_section_video_heading",
             "label": "Section Video Heading",
             "name": "section_video_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_video_video_url",
             "label": "Section Video Video Url",
             "name": "section_video_video_url",
+            "aria-label": "",
             "type": "oembed",
-            "width": ""
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
         },
         {
             "key": "field_section_video_text",
             "label": "Section Video Text",
             "name": "section_video_text",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_credibility_heading",
             "label": "Section Credibility Heading",
             "name": "section_credibility_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_credibility_featured",
             "label": "Section Credibility Featured",
             "name": "section_credibility_featured",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_credibility_featured_item_image",
                     "label": "Section Credibility Featured Item Image",
                     "name": "item_image",
+                    "aria-label": "",
                     "type": "image",
-                    "return_format": "id"
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_section_credibility_featured"
                 },
                 {
                     "key": "field_section_credibility_featured_item_badge",
                     "label": "Section Credibility Featured Item Badge",
                     "name": "item_badge",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_credibility_featured"
                 },
                 {
                     "key": "field_section_credibility_featured_item_title",
                     "label": "Section Credibility Featured Item Title",
                     "name": "item_title",
-                    "type": "textarea"
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "parent_repeater": "field_section_credibility_featured"
                 },
                 {
                     "key": "field_section_credibility_featured_item_date",
                     "label": "Section Credibility Featured Item Date",
                     "name": "item_date",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_credibility_featured"
                 }
             ]
         },
@@ -123,26 +376,85 @@
             "key": "field_section_credibility_items",
             "label": "Section Credibility Items",
             "name": "section_credibility_items",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_credibility_items_item_badge",
                     "label": "Section Credibility Items Item Badge",
                     "name": "item_badge",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_credibility_items"
                 },
                 {
                     "key": "field_section_credibility_items_item_heading",
                     "label": "Section Credibility Items Item Heading",
                     "name": "item_heading",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_credibility_items"
                 },
                 {
                     "key": "field_section_credibility_items_item_date",
                     "label": "Section Credibility Items Item Date",
                     "name": "item_date",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_credibility_items"
                 }
             ]
         },
@@ -150,50 +462,167 @@
             "key": "field_section_experiences_heading",
             "label": "Section Experiences Heading",
             "name": "section_experiences_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_experiences_subtitle",
             "label": "Section Experiences Subtitle",
             "name": "section_experiences_subtitle",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_experiences_items",
             "label": "Section Experiences Items",
             "name": "section_experiences_items",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_experiences_items_item_title",
                     "label": "Section Experiences Items Item Title",
                     "name": "item_title",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_experiences_items"
                 },
                 {
                     "key": "field_section_experiences_items_item_length",
                     "label": "Section Experiences Items Item Length",
                     "name": "item_length",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_experiences_items"
                 },
                 {
                     "key": "field_section_experiences_items_item_ideal",
                     "label": "Section Experiences Items Item Ideal",
                     "name": "item_ideal",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_experiences_items"
                 },
                 {
                     "key": "field_section_experiences_items_item_description",
                     "label": "Section Experiences Items Item Description",
                     "name": "item_description",
-                    "type": "textarea"
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "parent_repeater": "field_section_experiences_items"
                 },
                 {
                     "key": "field_section_experiences_items_item_btn_url",
                     "label": "Section Experiences Items Item Btn Url",
                     "name": "item_btn_url",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_experiences_items"
                 }
             ]
         },
@@ -201,81 +630,261 @@
             "key": "field_section_book_heading",
             "label": "Section Book Heading",
             "name": "section_book_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_book_text",
             "label": "Section Book Text",
             "name": "section_book_text",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_book_image",
             "label": "Section Book Image",
             "name": "section_book_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_book_btn_text",
             "label": "Section Book Btn Text",
             "name": "section_book_btn_text",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_book_btn_url",
             "label": "Section Book Btn Url",
             "name": "section_book_btn_url",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_download_heading",
             "label": "Section Download Heading",
             "name": "section_download_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_download_text",
             "label": "Section Download Text",
             "name": "section_download_text",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_download_bg_image",
             "label": "Section Download Bg Image",
             "name": "section_download_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_download_image_left",
             "label": "Section Download Image Left",
             "name": "section_download_image_left",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_download_image_right",
             "label": "Section Download Image Right",
             "name": "section_download_image_right",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_download_btn_text",
             "label": "Section Download Btn Text",
             "name": "section_download_btn_text",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_download_btn_url",
             "label": "Section Download Btn Url",
             "name": "section_download_btn_url",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -287,5 +896,14 @@
             }
         ]
     ],
-    "active": true
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780710493
 }

@@ -297,4 +297,16 @@
     .menu-item-has-children.expanded > a > .menu-chevron {
         transform: rotate(180deg);
     }
+
+    /* Sub-menu links on mobile — bigger touch targets */
+    .sub-menu-link {
+        display: block;
+        padding: 10px 0;
+        font-size: 15px;
+        opacity: 0.85;
+    }
+
+    .sub-menu-link:hover {
+        opacity: 1;
+    }
 }

@@ -12,7 +12,17 @@ $webhook_url = 'https://services.leadconnectorhq.com/hooks/txFvEqJbQlKriCxJl8w3/
 <div class="fixed inset-0 z-[9999] flex items-center justify-center p-5 opacity-0 invisible transition-all duration-400 ease-in-out"
      id="tysExitModal"
      style="background: rgba(15, 32, 61, 0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
-    <div class="bg-white rounded-[24px] max-w-[580px] w-full max-h-[100vh] overflow-y-auto p-8 sm:p-10 lg:p-12 relative shadow-2xl transform translate-y-8 scale-[0.97] transition-transform duration-400 ease-in-out"
+    <style>
+        /* Hide scrollbar for #tysModalCard while keeping scroll functionality */
+        #tysModalCard.scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+        #tysModalCard.scrollbar-hide::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari, Edge */
+        }
+    </style>
+    <div class="bg-white rounded-[24px] max-w-[580px] w-full max-h-[80vh] lg:max-h-[100vh] overflow-y-auto p-8 sm:p-10 lg:p-12 relative shadow-2xl transform translate-y-8 scale-[0.97] transition-transform duration-400 ease-in-out scrollbar-hide"
          id="tysModalCard">
         <!-- Close Button -->
         <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#f0ede6] border-none cursor-pointer flex items-center justify-center hover:bg-[#e0dbd0] transition-colors"

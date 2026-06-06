@@ -57,7 +57,7 @@ $subtitle = get_field('section_signature_subtitle') ?: 'The primary transformati
                         'price_label' => '',
                         'price'       => '$3,200',
                         'cta'         => 'FIND MY MESSAGE',
-                        'url'         => home_url('/the-speaker/'),
+                        'url'         => home_url('/tell-your-story/'),
                     ),
                     array(
                         'title'       => 'Move the Room',

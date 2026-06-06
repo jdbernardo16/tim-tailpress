@@ -43,20 +43,34 @@
             </svg>
         </button>
     </div>
+</header>
 
-    <div id="header-mobile-menu" class="hidden lg:hidden bg-navy/95 backdrop-blur-sm absolute top-full left-0 right-0" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Mobile menu', 'tailpress'); ?>">
-        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
-            <?php
-            wp_nav_menu([
-                'theme_location' => 'header',
-                'container' => false,
-                'menu_class' => 'flex flex-col gap-4',
-                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth' => 2,
-                'fallback_cb' => false,
-                'walker' => new \TailPress\Walkers\HeaderNavWalker(),
-            ]);
-            ?>
+<div id="header-mobile-menu" class="hidden lg:hidden bg-navy fixed inset-0 z-50 pt-24 overflow-y-auto" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Mobile menu', 'tailpress'); ?>">
+    <button type="button" id="header-mobile-close" class="absolute top-6 right-4 w-9 h-9 flex items-center justify-center text-white/80 hover:text-white transition-colors" aria-label="<?php esc_attr_e('Close navigation', 'tailpress'); ?>">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+    <div class="min-h-full flex flex-col px-6 pb-8">
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'header',
+            'container' => false,
+            'menu_class' => 'flex flex-col gap-2',
+            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth' => 2,
+            'fallback_cb' => false,
+            'walker' => new \TailPress\Walkers\HeaderNavWalker(),
+        ]);
+        ?>
+
+        <div class="mt-auto pt-8">
+            <a href="<?php echo esc_url(home_url('/get-started/')); ?>" class="btn-primary w-full py-4">
+                <?php esc_html_e('GET STARTED', 'tailpress'); ?>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </a>
         </div>
     </div>
-</header>
+</div>

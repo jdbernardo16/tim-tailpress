@@ -6,86 +6,278 @@
             "key": "field_section_hero_heading",
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Ways to Work<br>with Joanna."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ways to Work<br>with Joanna.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_hero_subtitle",
             "label": "Section Hero Subtitle",
             "name": "section_hero_subtitle",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_hero_bg_image",
             "label": "Section Hero Bg Image",
             "name": "section_hero_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_hero_profile_image",
             "label": "Section Hero Profile Image",
             "name": "section_hero_profile_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_signature_heading",
             "label": "Section Signature Heading",
             "name": "section_signature_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Signature <em class=\"text-gold italic\">Offers</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Signature <em class=\"text-gold italic\">Offers<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_signature_subtitle",
             "label": "Section Signature Subtitle",
             "name": "section_signature_subtitle",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_signature_items",
             "label": "Section Signature Items",
             "name": "section_signature_items",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_signature_items_item_title",
                     "label": "Section Signature Items Item Title",
                     "name": "item_title",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_signature_items"
                 },
                 {
                     "key": "field_section_signature_items_item_description",
                     "label": "Section Signature Items Item Description",
                     "name": "item_description",
-                    "type": "textarea"
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "parent_repeater": "field_section_signature_items"
                 },
                 {
                     "key": "field_section_signature_items_item_price_label",
                     "label": "Section Signature Items Item Price Label",
                     "name": "item_price_label",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_signature_items"
                 },
                 {
                     "key": "field_section_signature_items_item_price",
                     "label": "Section Signature Items Item Price",
                     "name": "item_price",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_signature_items"
                 },
                 {
                     "key": "field_section_signature_items_item_cta",
                     "label": "Section Signature Items Item Cta",
                     "name": "item_cta",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_signature_items"
                 },
                 {
                     "key": "field_section_signature_items_item_url",
                     "label": "Section Signature Items Item Url",
                     "name": "item_url",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_signature_items"
                 }
             ]
         },
@@ -93,44 +285,147 @@
             "key": "field_section_other_heading",
             "label": "Section Other Heading",
             "name": "section_other_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_other_items",
             "label": "Section Other Items",
             "name": "section_other_items",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_other_items_item_title",
                     "label": "Section Other Items Item Title",
                     "name": "item_title",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_other_items"
                 },
                 {
                     "key": "field_section_other_items_item_description",
                     "label": "Section Other Items Item Description",
                     "name": "item_description",
-                    "type": "textarea"
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "parent_repeater": "field_section_other_items"
                 },
                 {
                     "key": "field_section_other_items_item_price",
                     "label": "Section Other Items Item Price",
                     "name": "item_price",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_other_items"
                 },
                 {
                     "key": "field_section_other_items_item_cta",
                     "label": "Section Other Items Item Cta",
                     "name": "item_cta",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_other_items"
                 },
                 {
                     "key": "field_section_other_items_item_url",
                     "label": "Section Other Items Item Url",
                     "name": "item_url",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_other_items"
                 }
             ]
         },
@@ -138,33 +433,106 @@
             "key": "field_section_cta_heading",
             "label": "Section Cta Heading",
             "name": "section_cta_heading",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_cta_text",
             "label": "Section Cta Text",
             "name": "section_cta_text",
-            "type": "textarea"
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_cta_btn_text",
             "label": "Section Cta Btn Text",
             "name": "section_cta_btn_text",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_cta_btn_url",
             "label": "Section Cta Btn Url",
             "name": "section_cta_btn_url",
-            "type": "text"
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_cta_bg_image",
             "label": "Section Cta Bg Image",
             "name": "section_cta_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -176,5 +544,14 @@
             }
         ]
     ],
-    "active": true
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780710493
 }

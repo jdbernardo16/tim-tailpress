@@ -6,58 +6,180 @@
             "key": "field_section_hero_heading",
             "label": "Section Hero Heading",
             "name": "section_hero_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Influence Begins<br>With What's <em class=\"text-gold italic\">True.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Influence Begins<br>With What's <em class=\"text-gold italic\">True.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_hero_subtitle",
             "label": "Section Hero Subtitle",
             "name": "section_hero_subtitle",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "Joanna Horton McPherson is a private advisor, speaker, and creator of the True Influence Method™ — helping leaders turn lived experience into messages people trust, feel, and follow."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Joanna Horton McPherson is a private advisor, speaker, and creator of the True Influence Method™ — helping leaders turn lived experience into messages people trust, feel, and follow.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_section_hero_bg_image",
             "label": "Section Hero Bg Image",
             "name": "section_hero_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_hero_profile_image",
             "label": "Section Hero Profile Image",
             "name": "section_hero_profile_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_hero_stats",
             "label": "Section Hero Stats",
             "name": "section_hero_stats",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_section_hero_stats_item_icon",
                     "label": "Section Hero Stats Item Icon",
                     "name": "item_icon",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
-                    "preview_size": "medium"
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_section_hero_stats"
                 },
                 {
                     "key": "field_section_hero_stats_item_value",
                     "label": "Section Hero Stats Item Value",
                     "name": "item_value",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_hero_stats"
                 },
                 {
                     "key": "field_section_hero_stats_item_label",
                     "label": "Section Hero Stats Item Label",
                     "name": "item_label",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_section_hero_stats"
                 }
             ]
         },
@@ -65,138 +187,397 @@
             "key": "field_section_leader_heading",
             "label": "Section Leader Heading",
             "name": "section_leader_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Being a Leader is Choosing What You <em class=\"text-gold italic\">Become.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Being a Leader is Choosing What You <em class=\"text-gold italic\">Become.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_leader_text",
             "label": "Section Leader Text",
             "name": "section_leader_text",
+            "aria-label": "",
             "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "tabs": "visual",
-            "media_upload": 0
+            "media_upload": 0,
+            "toolbar": "full",
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_section_leader_image",
             "label": "Section Leader Image",
             "name": "section_leader_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_leader_gallery",
             "label": "Section Leader Gallery",
             "name": "section_leader_gallery",
+            "aria-label": "",
             "type": "gallery",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": 0,
+            "max": 0,
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_meaning_heading",
             "label": "Section Meaning Heading",
             "name": "section_meaning_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Long Before the Stages, There Was the Search for <em class=\"text-gold italic\">Meaning.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Long Before the Stages, There Was the Search for <em class=\"text-gold italic\">Meaning.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_meaning_text",
             "label": "Section Meaning Text",
             "name": "section_meaning_text",
+            "aria-label": "",
             "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "tabs": "visual",
-            "media_upload": 0
+            "media_upload": 0,
+            "toolbar": "full",
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_section_meaning_image",
             "label": "Section Meaning Image",
             "name": "section_meaning_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_meaning_gallery",
             "label": "Section Meaning Gallery",
             "name": "section_meaning_gallery",
+            "aria-label": "",
             "type": "gallery",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": 0,
+            "max": 0,
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_life_heading",
             "label": "Section Life Heading",
             "name": "section_life_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "A <em class=\"text-gold italic\">Life</em> Built Across Leadership<br>and Transformation."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "A <em class=\"text-gold italic\">Life<\/em> Built Across Leadership<br>and Transformation.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_life_text",
             "label": "Section Life Text",
             "name": "section_life_text",
+            "aria-label": "",
             "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "tabs": "visual",
-            "media_upload": 0
+            "media_upload": 0,
+            "toolbar": "full",
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_section_life_image",
             "label": "Section Life Image",
             "name": "section_life_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_section_reconnect_heading",
             "label": "Section Reconnect Heading",
             "name": "section_reconnect_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Joanna <span class=\"italic text-gold\">Help</span> Leaders Reconnect With What People Can Actually Feel."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Joanna <span class=\"italic text-gold\">Help<\/span> Leaders Reconnect With What People Can Actually Feel.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_reconnect_text",
             "label": "Section Reconnect Text",
             "name": "section_reconnect_text",
+            "aria-label": "",
             "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "tabs": "visual",
-            "media_upload": 0
+            "media_upload": 0,
+            "toolbar": "full",
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_section_reconnect_btn_text",
             "label": "Section Reconnect Btn Text",
             "name": "section_reconnect_btn_text",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Work With Joanna"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Work With Joanna",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_reconnect_btn_url",
             "label": "Section Reconnect Btn Url",
             "name": "section_reconnect_btn_url",
+            "aria-label": "",
             "type": "text",
-            "default_value": "/inquiry/"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "\/inquiry\/",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_voice_heading",
             "label": "Section Voice Heading",
             "name": "section_voice_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Your Voice Carries More Than <em class=\"text-warm-beige italic\">Information.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_section_voice_text",
             "label": "Section Voice Text",
             "name": "section_voice_text",
+            "aria-label": "",
             "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "tabs": "visual",
-            "media_upload": 0
+            "media_upload": 0,
+            "toolbar": "full",
+            "default_value": "",
+            "delay": 0
         },
         {
             "key": "field_section_voice_bg_image",
             "label": "Section Voice Bg Image",
             "name": "section_voice_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -208,5 +589,14 @@
             }
         ]
     ],
-    "active": true
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780710492
 }

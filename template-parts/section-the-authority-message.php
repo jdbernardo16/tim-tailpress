@@ -6,60 +6,48 @@
  * @package TailPress
  */
 
+$heading = get_field('section_message_heading') ?: 'Be the <em class="text-gold italic">Authority</em> Through Your Story';
+
+$default_text = <<<HTML
+<p>You need:</p>
+<ul>
+  <li>a message that lands clearly</li>
+  <li>emotional connection, not overexplaining</li>
+  <li>language people can remember and repeat</li>
+</ul>
+<p>That&rsquo;s where authority begins.</p>
+HTML;
+
+$text = get_field('section_message_text') ?: $default_text;
 $image_id = get_field('section_message_image');
-$heading = get_field('section_message_heading');
-$text = get_field('section_message_text');
 ?>
 <section class="bg-canvas py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
             <!-- Image -->
-            <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+            <div class="w-full lg:flex-1">
                 <?php if ($image_id): ?>
-                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full max-w-lg object-cover rounded-xl', 'alt' => 'Joanna Horton McPherson']) ?>
+                    <?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'w-full h-[450px] object-cover rounded-[10px]', 'alt' => 'Joanna Horton McPherson']) ?>
                 <?php endif; ?>
             </div>
 
             <!-- Text Content -->
-            <div class="w-full lg:w-1/2 max-w-xl">
+            <div class="w-full lg:w-[590px] flex-shrink-0">
                 <h2 class="font-flatline font-medium text-4xl md:text-5xl lg:text-[56px] text-navy leading-[1.1]">
                     <?= $heading ?>
                 </h2>
 
-                <p class="mt-10 font-flatline font-medium text-2xl text-navy leading-[1.1]">
-                    You need:
-                </p>
-
-                <ul class="mt-4 space-y-2">
-                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
-                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
-                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
-                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
-                        </svg>
-                        <span>a message that lands clearly</span>
-                    </li>
-                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
-                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
-                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
-                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
-                        </svg>
-                        <span>emotional connection, not overexplaining</span>
-                    </li>
-                    <li class="flex items-center gap-3 font-garet text-lg text-dark-text">
-                        <svg class="w-5 h-5 flex-shrink-0 text-gold" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"/>
-                            <path d="M18 14L18.75 16.25L21 17L18.75 17.75L18 20L17.25 17.75L15 17L17.25 16.25L18 14Z" opacity="0.6"/>
-                            <path d="M6 14L6.75 16.25L9 17L6.75 17.75L6 20L5.25 17.75L3 17L5.25 16.25L6 14Z" opacity="0.6"/>
-                        </svg>
-                        <span>language people can remember and repeat</span>
-                    </li>
-                </ul>
-
-                <p class="mt-8 font-garet text-lg text-dark-text leading-[150%]">
-                    <?= esc_html($text) ?>
-                </p>
+                <div class="mt-6 font-garet text-lg font-light text-dark-text leading-[150%]
+                            [&>p]:m-0
+                            [&>p:first-child]:font-flatline [&>p:first-child]:text-2xl [&>p:first-child]:font-medium [&>p:first-child]:text-navy [&>p:first-child]:leading-[1.1] [&>p:first-child]:mb-4
+                            [&>p+p]:mt-4
+                            [&>ul]:list-none [&>ul]:p-0 [&>ul]:m-0 [&>ul]:space-y-1 [&>ul]:mb-6
+                            [&_ul_li]:flex [&_ul_li]:items-center [&_ul_li]:gap-2
+                            [&_ul_li]:before:content-[''] [&_ul_li]:before:w-4 [&_ul_li]:before:h-4
+                            [&_ul_li]:before:bg-no-repeat [&_ul_li]:before:bg-contain [&_ul_li]:before:flex-shrink-0
+                            [&_ul_li]:before:bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27%23d4b478%27%3E%3Cpath%20d%3D%27M12%202L13.5%208.5L20%2010L13.5%2011.5L12%2018L10.5%2011.5L4%2010L10.5%208.5L12%202Z%27%2F%3E%3C%2Fsvg%3E')]">
+                    <?= wp_kses_post($text) ?>
+                </div>
             </div>
         </div>
     </div>

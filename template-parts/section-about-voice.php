@@ -68,7 +68,10 @@ $bg_image_id = get_field('section_voice_bg_image');
             <?= $heading ?>
         </h2>
         <?php if ($text): ?>
-            <?= $text ?>
+            <div class="mt-6 font-garet text-lg text-white leading-normal
+                        [&>p]:m-0">
+                <?= wp_kses_post($text) ?>
+            </div>
         <?php else: ?>
             <p class="mt-6 font-garet text-lg text-white leading-normal">
                 It carries your story. Your leadership.<br>The life that shaped you.

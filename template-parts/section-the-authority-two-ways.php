@@ -40,9 +40,10 @@ $heading = get_field('section_two_ways_heading');
                         </h3>
 
                         <?php if ($item_text): ?>
-                            <p class="mt-6 font-garet text-lg text-dark-text leading-[150%]">
-                                <?= esc_html($item_text) ?>
-                            </p>
+                            <div class="mt-6 font-garet text-lg text-dark-text leading-[150%]
+                                        [&>p]:m-0">
+                                <?= wp_kses_post($item_text) ?>
+                            </div>
                         <?php endif; ?>
 
                         <?php if ($item_includes): ?>

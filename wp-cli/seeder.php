@@ -493,7 +493,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
 
         $this->update_acf_field('section_journey_heading', 'The <em class="text-gold italic">Journey</em>', $page_id, $force);
         $this->update_acf_field('section_journey_items', [
-            ['item_icon' => $this->upload_image('phase1.webp'), 'item_heading' => 'Tell Your Story', 'item_text' => 'Your story becomes the foundation of your influence.', 'item_url' => home_url('/events/')],
+            ['item_icon' => $this->upload_image('phase1.webp'), 'item_heading' => 'Tell Your Story', 'item_text' => 'Your story becomes the foundation of your influence.', 'item_url' => home_url('/tell-your-story/')],
             ['item_icon' => $this->upload_image('phase2.webp'), 'item_heading' => 'Move the Room', 'item_text' => 'Your message becomes clear, structured, and emotionally powerful.', 'item_url' => home_url('/speaker-cohort/')],
             ['item_icon' => $this->upload_image('phase3.webp'), 'item_heading' => 'Become Known', 'item_text' => 'Become known for a message people remember and repeat.', 'item_url' => home_url('/million-dollar-message/')],
             ['item_icon' => $this->upload_image('phase4.webp'), 'item_heading' => 'Build Leaders', 'item_text' => 'Turn your message into leadership culture and scalable influence.', 'item_url' => home_url('/build-my-team/')],
@@ -893,7 +893,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_signature_heading', 'Signature <em class="text-gold italic">Offers</em>', $page_id, $force);
         $this->update_acf_field('section_signature_subtitle', 'The primary transformational experiences inside the True Influence Method&trade; — designed for different stages of leadership, visibility, authority, and long-term impact.', $page_id, $force);
         $this->update_acf_field('section_signature_items', [
-            ['item_title' => 'Tell Your Story', 'item_description' => 'Reconnect with the defining moments behind your leadership, voice, and influence.', 'item_price_label' => '', 'item_price' => '$3,200', 'item_cta' => 'FIND MY MESSAGE', 'item_url' => home_url('/events/')],
+            ['item_title' => 'Tell Your Story', 'item_description' => 'Reconnect with the defining moments behind your leadership, voice, and influence.', 'item_price_label' => '', 'item_price' => '$3,200', 'item_cta' => 'FIND MY MESSAGE', 'item_url' => home_url('/tell-your-story/')],
             ['item_title' => 'Move the Room', 'item_description' => 'Build a signature talk and message people trust, remember, and follow.', 'item_price_label' => '', 'item_price' => '$12,000', 'item_cta' => 'TAKE THE STAGE', 'item_url' => home_url('/speaker-cohort/')],
             ['item_title' => 'Master My Message', 'item_description' => 'Refine your positioning, authority, and keynote-level message.', 'item_price_label' => 'Starts at', 'item_price' => '$25,000', 'item_cta' => 'CREATE MY KEYNOTE', 'item_url' => home_url('/master-my-message/')],
             ['item_title' => 'Build My Team', 'item_description' => 'Scale communication, trust, and leadership across your organization.', 'item_price_label' => 'Starts at', 'item_price' => '$250,000', 'item_cta' => 'SCALE MY BUSINESS', 'item_url' => home_url('/build-my-team/')],
@@ -1075,7 +1075,7 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_message_text', "That's where authority begins.", $page_id, $force);
         $this->update_acf_field('section_two_ways_heading', 'Two Ways <em class="text-gold italic">Forward</em>', $page_id, $force);
         $this->update_acf_field('section_two_ways_items', [
-            ['item_heading' => 'Move the Room &mdash; My Signature Talk', 'item_text' => 'Your story becomes a structured talk that moves people.', 'item_price' => '$12,000', 'item_price_label' => '', 'item_includes' => "A 7-minute signature talk\nA clear problem \u2192 solution message\nEmotional connection points + defined CTA\nLive coaching with Joanna", 'item_btn_text' => 'TAKE THE STAGE', 'item_btn_url' => home_url('/the-speaker/')],
+            ['item_heading' => 'Move the Room &mdash; My Signature Talk', 'item_text' => 'Your story becomes a structured talk that moves people.', 'item_price' => '$12,000', 'item_price_label' => '', 'item_includes' => "A 7-minute signature talk\nA clear problem → solution message\nEmotional connection points + defined CTA\nLive coaching with Joanna", 'item_btn_text' => 'TAKE THE STAGE', 'item_btn_url' => home_url('/the-speaker/')],
             ['item_heading' => 'Master My Message &mdash; Keynote or TEDx', 'item_text' => 'This is where you become known.', 'item_price' => '$25,000', 'item_price_label' => 'Starts at', 'item_includes' => "A refined, repeatable signature message\nYour thought-leader perspective\nYour \"special sauce\" (what you do differently)\nA one-liner people can repeat", 'item_btn_text' => 'CREATE MY KEYNOTE', 'item_btn_url' => home_url('/master-my-message/')],
         ], $page_id, $force);
         $this->update_acf_field('section_work_heading', 'Work 1:1 with Joanna.', $page_id, $force);
@@ -1100,8 +1100,8 @@ It\'s about reconnecting with the moments that shaped your voice, your leadershi
         $this->update_acf_field('section_message_text', "You need: a message that lands clearly, emotional connection, not overexplaining, language people can remember and repeat. That's where authority begins.", $page_id, $force);
         $this->update_acf_field('section_two_ways_heading', 'Two Ways <em class="text-gold italic">Forward</em>', $page_id, $force);
         $this->update_acf_field('section_two_ways_items', [
-            ['item_heading' => 'Build My Team &mdash; My Scaling Strategy', 'item_text' => 'Your message becomes a system.', 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/build-my-team/')],
-            ['item_heading' => 'Be Remembered &mdash; My Legacy Framework', 'item_text' => 'Your work outlives you.', 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/be-remembered/')],
+            ['item_heading' => 'Build My Team &mdash; My Scaling Strategy', 'item_text' => 'Your message becomes a system.', 'item_price' => '$250,000', 'item_price_label' => 'Starts at', 'item_includes' => "Your leadership framework\nA team communication system\nA mentorship structure based on your message\nPsychological safety + trust inside your team", 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/build-my-team/')],
+            ['item_heading' => 'Be Remembered &mdash; My Legacy Framework', 'item_text' => 'Your work outlives you.', 'item_price' => '$1M', 'item_price_label' => 'Starts at', 'item_includes' => "Your legacy blueprint\nYour impact thesis\nYour succession plan\nVoice + wealth + long-term contribution, aligned", 'item_btn_text' => 'DISCOVERY CALL', 'item_btn_url' => home_url('/be-remembered/')],
         ], $page_id, $force);
     }
 

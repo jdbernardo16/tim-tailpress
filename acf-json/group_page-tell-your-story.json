@@ -6,120 +6,348 @@
             "key": "field_tys_hero_eyebrow",
             "label": "Hero Eyebrow",
             "name": "section_tys_hero_eyebrow",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Tell Your Story"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Tell Your Story",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_hero_heading",
             "label": "Hero Heading",
             "name": "section_tys_hero_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Where Leaders<br>Tell The <em class=\"text-gold italic\">Truth.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Where Leaders<br>Tell The <em class=\"text-gold italic\">Truth.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_hero_body",
             "label": "Hero Body",
             "name": "section_tys_hero_body",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "Tell Your Story is the transformational course + retreat experience inside the True Influence Method. Created for leaders ready to reconnect with the story behind their influence."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Tell Your Story is the transformational course + retreat experience inside the True Influence Method. Created for leaders ready to reconnect with the story behind their influence.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_hero_cta_text",
             "label": "Hero CTA Text",
             "name": "section_tys_hero_cta_text",
+            "aria-label": "",
             "type": "text",
-            "default_value": "VIEW THE RETREAT EXPERIENCE"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "VIEW THE RETREAT EXPERIENCE",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_hero_cta_url",
             "label": "Hero CTA URL",
             "name": "section_tys_hero_cta_url",
+            "aria-label": "",
             "type": "text",
-            "default_value": "#pricing"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#pricing",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_hero_bg_image",
             "label": "Hero Background Image",
             "name": "section_tys_hero_bg_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
-            "preview_size": "large"
+            "preview_size": "large",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_tys_speaking_heading",
             "label": "Speaking Heading",
             "name": "section_tys_speaking_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "This Is <em>Not</em> Just Speaking Training; It's Leading from the Stage"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "This Is <em>Not<\/em> Just Speaking Training; It's Leading from the Stage",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_speaking_text_1",
             "label": "Speaking Text 1",
             "name": "section_tys_speaking_text_1",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "This is the work of uncovering the moments that shaped your voice, your leadership, and the way people experience you."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "This is the work of uncovering the moments that shaped your voice, your leadership, and the way people experience you.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_speaking_text_2",
             "label": "Speaking Text 2",
             "name": "section_tys_speaking_text_2",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "Inside the retreat, leaders reconnect with the truth behind their message so their words stop sounding practiced and start feeling real."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Inside the retreat, leaders reconnect with the truth behind their message so their words stop sounding practiced and start feeling real.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_founding_heading",
             "label": "Founding Heading",
             "name": "section_tys_founding_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Be Part of the<br><em class=\"text-gold\">Founding Experience.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Be Part of the<br><em class=\"text-gold\">Founding Experience.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_founding_subhead",
             "label": "Founding Subhead",
             "name": "section_tys_founding_subhead",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "This retreat marks the beginning of a new chapter inside the True Influence Method \u2014 bringing together a small group of leaders ready to uncover the story behind their influence."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "This retreat marks the beginning of a new chapter inside the True Influence Method — bringing together a small group of leaders ready to uncover the story behind their influence.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_founding_card_title",
             "label": "Founding Card Title",
             "name": "section_tys_founding_card_title",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Inside the Experience"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Inside the Experience",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_founding_card_sub",
             "label": "Founding Card Subtitle",
             "name": "section_tys_founding_card_sub",
+            "aria-label": "",
             "type": "text",
-            "default_value": "A guided experience designed to help you uncover the story behind your leadership."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "A guided experience designed to help you uncover the story behind your leadership.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_founding_card_text",
             "label": "Founding Card Text",
             "name": "section_tys_founding_card_text",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "Inside Tell Your Story, you'll move through a structured self-guided course experience with Joanna designed to help you identify the defining moments, emotional truths, and deeper why behind your message."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Inside Tell Your Story, you'll move through a structured self-guided course experience with Joanna designed to help you identify the defining moments, emotional truths, and deeper why behind your message.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_founding_date",
             "label": "Founding Date",
             "name": "section_tys_founding_date",
+            "aria-label": "",
             "type": "text",
-            "default_value": "September 17-20, 2027"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "September 17-20, 2027",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_founding_features",
             "label": "Founding Features",
             "name": "section_tys_founding_features",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_tys_founding_features_text",
                     "label": "Feature Text",
                     "name": "feature_text",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_tys_founding_features"
                 }
             ]
         },
@@ -127,16 +355,48 @@
             "key": "field_tys_carousel_images",
             "label": "Carousel Images",
             "name": "section_tys_carousel_images",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_tys_carousel_images_image",
                     "label": "Image",
                     "name": "image",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
-                    "preview_size": "medium"
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_tys_carousel_images"
                 }
             ]
         },
@@ -144,97 +404,284 @@
             "key": "field_tys_transformations_heading",
             "label": "Transformations Heading",
             "name": "section_tys_transformations_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Some Transformations Can't be Explained.<br>They Have to be <em class=\"text-gold italic\">Experienced.</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Some Transformations Can't be Explained.<br>They Have to be <em class=\"text-gold italic\">Experienced.<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_transformations_subtitle",
             "label": "Transformations Subtitle",
             "name": "section_tys_transformations_subtitle",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "When your story becomes clear, so does your leadership."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "When your story becomes clear, so does your leadership.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_transformations_banner",
             "label": "Transformations Banner Text",
             "name": "section_tys_transformations_banner",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Because your message finally comes from something real."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Because your message finally comes from something real.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_pricing_heading",
             "label": "Pricing Heading",
             "name": "section_tys_pricing_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Join the Course &amp; Retreat<br><em class=\"text-gold-section italic\">Experience</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Join the Course &amp; Retreat<br><em class=\"text-gold-section italic\">Experience<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_pricing_subhead",
             "label": "Pricing Subhead",
             "name": "section_tys_pricing_subhead",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "This inaugural course & retreat experience is intentionally intimate to preserve depth, connection, and transformation."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "This inaugural course & retreat experience is intentionally intimate to preserve depth, connection, and transformation.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_pricing_strike",
             "label": "Pricing Original Price (strikethrough)",
             "name": "section_tys_pricing_strike",
+            "aria-label": "",
             "type": "text",
-            "default_value": "$12,000"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "$12,000",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_pricing_price",
             "label": "Pricing Price",
             "name": "section_tys_pricing_price",
+            "aria-label": "",
             "type": "text",
-            "default_value": "$3,200"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "$3,200",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_pricing_footnote",
             "label": "Pricing Footnote",
             "name": "section_tys_pricing_footnote",
+            "aria-label": "",
             "type": "textarea",
-            "default_value": "Includes the transformational course and retreat experience.\nTravel & accommodations not included."
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Includes the transformational course and retreat experience.\nTravel & accommodations not included.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_tys_pricing_cta_text",
             "label": "Pricing CTA Text",
             "name": "section_tys_pricing_cta_text",
+            "aria-label": "",
             "type": "text",
-            "default_value": "JOIN THE COURSE & RETREAT"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "JOIN THE COURSE & RETREAT",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_pricing_cta_url",
             "label": "Pricing CTA URL",
             "name": "section_tys_pricing_cta_url",
+            "aria-label": "",
             "type": "text",
-            "default_value": "https://true-influence-method.mykajabi.com/offers/zvLu7zev/checkout"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/true-influence-method.mykajabi.com\/offers\/zvLu7zev\/checkout",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_faq_heading",
             "label": "FAQ Heading",
             "name": "section_tys_faq_heading",
+            "aria-label": "",
             "type": "text",
-            "default_value": "Frequently Asked<br><em class=\"text-gold italic\">Questions</em>"
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Frequently Asked<br><em class=\"text-gold italic\">Questions<\/em>",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_tys_faq_items",
             "label": "FAQ Items",
             "name": "section_tys_faq_items",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_tys_faq_items_question",
                     "label": "Question",
                     "name": "question",
-                    "type": "text"
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_tys_faq_items"
                 },
                 {
                     "key": "field_tys_faq_items_answer",
                     "label": "Answer",
                     "name": "answer",
-                    "type": "textarea"
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "parent_repeater": "field_tys_faq_items"
                 }
             ]
         }
@@ -248,5 +695,14 @@
             }
         ]
     ],
-    "active": true
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1780710493
 }

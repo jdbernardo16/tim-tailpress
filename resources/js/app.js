@@ -28,8 +28,22 @@ import { Navigation, Autoplay } from "swiper/modules";
         }
     });
 
+    var closeBtn = document.getElementById('header-mobile-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            setMenuOpen(false);
+            toggle.focus();
+        });
+    }
+
     menu.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () {
+            // Don't close the menu when clicking a parent item with children
+            // that isn't expanded yet (the submenu toggle handler handles it).
+            var parent = a.parentElement;
+            if (parent && parent.classList.contains('menu-item-has-children') && !parent.classList.contains('expanded')) {
+                return;
+            }
             setMenuOpen(false);
         });
     });
@@ -356,6 +370,152 @@ window.addEventListener("load", function () {
         } catch (err) {
             console.error("Inquiry submission failed:", err);
             showFieldError("full_name", "Something went wrong. Please try again or contact us directly.");
+        } finally {
+            setLoading(false);
+        }
+    });
+
+    // Modal close handlers
+    modalCloseBtn?.addEventListener("click", hideModalAndReset);
+    modalOkayBtn?.addEventListener("click", hideModalAndReset);
+
+    // Close modal on overlay click
+    modalEl?.addEventListener("click", function (e) {
+        if (e.target === this) hideModalAndReset();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modalEl && !modalEl.classList.contains("hidden")) {
+            hideModalAndReset();
+        }
+    });
+});
+
+// ============================================================
+// Newsletter Footer Form — validation, GHL webhook, modal
+// ============================================================
+window.addEventListener("load", function () {
+    const newsletterForm = document.getElementById("footer-newsletter-form");
+    if (!newsletterForm) return;
+
+    const modalEl = document.getElementById("newsletter-success-modal");
+    const modalCloseBtn = document.getElementById("newsletter-modal-close");
+    const modalOkayBtn = document.getElementById("newsletter-modal-okay");
+    const submitBtn = document.getElementById("newsletter-submit");
+    const btnText = submitBtn?.querySelector(".newsletter-btn-text");
+    const btnSpinner = submitBtn?.querySelector(".newsletter-btn-spinner");
+
+    /** Show an error message for the email field. */
+    function showEmailError(message) {
+        const errorEl = document.querySelector(".newsletter-error[data-field='email']");
+        const inputEl = document.querySelector("#footer-newsletter-form [name='email']");
+        if (errorEl) {
+            errorEl.textContent = message;
+            errorEl.classList.remove("hidden");
+        }
+        if (inputEl) inputEl.classList.add("newsletter-field-error");
+    }
+
+    /** Clear email field error. */
+    function clearEmailError() {
+        const errorEl = document.querySelector(".newsletter-error[data-field='email']");
+        const inputEl = document.querySelector("#footer-newsletter-form [name='email']");
+        if (errorEl) {
+            errorEl.textContent = "";
+            errorEl.classList.add("hidden");
+        }
+        if (inputEl) inputEl.classList.remove("newsletter-field-error");
+    }
+
+    /** Validate email field. Returns error string or empty string. */
+    function validateEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
+            ? ""
+            : "Please enter a valid email address.";
+    }
+
+    /** Set loading state on the submit button. */
+    function setLoading(loading) {
+        if (!submitBtn || !btnText || !btnSpinner) return;
+        submitBtn.disabled = loading;
+        btnText.classList.toggle("hidden", loading);
+        btnSpinner.classList.toggle("hidden", !loading);
+    }
+
+    /** Show the success modal. */
+    function showModal() {
+        if (!modalEl) return;
+        modalEl.classList.remove("hidden");
+        modalEl.classList.add("flex");
+        document.body.style.overflow = "hidden";
+    }
+
+    /** Hide the success modal and reset the form. */
+    function hideModalAndReset() {
+        if (modalEl) {
+            modalEl.classList.add("hidden");
+            modalEl.classList.remove("flex");
+        }
+        document.body.style.overflow = "";
+        newsletterForm.reset();
+        clearEmailError();
+    }
+
+    // Real-time email validation on blur
+    const emailInput = newsletterForm.querySelector('[name="email"]');
+    if (emailInput) {
+        emailInput.addEventListener("blur", function () {
+            const err = validateEmail(this.value);
+            if (err) {
+                showEmailError(err);
+            } else {
+                clearEmailError();
+            }
+        });
+        // Clear error on input (while typing)
+        emailInput.addEventListener("input", function () {
+            const errorEl = document.querySelector(".newsletter-error[data-field='email']");
+            if (errorEl && !errorEl.classList.contains("hidden")) {
+                const err = validateEmail(this.value);
+                if (!err) clearEmailError();
+            }
+        });
+    }
+
+    // Form submission
+    newsletterForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        clearEmailError();
+
+        const email = this.email.value.trim();
+        const error = validateEmail(email);
+        if (error) {
+            showEmailError(error);
+            return;
+        }
+
+        const webhook = this.dataset.ghlWebhook;
+        if (!webhook) {
+            console.error("Newsletter form: missing GHL webhook URL");
+            return;
+        }
+
+        const payload = { email };
+
+        setLoading(true);
+        try {
+            const response = await fetch(webhook, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            showModal();
+        } catch (err) {
+            console.error("Newsletter submission failed:", err);
+            showEmailError("Something went wrong. Please try again.");
         } finally {
             setLoading(false);
         }

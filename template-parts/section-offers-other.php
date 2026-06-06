@@ -76,7 +76,7 @@ $heading = get_field('section_other_heading') ?: 'Other Ways to<br>Work <em clas
                         'price_label' => '',
                         'price'       => '$2,000',
                         'cta'         => 'BOOK A BREAKTHROUGH SESSION',
-                        'url'         => home_url('/inquiry/'),
+                        'url'         => home_url('/breakthrough-sessoin/'),
                     ),
                 );
                 ?>

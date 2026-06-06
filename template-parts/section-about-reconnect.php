@@ -43,7 +43,10 @@ $btn_url = get_field('section_reconnect_btn_url');
                         <?= $heading ?>
                     </h2>
                     <?php if ($text): ?>
-                        <?= $text ?>
+                        <div class="mt-6 md:mt-8 font-garet text-base md:text-lg text-white leading-relaxed opacity-90
+                                    [&>p]:m-0">
+                            <?= wp_kses_post($text) ?>
+                        </div>
                     <?php else: ?>
                         <p class="mt-6 md:mt-8 font-garet text-base md:text-lg text-white leading-relaxed opacity-90">
                             Through retreats, transformational speaking experiences, leadership conversations, and private advisory work, she helps people uncover the story behind their influence and communicate it with clarity, courage, and emotional truth.

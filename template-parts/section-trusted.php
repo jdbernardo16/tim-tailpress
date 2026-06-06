@@ -35,10 +35,10 @@ $heading = get_field('section_trusted_heading') ?: 'Trusted by<br>leaders worldw
         </div>
     </div>
     <div class="marquee overflow-hidden">
-        <div class="marquee__track flex gap-8 md:gap-12 opacity-60 grayscale">
+        <div class="marquee__track flex gap-8 md:gap-16">
             <?php for ($j = 0; $j < 2; $j++) : ?>
                 <?php for ($i = 1; $i <= 30; $i++) : ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo-company-<?php echo $i; ?>.webp" alt="" class="marquee__img h-10 w-auto object-contain">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logos/logo-company-<?php echo $i; ?>.webp" alt="" class="marquee__img h-16 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0">
                 <?php endfor; ?>
             <?php endfor; ?>
         </div>

@@ -60,15 +60,25 @@
             <div class="flex flex-col gap-4 lg:w-80">
                 <h3 class="font-flatline font-semibold text-lg text-navy">Stay Connected</h3>
                 <p class="font-garet font-light text-sm text-black/70">Weekly insights on authentic influence.</p>
-                <form class="flex flex-col gap-1" action="#" method="post">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="your@email.com"
-                        class="w-full px-4 py-2.5 border border-warm-beige rounded-lg font-garet font-light text-sm text-black placeholder:text-black/50 bg-white focus:outline-none focus:ring-2 focus:ring-gold/50"
-                        required>
-                    <button type="submit" class="btn-primary w-full justify-center">
-                        SUBSCRIBE
+                <form id="footer-newsletter-form" class="flex flex-col gap-1" novalidate
+                      data-ghl-webhook="https://services.leadconnectorhq.com/hooks/txFvEqJbQlKriCxJl8w3/webhook-trigger/df1dc8ef-b3ec-4ae5-815f-4ad8e42d493b">
+                    <div>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="your@email.com"
+                            class="newsletter-email-input w-full px-4 py-2.5 border border-warm-beige rounded-lg font-garet font-light text-sm text-black placeholder:text-black/50 bg-white focus:outline-none focus:ring-2 focus:ring-gold/50"
+                            required>
+                        <span class="newsletter-error hidden text-red-400 text-xs font-garet mt-1" data-field="email"></span>
+                    </div>
+                    <button type="submit" id="newsletter-submit" class="btn-primary w-full justify-center h-[38px]">
+                        <span class="newsletter-btn-text">SUBSCRIBE</span>
+                        <span class="newsletter-btn-spinner hidden">
+                            <svg class="animate-spin h-4 w-4 text-navy" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            </svg>
+                        </span>
                     </button>
                 </form>
             </div>
@@ -132,3 +142,52 @@
         </div>
     </div>
 </footer>
+
+<!-- Newsletter Success Modal -->
+<div id="newsletter-success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-heading">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+    <!-- Modal Card -->
+    <div class="relative w-full max-w-lg bg-navy rounded-2xl p-8 sm:p-12 text-center shadow-2xl border border-white/10">
+        <!-- Close Button -->
+        <button type="button" id="newsletter-modal-close" class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Success Icon -->
+        <div class="mx-auto mb-6 w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <!-- Heading -->
+        <h3 id="newsletter-modal-heading" class="font-flatline font-semibold text-2xl sm:text-3xl text-white">
+            You're In!
+        </h3>
+
+        <!-- Message -->
+        <p class="mt-4 font-garet text-base text-white/80 leading-relaxed">
+            Thanks for subscribing. We'll send weekly insights on authentic influence straight to your inbox.
+        </p>
+
+        <!-- Okay Button -->
+        <button type="button" id="newsletter-modal-okay" class="mt-8 px-8 h-[41px] rounded-full font-flatline font-bold text-base uppercase tracking-normal text-navy transition-opacity hover:opacity-90"
+                style="background: radial-gradient(circle at 65% 0%, #e7d4c5 0%, #d4b478 100%); border: 1px solid #e7d4c5;">
+            OKAY
+        </button>
+    </div>
+</div>
+
+<style>
+    .newsletter-field-error {
+        border-color: #f87171 !important;
+    }
+    .newsletter-field-error:focus {
+        ring-color: #f87171 !important;
+    }
+</style>
